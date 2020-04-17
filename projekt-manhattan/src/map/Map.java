@@ -5,7 +5,8 @@ public class Map {
     private int length;
     private int width;     
     
-    //Pole będące tablicą obiektów typu Byt
+    //Pole będące tablicą obiektów implementujących IPrintable
+    
     public IPrintable[][] table;
 
     //Konstruktor mapy
