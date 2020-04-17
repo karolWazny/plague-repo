@@ -17,4 +17,8 @@ public abstract class Being {
     public String toString(){
         return id;
     }
+
+    public printRepresentation() {
+        
+    }
 }
