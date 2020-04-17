@@ -5,10 +5,10 @@ public class Mapa {
     private int dlugosc;
     private int szerokosc;     
     
-    //Pole będące tablicą obiektów typu Byt
+    
     public Byt[][] tablica;
 
-    //Konstruktor mapy
+    
     public Mapa(int dlugosc, int szerokosc){
         this.dlugosc = dlugosc;
         this.szerokosc = szerokosc;
@@ -20,7 +20,7 @@ public class Mapa {
             }
         }
     }
-    @Override
+    
     public String toString(){
         return "Mapa o rozmiarze: " + this.dlugosc + " na " + this.szerokosc;
     }
