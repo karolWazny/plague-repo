@@ -1,10 +1,10 @@
 package map;
 
-public abstract class Being {
+public class Being implements IPrintable {
     //Pole - identyfikator bytu
     private final String id;
 
-    private final char representation;
+    private final Character representation;
 
     //Konstruktor klasy Byt
     public Being(String id, char representation){
@@ -15,6 +15,10 @@ public abstract class Being {
     //Metoda do wyświetlenia identyfikatora klasy Byt
     @Override
     public String toString(){
+        return representation.toString();
+    }
+
+    public String getId() {
         return id;
     }
 }

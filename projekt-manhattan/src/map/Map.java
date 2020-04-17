@@ -5,8 +5,9 @@ public class Map {
     private int length;
     private int width;     
     
-    //Pole będące tablicą obiektów typu Byt
-    public Being[][] table;
+    //Pole będące tablicą obiektów implementujących IPrintable
+    
+    public IPrintable[][] table;
 
     //Konstruktor mapy
     public Map(int dlugosc, int szerokosc){
@@ -16,7 +17,7 @@ public class Map {
 
         for(int i=0; i<this.length; i++){
             for(int j=0; j<this.width; j++){
-                this.table[i][j] = new Being("0");
+                this.table[i][j] = new Man("0");
             }
         }
     }
