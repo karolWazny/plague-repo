@@ -31,6 +31,7 @@ public class Mapa {
                 System.out.print(this.tablica[i][j]);
             }
             System.out.print("\n");
+            System.out.print("\n");
         }
     }
 }
