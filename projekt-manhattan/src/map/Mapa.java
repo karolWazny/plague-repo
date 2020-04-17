@@ -1,17 +1,17 @@
-package app;
+package map;
 
 public class Mapa {
     //Pole identyfikujące rozmiar mapy - ilość pól tekstowych w konsoli
     private int rozmiar;     
     
     //Pole będące tablicą obiektów typu Byt
-    public app.Byt[][] tablica;
+    public Byt[][] tablica;
 
     //Konstruktor mapy
     public Mapa(int rozmiar){
         this.rozmiar = rozmiar;
     
-        tablica = new app.Byt[this.rozmiar][this.rozmiar];
+        tablica = new Byt[this.rozmiar][this.rozmiar];
 
         for(int i=0; i<this.rozmiar; i++){
             for(int j=0; j<this.rozmiar; j++){

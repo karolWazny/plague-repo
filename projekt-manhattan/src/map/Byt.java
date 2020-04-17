@@ -1,4 +1,4 @@
-package app;
+package map;
 
 public class Byt {
     //Pole - identyfikator bytu
