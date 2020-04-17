@@ -1,11 +1,11 @@
 package app;
 
-import map.Byt;
-import map.Mapa;
+import map.Being;
+import map.Map;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Mapa map = new Mapa(10);
-        map.wyswietl_Mape();
+        Map map = new Map(10, 20);
+        map.displayMap();
     }
 }

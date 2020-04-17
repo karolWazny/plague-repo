@@ -1,15 +1,19 @@
 package map;
 
-public class Byt {
+public abstract class Being {
     //Pole - identyfikator bytu
-    private String id;
+    private final String id;
+
+    private final char representation;
 
     //Konstruktor klasy Byt
-    public Byt(String id){
+    public Being(String id, char representation){
         this.id = id;
+        this.representation = representation;
     }
 
     //Metoda do wyświetlenia identyfikatora klasy Byt
+    @Override
     public String toString(){
         return id;
     }
