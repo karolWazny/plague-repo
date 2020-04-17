@@ -6,7 +6,7 @@ public class Map {
     private int width;     
     
     //Pole będące tablicą obiektów typu Byt
-    public Being[][] table;
+    public IPrintable[][] table;
 
     //Konstruktor mapy
     public Map(int dlugosc, int szerokosc){
