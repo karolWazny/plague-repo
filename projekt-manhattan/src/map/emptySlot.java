@@ -1,9 +1,8 @@
 package map;
 
-public class emptySlot extends Being {
-    
-    emptySlot() {
-        super("empty slot", ' ');
-    }
+public final class EmptySlot extends Being {
 
+    public EmptySlot() {
+        super("puste pole", ' ');
+    }
 }

@@ -1,0 +1,8 @@
+{
+    "plantuml.commandArgs": [
+        "-DGRAPHVIZ_DOT=D:\\graphviz-2.38\\release\\bin\\dot.exe",
+    ],
+    "plantuml.java": "D:\\Program Files\\Java\\jdk-14.0.1\\bin\\java.exe",
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "https://www.plantuml.com/plantuml"
+}
