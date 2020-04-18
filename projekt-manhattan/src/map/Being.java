@@ -1,6 +1,6 @@
 package map;
 
-public class Being implements IPrintable {
+public abstract class Being implements IPrintable {
     //Pole - identyfikator bytu
     private final String id;
 
