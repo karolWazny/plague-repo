@@ -1,20 +1,8 @@
 package map;
 
-public final class EmptySlot implements IPrintable {
+public final class EmptySlot extends Being {
 
-    private final static Character representation = '#';
-
-    private final static String id = "puste pole";
-    
     public EmptySlot() {
-    }
-
-    @Override
-    public String toString() {
-        return representation.toString();
-    }
-
-    public String getId() {
-        return id;
+        super("puste pole", ' ');
     }
 }
