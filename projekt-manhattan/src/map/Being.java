@@ -17,8 +17,13 @@ public abstract class Being implements IPrintable {
     public String toString(){
         return representation.toString();
     }
-
+    @Override
     public String getId() {
         return id;
+    }
+    @Override
+    public char getRepresentation()
+    {
+        return representation;
     }
 }
