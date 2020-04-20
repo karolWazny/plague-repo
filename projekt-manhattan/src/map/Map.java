@@ -5,18 +5,19 @@ public class Map {
     private int length;
     private int width;     
     
-    //Pole będące tablicą obiektów typu Byt
-    public Being[][] table;
+    //Pole będące tablicą obiektów implementujących IPrintable
+    
+    private IPrintable[][] table;
 
     //Konstruktor mapy
-    public Map(int dlugosc, int szerokosc){
-        this.length = dlugosc;
-        this.width = szerokosc;
-        table = new Being[this.length][this.width];
+    public Map(int length, int width){
+        this.length = length;
+        this.width = width;
+        table = new IPrintable[this.length][this.width];
 
         for(int i=0; i<this.length; i++){
             for(int j=0; j<this.width; j++){
-                this.table[i][j] = new Man("manid"+i+" "+j);
+                this.table[i][j] = new Man();
             }
         }
     }
@@ -28,7 +29,7 @@ public class Map {
     public void displayMap(){
         for(int i=0; i<this.length; i++){
             for(int j=0; j<this.width; j++){
-                System.out.print(this.table[i][j]);
+                System.out.print(this.table[i][j].toString());
             }
             System.out.print("\n");
         }

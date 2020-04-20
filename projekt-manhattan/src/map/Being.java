@@ -1,10 +1,10 @@
 package map;
 
-public class Being {
+public abstract class Being implements IPrintable {
     //Pole - identyfikator bytu
     private final String id;
 
-    private final Character representation;
+    protected final Character representation;
 
     //Konstruktor klasy Byt
     public Being(String id, char representation){

@@ -1,6 +1,5 @@
 package app;
 
-import map.Being;
 import map.Map;
 
 public class App {
