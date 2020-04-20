@@ -14,4 +14,23 @@ public class Man extends Being implements IMovable, IDiseaseSensitive {
         
     }
 
+    private byte healthPoints;
+    private boolean isInfected;
+    private final Sex sex;
+
+    public Sex getSex()
+    {
+        return sex;
+    }
+
+    public byte getHealthPoints()
+    {
+        return healthPoints;
+    }
+
+    public boolean getIsInfected()
+    {
+        return isInfected;
+    }
+
 }
