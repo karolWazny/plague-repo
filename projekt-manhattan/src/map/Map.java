@@ -29,9 +29,19 @@ public class Map {
     public void displayMap(){
         for(int i=0; i<this.length; i++){
             for(int j=0; j<this.width; j++){
-                System.out.print(this.table[i][j].toString());
+                System.out.print(this.table[i][j].getRepresentation());
             }
             System.out.print("\n");
         }
+    }
+
+    public IPrintable getField(int vertical, int horizontal)
+    {
+        return table[vertical][horizontal];
+    }
+
+    public IPrintable getField(int[] verHor)
+    {
+        return table[verHor[0]][verHor[1]];
     }
 }

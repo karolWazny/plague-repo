@@ -1,5 +1,5 @@
 package map;
 
 public interface IMovable {
-    public void move();
+    public int[] move(int[] verHor);
 }
