@@ -17,6 +17,16 @@ public class Man extends Being implements IMovable, IDiseaseSensitive {
         super("Citizen "+ manCounter, ((Dice.d2()==1)?'m':'k'));
         sex = ((super.representation=='k')?1:2);
         age = Dice.d4(20);
+        isInfected = false;
+        manCounter++;
+    }
+
+    protected Man(int sex, int age, char representation) //doctors only!
+    {
+        super("Citizen "+ manCounter, 'd');
+        this.sex = sex;
+        this.age = age;
+        isInfected = false;
         manCounter++;
     }
 

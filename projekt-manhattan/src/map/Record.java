@@ -20,8 +20,7 @@ public abstract class  Record implements IMapable {
     @Override
     public void move()
     {
-        int [] newVerHor = being.move(getVerHor());
-        
+        setVerHor(being.move(getVerHor()));
     }
 
     @Override
@@ -29,5 +28,12 @@ public abstract class  Record implements IMapable {
     {
         int location[] = new int[] {vertical, horizontal};
         return location;
+    }
+
+    @Override
+    public void setVerHor(int[] newVerHor)
+    {
+        vertical = newVerHor[0];
+        horizontal = newVerHor[1];
     }
 }

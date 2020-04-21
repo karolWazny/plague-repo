@@ -6,9 +6,12 @@ import java.util.ArrayList;
 public class BeingContainer {
     private List<IMapable> list;
     
-    public BeingContainer()
+    private Map map;
+
+    public BeingContainer(Map map)
     {
         list = new ArrayList<IMapable>();
+        this.map = map;
     }
     
     public List<IMapable> getList()
@@ -16,11 +19,24 @@ public class BeingContainer {
         return list;
     }
 
+    public Map getMap()
+    {
+        return map;
+    }
+
     public void performMovementRound()
     {
+        int[] currentVerHor;
+        int[] newVerHor;
         for(IMapable obj:list)
         {
+            currentVerHor = obj.getVerHor();
             obj.move();
+            newVerHor = obj.getVerHor();
+            if(map.getField(newVerHor).getId()!="empty")
+            {
+                obj.setVerHor(currentVerHor);
+            }
         }
     }
 }

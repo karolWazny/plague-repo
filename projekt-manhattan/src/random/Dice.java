@@ -98,4 +98,18 @@ public class Dice {
     public static int d100() {
         return d100(1);
     }
+
+    public static int custom(int diceRange, int diceNumber)
+    {
+        int wynik = 0;
+        for(int i = 0; i<diceNumber; i++) {
+            wynik+=(int)(Math.random()*diceRange)+1;
+        }
+        return wynik;
+    }
+
+    public static int custom(int diceRange)
+    {
+        return custom(diceRange, 1);
+    }
 }
