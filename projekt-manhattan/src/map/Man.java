@@ -31,17 +31,17 @@ public class Man extends Being implements IMovable, IDiseaseSensitive {
     }
 
     @Override
-    public int[] move(int[] verHor) {
-        int[] newPosition = new int[] {verHor[0], verHor[1]};
+    public Coordinates move(Coordinates currentCoordinates) {
+        Coordinates newPosition = new Coordinates(currentCoordinates);
         switch(Dice.d4())
         {
-            case 1: newPosition[0]++;
+            case 1: newPosition.setVertical(newPosition.getVertical()+1);
                 break;
-            case 2: newPosition[0]--;
+            case 2: newPosition.setVertical(newPosition.getVertical()-1);
                 break;
-            case 3: newPosition[1]++;
+            case 3: newPosition.setHorizontal(newPosition.getHorizontal()+1);
                 break;
-            case 4: newPosition[1]--;
+            case 4: newPosition.setHorizontal(newPosition.getHorizontal()-1);
                 break;
         }
         return newPosition;

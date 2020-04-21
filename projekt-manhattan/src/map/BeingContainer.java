@@ -26,16 +26,29 @@ public class BeingContainer {
 
     public void performMovementRound()
     {
-        int[] currentVerHor;
-        int[] newVerHor;
+        Coordinates currentPosition = new Coordinates();
+        Coordinates newPosition = new Coordinates();
+        boolean newLocationAccessible = true;
         for(IMapable obj:list)
         {
-            currentVerHor = obj.getVerHor();
+            currentPosition.setCoordinates(obj.getCoordinates());
             obj.move();
-            newVerHor = obj.getVerHor();
-            if(map.getField(newVerHor).getId()!="empty")
+            newPosition.setCoordinates(obj.getCoordinates());
+            if(map.getLength() <= newPosition.getVertical() || newPosition.getVertical() < 0)
             {
-                obj.setVerHor(currentVerHor);
+                newLocationAccessible = false;
+            }
+            else if(map.getWidth() <= newPosition.getHorizontal() || newPosition.getHorizontal() < 0)
+            {
+                newLocationAccessible = false;
+            }
+            else if(map.getField(newPosition).getId()!="empty")
+            {
+                newLocationAccessible = false;
+            }
+            if(!newLocationAccessible)
+            {
+                obj.setCoordinates(currentPosition);;
             }
         }
     }

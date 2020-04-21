@@ -2,6 +2,6 @@ package map;
 
 public interface IMapable {
     public void move();
-    public int[] getVerHor();
-    public void setVerHor(int[] newVerHor);
+    public Coordinates getCoordinates();
+    public void setCoordinates(Coordinates newCoords);
 }

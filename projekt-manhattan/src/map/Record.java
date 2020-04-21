@@ -1,39 +1,41 @@
 package map;
 
 public abstract class  Record implements IMapable {
-    private IMovable being;
-    private int vertical;
-    private int horizontal;
+    private IMovable content;
+    private Coordinates coordinates;
 
-    public Record(IMovable being, int vertical, int horizontal) 
+    public Record(IMovable content, int vertical, int horizontal) 
     {
-        this.being = being;
-        this.vertical = vertical;
-        this.horizontal = horizontal;
+        this.content = content;
+        coordinates = new Coordinates(vertical, horizontal);
     }
 
-    public IMovable getBeing()
+    public Record(IMovable content, Coordinates coords) 
     {
-        return being;
+        this.content = content;
+        coordinates = new Coordinates(coords);
+    }
+
+    public IMovable getContent()
+    {
+        return content;
     }
 
     @Override
     public void move()
     {
-        setVerHor(being.move(getVerHor()));
+        setCoordinates(content.move(getCoordinates()));
     }
 
     @Override
-    public int[] getVerHor()
+    public Coordinates getCoordinates()
     {
-        int location[] = new int[] {vertical, horizontal};
-        return location;
+        return coordinates;
     }
 
     @Override
-    public void setVerHor(int[] newVerHor)
+    public void setCoordinates(Coordinates newCoords)
     {
-        vertical = newVerHor[0];
-        horizontal = newVerHor[1];
+        coordinates.setCoordinates(newCoords);
     }
 }

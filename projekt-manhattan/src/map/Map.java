@@ -2,8 +2,8 @@ package map;
 
 public class Map {
     //Pole identyfikujące rozmiar mapy - ilość pól tekstowych w konsoli
-    private int length;
-    private int width;     
+    private final int length;
+    private final int width;     
     
     //Pole będące tablicą obiektów implementujących IPrintable
     
@@ -43,23 +43,21 @@ public class Map {
 
     //setter i getter pola
 
-    public IPrintable getField(int vertical, int horizontal)
+    public IPrintable getField(Coordinates coordinates)
     {
-        return table[vertical][horizontal];
+        return table[coordinates.getVertical()][coordinates.getHorizontal()];
     }
 
-    public IPrintable getField(int[] verHor)
+    public void setField(IPrintable obj, Coordinates coordinates)
     {
-        return table[verHor[0]][verHor[1]];
+        table[coordinates.getVertical()][coordinates.getHorizontal()] = obj;
     }
 
-    public void setField(IPrintable obj, int[] verHor)
-    {
-        table[verHor[0]][verHor[1]] = obj;
+    public int getLength() {
+        return length;
     }
 
-    public void setField(IPrintable obj, int ver, int hor)
-    {
-        table[ver][hor] = obj;
+    public int getWidth() {
+        return width;
     }
 }
