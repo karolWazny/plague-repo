@@ -21,9 +21,22 @@ public class Man extends Being implements IMovable, IDiseaseSensitive {
     }
 
     @Override
-    public void move() {
-        
+    public int[] move(int[] verHor) {
+        int[] newPosition = new int[] {verHor[0], verHor[1]};
+        switch(Dice.d4())
+        {
+            case 1: newPosition[0]++;
+                break;
+            case 2: newPosition[0]--;
+                break;
+            case 3: newPosition[1]++;
+                break;
+            case 4: newPosition[1]--;
+                break;
+        }
+        return newPosition;
     }
+
     @Override
     public void performIllness() {
         
@@ -33,7 +46,7 @@ public class Man extends Being implements IMovable, IDiseaseSensitive {
     private boolean isInfected;
     private final int sex;
     private int age;
-    private static int manCounter = 0;
+    private static int manCounter = 1;
 
     public String getSex()
     {

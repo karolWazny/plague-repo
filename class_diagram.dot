@@ -1,0 +1,104 @@
+@startuml
+
+class Map
+{
+- int length;
+- int width;
+- IPrintable table;
++ String toString();
++ void displayMap();
++ IPrintable getField(int, int);
++ IPrintable getField(int[]);
+}
+
+interface IPrintable
+{
++ String toString();
++ String getId();
++ char getRepresentation();
+}
+
+abstract class Being
+{
+- String id;
+# Character representation;
+
+}
+
+abstract class Record
+{
+- IMovable being;
+- int vertical;
+- int horizontal;
++ Record(IMovable, int, int);
++ IMovable getBeing();
+}
+
+interface IMapable
+{
++ void move();
++ int[] getVerHor();
+}
+
+class BeingContainer
+{
+- List<IMapable> list;
++ BeingContainer();
++ List<IMapable> getList();
++ void performMovementRound();
+}
+
+class EmptySlot
+{
++ EmptySlot();
+}
+
+interface IDiseaseSensitive
+{
++ void PerformIllness();
+}
+
+interface IMovable
+{
++ int[] move(int[]);
+}
+
+class Man
+{
+- int healthPoints;
+- boolean isInfected;
+- int sex;
+-  int age;
+- {static} int manCounter;
+}
+
+class Dice
+{
++ {static} int d2();
++ {static} int d2(int);
++ {static} int d4();
++ {static} int d4(int);
++ {static} int d6();
++ {static} int d6(int);
++ {static} int d8();
++ {static} int d8(int);
++ {static} int d10();
++ {static} int d10(int);
++ {static} int d12();
++ {static} int d12(int);
++ {static} int d20();
++ {static} int d20(int);
++ {static} int d100();
++ {static} int d100(int);
+}
+
+Map o- IPrintable
+IPrintable <|-- Being
+Being <|-- EmptySlot
+IMapable <|-- Record
+BeingContainer o- IMapable
+Being <|-- Man
+IMovable <|-- Man
+IDiseaseSensitive <|-- Man
+IMovable -o Record
+@enduml
