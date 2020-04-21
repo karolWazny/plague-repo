@@ -4,11 +4,15 @@ class Map
 {
 - int length;
 - int width;
+- {static} EmptySlot empty;
 - IPrintable table;
++ Map(int, int);
 + String toString();
 + void displayMap();
 + IPrintable getField(int, int);
 + IPrintable getField(int[]);
++ IPrintable setField(IPrintable, int, int);
++ IPrintable setField(IPrintable, int[]);
 }
 
 interface IPrintable
@@ -22,7 +26,7 @@ abstract class Being
 {
 - String id;
 # Character representation;
-
++ Being (String, char);
 }
 
 abstract class Record
@@ -38,13 +42,16 @@ interface IMapable
 {
 + void move();
 + int[] getVerHor();
++ void setVerHor(int[]);
 }
 
 class BeingContainer
 {
 - List<IMapable> list;
-+ BeingContainer();
+- Map map;
++ BeingContainer(Map map);
 + List<IMapable> getList();
++ Map getMap();
 + void performMovementRound();
 }
 
@@ -70,6 +77,11 @@ class Man
 - int sex;
 -  int age;
 - {static} int manCounter;
++ String getSex();
++ int getSexValue();
++ int getHealyhPoints();
++ boolean getIsInfected();
++ int getAge();
 }
 
 class Dice
@@ -92,6 +104,12 @@ class Dice
 + {static} int d100(int);
 }
 
+class Doctor
+{
++ Doctor();
++ void heal(Man);
+}
+
 Map o- IPrintable
 IPrintable <|-- Being
 Being <|-- EmptySlot
@@ -101,4 +119,7 @@ Being <|-- Man
 IMovable <|-- Man
 IDiseaseSensitive <|-- Man
 IMovable -o Record
+Map o- EmptySlot
+Map -o BeingContainer
+Man <|-- Doctor
 @enduml
