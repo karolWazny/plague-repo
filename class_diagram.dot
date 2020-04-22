@@ -74,6 +74,7 @@ class Human
 {
 - int healthPoints;
 - boolean isInfected;
+- boolean isAlive;
 - int sex;
 -  int age;
 - {static} int humanCounter;
