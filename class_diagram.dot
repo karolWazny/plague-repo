@@ -79,7 +79,7 @@ class Human
 -  int age;
 - {static} int humanCounter;
 + String getSex();
-+ int getHealyhPoints();
++ int getHealthPoints();
 + boolean getIsInfected();
 + boolean getIsAlive();
 + int getAge();
