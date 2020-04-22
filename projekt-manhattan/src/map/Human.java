@@ -67,11 +67,6 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
         return (sex==2)? "male":"female"; 
     }
 
-    public int getSexValue()
-    {
-        return sex;
-    }
-
     public int getHealthPoints()
     {
         return healthPoints;
@@ -80,6 +75,11 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     public boolean getIsInfected()
     {
         return isInfected;
+    }
+
+    public boolean getIsAlive()
+    {
+        return isAlive;
     }
 
     public int getAge()
