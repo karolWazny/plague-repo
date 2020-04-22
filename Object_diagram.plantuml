@@ -1,0 +1,44 @@
+@startuml
+object BeingContainer{
+    list
+    map
+}
+object Map{
+    lenght = 20
+    width = 20
+    empty 
+    table
+} 
+object Human{
+    id = Citizen 1
+    represantion = 'm'
+    healthPoints = 100
+    isInfected = true
+    isAlive = true
+    sex = male 
+    age = 30 
+    humanCounter = 2
+}
+object Doctor{
+    id = Citizen 2
+    represantion = 'm'
+    healthPoints = 100
+    isInfected = true
+    isAlive = true
+    sex = male 
+    age = 40 
+    humanCounter = 2
+}
+object EmptySlot{
+    id = empty
+    representation = ' '
+}
+
+Map -o BeingContainer 
+Map *-- EmptySlot
+Map o-- Human
+BeingContainer o-- Human
+Map o-- Doctor
+BeingContainer o-- Doctor
+
+@enduml 

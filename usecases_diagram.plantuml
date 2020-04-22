@@ -1,4 +1,4 @@
-@startuml
+@startuml Usecases
 :User: 
 rectangle Simulation {
     :User: -> (Start)
