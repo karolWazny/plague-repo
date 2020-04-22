@@ -2,32 +2,35 @@ package map;
 
 import random.Dice;
 
-public class Man extends Being implements IMovable, IDiseaseSensitive {
-    public Man(int sex, int age)
+public class Human extends Being implements IMovable, IDiseaseSensitive {
+    public Human(int sex, int age)
     {
-        super("Citizen "+ manCounter, ((sex==1)?'k':'m'));
+        super("Citizen "+ humanCounter, ((sex==1)?'k':'m'));
         this.sex = sex;
         this.age = age;
         isInfected = false;
-        manCounter++;
+        isAlive = true;
+        humanCounter++;
     }
 
-    public Man()
+    public Human()
     {
-        super("Citizen "+ manCounter, ((Dice.d2()==1)?'k':'m'));
+        super("Citizen "+ humanCounter, ((Dice.d2()==1)?'k':'m'));
         sex = ((super.representation=='k')?1:2);
         age = Dice.d4(20);
         isInfected = false;
-        manCounter++;
+        isAlive = true;
+        humanCounter++;
     }
 
-    protected Man(int sex, int age, char representation) //doctors only!
+    protected Human(int sex, int age, char representation) //doctors only!
     {
-        super("Citizen "+ manCounter, 'd');
+        super("Citizen "+ humanCounter, 'd');
         this.sex = sex;
         this.age = age;
         isInfected = false;
-        manCounter++;
+        isAlive = true;
+        humanCounter++;
     }
 
     @Override
@@ -54,9 +57,10 @@ public class Man extends Being implements IMovable, IDiseaseSensitive {
 
     private int healthPoints;
     private boolean isInfected;
+    private boolean isAlive;
     private final int sex; //1==female, 2 == male
     private int age;
-    private static int manCounter = 1;
+    private static int humanCounter = 1;
 
     public String getSex()
     {

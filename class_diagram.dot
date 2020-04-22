@@ -70,13 +70,13 @@ interface IMovable
 + int[] move(int[]);
 }
 
-class Man
+class Human
 {
 - int healthPoints;
 - boolean isInfected;
 - int sex;
 -  int age;
-- {static} int manCounter;
+- {static} int humanCounter;
 + String getSex();
 + int getSexValue();
 + int getHealyhPoints();
@@ -107,7 +107,7 @@ class Dice
 class Doctor
 {
 + Doctor();
-+ void heal(Man);
++ void heal(Human);
 }
 
 Map o- IPrintable
@@ -115,11 +115,11 @@ IPrintable <|-- Being
 Being <|-- EmptySlot
 IMapable <|-- Record
 BeingContainer o- IMapable
-Being <|-- Man
-IMovable <|-- Man
-IDiseaseSensitive <|-- Man
+Being <|-- Human
+IMovable <|-- Human
+IDiseaseSensitive <|-- Human
 IMovable -o Record
-Map o- EmptySlot
+Map *- EmptySlot
 Map -o BeingContainer
-Man <|-- Doctor
+Human <|-- Doctor
 @enduml
