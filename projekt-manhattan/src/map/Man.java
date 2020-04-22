@@ -14,7 +14,7 @@ public class Man extends Being implements IMovable, IDiseaseSensitive {
 
     public Man()
     {
-        super("Citizen "+ manCounter, ((Dice.d2()==1)?'m':'k'));
+        super("Citizen "+ manCounter, ((Dice.d2()==1)?'k':'m'));
         sex = ((super.representation=='k')?1:2);
         age = Dice.d4(20);
         isInfected = false;
@@ -54,7 +54,7 @@ public class Man extends Being implements IMovable, IDiseaseSensitive {
 
     private int healthPoints;
     private boolean isInfected;
-    private final int sex;
+    private final int sex; //1==feamle, 2 == male
     private int age;
     private static int manCounter = 1;
 
