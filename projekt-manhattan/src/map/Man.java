@@ -54,7 +54,7 @@ public class Man extends Being implements IMovable, IDiseaseSensitive {
 
     private int healthPoints;
     private boolean isInfected;
-    private final int sex; //1==feamle, 2 == male
+    private final int sex; //1==female, 2 == male
     private int age;
     private static int manCounter = 1;
 
