@@ -1,0 +1,10 @@
+@startuml Usecases
+:User: 
+rectangle Simulation {
+    :User: -> (Start)
+    :User: -> (Customize\nsimulation)
+    :User: -> (Run Simulation)
+    (Run Simulation) -> (View results)
+    :User: -> (View results)
+}
+@enduml

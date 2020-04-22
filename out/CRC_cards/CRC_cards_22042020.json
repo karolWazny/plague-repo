@@ -1,0 +1,124 @@
+[
+  {
+    "name": "Human",
+    "superclasses": "Being",
+    "subclasses": "Doctor",
+    "type": 1,
+    "responsibilities": [
+      "move",
+      "perform illness",
+      "get sex",
+      "get health points",
+      "get is infected",
+      "get age",
+      ""
+    ],
+    "collaborators": [
+      "IMovable",
+      "IDiseaseSensitive",
+      "Dice"
+    ]
+  },
+  {
+    "name": "BeingContainer",
+    "superclasses": "none",
+    "subclasses": "Human",
+    "type": 2,
+    "responsibilities": [
+      "get list of agents",
+      "add agents",
+      "get map",
+      "perform movement round",
+      "perform illness round",
+      ""
+    ],
+    "collaborators": [
+      "Map",
+      "Record",
+      ""
+    ]
+  },
+  {
+    "name": "Being",
+    "superclasses": "none",
+    "subclasses": "Human, EmptySlot",
+    "type": 2,
+    "responsibilities": [
+      "get identification",
+      "get representation",
+      ""
+    ],
+    "collaborators": [
+      "IPrintable"
+    ]
+  },
+  {
+    "name": "Map",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "display map measurments",
+      "display map",
+      "get field",
+      "set field",
+      ""
+    ],
+    "collaborators": [
+      "IPrintable",
+      "EmptySlot",
+      "BeingContainer",
+      ""
+    ]
+  },
+  {
+    "name": "Doctor",
+    "superclasses": "Human",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "heal the patient"
+    ],
+    "collaborators": [
+      "Human"
+    ]
+  },
+  {
+    "name": "EmptySlot",
+    "superclasses": "Being",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "is empty"
+    ],
+    "collaborators": [
+      "Map"
+    ]
+  },
+  {
+    "name": "Record",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 2,
+    "responsibilities": [
+      "get position",
+      "get being (agent binded to this record)",
+      ""
+    ],
+    "collaborators": [
+      "IMovable"
+    ]
+  },
+  {
+    "name": "Dice",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "generate pseudorandom numbers"
+    ],
+    "collaborators": [
+      "none"
+    ]
+  }
+]
