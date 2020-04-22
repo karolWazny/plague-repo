@@ -119,7 +119,7 @@ Being <|-- Man
 IMovable <|-- Man
 IDiseaseSensitive <|-- Man
 IMovable -o Record
-Map o- EmptySlot
+Map *- EmptySlot
 Map -o BeingContainer
 Man <|-- Doctor
 @enduml
