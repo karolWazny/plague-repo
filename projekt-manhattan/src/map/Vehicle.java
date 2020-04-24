@@ -1,5 +1,5 @@
 package map;
 
-public abstract class Vehicle extends Being{
+public abstract class Vehicle extends Being implements IMovable{
 
 }
