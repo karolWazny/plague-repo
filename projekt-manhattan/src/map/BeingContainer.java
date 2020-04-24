@@ -26,8 +26,8 @@ public class BeingContainer {
 
     public void performMovementRound()
     {
-        int[] currentVerHor;
-        int[] newVerHor;
+        Coordinates currentVerHor;
+        Coordinates newVerHor;
         for(IMapable obj:list)
         {
             currentVerHor = obj.getVerHor();
