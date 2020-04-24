@@ -1,16 +1,16 @@
 package map;
 
 public abstract class  Record implements IMapable {
-    private IMovable being;
+    private Being being;
     private Coordinates position;
 
-    public Record(IMovable being, Coordinates position) 
+    public Record(Being being, Coordinates position) 
     {
         this.being = being;
         this.position = new Coordinates(position);
     }
 
-    public IMovable getBeing()
+    public Being getBeing()
     {
         return being;
     }
@@ -18,7 +18,10 @@ public abstract class  Record implements IMapable {
     @Override
     public void move()
     {
-        setVerHor(being.move(getVerHor()));
+        if(being instanceof IMovable){
+            IMovable being = (IMovable) this.being;
+            position.addVector(being.move());
+        }
     }
 
     @Override

@@ -44,4 +44,10 @@ public class Coordinates {
     public void setHorizontal(int horizontal){
         this.horizontal = horizontal;
     }
+
+    public void addVector(Coordinates vector)
+    {
+        this.horizontal+=vector.getHorizontal();
+        this.vertical+=vector.getVertical();
+    }
 }
