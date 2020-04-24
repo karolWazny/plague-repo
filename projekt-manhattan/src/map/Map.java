@@ -43,6 +43,7 @@ public class Map {
 
     //setter i getter pola
 
+    //sorry, że ruszyłem za Ciebie Kuba, ale było mi potrzebne do poprawek w kontenerze - KW
     public void setField(IPrintable obj, Coordinates coords)
     {
         table[coords.getVertical()][coords.getHorizontal()] = obj;
