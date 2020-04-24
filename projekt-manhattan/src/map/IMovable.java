@@ -1,5 +1,5 @@
 package map;
 
 public interface IMovable {
-    public Coordinates move(Coordinates verHor);
+    public Coordinates move(); //zwraca wektor przemieszczenia, nie nowe koordynaty!
 }
