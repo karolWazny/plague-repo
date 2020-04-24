@@ -24,6 +24,11 @@ public class Coordinates {
         this.horizontal = horizontal;
     }
 
+    public void setCoordinates(Coordinates Coor){
+        this.vertical = Coor.getVertical();
+        this.horizontal = Coor.getHorizontal();
+    }
+
     public int getVertical(){
         return vertical;
     }
