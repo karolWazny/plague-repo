@@ -9,8 +9,26 @@ public class Coordinates {
         this.horizontal = horizontal;
     }
 
+    public Coordinates(Coordinates Coor){
+        this.vertical = Coor.getVertical();
+        this.horizontal = Coor.getHorizontal();
+    }
+
     @Override
     public String toString(){
         return "Vertical = " + vertical + "; horizontal = " + horizontal;
+    }
+
+    public setCoordinates(int vertical, int horizontal){
+        this.vertical = vertical;
+        this.horizontal = horizontal;
+    }
+
+    public getVertical(){
+        return vertical;
+    }
+
+    public getHorizontal(){
+        return horizontal;
     }
 }
