@@ -19,16 +19,16 @@ public class Coordinates {
         return "Vertical = " + vertical + "; horizontal = " + horizontal;
     }
 
-    public setCoordinates(int vertical, int horizontal){
+    public void setCoordinates(int vertical, int horizontal){
         this.vertical = vertical;
         this.horizontal = horizontal;
     }
 
-    public getVertical(){
+    public int getVertical(){
         return vertical;
     }
 
-    public getHorizontal(){
+    public int getHorizontal(){
         return horizontal;
     }
 }
