@@ -36,4 +36,12 @@ public class Coordinates {
     public int getHorizontal(){
         return horizontal;
     }
+
+    public void setVertical(int vertical){
+        this.vertical = vertical;
+    }
+
+    public void setHorizontal(int horizontal){
+        this.horizontal = horizontal;
+    }
 }
