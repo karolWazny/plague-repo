@@ -62,4 +62,7 @@ public class Map {
     {
         table[ver][hor] = obj;
     }
+	public IPrintable getField(Coordinates newVerHor) {
+		return null;
+	}
 }

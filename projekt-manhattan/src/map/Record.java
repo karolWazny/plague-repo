@@ -7,7 +7,7 @@ public abstract class  Record implements IMapable {
     public Record(IMovable being, Coordinates position) 
     {
         this.being = being;
-        this.position = new Coordinates(vertical, horizontal);
+        this.position = new Coordinates(position);
     }
 
     public IMovable getBeing()
