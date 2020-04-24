@@ -2,14 +2,12 @@ package map;
 
 public abstract class  Record implements IMapable {
     private IMovable being;
-    private int vertical;
-    private int horizontal;
+    private Coordinates position;
 
-    public Record(IMovable being, int vertical, int horizontal) 
+    public Record(IMovable being, Coordinates position) 
     {
         this.being = being;
-        this.vertical = vertical;
-        this.horizontal = horizontal;
+        this.position = new Coordinates(vertical, horizontal);
     }
 
     public IMovable getBeing()
@@ -24,16 +22,14 @@ public abstract class  Record implements IMapable {
     }
 
     @Override
-    public int[] getVerHor()
+    public Coordinates getVerHor()
     {
-        int location[] = new int[] {vertical, horizontal};
-        return location;
+        return position;
     }
 
     @Override
-    public void setVerHor(int[] newVerHor)
+    public void setVerHor(Coordinates newVerHor)
     {
-        vertical = newVerHor[0];
-        horizontal = newVerHor[1];
+        position = newVerHor;
     }
 }
