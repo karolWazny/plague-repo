@@ -43,26 +43,30 @@ public class Map {
 
     //setter i getter pola
 
-    public IPrintable getField(int vertical, int horizontal)
+    public void setField(IPrintable obj, Coordinates coords)
     {
-        return table[vertical][horizontal];
+        table[coords.getVertical()][coords.getHorizontal()] = obj;
     }
 
-    public IPrintable getField(int[] verHor)
+    @Deprecated
+    public void setField(IPrintable obj, int vertical, int horizontal)
     {
-        return table[verHor[0]][verHor[1]];
+        table[vertical][horizontal] = obj;
     }
 
-    public void setField(IPrintable obj, int[] verHor)
-    {
-        table[verHor[0]][verHor[1]] = obj;
-    }
-
-    public void setField(IPrintable obj, int ver, int hor)
-    {
-        table[ver][hor] = obj;
-    }
 	public IPrintable getField(Coordinates newVerHor) {
-		return null;
-	}
+		return table[newVerHor.getVertical()][newVerHor.getHorizontal()];
+    }
+
+    public void emptyField(Coordinates coords) {
+        setField(empty, coords);
+    }
+    
+    public int getLength() {
+        return length;
+    }
+
+    public int getWidth() {
+        return width;
+    }
 }
