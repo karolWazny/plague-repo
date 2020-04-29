@@ -28,4 +28,23 @@ public class DiseaseRecord {
         state = 0;
     }
     // set/get
+    public String getDiseaseId(){
+        return disease.getId();
+    }
+
+    public boolean getIsActive(){
+        return isActive;
+    }
+
+    public boolean getInfects(){
+        return infects;
+    }
+
+    public boolean getIsCured(){
+        return isCured;
+    }
+
+    public int getState(){
+        return state;
+    }
 }
