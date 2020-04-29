@@ -18,6 +18,10 @@ public abstract class  Record implements IMapable {
     @Override
     public void move()
     {
+        if(being instanceof IDiseaseSensitive) {
+            if(((IDiseaseSensitive)being).getIsAlive()==false)
+            return; //trupy nie chodzą
+        }
         if(being instanceof IMovable){
             IMovable being = (IMovable) this.being;
             position.addVector(being.move());
