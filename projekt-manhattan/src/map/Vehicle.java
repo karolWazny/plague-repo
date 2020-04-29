@@ -3,24 +3,24 @@ package map;
 public abstract class Vehicle extends Being{
     private int capacity;
     private int velocity;
-    private static int num_Veh = 0;
+    private static int numVeh = 0;
     
     //Konstruktory
     public Vehicle(){
         super("Vehicle",'V');
-        num_Veh++;
+        numVeh++;
     }
 
-    public Vehicle(int capacity, int velocity){
-        super("Vehicle",'V');
+    public Vehicle(String id, char representation, int capacity, int velocity){
+        super(id, representation);
         this.capacity = capacity;
         this.velocity = velocity;
-        num_Veh++;
+        numVeh++;
     }
 
     @Override
     public String toString(){
-        return "Vehicle nr " + num_Veh + " with capacity " + this.capacity + 
+        return "Vehicle nr " + numVeh + " with capacity " + this.capacity + 
         " and velocity " + this.velocity;
     }
 
@@ -33,6 +33,6 @@ public abstract class Vehicle extends Being{
     }
 
     public int getNumVeh(){
-        return num_Veh;
+        return numVeh;
     }
 }
