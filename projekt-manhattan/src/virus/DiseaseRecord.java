@@ -17,7 +17,9 @@ public class DiseaseRecord {
     }
 
     public void infect(Human human) {
-        disease.infect(human); //dokończyć metodę
+        if(!infects)
+            return;
+        disease.infect(human);
     }
     //konstruktor
     public DiseaseRecord(Disease disease, Human infected) {

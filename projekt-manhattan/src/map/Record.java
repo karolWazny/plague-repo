@@ -1,5 +1,7 @@
 package map;
 
+import virus.DiseaseRecord;
+
 public abstract class  Record implements IMapable {
     private Being being;
     private Coordinates position;
@@ -25,6 +27,21 @@ public abstract class  Record implements IMapable {
         if(being instanceof IMovable){
             IMovable being = (IMovable) this.being;
             position.addVector(being.move());
+        }
+    }
+
+    public void infectNeighbours(Map map) {
+        if(!(being instanceof IDiseaseSensitive)) {
+            return;
+        }
+        Being neighbour;
+        for(DiseaseRecord disease:((IDiseaseSensitive)being).getDiseases()) {
+            for(int i = 0; i<8; i++) {
+                neighbour = (Being)map.getField(position.neighboursClockwise(i));
+                if(neighbour instanceof IDiseaseSensitive) {
+                    disease.infect((Human)neighbour);
+                }
+            }
         }
     }
 

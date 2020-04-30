@@ -97,6 +97,10 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
         return isInfected;
     }
 
+    public void setIsInfected(boolean isInfected) {
+        this.isInfected = isInfected;
+    }
+
     public boolean getIsAlive()
     {
         return isAlive;
@@ -105,5 +109,10 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     public int getAge()
     {
         return age;
+    }
+
+    @Override
+    public List<DiseaseRecord> getDiseases() {
+        return diseases;
     }
 }

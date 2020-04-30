@@ -8,6 +8,7 @@ public abstract class Disease implements IDisease {
     private int timeTilInfect;
     private int timeTilCured;
     private String id;
+    protected Infector infector;
 
     //metody
     @Override
@@ -28,6 +29,7 @@ public abstract class Disease implements IDisease {
     public boolean getIsActive() {
         return isActive;
     }
+
 
     public String getId() {
         return id;

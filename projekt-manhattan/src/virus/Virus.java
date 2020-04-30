@@ -12,12 +12,14 @@ public class Virus extends Disease {
 
     }
 
-    @Override public void infect(Human human) {
-
+    @Override
+    public void infect(Human human) {
+        infector.performInfection(human, this);
+        human.setIsInfected(true);
     }
     //konstruktor
     public Virus(Human infected) {
-        super(Dice.d100()>5, "korona");
+        super(Dice.d100()>5, "korona", 5, 50);
     }
     // get/set
 }
