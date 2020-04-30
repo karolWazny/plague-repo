@@ -62,4 +62,16 @@ public class BeingContainer {
             obj.infectNeighbours(map);
         }
     }
+
+    public void performDiseaseRound() {
+        for(IRecord obj:list) {
+            obj.progressIllness();
+        }
+    }
+
+    public void performRecoveryRound() {
+        for(IRecord obj:list) {
+            obj.performRecovery();
+        }
+    }
 }

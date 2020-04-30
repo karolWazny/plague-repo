@@ -30,6 +30,7 @@ public abstract class  Record implements IRecord {
         }
     }
 
+    @Override
     public void infectNeighbours(Map map) {
         if(!(being instanceof IDiseaseSensitive)) {
             return;
@@ -48,6 +49,7 @@ public abstract class  Record implements IRecord {
         }
     }
 
+    @Override
     public void progressIllness() {
         if(!(being instanceof IDiseaseSensitive)) {
             return;
@@ -58,6 +60,7 @@ public abstract class  Record implements IRecord {
         ((IDiseaseSensitive)being).performIllness();
     }
 
+    @Override
     public void performRecovery() {
         if(!(being instanceof IDiseaseSensitive)) {
             return;
