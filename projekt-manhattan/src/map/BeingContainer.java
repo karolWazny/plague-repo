@@ -4,17 +4,17 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class BeingContainer {
-    private List<IMapable> list;
+    private List<IRecord> list;
     
     private Map map;
 
     public BeingContainer(Map map)
     {
-        list = new ArrayList<IMapable>();
+        list = new ArrayList<IRecord>();
         this.map = map;
     }
     
-    public List<IMapable> getList()
+    public List<IRecord> getList()
     {
         return list;
     }
@@ -29,7 +29,7 @@ public class BeingContainer {
         Coordinates currentVerHor = new Coordinates(0,0);
         Coordinates newVerHor = new Coordinates(0,0);
         boolean newLocationAccessible;
-        for(IMapable obj:list)
+        for(IRecord obj:list)
         {
             newLocationAccessible = true;
             currentVerHor.setCoordinates(obj.getVerHor());
@@ -54,6 +54,24 @@ public class BeingContainer {
                 map.emptyField(currentVerHor);
                 map.setField((IPrintable) obj, newVerHor);
             }
+        }
+    }
+
+    public void performInfectRound() {
+        for(IRecord obj:list) {
+            obj.infectNeighbours(map);
+        }
+    }
+
+    public void performDiseaseRound() {
+        for(IRecord obj:list) {
+            obj.progressIllness();
+        }
+    }
+
+    public void performRecoveryRound() {
+        for(IRecord obj:list) {
+            obj.performRecovery();
         }
     }
 }

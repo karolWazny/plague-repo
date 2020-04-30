@@ -46,6 +46,18 @@ public class Map {
     //sorry, że ruszyłem za Ciebie Kuba, ale było mi potrzebne do poprawek w kontenerze - KW
     public void setField(IPrintable obj, Coordinates coords)
     {
+        if(coords.getVertical()>=this.length) {
+            System.out.println("setField exception: coordinates out of range");
+            return;
+        }
+        if(coords.getHorizontal()>=this.width) {
+            System.out.println("setField exception: coordinates out of range");
+            return;
+        }
+        if(coords.getVertical()<0||coords.getHorizontal()<0) {
+            System.out.println("setField exception: coordinates out of range");
+            return;
+        }
         table[coords.getVertical()][coords.getHorizontal()] = obj;
     }
 
@@ -56,6 +68,15 @@ public class Map {
     }
 
 	public IPrintable getField(Coordinates newVerHor) {
+        if(newVerHor.getVertical()>=this.length) {
+            return null;
+        }
+        if(newVerHor.getHorizontal()>=this.width) {
+            return null;
+        }
+        if(newVerHor.getVertical()<0||newVerHor.getHorizontal()<0) {
+            return null;
+        }
 		return table[newVerHor.getVertical()][newVerHor.getHorizontal()];
     }
 
