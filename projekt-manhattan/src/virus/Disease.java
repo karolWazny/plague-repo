@@ -8,6 +8,7 @@ public abstract class Disease implements IDisease {
     private int timeTilInfect;
     private int timeTilCured;
     private String id;
+    private int infectionRate;
     protected Infector infector;
 
     //metody
@@ -17,11 +18,12 @@ public abstract class Disease implements IDisease {
     @Override
     public abstract void infect(Human man);
     //konstruktor
-    public Disease(boolean isActive, String id, int timeTilInfect, int timeTilCured) {
+    public Disease(boolean isActive, String id, int timeTilInfect, int timeTilCured, int infectionRate) {
         this.timeTilInfect = timeTilInfect;
         this.timeTilCured = timeTilCured;
         this.isActive = isActive;
         this.id = id;
+        this.infectionRate = infectionRate;
     }
 
     // set/get
@@ -41,5 +43,9 @@ public abstract class Disease implements IDisease {
 
     public int getTimeTilCured() {
         return timeTilCured;
+    }
+
+    public int getInfectionRate() {
+        return infectionRate;
     }
 }

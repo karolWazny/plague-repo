@@ -1,6 +1,7 @@
 package virus;
 
 import map.Human;
+import random.Dice;
 
 public class Infector {
     public void performInfection(Human human, Disease disease) {
@@ -9,6 +10,8 @@ public class Infector {
                 return;
             }
         }
-        human.getDiseases().add(new DiseaseRecord(disease, human));
+        if(Dice.d100()<=disease.getInfectionRate()) {
+            human.getDiseases().add(new DiseaseRecord(disease, human));
+        }
     }
 }

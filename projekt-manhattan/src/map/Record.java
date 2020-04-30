@@ -2,7 +2,7 @@ package map;
 
 import virus.DiseaseRecord;
 
-public abstract class  Record implements IMapable {
+public abstract class  Record implements IRecord {
     private Being being;
     private Coordinates position;
 

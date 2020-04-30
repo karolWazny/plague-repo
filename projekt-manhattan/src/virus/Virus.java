@@ -19,7 +19,7 @@ public class Virus extends Disease {
     }
     //konstruktor
     public Virus(Human infected) {
-        super(Dice.d100()>5, "korona", 5, 50);
+        super(Dice.d100()>5, "korona", 5, 50, 25);
     }
     // get/set
 }
