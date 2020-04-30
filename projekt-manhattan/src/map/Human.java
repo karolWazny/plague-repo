@@ -92,6 +92,10 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
         return healthPoints;
     }
 
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
     public boolean getIsInfected()
     {
         return isInfected;
