@@ -37,9 +37,11 @@ public class Virus extends Disease {
                 infected.setIsInfected(false);
             }
         }
-        infected.setHealthPoints(infected.getHealthPoints()-Dice.custom(power1, power2));
+        if(record.getAreSymptoms()) {
+            infected.setHealthPoints(infected.getHealthPoints()-Dice.custom(power1, power2));
         if(infected.getHealthPoints()<=0) {
             infected.setIsAlive(false);
+        }
         }
     }
 
