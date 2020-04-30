@@ -24,6 +24,7 @@ public class Virus extends Disease {
                     record.setIsCured(true);
                     record.setInfects(false);
                     record.setAreSymptoms(false);
+                    infected.setIsInfected(false);
                 }
             }
         if(!(record.getIsActive()||record.getIsCured())) {
@@ -31,11 +32,15 @@ public class Virus extends Disease {
                 record.setInfects(true);
             }
             if(record.getState()>=this.getTimeTilCured()) {
-                record.setIsCured(true);;
-                record.setInfects(false);;
+                record.setIsCured(true);
+                record.setInfects(false);
+                infected.setIsInfected(false);
             }
         }
         infected.setHealthPoints(infected.getHealthPoints()-Dice.custom(power1, power2));
+        if(infected.getHealthPoints()<=0) {
+            infected.setIsAlive(false);
+        }
     }
 
     @Override

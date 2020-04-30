@@ -110,6 +110,10 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
         return isAlive;
     }
 
+    public void setIsAlive(boolean isAlive) {
+        this.isAlive = isAlive;
+    }
+
     public int getAge()
     {
         return age;

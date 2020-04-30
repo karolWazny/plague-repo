@@ -21,7 +21,7 @@ public abstract class  Record implements IRecord {
     public void move()
     {
         if(being instanceof IDiseaseSensitive) {
-            if(((IDiseaseSensitive)being).getIsAlive()==false)
+            if(!((IDiseaseSensitive)being).getIsAlive())
             return; //trupy nie chodzą
         }
         if(being instanceof IMovable){
@@ -34,6 +34,9 @@ public abstract class  Record implements IRecord {
         if(!(being instanceof IDiseaseSensitive)) {
             return;
         }
+        if(!((IDiseaseSensitive)being).getIsAlive()) {
+            return; //trupy nie zarażają (chyba, że jednak, i trzeba je sprzątać...)
+        }
         Being neighbour;
         for(DiseaseRecord disease:((IDiseaseSensitive)being).getDiseases()) {
             for(int i = 0; i<8; i++) {
@@ -43,6 +46,26 @@ public abstract class  Record implements IRecord {
                 }
             }
         }
+    }
+
+    public void progressIllness() {
+        if(!(being instanceof IDiseaseSensitive)) {
+            return;
+        }
+        if(!((IDiseaseSensitive)being).getIsAlive()) {
+            return; //trupy nie chorują
+        }
+        ((IDiseaseSensitive)being).performIllness();
+    }
+
+    public void performRecovery() {
+        if(!(being instanceof IDiseaseSensitive)) {
+            return;
+        }
+        if(!((IDiseaseSensitive)being).getIsAlive()) {
+            return; //trupy nie zdrowieją
+        }
+        ((IDiseaseSensitive)being).recover();
     }
 
     @Override
