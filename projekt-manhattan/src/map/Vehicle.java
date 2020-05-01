@@ -58,6 +58,7 @@ public abstract class Vehicle extends Being implements IMovable{
     public void setPassenger(IMovable patient){
         if(this.numPassengers<this.capacity){
             this.passengers.add(patient);
+            this.numPassengers++;
         }
         else{
             return;
