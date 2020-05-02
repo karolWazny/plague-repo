@@ -4,6 +4,8 @@ public class Ambulance extends Vehicle{
     //Dodać jakieś pole
     private static int numAmb = 0;
 
+    ////////////////////////////
+
     public Ambulance(){
         super("Ambulance", 'A', 5, 100);
         numAmb++;
@@ -14,10 +16,14 @@ public class Ambulance extends Vehicle{
         numAmb++;
     }
 
+    ////////////////////////////
+
     @Override
     public String toString(){
         return "Ambulance nr " + numAmb;
     }
+
+    ////////////////////////////
 
     //Jak się pojawią pola, to settery i gettery też stykną
     public int getNumAmb(){
