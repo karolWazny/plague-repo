@@ -6,20 +6,17 @@ public abstract class  Record implements IRecord {
     private Being being;
     private Coordinates position;
 
-    public Record(Being being, Coordinates position) 
-    {
+    ////////////////////////////
+
+    public Record(Being being, Coordinates position){
         this.being = being;
         this.position = new Coordinates(position);
     }
 
-    public Being getBeing()
-    {
-        return being;
-    }
+    ////////////////////////////
 
     @Override
-    public void move()
-    {
+    public void move(){
         if(being instanceof IDiseaseSensitive) {
             if(!((IDiseaseSensitive)being).getIsAlive())
             return; //trupy nie chodzą
@@ -31,7 +28,7 @@ public abstract class  Record implements IRecord {
     }
 
     @Override
-    public void infectNeighbours(Map map) {
+    public void infectNeighbours(Map map){
         if(!(being instanceof IDiseaseSensitive)) {
             return;
         }
@@ -50,7 +47,7 @@ public abstract class  Record implements IRecord {
     }
 
     @Override
-    public void progressIllness() {
+    public void progressIllness(){
         if(!(being instanceof IDiseaseSensitive)) {
             return;
         }
@@ -61,7 +58,7 @@ public abstract class  Record implements IRecord {
     }
 
     @Override
-    public void performRecovery() {
+    public void performRecovery(){
         if(!(being instanceof IDiseaseSensitive)) {
             return;
         }
@@ -71,15 +68,21 @@ public abstract class  Record implements IRecord {
         ((IDiseaseSensitive)being).recover();
     }
 
+    ////////////////////////////
+
     @Override
-    public Coordinates getVerHor()
-    {
+    public void setVerHor(Coordinates newVerHor){
+        position = newVerHor;
+    }
+
+    ////////////////////////////
+
+    @Override
+    public Coordinates getVerHor(){
         return position;
     }
 
-    @Override
-    public void setVerHor(Coordinates newVerHor)
-    {
-        position = newVerHor;
+    public Being getBeing(){
+        return being;
     }
 }

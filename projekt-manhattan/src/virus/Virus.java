@@ -4,11 +4,19 @@ import random.Dice;
 import map.Human;
 
 public class Virus extends Disease {
-    //pola
     private int power1;
     private int power2;
 
-    //metody
+    ////////////////////////////
+    
+    public Virus(Human infected, int power1, int power2) {
+        super(Dice.d100()>5, "korona", 5, 50, 25, 100);
+        this.power1 = power1;
+        this.power2 = power2;
+    }
+
+    ////////////////////////////
+
     @Override
     public void progress(Human infected, DiseaseRecord record) {
             record.setState(record.getState()+Dice.d4()); //ta metoda i tak wywoła się tylko, jeżeli choroba nie jest cured
@@ -48,11 +56,6 @@ public class Virus extends Disease {
         infector.performInfection(human, this);
         human.setIsInfected(true);
     }
-    //konstruktor
-    public Virus(Human infected, int power1, int power2) {
-        super(Dice.d100()>5, "korona", 5, 50, 25, 100);
-        this.power1 = power1;
-        this.power2 = power2;
-    }
-    // get/set
+
+    ////////////////////////////
 }
