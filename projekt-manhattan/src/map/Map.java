@@ -4,16 +4,13 @@ public class Map {
     //Pole identyfikujące rozmiar mapy - ilość pól tekstowych w konsoli
     private int length;
     private int width;     
-    
     //Pole będące tablicą obiektów implementujących IPrintable
-    
     private IPrintable[][] table;
-
     //Puste pole, do którego prowadzą wszystkie referencje z pól, gdzie nic nie ma
-
     private static EmptySlot empty = new EmptySlot();
 
-    //Konstruktor mapy
+    ////////////////////////////
+
     public Map(int length, int width){
         this.length = length;
         this.width = width;
@@ -25,13 +22,16 @@ public class Map {
             }
         }
     }
+
+    ////////////////////////////
+
     @Override
     public String toString(){
         return "Mapa o rozmiarze: " + this.length + " na " + this.width;
     }
 
+    ////////////////////////////
     //wyswietla mape w konsoli
-
     public void displayMap(){
         for(int i=0; i<this.length; i++){
             for(int j=0; j<this.width; j++){
@@ -41,14 +41,14 @@ public class Map {
         }
     }
 
-    //setter i getter pola
+    ////////////////////////////
 
-    //sorry, że ruszyłem za Ciebie Kuba, ale było mi potrzebne do poprawek w kontenerze - KW
-    public void setField(IPrintable obj, Coordinates coords)
-    {
+    public void setField(IPrintable obj, Coordinates coords){
         if(coords.getVertical()>=this.length) {
             System.out.println("setField exception: coordinates out of range");
             return;
+            //Tutaj trzeba te printy zmienić, tak jak mówiliśmy
+            //Bo nam mapę spierdzielą
         }
         if(coords.getHorizontal()>=this.width) {
             System.out.println("setField exception: coordinates out of range");
@@ -60,12 +60,17 @@ public class Map {
         }
         table[coords.getVertical()][coords.getHorizontal()] = obj;
     }
+    
+    public void emptyField(Coordinates coords) {
+        setField(empty, coords);
+    }
 
     @Deprecated
-    public void setField(IPrintable obj, int vertical, int horizontal)
-    {
+    public void setField(IPrintable obj, int vertical, int horizontal) {
         table[vertical][horizontal] = obj;
     }
+
+    ////////////////////////////
 
 	public IPrintable getField(Coordinates newVerHor) {
         if(newVerHor.getVertical()>=this.length) {
@@ -78,10 +83,6 @@ public class Map {
             return null;
         }
 		return table[newVerHor.getVertical()][newVerHor.getHorizontal()];
-    }
-
-    public void emptyField(Coordinates coords) {
-        setField(empty, coords);
     }
     
     public int getLength() {
