@@ -3,7 +3,6 @@ package virus;
 import map.Human;
 
 public abstract class Disease implements IDisease {
-    //pola
     private boolean isActive;
     private int timeTilSymptoms;
     private int timeTilInfect;
@@ -13,13 +12,8 @@ public abstract class Disease implements IDisease {
     private int activeRate;
     protected Infector infector;
 
-    //metody
-    @Override
-    public abstract void progress(Human infected, DiseaseRecord record);
+    ////////////////////////////
     
-    @Override
-    public abstract void infect(Human man);
-    //konstruktor
     public Disease(boolean isActive, String id, int timeTilInfect, int timeTilCured, int infectionRate, int activeRate) {
         this.timeTilInfect = timeTilInfect;
         this.timeTilCured = timeTilCured;
@@ -29,12 +23,22 @@ public abstract class Disease implements IDisease {
         this.activeRate = activeRate;
     }
 
-    // set/get
+    ////////////////////////////
+
+    @Override
+    public abstract void progress(Human infected, DiseaseRecord record);
+    
+    @Override
+    public abstract void infect(Human man);
+
+    ////////////////////////////
+
+    ////////////////////////////
+
     @Override
     public boolean getIsActive() {
         return isActive;
     }
-
 
     public String getId() {
         return id;

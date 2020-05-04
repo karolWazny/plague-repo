@@ -5,25 +5,17 @@ import java.util.ArrayList;
 
 public class BeingContainer {
     private List<IRecord> list;
-    
     private Map map;
 
-    public BeingContainer(Map map)
-    {
+    ////////////////////////////
+
+    public BeingContainer(Map map){
         list = new ArrayList<IRecord>();
         this.map = map;
     }
+
+    ////////////////////////////
     
-    public List<IRecord> getList()
-    {
-        return list;
-    }
-
-    public Map getMap()
-    {
-        return map;
-    }
-
     public void performMovementRound()
     {
         Coordinates currentVerHor = new Coordinates(0,0);
@@ -73,5 +65,17 @@ public class BeingContainer {
         for(IRecord obj:list) {
             obj.performRecovery();
         }
+    }
+
+    ////////////////////////////
+
+    ////////////////////////////
+
+    public List<IRecord> getList(){
+        return list;
+    }
+
+    public Map getMap(){
+        return map;
     }
 }
