@@ -3,7 +3,6 @@ package virus;
 import map.Human;
 
 public abstract class Disease implements IDisease {
-    private boolean isActive;
     private int timeTilSymptoms;
     private int timeTilInfect;
     private int timeTilCured;
@@ -14,10 +13,9 @@ public abstract class Disease implements IDisease {
 
     ////////////////////////////
     
-    public Disease(boolean isActive, String id, int timeTilInfect, int timeTilCured, int infectionRate, int activeRate) {
+    public Disease(String id, int timeTilInfect, int timeTilCured, int infectionRate, int activeRate) {
         this.timeTilInfect = timeTilInfect;
         this.timeTilCured = timeTilCured;
-        this.isActive = isActive;
         this.id = id;
         this.infectionRate = infectionRate;
         this.activeRate = activeRate;
@@ -34,11 +32,6 @@ public abstract class Disease implements IDisease {
     ////////////////////////////
 
     ////////////////////////////
-
-    @Override
-    public boolean getIsActive() {
-        return isActive;
-    }
 
     public String getId() {
         return id;

@@ -10,7 +10,7 @@ public class Virus extends Disease {
     ////////////////////////////
     
     public Virus(Human infected, int power1, int power2) {
-        super(Dice.d100()>5, "korona", 5, 50, 25, 100);
+        super("korona", 5, 50, 25, 100);
         this.power1 = power1;
         this.power2 = power2;
     }
