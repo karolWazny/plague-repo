@@ -111,6 +111,149 @@ class Doctor
 + void heal(Human);
 }
 
+abstract class Vehicle
+{
+- int capacity;
+- int velocity
+- {static} int numVeh;
+- List<IMovable> passengers;
+- int numPassengers;
++ String toString();
++ Coordinates move();
++ void setPassengers();
++ int getVelocity();
++ int getCapacity();
++ getNumVeh();
++ List<IMovable> getPassengers();
+}
+
+abstract class Building
+{
+    - {static} int blockCounter;
+    - int capacity;
+    + void setCapacity(int);
+    + int getCapacity();
+    + int getBlockCounter();
+}
+
+class Ambulance
+{
+    - {static} int numAmb;
+    + String toString();
+    + int getNumAmb();
+}
+
+class Hearse 
+{
+    - {static} int numHear;
+    + String toString();
+    + int getNumHear();
+}
+
+class Hospital
+{
+    - {static} int hospitalCounter;
+    + int getHospitalCounter();
+
+}
+
+class Graveyard
+{
+
+}
+
+class Dispatching
+{
+
+}
+
+abstract class Disease 
+{
+    - boolean isActive;
+    - int timeTilSymptoms;
+    - int timeTilInfect;
+    - int timeTilCured;
+    - String id;
+    - int infectionRate;
+    - int activeRate;
+    # Infector infector;
+    + {abstract} progress(Human, DiseaseRecord);
+    + {abstract} infect(Human);
+    + boolean getIsActive();
+    + String getId();
+    + int getTimeTilInfect();
+    + int getTimeTilCured();
+    + int getInfectionRate();
+    + int getTimeTilSymptoms();
+    + int getActiveRate();
+}
+
+class DiseaseRecord 
+{
+    - Disease disease;
+    - boolean isActive;
+    - boolean infects;
+    - boolean areSymptoms;
+    - boolean isCured;
+    - int state;
+    + void infect(Human);
+    + void setIsActive(boolean);
+    + void setInfects(boolean);
+    + void setIsCured(boolean);
+    + void setState(int);
+    + void setAreSymptom(boolean);
+    + String getDiseaseId();
+    + boolean getIsActive();
+    + boolean getInfects();
+    + boolean getIsCured();
+    + int getState();
+    + boolean getAreSymptoms(); 
+}
+
+interface IDisease 
+{
+    + void infect(Human);
+    + void progress(Human, DiseaseRecord);
+    + boolean getIsActive();
+    + int getInfectionRate();
+    + int getActiveRate();
+    + int getTimeTilSymptoms();
+}
+
+class Infector 
+{
+    + void performInfection(Human, Disease);
+}
+
+class Virus
+{
+    - int power1;
+    - int power2;
+    + void progress(Human, DiseaseRecord);
+    +void infect(Human);
+}
+
+class Queue 
+{
+
+}
+
+class Coordinates 
+{
+    - int vertical;
+    - int horizontal;
+    + String toString();
+    + void addVector(Coordinates);
+    + Coordinates changedVector(int, int);
+    + Coordinates neighboursClockwise(int);
+    + void setCoordinates(int, int);
+    + void setCoordinates(Coordinates);
+    + void setVertical(int);
+    + void setHorizontal(int);
+    + int getVertical();
+    + int getHorizontal();
+}
+
 Map o- IPrintable
 IPrintable <|-- Being
 Being <|-- EmptySlot
@@ -123,4 +266,14 @@ IMovable -o Record
 Map *- EmptySlot
 Map -o BeingContainer
 Human <|-- Doctor
+Being <|-- Vehicle
+IMovable <|-- Vehicle
+Vehicle <|-- Ambulance
+Vehicle <|-- Hearse
+Being <|-- Building
+Building <|-- Hospital
+Building <|-- Graveyard
+Building <|-- Dispatching
+IDisease <|-- Disease
+Disease <|-- Virus
 @enduml
