@@ -1,10 +1,17 @@
 @startuml Usecases
-:User: 
+ 
 rectangle Simulation {
-    :User: -> (Start)
-    :User: -> (Customize\nsimulation)
-    :User: -> (Run Simulation)
-    (Run Simulation) -> (View results)
-    :User: -> (View results)
+    :User:
+    :User: -left-> (Start)
+    :User: -up-> (Enter the number\nof people)
+    :User: -down-> (Enter the map size)
+    :User: -up-> (Enter the number\nof ambulances)
+    :User: -up-> (Enter the number\nof hearses)
+    :User: -down-> (Enter the percentage of\ndoctors)
+    :User: -down-> (Enter the virus\nparameters)
+    :User: -left-> (Run Simulation) 
+    (Run Simulation) -left-> (View results)
+    :User: -right-> (View results)
+    
 }
 @enduml
