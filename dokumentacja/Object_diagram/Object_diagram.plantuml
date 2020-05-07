@@ -1,4 +1,4 @@
-@startuml
+@startuml Object diagram
 object BeingContainer{
     list
     map
@@ -32,6 +32,56 @@ object Doctor{
 object EmptySlot{
     id = empty
     representation = ' '
+}
+object Hospital{
+    hospitalNumber = 1
+}
+object Ambulance{
+    capacity = 1
+    velocity = 100
+    numPassengers = 1
+    passengers = //Nie wiem \nco z tą listą 
+    numAmb = 1
+}
+object Hearse{
+    capacity = 1
+    velocity = 100
+    numPassengers = 1
+    passengers = //Nie wiem \nco z tą listą
+    numHear = 1
+}
+object Graveyard{
+    
+}
+object Coordinates{
+    vertical = 0
+    horizontal = 0
+}
+object Queue{
+
+}
+object DiseaseRecord{
+    disease = 
+    isActive = false 
+    infects = false 
+    are Symptoms = false 
+    isCured = false 
+    state = 1
+}
+object Infector{
+    
+}
+object Virus{
+    isActve = false
+    timeTilSymptoms = 10
+    timeTilInfect = 10
+    timeTilCured = 10
+    id = Koronaświrus
+    infectionRate = 10
+    activeRate = 10
+    infector = INFECTOR 
+    power1 = 10
+    power2 = 10
 }
 
 Map -o BeingContainer 
