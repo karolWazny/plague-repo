@@ -1,0 +1,16 @@
+@startuml infect_round_07052020
+
+(*) --> "Checkout to next record"
+
+if "Is this record disease sensitive?" then
+    -->[yes] "do some stuff"
+    -->"ending condition"
+    else
+    -->[no]"ending condition"
+
+    if "Was it the last record?" then
+        -->[yes] (*)
+    else
+        -->[no]"Checkout to next record"
+
+@enduml

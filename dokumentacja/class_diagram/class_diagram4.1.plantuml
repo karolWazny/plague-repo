@@ -139,6 +139,7 @@ abstract class Vehicle
 - int capacity;
 - int velocity
 - {static} int numVeh;
+- IGPS gps;
 - List<IMovable> passengers;
 - int numPassengers;
 + Vehicle();
