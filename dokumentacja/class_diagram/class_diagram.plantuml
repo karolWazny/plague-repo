@@ -1,4 +1,4 @@
-@startuml
+@startuml class_diagram
 
 class Map
 {
@@ -9,10 +9,12 @@ class Map
 + Map(int, int);
 + String toString();
 + void displayMap();
-+ IPrintable getField(int, int);
-+ IPrintable getField(int[]);
-+ IPrintable setField(IPrintable, int, int);
-+ IPrintable setField(IPrintable, int[]);
++ IPrintable getField(Coordinates);
++ IPrintable setField(IPrintable, Coordinates);
++ void setField(IPrintable, int, int);
++ void emptyField(Coordinates);
++ int getLength();
++ int getWidth();
 }
 
 interface IPrintable
@@ -32,27 +34,38 @@ abstract class Being
 abstract class Record
 {
 - IMovable being;
-- int vertical;
-- int horizontal;
-+ Record(IMovable, int, int);
-+ IMovable getBeing();
+- Coordinates position;
++ Record(Being, Coordinates);
++ void move();
++ void infectNeighbours(Map);
++ void progressIllness();
++ void performRecovery();
++ void setVerHor(Coordinates);
++ Coordinates getVerHor();
++ Being getBeing();
 }
 
-interface IMapable
+interface IRecord
 {
 + void move();
 + int[] getVerHor();
-+ void setVerHor(int[]);
++ void setVerHor(Coordinates);
++ void infectNeighbours(Map);
++ void progressIllness();
++ void performRecovery();
 }
 
 class BeingContainer
 {
-- List<IMapable> list;
+- List<Record> list;
 - Map map;
 + BeingContainer(Map map);
-+ List<IMapable> getList();
++ List<Record> getList();
 + Map getMap();
 + void performMovementRound();
++ void InfectRound();
++ void PerformDiseaseRound();
++ void PerformRecoveryRound();
 }
 
 class EmptySlot
@@ -63,6 +76,9 @@ class EmptySlot
 interface IDiseaseSensitive
 {
 + void PerformIllness();
++ boolean getIsAlive();
++ void recover();
++ List<DiseaseRecord> getDisease();
 }
 
 interface IMovable
@@ -78,11 +94,18 @@ class Human
 - int sex;
 -  int age;
 - {static} int humanCounter;
+- List<DiseaseRecord> diseases;
++ Human();
++ Human(int, int);
+# Human(int, int, char);
 + String getSex();
 + int getSexValue();
 + int getHealyhPoints();
 + boolean getIsInfected();
 + int getAge();
++ void setHealthPoints(int);
++ void setIsInfected(boolean);
++ void setIsAlive(boolean);
 }
 
 class Dice
@@ -118,6 +141,8 @@ abstract class Vehicle
 - {static} int numVeh;
 - List<IMovable> passengers;
 - int numPassengers;
++ Vehicle();
++ Vehicle(String, char, int, int);
 + String toString();
 + Coordinates move();
 + void setPassengers();
@@ -129,8 +154,12 @@ abstract class Vehicle
 
 abstract class Building
 {
+    
+    
     - {static} int blockCounter;
     - int capacity;
+    + Building();
+    + Building(String, char, int);
     + void setCapacity(int);
     + int getCapacity();
     + int getBlockCounter();
@@ -139,6 +168,8 @@ abstract class Building
 class Ambulance
 {
     - {static} int numAmb;
+    + Ambulance();
+    + Ambulance(String, char, int, int);
     + String toString();
     + int getNumAmb();
 }
@@ -146,6 +177,8 @@ class Ambulance
 class Hearse 
 {
     - {static} int numHear;
+    + Hearse();
+    + Hearse(String, char, int, int);
     + String toString();
     + int getNumHear();
 }
@@ -153,6 +186,8 @@ class Hearse
 class Hospital
 {
     - {static} int hospitalCounter;
+    + Hospital();
+    + Hospital(String, char, int);
     + int getHospitalCounter();
 
 }
@@ -176,6 +211,7 @@ abstract class Disease
     - String id;
     - int infectionRate;
     - int activeRate;
+    + Disease(boolean, String, int, int, int, int)
     # Infector infector;
     + {abstract} progress(Human, DiseaseRecord);
     + {abstract} infect(Human);
@@ -196,6 +232,7 @@ class DiseaseRecord
     - boolean areSymptoms;
     - boolean isCured;
     - int state;
+    + Disease(Disease, Human);
     + void infect(Human);
     + void setIsActive(boolean);
     + void setInfects(boolean);
@@ -214,7 +251,6 @@ interface IDisease
 {
     + void infect(Human);
     + void progress(Human, DiseaseRecord);
-    + boolean getIsActive();
     + int getInfectionRate();
     + int getActiveRate();
     + int getTimeTilSymptoms();
@@ -229,8 +265,9 @@ class Virus
 {
     - int power1;
     - int power2;
+    + Virus(Human, int, int);
     + void progress(Human, DiseaseRecord);
-    +void infect(Human);
+    + void infect(Human);
 }
 
 class Queue 
@@ -242,6 +279,8 @@ class Coordinates
 {
     - int vertical;
     - int horizontal;
+    + Coordinates(int, int);
+    + Cooridnates(Cooridnates);
     + String toString();
     + void addVector(Coordinates);
     + Coordinates changedVector(int, int);
@@ -254,11 +293,21 @@ class Coordinates
     + int getHorizontal();
 }
 
+class GPS1
+{
+
+}
+
+interface IGPS
+{
+
+}
+
 Map o- IPrintable
 IPrintable <|-- Being
 Being <|-- EmptySlot
-IMapable <|-- Record
-BeingContainer o- IMapable
+IRecord <|-- Record
+BeingContainer o- IRecord
 Being <|-- Human
 IMovable <|-- Human
 IDiseaseSensitive <|-- Human
@@ -273,7 +322,21 @@ Vehicle <|-- Hearse
 Being <|-- Building
 Building <|-- Hospital
 Building <|-- Graveyard
-Building <|-- Dispatching
 IDisease <|-- Disease
 Disease <|-- Virus
+Dispatching --* Hospital
+Dispatching --* Graveyard
+Doctor -- Dice : uses <
+IGPS <|-- GPS1
+Human *-- DiseaseRecord
+Dispatching *--  Queue
+Record *-- Coordinates
+Vehicle o-- IGPS
+Human -- Dice : uses <
+Disease *-- Infector
+DiseaseRecord *-- Disease
+DiseaseRecord -- Dice : uses <
+Infector - Dice : uses <
+Virus - Dice : uses <
+
 @enduml
