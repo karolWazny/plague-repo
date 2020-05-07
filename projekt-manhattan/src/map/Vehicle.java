@@ -6,6 +6,7 @@ public abstract class Vehicle extends Being implements IMovable{
     private int capacity;
     private int velocity;
     private static int numVeh = 0;
+    private static IGPS gps;
     private List<IMovable> passengers; //Kontener na obiekty
     private int numPassengers = 0;
    
@@ -15,6 +16,7 @@ public abstract class Vehicle extends Being implements IMovable{
         super("Vehicle",'V');
         passengers = new ArrayList<>();
         numVeh++;
+        gps = new GPS1();
     }
 
     public Vehicle(String id, char representation, int capacity, int velocity){
@@ -22,6 +24,7 @@ public abstract class Vehicle extends Being implements IMovable{
         this.capacity = capacity;
         this.velocity = velocity;
         passengers = new ArrayList<>();
+        gps = new GPS1();
         numVeh++;
     }
 
@@ -70,5 +73,9 @@ public abstract class Vehicle extends Being implements IMovable{
     }
     public List<IMovable> getPassengers(){
         return passengers;
+    }
+
+    public IGPS getIGPS() {
+        return gps;
     }
 }
