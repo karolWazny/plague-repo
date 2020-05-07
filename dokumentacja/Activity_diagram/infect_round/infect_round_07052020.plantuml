@@ -7,11 +7,11 @@ repeat :checkout to next record;
     if (is being in this record \nalive?) then (yes)
         if (is there any disease?) then (yes)
             repeat :checkout to next disease;
-                repeat
-                    repeat
-                    :some stuff;
-                    repeat while
-                repeat while(more neighbouring fields?);
+                repeat :checkout to next \nneighbouring field;
+                    if (is this neighbour disease sensitive?) then (yes)
+                        :infect neighbour;
+                    endif
+                repeat while(more neighbouring fields?) is (yes);
             repeat while (more diseases?) is (yes)
         endif
     endif
