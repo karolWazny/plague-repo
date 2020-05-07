@@ -7,7 +7,7 @@ object Map{
     lenght = 20
     width = 20
     empty 
-    table
+    table 
 } 
 object Human{
     id = Citizen 1
@@ -18,56 +18,78 @@ object Human{
     sex = male 
     age = 30 
     humanCounter = 2
+    diseases = [virus] 
 }
 object Doctor{
     id = Citizen 2
-    represantion = 'm'
+    represantion = 'D'
     healthPoints = 100
-    isInfected = true
+    isInfected = false
     isAlive = true
     sex = male 
     age = 40 
     humanCounter = 2
+    diseases = [none]
 }
 object EmptySlot{
     id = empty
     representation = ' '
 }
 object Hospital{
+    id = Hospital
+    Character representation = 'H'
+    blockCounter = 2
     hospitalNumber = 1
+    capacity = 50
+}
+object Dispatching1{
+
+}
+object Dispatching2{
+
+}
+object GPS1{
+
 }
 object Ambulance{
+    numVeh = 2
     capacity = 1
     velocity = 100
     numPassengers = 1
-    passengers = //Nie wiem \nco z tą listą 
+    GPS = ...
+    passengers = 0
     numAmb = 1
 }
 object Hearse{
+    numVeh = 2
     capacity = 1
     velocity = 100
     numPassengers = 1
-    passengers = //Nie wiem \nco z tą listą
+    GPS = ...
+    passengers = 0
     numHear = 1
 }
-object Graveyard{
-    
+object GPS2{
+
 }
-object Coordinates{
+object Graveyard{
+    id = Hospital
+    Character representation = 'H'
+    blockCounter = 2
+    capacity = 100
+    GraveyardNumber = 1
+}
+object Coordinates1{
     vertical = 0
     horizontal = 0
 }
-object Queue{
+object Queue1{
 
 }
-object DiseaseRecord{
-    disease = 
-    isActive = false 
-    infects = false 
-    are Symptoms = false 
-    isCured = false 
-    state = 1
+object Queue2{
+
 }
+
 object Infector{
     
 }
@@ -83,12 +105,60 @@ object Virus{
     power1 = 10
     power2 = 10
 }
+object Virus{
+    timeTilSymptoms = 10
+    timeTilInfect = 10
+    timeTilCured = 10
+    id = koronaświrus
+    infectionRate = 25
+    activeRate = 25
+    power1 = 2
+    power2 = 3
+}
+object DiseaseRecord{
+    disease = koronaświrus
+    isActive = true 
+    infects = true 
+    areSymptoms = true 
+    isCured = false 
+    state = 8
+}
+object Record1{
+    Being = Human
+    position = Coordinates
+}
+object Record2{
+    Being = Doctor
+    position = Coordinates
+}
+object Coordinates2{
+    vertical = 1
+    horizontal = 1
+}
 
 Map -o BeingContainer 
 Map *-- EmptySlot
 Map o-- Human
-BeingContainer o-- Human
-Map o-- Doctor
-BeingContainer o-- Doctor
+Record1 *-- Human
+Hospital o-- Doctor
+Record2 *-- Doctor
+Record1 --o BeingContainer
+Hospital --* Map 
+Graveyard --* Map 
+GPS1 --* Ambulance 
+Ambulance --o Map
+GPS2 --* Hearse 
+Hearse --o Map
+Infector --* Virus
+Dispatching1 --* Hospital
+Dispatching2 --* Graveyard
+Queue1 --* Dispatching1
+Queue2 --* Dispatching2
+Virus --* DiseaseRecord
+DiseaseRecord --o Human
+Coordinates1 --* Record1
+Record2 --o BeingContainer
+Coordinates2 --* Record2
+
 
 @enduml 
