@@ -1,0 +1,13 @@
+@startuml Movement
+start
+
+:Perform movement round;
+:Human;
+
+while(isAlive && healthPoints>50) 
+:Get a random number;
+:Set new position;
+endwhile
+
+stop
+@enduml
