@@ -1,0 +1,13 @@
+@startuml beginning diagram 
+title Simulation
+start
+:"Download simulation settings";
+:"Creating a map from empty field";
+:"Arrangement of objects\non the map";
+:"The beginning of the simulation";
+repeat
+:"Perform movement round";
+repeat while("Stop condition met") is (no)
+->yes; 
+stop
+@enduml
