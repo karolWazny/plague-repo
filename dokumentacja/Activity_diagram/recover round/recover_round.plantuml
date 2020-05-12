@@ -1,0 +1,18 @@
+@startuml recovery_diagram
+start
+
+repeat :checkout to next Human;
+
+if(isAlive && healthPoints!=100) then(yes)
+
+if(Is in Hospital?) then (yes)
+:Recover + Doctor's heal;
+else (no)
+:Recover;
+endif
+endif
+
+repeat while(more Humans?) is (yes) 
+
+stop
+@enduml
