@@ -1,0 +1,14 @@
+@startuml infect_neighbour_11052020
+
+start
+if (this disease infects?) then (yes)
+    if (this human already\nhas this illness) then (no)
+        :get random number between 1 and 100;
+        if (random number<=this disease infectRate) then (yes)
+            :add this disease\nto human's diseases;
+        endif
+    endif
+endif
+stop
+
+@enduml
