@@ -1,0 +1,24 @@
+@startuml vehicle_movement_12052020
+
+start
+:get destination coordinates;
+:set distance value to 0;
+repeat
+    if(veh. vertical != dest. vertical) then (yes)
+        :move vertically to reach destination's vertical;
+        if (obstacles met?) then (yes)
+            :bypass obstacle;
+            :get back on course;
+        endif
+    else (no)
+        :move horizontally to reach destination's horizontal;
+        if (obstacles met?) then (yes)
+            :bypass obstacle;
+            :get back on course;
+        endif
+    endif
+    backward :distance++;
+repeat while (distance < vehicle's velocity\n&&\nveh. coors != dest. coords) is (yes)
+stop
+
+@enduml
