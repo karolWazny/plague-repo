@@ -1,13 +1,20 @@
-@startuml Movement
+@startuml Perform movement round
+title Perform movement round
 start
-
-:Perform movement round;
-:Human;
-
-while(isAlive && healthPoints>50) 
-:Get a random number;
-:Set new position;
-endwhile
-
-stop
+:Get list of objects;
+:Start iterating through the list of objects;
+repeat
+:Get object;
+:Get current Coordinates;
+if(IMovable) then (yes)
+    if(Human) then (yes)
+        :Human movement;
+    else (no)
+        :Vehicle movement;
+    endif 
+    :Set new Coordinates;
+else (no)
+endif 
+repeat while(Next object);
+end 
 @enduml
