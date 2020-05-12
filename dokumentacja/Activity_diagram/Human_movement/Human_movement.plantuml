@@ -1,12 +1,7 @@
 @startuml Human movement
 title Human movement
 start 
-:Human;
 
-while(isAlive && healthPoints>50) 
-:Get a random number;
-:Set new position;
-endwhile
 
 stop
 @enduml
