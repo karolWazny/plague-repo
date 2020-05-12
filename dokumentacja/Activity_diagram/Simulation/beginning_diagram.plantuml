@@ -7,6 +7,9 @@ start
 :"The beginning of the simulation";
 repeat
 :"Perform movement round";
+:"Perform infect round";
+:"Perform illness round";
+:"Perform recover round";
 repeat while("Stop condition met") is (no)
 ->yes; 
 stop
