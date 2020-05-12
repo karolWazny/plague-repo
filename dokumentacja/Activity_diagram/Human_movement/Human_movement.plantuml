@@ -1,7 +1,24 @@
 @startuml Human movement
 title Human movement
 start 
-
-
+:Randomize position;
+split
+:Got 1;
+:Set vertical +1;
+split again 
+:Got 2;
+:Set vertical -1;
+split again
+:Got 3;
+:Set horizontal +1;
+split again
+:Got 4;
+:Set hotizontal -1;
+end split
+if(occupied field) then (yes)
+    :Stay in the field;
+    else (no)
+    :perform move;
+endif 
 stop
 @enduml

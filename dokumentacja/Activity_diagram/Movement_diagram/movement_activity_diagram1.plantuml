@@ -12,7 +12,11 @@ if(IMovable) then (yes)
     else (no)
         :Vehicle movement;
     endif 
+    if(Correct coordinates) then (yes)
     :Set new Coordinates;
+    else (no)
+    :Stay;
+    endif
 else (no)
 endif 
 repeat while(Next object);
