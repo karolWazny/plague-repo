@@ -1,0 +1,41 @@
+@startuml disease_progress_12052020
+
+start
+    if (is this disease cured?) then (no)
+        :get random number btwn 1 and 4;
+        :increase disease state by this random number;
+        if (disease ain't infect\n&&\nstate >= timeTilInfect) then (yes)
+            :set infects value to true;
+        endif
+        if (ain't no symptoms\n&&\nstate >= timeTilSymptoms) then (yes)
+            :set areSymptoms value to true;
+        endif
+        if (state>=timeTilCured) then (yes)
+            :set isActive value to false;
+            :set isCured value to true;
+            :set infects value to false;
+            :set areSymptoms value to false;
+            :set isInfected value to false;
+        endif
+    endif
+    if (not active && not cured?) then (yes)
+        if(ain't infectin'\n&&\nstate >= timeTilInfect) then (yes)
+            :set infects value to true;
+        endif
+        if(state >= timeTilCured) then (yes)
+            :set isCured value to true;
+            :set infects value to false;
+            :set isInfected value to false;
+        endif
+    endif
+    if(are symptoms?) then (yes)
+        :get power1 and power2\nof disease;
+        :get pseudorandom number like:\nroll power1 number of power2-sided dice;
+        :decrease human's healthPoints\nby that number;
+        if(healthPoints<=0) then (yes)
+            :set isAlive value to false;
+        endif
+    endif
+stop
+
+@enduml

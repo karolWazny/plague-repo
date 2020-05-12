@@ -1,0 +1,14 @@
+@startuml illness_round_11052020
+
+start
+    if (is this being disease sensitive?) then (yes)
+        if (is this being alive?) then (yes)
+            :get this being's diseases;
+            repeat :checkout to next disease;
+                :perform disease progress;
+            repeat while (more diseases?) is (yes)
+        endif
+    endif
+stop
+
+@enduml

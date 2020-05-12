@@ -6,6 +6,7 @@ if (this disease infects?) then (yes)
         :get random number between 1 and 100;
         if (random number<=this disease infectRate) then (yes)
             :add this disease\nto human's diseases;
+            :set isInfected value to true;
         endif
     endif
 endif
