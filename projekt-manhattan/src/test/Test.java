@@ -1,7 +1,7 @@
 package test;
 import map.Map;
-import map.Doctor;
-import map.Human;
+import human.Doctor;
+import human.Human;
 
 public class Test {
     public static void main(String[] Args) {

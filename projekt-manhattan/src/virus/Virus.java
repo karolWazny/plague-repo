@@ -1,7 +1,7 @@
 package virus;
 
 import random.Dice;
-import map.Human;
+import human.IDiseaseSensitive;
 
 public class Virus extends Disease {
     private int power1;
@@ -9,7 +9,7 @@ public class Virus extends Disease {
 
     ////////////////////////////
     
-    public Virus(Human infected, int power1, int power2) {
+    public Virus(IDiseaseSensitive infected, int power1, int power2) {
         super("korona", 5, 50, 25, 100);
         this.power1 = power1;
         this.power2 = power2;
@@ -18,7 +18,7 @@ public class Virus extends Disease {
     ////////////////////////////
 
     @Override
-    public void progress(Human infected, DiseaseRecord record) {
+    public void progress(IDiseaseSensitive infected, DiseaseRecord record) {
             record.setState(record.getState()+Dice.d4()); //ta metoda i tak wywoła się tylko, jeżeli choroba nie jest cured
         if(record.getIsActive()) {
                 if((!record.getInfects())&&(record.getState()>=this.getTimeTilInfect())) {
@@ -54,7 +54,7 @@ public class Virus extends Disease {
     }
 
     @Override
-    public void infect(Human human) {
+    public void infect(IDiseaseSensitive human) {
         infector.performInfection(human, this);
         human.setIsInfected(true);
     }

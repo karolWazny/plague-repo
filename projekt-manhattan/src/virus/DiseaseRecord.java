@@ -1,6 +1,6 @@
 package virus;
 
-import map.Human;
+import human.IDiseaseSensitive;
 import random.Dice;
 
 public class DiseaseRecord {
@@ -13,7 +13,7 @@ public class DiseaseRecord {
 
     ////////////////////////////
 
-    public DiseaseRecord(Disease disease, Human infected) {
+    public DiseaseRecord(Disease disease, IDiseaseSensitive infected) {
         this.disease = disease;
         isActive = (Dice.d100()<=disease.getActiveRate());
         infects = false;
@@ -23,13 +23,13 @@ public class DiseaseRecord {
 
     ////////////////////////////
 
-    public void progress(Human infected) {
+    public void progress(IDiseaseSensitive infected) {
         if(!isCured) {
             disease.progress(infected, this);
         }       
     }
 
-    public void infect(Human human) {
+    public void infect(IDiseaseSensitive human) {
         if(!infects)
             return;
         disease.infect(human);

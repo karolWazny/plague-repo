@@ -1,6 +1,6 @@
 package virus;
 
-import map.Human;
+import human.IDiseaseSensitive;
 
 public abstract class Disease implements IDisease {
     private int timeTilSymptoms;
@@ -24,10 +24,10 @@ public abstract class Disease implements IDisease {
     ////////////////////////////
 
     @Override
-    public abstract void progress(Human infected, DiseaseRecord record);
+    public abstract void progress(IDiseaseSensitive infected, DiseaseRecord record);
     
     @Override
-    public abstract void infect(Human man);
+    public abstract void infect(IDiseaseSensitive man);
 
     ////////////////////////////
 

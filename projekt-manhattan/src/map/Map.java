@@ -1,5 +1,7 @@
 package map;
 
+import container.Coordinates;
+
 public class Map {
     //Pole identyfikujące rozmiar mapy - ilość pól tekstowych w konsoli
     private int length;

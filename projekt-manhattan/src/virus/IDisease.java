@@ -1,10 +1,10 @@
 package virus;
 
-import map.Human;
+import human.IDiseaseSensitive;
 
 public interface IDisease {
-    public void infect(Human human);
-    public void progress(Human infected, DiseaseRecord record);
+    public void infect(IDiseaseSensitive human);
+    public void progress(IDiseaseSensitive infected, DiseaseRecord record);
     public int getInfectionRate();
     public int getActiveRate();
     public int getTimeTilSymptoms();
