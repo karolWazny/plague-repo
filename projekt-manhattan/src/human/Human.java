@@ -62,7 +62,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     ////////////////////////////
 
     @Override
-    public Coordinates move() {
+    public Coordinates move(Coordinates currentPosition) {
         Coordinates newPosition = new Coordinates(0,0);
         switch(Dice.d4())
         {
@@ -75,6 +75,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
             case 4: newPosition.setHorizontal(-1);
                 break;
         }
+        newPosition.addVector(currentPosition);
         return newPosition;
     }
 

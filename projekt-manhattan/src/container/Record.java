@@ -26,7 +26,7 @@ public abstract class  Record implements IRecord {
         }
         if(being instanceof IMovable){
             IMovable being = (IMovable) this.being;
-            position.addVector(being.move());
+            position = being.move(position);
         }
     }
 
