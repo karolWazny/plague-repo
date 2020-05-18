@@ -5,7 +5,7 @@ import map.Being;
 import human.IDiseaseSensitive;
 import map.Map;
 
-public abstract class  Record implements IRecord {
+public class  Record implements IRecord {
     private Being being;
     private Coordinates position;
 

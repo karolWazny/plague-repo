@@ -1,6 +1,8 @@
 package map;
 
 import container.Coordinates;
+import java.util.List;
+import java.util.LinkedList;
 
 public class Map {
     //Pole identyfikujące rozmiar mapy - ilość pól tekstowych w konsoli
@@ -43,6 +45,17 @@ public class Map {
         }
     }
 
+    public List<Coordinates> emptyFieldsList () {
+        List<Coordinates> list = new LinkedList<>();
+        for(int i = 0; i < length ; i++) {
+            for(int j = 0; j < width; j++) {
+                if(table[i][j] instanceof EmptySlot) {
+                    list.add(new Coordinates(i, j));
+                }
+            }
+        }
+        return list;
+    }
     ////////////////////////////
 
     public void setField(IPrintable obj, Coordinates coords){

@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.ArrayList;
 import map.Map;
 import map.IPrintable;
+import map.EmptySlot;
+import map.Being;
+import random.Dice;
 
 public class BeingContainer {
     private List<IRecord> list;
@@ -69,6 +72,20 @@ public class BeingContainer {
         }
     }
 
+    public boolean addRecord(Being being, Coordinates coords) {
+        if(!(map.getField(coords) instanceof EmptySlot)) {
+            addRecord(being); //nie wiem, czy dobre rozwiązanie problemu
+        }
+        list.add(new Record(being, coords));
+        map.setField((IPrintable)being, coords);
+        return true;
+    }
+
+    public void addRecord(Being being) {
+        List<Coordinates> list = map.emptyFieldsList();
+        Coordinates coords = new Coordinates(list.get(Dice.custom(list.size())-1));
+        addRecord(being, coords);
+    }
     ////////////////////////////
 
     ////////////////////////////
