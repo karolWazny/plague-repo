@@ -28,10 +28,10 @@ public abstract class Disease implements IDisease {
     ////////////////////////////
 
     @Override
-    public abstract void progress(IDiseaseSensitive infected, DiseaseRecord record);
+    public abstract int progress(IDiseaseSensitive infected, DiseaseRecord record);
     
     @Override
-    public abstract void infect(IDiseaseSensitive man);
+    public abstract int infect(IDiseaseSensitive man); //zarażenie wirusem zwraca 1, zarażenie czymś innym lub brak zarażenia zwraca 0
 
     ////////////////////////////
 

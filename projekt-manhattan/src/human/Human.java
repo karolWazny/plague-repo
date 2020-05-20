@@ -80,10 +80,18 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     }
 
     @Override
-    public void performIllness() {
+    public int performIllness() {
+        int output = 0;
+        boolean wasInfected = isInfected;
         for(DiseaseRecord illness:diseases) {
             illness.progress(this);
         }
+        if(!isAlive) {
+            output = -1;
+        } else if((!isInfected)&&wasInfected) {
+            output = 1;
+        }
+        return output;
     }
 
     @Override
