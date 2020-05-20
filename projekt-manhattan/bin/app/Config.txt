@@ -1,0 +1,13 @@
+Parametry wejściowe:    
+mapLength = ;
+mapWidth = ;
+numPeople = ;
+numDocs = ;
+numAmbulance = ;
+numHearse = ;
+power1 = ;
+power2 = ;
+timeTilInfect = ;
+timeTilCured = ;
+infectionRate = ;
+activeRate = ;
