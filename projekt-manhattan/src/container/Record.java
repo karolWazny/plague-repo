@@ -75,7 +75,7 @@ public class  Record implements IRecord {
 
     @Override
     public void setVerHor(Coordinates newVerHor){
-        position = newVerHor;
+        position = new Coordinates(newVerHor);
     }
 
     ////////////////////////////
@@ -85,6 +85,7 @@ public class  Record implements IRecord {
         return position;
     }
 
+    @Override
     public Being getBeing(){
         return being;
     }

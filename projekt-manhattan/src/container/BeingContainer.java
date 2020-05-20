@@ -25,32 +25,27 @@ public class BeingContainer {
     {
         Coordinates currentVerHor = new Coordinates(0,0);
         Coordinates newVerHor = new Coordinates(0,0);
-        boolean newLocationAccessible;
         for(IRecord obj:list)
         {
-            newLocationAccessible = true;
             currentVerHor.setCoordinates(obj.getVerHor());
             obj.move();
             newVerHor.setCoordinates(obj.getVerHor());
+            obj.setVerHor(currentVerHor);
             if(map.getLength() <= newVerHor.getVertical() || newVerHor.getVertical() < 0)
             {
-                newLocationAccessible = false;
+                continue;
             }
-            else if(map.getWidth() <= newVerHor.getHorizontal() || newVerHor.getHorizontal() < 0)
+            if(map.getWidth() <= newVerHor.getHorizontal() || newVerHor.getHorizontal() < 0)
             {
-                newLocationAccessible = false;
+                continue;
             }
-            else if(map.getField(newVerHor).getId()!="empty")
+            if(map.getField(newVerHor).getId()!="empty")
             {
-                newLocationAccessible = false;
+                continue;
             }
-            if(!newLocationAccessible)
-            {
-                obj.setVerHor(currentVerHor);
-            } else {
-                map.emptyField(currentVerHor);
-                map.setField((IPrintable) obj, newVerHor);
-            }
+            obj.setVerHor(newVerHor);
+            map.emptyField(currentVerHor);
+            map.setField((IPrintable) obj.getBeing(), newVerHor);
         }
     }
 
