@@ -1,8 +1,9 @@
 package app;
 
 import java.io.File;
-import java.util.Scanner;
+//import java.util.Scanner;
 import java.io.FileNotFoundException;
+import java.util.*;
 
 public class SimulationParameters {
     int mapLength;
@@ -37,20 +38,6 @@ public class SimulationParameters {
     }
 
     SimulationParameters(){
-        File plik = new File("D:/STUDIA/II semestr/Programowanie obiektowe/PROJEKT/Repozytorium projekt/plague-repo/projekt-manhattan/src/app/Config.txt");
-
-        boolean exists = plik.exists();
-        if(exists){
-            Scanner in = new Scanner(plik);
-            String line = in.nextLine();
-            while(line != null){
-                System.out.println(line);
-
-                line = nextLine();
-            }
-            in.close();
-        }
-        else{
         this.mapLength = 50;
         this.mapWidth = 50;
         this.numPeople = 10;
@@ -62,7 +49,28 @@ public class SimulationParameters {
         this.timeTilInfect = 5;
         this.timeTilCured = 10;
         this.infectionRate = 10;
-        this.activeRate = 10;
-        }  
+        this.activeRate = 10;    
+    }
+
+    @Override
+    public void ReadFromFile(){
+        File plik = new File("D:/Config.txt");
+
+        boolean exists = plik.exists();
+
+        System.out.println(exists);
+
+        if(exists){
+            Scanner in = new Scanner(plik);
+            String line = in.nextLine();
+            while(line != null){
+                System.out.println(line);
+
+                System.out.println(line.substring(0,5));
+
+                line = in.nextLine();
+            }
+            in.close();
+        }
     }
 }
