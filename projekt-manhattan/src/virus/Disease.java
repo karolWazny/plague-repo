@@ -9,7 +9,7 @@ public abstract class Disease implements IDisease {
     private String id;
     private int infectionRate;
     private int activeRate;
-    protected Infector infector;
+    protected static Infector infector = new Infector();
 
     ////////////////////////////
     
@@ -19,6 +19,10 @@ public abstract class Disease implements IDisease {
         this.id = id;
         this.infectionRate = infectionRate;
         this.activeRate = activeRate;
+    }
+
+    public Disease(Disease prototype) {
+        this(prototype.getId(), prototype.getTimeTilInfect(), prototype.getTimeTilCured(), prototype.getInfectionRate(), prototype.getActiveRate());
     }
 
     ////////////////////////////

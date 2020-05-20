@@ -6,33 +6,36 @@ import java.util.List;
 import random.Dice;
 import human.Human;
 import human.Doctor;
+import virus.Virus;
 
 public class Simulation {
     private Map map;
     private BeingContainer container;
+    private Virus strain;
 
     ////////////////////////
 
-    Simulation(int mapLength, int mapWidth, int numPeople, int numDocs, int numAmbulance, int numHearse) {
-        map = new Map(mapLength, mapWidth);
+    Simulation(SimulationParameters parameters) {
+        map = new Map(parameters.mapLength, parameters.mapWidth);
         container = new BeingContainer(map);
         List<Coordinates> list = map.emptyFieldsList();
         int listLength = list.size();
-        if((numPeople + numDocs + numAmbulance + numHearse + 8)>listLength)
+        if((parameters.numPeople + parameters.numDocs + parameters.numAmbulance + parameters.numHearse + 8)>listLength)
          return;
         int roll;
-        for(int i = 0; i<numPeople - numDocs; i++) {
+        for(int i = 0; i<parameters.numPeople - parameters.numDocs; i++) {
             roll = Dice.custom(listLength) - 1;
             container.addRecord(new Human(), new Coordinates(list.get(roll)));
             list.remove(roll);
             listLength--;
         }
-        for(int i = 0; i < numDocs; i++) {
+        for(int i = 0; i < parameters.numDocs; i++) {
             roll = Dice.custom(listLength) - 1;
             container.addRecord(new Doctor(), new Coordinates(list.get(roll)));
             list.remove(roll);
             listLength--;
         }
+        strain = new Virus(parameters.power1, parameters.power2, parameters.timeTilInfect, parameters.timeTilCured, parameters.infectionRate, parameters.activeRate)
     }
 
 

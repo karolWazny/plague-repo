@@ -9,10 +9,16 @@ public class Virus extends Disease {
 
     ////////////////////////////
     
-    public Virus(IDiseaseSensitive infected, int power1, int power2) {
-        super("korona", 5, 50, 25, 100);
+    public Virus(int power1, int power2, int timeTilInfect, int timeTilCured, int infectionRate, int activeRate) {
+        super("korona", timeTilInfect, timeTilCured, infectionRate, activeRate);
         this.power1 = power1;
         this.power2 = power2;
+    }
+
+    public Virus(Virus prototype) {
+        super(prototype);
+        this.power1 = prototype.getPower1();
+        this.power2 = prototype.getPower2();
     }
 
     ////////////////////////////
@@ -60,4 +66,12 @@ public class Virus extends Disease {
     }
 
     ////////////////////////////
+
+    public int getPower1() {
+        return power1;
+    }
+
+    public int getPower2() {
+        return power2;
+    }
 }
