@@ -62,13 +62,12 @@ public class Simulation {
         numInfected -= buffer[1];
         numPeople -= buffer[0];
         container.performRecoveryRound();
-        map.displayMap();
     }
 
     public void doSimulation() {
-        for(int i = 0; i < 20; i++) {
+        for(int i = 0; i < 100; i++) {
             performRound();
-            System.out.println("///////////////////");
+            System.out.println("People: "+numPeople+", infected: "+numInfected);
         }
     }
 
