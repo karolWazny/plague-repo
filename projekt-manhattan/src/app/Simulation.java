@@ -35,7 +35,7 @@ public class Simulation {
             list.remove(roll);
             listLength--;
         }
-        strain = new Virus(parameters.power1, parameters.power2, parameters.timeTilInfect, parameters.timeTilCured, parameters.infectionRate, parameters.activeRate)
+        strain = new Virus(parameters.power1, parameters.power2, parameters.timeTilInfect, parameters.timeTilCured, parameters.infectionRate, parameters.activeRate);
     }
 
 
