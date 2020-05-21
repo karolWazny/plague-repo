@@ -1,4 +1,4 @@
-mapLength=1
+mapLength=100
 mapWidth=2
 numPeople=3
 numDocs=4

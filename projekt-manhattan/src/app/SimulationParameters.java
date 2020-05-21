@@ -55,60 +55,54 @@ public class SimulationParameters {
     public void ReadFromFile(File plik) throws FileNotFoundException{
         boolean exists = plik.exists();
 
-        System.out.println("Exists? " + exists);
-
         if(exists){
             Scanner in = new Scanner(plik);
             String line = in.nextLine();
 
             while(in.hasNextLine()){
-
                 int index1 = line.indexOf("=");
 
                 String name = line.substring(0, index1);
           
                 String number = line.substring(index1+1);
 
-                System.out.println(name);
-                System.out.println(Integer.valueOf(number));
-
-                if(name == "mapLength"){
+                if(name.equals("mapLength")){
                     this.mapLength = Integer.valueOf(number);
                 }
-                else if(name == "mapWidth"){
+                else if(name.equals("mapWidth")){
                     this.mapWidth = Integer.valueOf(number);
                 }
-                else if(name == "numPeople"){
+                else if(name.equals("numPeople")){
                     this.numPeople = Integer.valueOf(number);
                 }
-                else if(name == "numDocs"){
+                else if(name.equals("numDocs")){
                     this.numDocs = Integer.valueOf(number);
                 }
-                else if(name == "numAmbulance"){
+                else if(name.equals("numAmbulance")){
                     this.numAmbulance = Integer.valueOf(number);
                 }
-                else if(name == "numHearse"){
+                else if(name.equals("numHearse")){
                     this.numHearse = Integer.valueOf(number);
                 }
-                else if(name == "power1"){
+                else if(name.equals("power1")){
                     this.power1 = Integer.valueOf(number);
                 }
-                else if(name == "power2"){
+                else if(name.equals("power2")){
                     this.power2 = Integer.valueOf(number);
                 }
-                else if(name == "timeTilInfect"){
+                else if(name.equals("timeTilInfect")){
                     this.timeTilInfect = Integer.valueOf(number);
                 }
-                else if(name == "timeTilCured"){
+                else if(name.equals("timeTilCured")){
                     this.timeTilCured = Integer.valueOf(number);
                 }
-                else if(name == "infectionRate"){
+                else if(name.equals("infectionRate")){
                     this.infectionRate = Integer.valueOf(number);
                 }
-                else if(name == "activeRate"){
+                else if(name.equals("activeRate")){
                     this.activeRate = Integer.valueOf(number);
                 }
-
+                
                 line = in.nextLine();
             }
             in.close();

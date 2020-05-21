@@ -9,12 +9,14 @@ public class App {
         Simulation sim = new Simulation(params);
         sim.doSimulation();*/
 
+        //Tu trzeba własną ścieżkę dostępu do pliku dodać:
         File plik = new File("D:/STUDIA/II semestr/Programowanie obiektowe/PROJEKT/Repozytorium projekt/plague-repo/projekt-manhattan/src/app/Config.txt");
+        
         SimulationParameters parametry = new SimulationParameters();
-        System.out.println(parametry.mapLength);
+        System.out.println("mapLength = " + parametry.mapLength);
         
         parametry.ReadFromFile(plik);
 
-        System.out.println("mapLength = " + parametry.mapLength);
+        System.out.println("After ReadFromFile(); mapLength = " + parametry.mapLength);
     }
 }
