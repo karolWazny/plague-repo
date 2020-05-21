@@ -24,8 +24,9 @@ public class Virus extends Disease {
     ////////////////////////////
 
     @Override
-    public void progress(IDiseaseSensitive infected, DiseaseRecord record) {
-            record.setState(record.getState()+Dice.d4()); //ta metoda i tak wywoła się tylko, jeżeli choroba nie jest cured
+    public int progress(IDiseaseSensitive infected, DiseaseRecord record) {
+        int output = 0; //1 - wyzdrowiał, -1 umarł
+        record.setState(record.getState()+Dice.d4()); //ta metoda i tak wywoła się tylko, jeżeli choroba nie jest cured
         if(record.getIsActive()) {
                 if((!record.getInfects())&&(record.getState()>=this.getTimeTilInfect())) {
                     record.setInfects(true);
@@ -39,6 +40,7 @@ public class Virus extends Disease {
                     record.setInfects(false);
                     record.setAreSymptoms(false);
                     infected.setIsInfected(false);
+                    output++;
                 }
             }
         if(!(record.getIsActive()||record.getIsCured())) {
@@ -49,20 +51,27 @@ public class Virus extends Disease {
                 record.setIsCured(true);
                 record.setInfects(false);
                 infected.setIsInfected(false);
+                output = 1;
             }
         }
         if(record.getAreSymptoms()) {
             infected.setHealthPoints(infected.getHealthPoints()-Dice.custom(power1, power2));
             if(infected.getHealthPoints()<=0) {
                 infected.setIsAlive(false);
+                output = -1;
             }
         }
+        return output;
     }
 
     @Override
-    public void infect(IDiseaseSensitive human) {
-        infector.performInfection(human, this);
-        human.setIsInfected(true);
+    public int infect(IDiseaseSensitive human) {
+        int infectionSuccessful = 0;
+        infectionSuccessful = infector.performInfection(human, this);
+        if(infectionSuccessful == 1) { 
+            human.setIsInfected(true);
+        }
+        return infectionSuccessful;
     }
 
     ////////////////////////////

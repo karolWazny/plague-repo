@@ -49,16 +49,26 @@ public class BeingContainer {
         }
     }
 
-    public void performInfectRound() {
+    public int performInfectRound() {
+        int output = 0;
         for(IRecord obj:list) {
-            obj.infectNeighbours(map);
+            output += obj.infectNeighbours(map);
         }
+        return output;
     }
 
-    public void performDiseaseRound() {
+    public int [] performDiseaseRound() {
+        int killCure []= new int[]{0,0};
+        int buffer;
         for(IRecord obj:list) {
-            obj.progressIllness();
+            buffer = obj.progressIllness();
+            if(buffer == -1) {
+                killCure[0]++;
+            } else if(buffer == 1) {
+                killCure[1]++;
+            }
         }
+        return killCure;
     }
 
     public void performRecoveryRound() {

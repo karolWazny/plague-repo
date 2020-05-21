@@ -20,6 +20,7 @@ public class Simulation {
 
     Simulation(SimulationParameters parameters) {
         numPeople = parameters.numPeople;
+        numInfected = 1;
         map = new Map(parameters.mapLength, parameters.mapWidth);
         container = new BeingContainer(map);
         strain = new Virus(parameters.power1, parameters.power2, parameters.timeTilInfect, parameters.timeTilCured, parameters.infectionRate, parameters.activeRate);
@@ -53,9 +54,13 @@ public class Simulation {
     /////////////////
 
     private void performRound() {
+        int [] buffer;
         container.performMovementRound();
-        container.performInfectRound();
-        container.performDiseaseRound();
+        numInfected += container.performInfectRound();
+        buffer = container.performDiseaseRound();
+        numInfected -= buffer[0];
+        numInfected -= buffer[1];
+        numPeople -= buffer[0];
         container.performRecoveryRound();
         map.displayMap();
     }

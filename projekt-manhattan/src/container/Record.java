@@ -31,33 +31,37 @@ public class  Record implements IRecord {
     }
 
     @Override
-    public void infectNeighbours(Map map){
+    public int infectNeighbours(Map map){        
         if(!(being instanceof IDiseaseSensitive)) {
-            return;
+            return 0;
         }
         if(!((IDiseaseSensitive)being).getIsAlive()) {
-            return; //trupy nie zarażają (chyba, że jednak, i trzeba je sprzątać...)
+            return 0; //trupy nie zarażają (chyba, że jednak, i trzeba je sprzątać...)
         }
         Being neighbour;
+        int newInfected = 0;
         for(DiseaseRecord disease:((IDiseaseSensitive)being).getDiseases()) {
             for(int i = 0; i<8; i++) {
                 neighbour = (Being)map.getField(position.neighboursClockwise(i));
                 if(neighbour instanceof IDiseaseSensitive) {
-                    disease.infect((IDiseaseSensitive)neighbour);
+                   newInfected += disease.infect((IDiseaseSensitive)neighbour);
                 }
             }
         }
+        return newInfected;
     }
 
     @Override
-    public void progressIllness(){
+    public int progressIllness(){
         if(!(being instanceof IDiseaseSensitive)) {
-            return;
+            return 0;
         }
         if(!((IDiseaseSensitive)being).getIsAlive()) {
-            return; //trupy nie chorują
+            return 0; //trupy nie chorują
         }
-        ((IDiseaseSensitive)being).performIllness();
+        int output = 0;
+        output = ((IDiseaseSensitive)being).performIllness();
+        return output;
     }
 
     @Override

@@ -29,10 +29,10 @@ public class DiseaseRecord {
         }       
     }
 
-    public void infect(IDiseaseSensitive human) {
+    public int infect(IDiseaseSensitive human) {
         if(!infects)
-            return;
-        disease.infect(human);
+            return 0;
+        return disease.infect(human);
     }
     
     ////////////////////////////

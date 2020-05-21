@@ -4,7 +4,7 @@ import java.util.List;
 import virus.DiseaseRecord;
 
 public interface IDiseaseSensitive {
-    public void performIllness();
+    public int performIllness();
     public void recover();
 
     /////////////////////////////////
