@@ -71,6 +71,10 @@ public class Simulation {
         }
     }
 
+    public void display() {
+        map.displayMap();
+    }
+
     ////////////////
 
 }
