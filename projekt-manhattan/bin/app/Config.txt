@@ -1,0 +1,12 @@
+mapLength=100
+mapWidth=2
+numPeople=3
+numDocs=4
+numAmbulance=5
+numHearse=6
+power1=7
+power2=8
+timeTilInfect=9
+timeTilCured=10
+infectionRate=11
+activeRate=12
