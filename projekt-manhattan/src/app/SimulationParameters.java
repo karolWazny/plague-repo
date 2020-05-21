@@ -1,9 +1,9 @@
 package app;
 
-import java.io.File;
-//import java.util.Scanner;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
+import java.io.FileNotFoundException;
+
 
 public class SimulationParameters {
     int mapLength;
@@ -37,7 +37,7 @@ public class SimulationParameters {
         this.activeRate = activeRate;
     }
 
-    SimulationParameters(){
+    public SimulationParameters(){
         this.mapLength = 50;
         this.mapWidth = 50;
         this.numPeople = 10;
@@ -49,24 +49,65 @@ public class SimulationParameters {
         this.timeTilInfect = 5;
         this.timeTilCured = 10;
         this.infectionRate = 10;
-        this.activeRate = 10;    
+        this.activeRate = 10;
     }
 
-    @Override
-    public void ReadFromFile(){
-        File plik = new File("D:/Config.txt");
-
+    public void ReadFromFile(File plik) throws FileNotFoundException{
         boolean exists = plik.exists();
 
-        System.out.println(exists);
+        System.out.println("Exists? " + exists);
 
         if(exists){
             Scanner in = new Scanner(plik);
             String line = in.nextLine();
-            while(line != null){
-                System.out.println(line);
 
-                System.out.println(line.substring(0,5));
+            while(in.hasNextLine()){
+
+                int index1 = line.indexOf("=");
+
+                String name = line.substring(0, index1);
+          
+                String number = line.substring(index1+1);
+
+                System.out.println(name);
+                System.out.println(Integer.valueOf(number));
+
+                if(name == "mapLength"){
+                    this.mapLength = Integer.valueOf(number);
+                }
+                else if(name == "mapWidth"){
+                    this.mapWidth = Integer.valueOf(number);
+                }
+                else if(name == "numPeople"){
+                    this.numPeople = Integer.valueOf(number);
+                }
+                else if(name == "numDocs"){
+                    this.numDocs = Integer.valueOf(number);
+                }
+                else if(name == "numAmbulance"){
+                    this.numAmbulance = Integer.valueOf(number);
+                }
+                else if(name == "numHearse"){
+                    this.numHearse = Integer.valueOf(number);
+                }
+                else if(name == "power1"){
+                    this.power1 = Integer.valueOf(number);
+                }
+                else if(name == "power2"){
+                    this.power2 = Integer.valueOf(number);
+                }
+                else if(name == "timeTilInfect"){
+                    this.timeTilInfect = Integer.valueOf(number);
+                }
+                else if(name == "timeTilCured"){
+                    this.timeTilCured = Integer.valueOf(number);
+                }
+                else if(name == "infectionRate"){
+                    this.infectionRate = Integer.valueOf(number);
+                }
+                else if(name == "activeRate"){
+                    this.activeRate = Integer.valueOf(number);
+                }
 
                 line = in.nextLine();
             }
