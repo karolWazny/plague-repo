@@ -10,3 +10,4 @@ timeTilInfect=9
 timeTilCured=10
 infectionRate=11
 activeRate=12
+KONIEC
