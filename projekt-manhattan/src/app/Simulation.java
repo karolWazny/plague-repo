@@ -68,6 +68,14 @@ public class Simulation {
         for(int i = 0; i < 100; i++) {
             performRound();
             System.out.println("People: "+numPeople+", infected: "+numInfected);
+            if(numPeople == 0) {
+                System.out.println("All dead");
+                return;
+            }
+            if(numInfected == 0) {
+                System.out.println("All cured");
+                return;
+            }
         }
     }
 
