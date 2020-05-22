@@ -10,4 +10,9 @@ timeTilInfect=9
 timeTilCured=10
 infectionRate=11
 activeRate=12
-KONIEC
+END
+
+Do powyższej sekwencji należy dane wpisać bez spacji
+między nazwą, znakiem równości i po nim.
+
+Inaczej program może nie zadziałać.

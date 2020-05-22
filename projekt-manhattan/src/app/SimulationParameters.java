@@ -59,9 +59,10 @@ public class SimulationParameters {
             Scanner in = new Scanner(plik);
             String line = in.nextLine();
 
-            while(in.hasNextLine()){
+            while(in.hasNextLine()&&(!line.equals("END"))){
                 
-                int index1 = line.indexOf("=");
+                int index1 = 0;
+                index1 = line.indexOf("=");
                 
                 if(index1 != 0){
                     String name = line.substring(0, index1);
