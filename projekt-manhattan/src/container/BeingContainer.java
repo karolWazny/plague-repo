@@ -64,6 +64,7 @@ public class BeingContainer {
             buffer = obj.progressIllness();
             if(buffer == -1) {
                 killCure[0]++;
+                map.emptyField(obj.getVerHor());//żeby trupy się nie zbierały na mapie
             } else if(buffer == 1) {
                 killCure[1]++;
             }

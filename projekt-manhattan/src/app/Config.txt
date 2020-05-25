@@ -1,15 +1,15 @@
 mapLength=100
-mapWidth=2
-numPeople=3
-numDocs=4
-numAmbulance=5
-numHearse=6
-power1=7
-power2=8
-timeTilInfect=9
-timeTilCured=10
-infectionRate=11
-activeRate=12
+mapWidth=200
+numPeople=5000
+numDocs=500
+numAmbulance=0
+numHearse=0
+power1=6
+power2=6
+timeTilInfect=1
+timeTilCured=90
+infectionRate=80
+activeRate=100
 END
 
 Do powyższej sekwencji należy dane wpisać bez spacji

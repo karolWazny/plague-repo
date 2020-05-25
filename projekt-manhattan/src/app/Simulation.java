@@ -65,18 +65,20 @@ public class Simulation {
     }
 
     public void doSimulation() {
-        for(int i = 0; i < 100; i++) {
+        boolean whetherToContinue = true;
+        while(whetherToContinue) {
             performRound();
             System.out.println("People: "+numPeople+", infected: "+numInfected);
             if(numPeople == 0) {
                 System.out.println("All dead");
-                return;
+                whetherToContinue = false;
             }
             if(numInfected == 0) {
                 System.out.println("All cured");
-                return;
+                whetherToContinue = false;
             }
         }
+        return;
     }
 
     public void display() {
