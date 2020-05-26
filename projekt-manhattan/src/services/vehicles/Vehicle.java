@@ -8,26 +8,28 @@ import map.Being;
 public abstract class Vehicle extends Being implements IMovable{
     private int capacity;
     private int velocity;
+    protected Coordinates destination;
+    protected final Coordinates home; 
     private static int numVeh = 0;
-    private static IGPS gps;
+    private IGPS gps;
     private List<IMovable> passengers; //Kontener na obiekty
     private int numPassengers = 0;
    
     ////////////////////////////
 
-    public Vehicle(){
+    public Vehicle(Coordinates home){
         super("Vehicle",'V');
         passengers = new ArrayList<>();
+        this.home = new Coordinates(home);
         numVeh++;
-        gps = new GPS1();
     }
 
-    public Vehicle(String id, char representation, int capacity, int velocity){
+    public Vehicle(String id, char representation, int capacity, int velocity, Coordinates home){
         super(id, representation);
         this.capacity = capacity;
         this.velocity = velocity;
+        this.home = new Coordinates(home);
         passengers = new ArrayList<>();
-        gps = new GPS1();
         numVeh++;
     }
 
@@ -41,11 +43,10 @@ public abstract class Vehicle extends Being implements IMovable{
 
     ////////////////////////////
 
-    public Coordinates move(){
-        Coordinates newPosition = new Coordinates(0,0);
-        //Tutaj będzie dużo pierdzielenia z tym ruchem...
-        //Bo naszym celem będzie dojechać do szpitala
-        //I w jakiś sposób musimy sygnalizować człowiekiem, że tam ma karetka dojechać
+    
+    @Override
+    public Coordinates move(Coordinates currentPosition){
+        Coordinates newPosition = gps.navigate(currentPosition, destination, velocity);        
         return newPosition;
     }
 
@@ -59,6 +60,10 @@ public abstract class Vehicle extends Being implements IMovable{
         else{
             return;
         }   
+    }
+
+    public void setGPS (IGPS gps) {
+        this.gps = gps;
     }
 
     ////////////////////////////

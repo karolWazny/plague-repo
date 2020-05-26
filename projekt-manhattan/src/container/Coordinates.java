@@ -6,6 +6,10 @@ public class Coordinates {
     
     ////////////////////////////
 
+    public Coordinates() {
+        this(0, 0);
+    }
+
     public Coordinates(int vertical, int horizontal){
         this.vertical = vertical;
         this.horizontal = horizontal;
@@ -34,6 +38,16 @@ public class Coordinates {
         Coordinates coords = new Coordinates(vertical, horizontal);
         coords.addVector(this);
         return coords;
+    }
+
+    public boolean equals(Coordinates coords) {
+        if(vertical != coords.getVertical()) {
+            return false;
+        }
+        if(horizontal != coords.getHorizontal()) {
+            return false;
+        }
+        return true;
     }
 
     public Coordinates neighboursClockwise(int direction) {
