@@ -8,7 +8,7 @@ import map.Being;
 public abstract class Vehicle extends Being implements IMovable{
     private int capacity;
     private int velocity;
-    protected Coordinates destination;
+    protected static Coordinates destination;
     protected final Coordinates home; 
     private static int numVeh = 0;
     private IGPS gps;

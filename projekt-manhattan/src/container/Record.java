@@ -4,10 +4,12 @@ import virus.DiseaseRecord;
 import map.Being;
 import human.IDiseaseSensitive;
 import map.Map;
+import services.dispatching.Dispatching;
 
 public class  Record implements IRecord {
     private Being being;
     private Coordinates position;
+    private Dispatching dispatching;
 
     ////////////////////////////
 
@@ -24,6 +26,12 @@ public class  Record implements IRecord {
             if(!((IDiseaseSensitive)being).getIsAlive())
             return; //trupy nie chodzą
         }
+        if( being instanceof IDiseaseSensitive) {
+            if(((IDiseaseSensitive)being).getHealthPoints() < 50)
+            dispatching.addPatient(being);
+            return; 
+        }
+
         if(being instanceof IMovable){
             IMovable being = (IMovable) this.being;
             position = being.move(position);
