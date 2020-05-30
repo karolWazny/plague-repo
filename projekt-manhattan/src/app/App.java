@@ -10,17 +10,18 @@ import java.io.InputStreamReader;
 public class App {
     public static void main(String[] args) throws Exception {
         //Tu trzeba własną ścieżkę dostępu do pliku dodać:
+        // startup();
+        // SimulationParameters parameters
         // File plik = new File("D:/programowanieProjekty/sluzbowe/naStudia/plague-repo/projekt-manhattan/src/app/Config.txt");
         // SimulationParameters parametry = new SimulationParameters();
         // parametry.ReadFromFile(plik);
         // Simulation sim2 = new Simulation(parametry);
-        // System.out.print(sim2.doSimulation().toString());
-        startup();
+        //menu();
         menu();
     }
 
     //////////////////////////
-    
+
     public static void startup() {
         try {
             System.out.print("Wake up, Neo...");
@@ -52,6 +53,8 @@ public class App {
     ////////////////////////
 
     public static void menu() throws IOException{
+        SimulationParameters parameters = new SimulationParameters();
+        SimulationLog log = new SimulationLog();
         boolean running = true;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int position;
@@ -66,9 +69,9 @@ public class App {
                 try {
                     position = Integer.parseInt(br.readLine());
                     switch(position) {
-                        case 1:
+                        case 1: menuRun(parameters, log);
                             break;
-                        case 2:
+                        case 2: menuShowParams(parameters);
                             break;
                         case 3:
                             break;
@@ -85,5 +88,44 @@ public class App {
                     System.out.println("Invalid number format!");
                 }
         }
+    }
+
+    //////////////////////////////
+
+    public static void menuRun(SimulationParameters parameters, SimulationLog log) {
+        if(parameters == null){
+            System.out.println("No parameters found.\nInput parameters manually\nor via path to parameters.txt file");
+            return;
+        }
+        Simulation sim = new Simulation(parameters);
+        log = sim.doSimulation(); //tu cały cyrk z zapisem do pliku
+    }
+
+    ////////////////////////////////////
+
+    public static void menuShowParams(SimulationParameters parameters) {
+        if(parameters == null){
+            System.out.println("No parameters found.\nInput parameters manually\nor via path to parameters.txt file");
+            return;
+        }
+        System.out.print(parameters.toString());
+    }
+
+    ///////////////////////////////////
+
+    public static void menuInManually(){
+
+    }
+
+    /////////////////////////////////////
+
+    public static void menuInFile(){
+
+    }
+
+    ///////////////////////////////////////
+
+    public static void menuShowLast(){
+
     }
 }
