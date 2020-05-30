@@ -135,9 +135,9 @@ public class SimulationParameters {
     @Override
     public String toString() {
         String out = new String();
-        out+="Simulation parameters:\n\nMap size:\n\twidth: "+mapWidth+", length: "+mapLength;
+        out+="Simulation parameters:\nMap size:\n\twidth: "+mapWidth+", length: "+mapLength;
         out+="\nInitial number of people: "+numPeople+", including "+numDocs;
-        out+=" doctors'\n'Number of ambulances: "+numAmbulance;
+        out+=" doctors\nNumber of ambulances: "+numAmbulance;
         out += "\nVirus characteristics:\n\tPower: "+power1+"d"+power2;
         out += "\n\tNominal time between beeing infected and infecting others: "+timeTilInfect;
         out += "\n\tNominal time between being infected and being cured: "+timeTilCured;

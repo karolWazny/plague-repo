@@ -39,9 +39,9 @@ public class SimulationLog {
         output += "Simulation run at: ";
         output += formatter.format(startTime) + '\n';
         output += parameters.toString()+'\n';
-        output += "Simulation length: "+(log.size()-1)+" rounds";
+        output += "Simulation length: "+(log.size()-1)+" rounds\n";
         output += "Simulation output: " +this.output+'\n';
-        output+="Details of the run:\n";
+        output+="Detailed log:\n";
         for(SimulationState state:log) {
             output += "Alive: "+state.getNumPeople()+", infected: "+state.getNumInfected()+'\n';
         }
