@@ -18,6 +18,9 @@ public class App {
         startup();
         menu();
     }
+
+    //////////////////////////
+    
     public static void startup() {
         try {
             System.out.print("Wake up, Neo...");
@@ -45,6 +48,9 @@ public class App {
         System.out.println("");
         //tu chciałbym drukować wersję
     }
+
+    ////////////////////////
+
     public static void menu() throws IOException{
         boolean running = true;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
