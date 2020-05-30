@@ -52,6 +52,21 @@ public class SimulationParameters {
         this.activeRate = 10;
     }
 
+    public SimulationParameters(SimulationParameters params) {
+        this.mapLength = params.mapLength;
+        this.mapWidth = params.mapWidth;
+        this.numPeople = params.numPeople;
+        this.numDocs = params.numDocs;
+        this.numAmbulance = params.numAmbulance;
+        this.numHearse = params.numHearse;
+        this.power1 = params.power1;
+        this.power2 = params.power2;
+        this.timeTilInfect = params.timeTilInfect;
+        this.timeTilCured = params.timeTilCured;
+        this.infectionRate = params.infectionRate;
+        this.activeRate = params.activeRate;
+    }
+
     public void ReadFromFile(File plik) throws FileNotFoundException{
         boolean exists = plik.exists();
 
@@ -115,5 +130,19 @@ public class SimulationParameters {
             }
             in.close();
         }
+    }
+
+    @Override
+    public String toString() {
+        String out = new String();
+        out+="Simulation parameters:\n\nMap size:\n\twidth: "+mapWidth+", length: "+mapLength;
+        out+="\nInitial number of people: "+numPeople+", including "+numDocs;
+        out+=" doctors'\n'Number of ambulances: "+numAmbulance;
+        out += "\nVirus characteristics:\n\tPower: "+power1+"d"+power2;
+        out += "\n\tNominal time between beeing infected and infecting others: "+timeTilInfect;
+        out += "\n\tNominal time between being infected and being cured: "+timeTilCured;
+        out += "\n\tInfection rate: "+infectionRate;
+        out += "%\n\tPercentage of active instances of virus: "+activeRate+"%";
+        return out;
     }
 }

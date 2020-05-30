@@ -29,7 +29,7 @@ public class  Record implements IRecord {
         if( being instanceof IDiseaseSensitive) {
             if(((IDiseaseSensitive)being).getHealthPoints() < 50)
             dispatching.addPatient(being);
-            return; 
+            return;
         }
 
         if(being instanceof IMovable){

@@ -15,10 +15,12 @@ public class Simulation {
     private Virus strain;
     private int numPeople;
     private int numInfected;
+    private SimulationParameters params;
 
     ////////////////////////
 
     Simulation(SimulationParameters parameters) {
+        params = parameters;
         numPeople = parameters.numPeople;
         numInfected = 1;
         map = new Map(parameters.mapLength, parameters.mapWidth);
@@ -64,21 +66,22 @@ public class Simulation {
         container.performRecoveryRound();
     }
 
-    public void doSimulation() {
+    public SimulationLog doSimulation() {
+        SimulationLog log = new SimulationLog(params);
         boolean whetherToContinue = true;
         while(whetherToContinue) {
             performRound();
-            System.out.println("People: "+numPeople+", infected: "+numInfected);
+            log.addRecord(numPeople, numInfected);
             if(numPeople == 0) {
-                System.out.println("All dead");
+                log.setOutput("All dead");
                 whetherToContinue = false;
             }
             if(numInfected == 0) {
-                System.out.println("All cured");
+                log.setOutput("All cured");
                 whetherToContinue = false;
             }
         }
-        return;
+        return log;
     }
 
     public void display() {
