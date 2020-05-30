@@ -28,8 +28,8 @@ public class  Record implements IRecord {
         }
         if( being instanceof IDiseaseSensitive) {
             if(((IDiseaseSensitive)being).getHealthPoints() < 50)
-            dispatching.addPatient(being);
-            return; 
+            //dispatching.addPatient(being);
+            return;
         }
 
         if(being instanceof IMovable){
