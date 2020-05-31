@@ -11,13 +11,14 @@ public class App {
     public static void main(String[] args) throws Exception {
         //Tu trzeba własną ścieżkę dostępu do pliku dodać:
         // startup();
-        // SimulationParameters parameters
-        // File plik = new File("D:/programowanieProjekty/sluzbowe/naStudia/plague-repo/projekt-manhattan/src/app/Config.txt");
-        // SimulationParameters parametry = new SimulationParameters();
-        // parametry.ReadFromFile(plik);
-        // Simulation sim2 = new Simulation(parametry);
+        File plik = new File("D:/programowanieProjekty/sluzbowe/naStudia/plague-repo/projekt-manhattan/src/app/Config.txt");
+        SimulationParameters parametry = new SimulationParameters();
+        parametry.ReadFromFile(plik);
+        Simulation sim2 = new Simulation(parametry);
+        System.out.println(sim2.doSimulation().toString());
         //menu();
-        menu();
+        // startup();
+        // menu();
     }
 
     //////////////////////////
