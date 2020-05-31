@@ -18,6 +18,13 @@ public class SimulationLog {
         this.parameters = new SimulationParameters(parameters);
         log = new LinkedList<>();
     }
+
+    public SimulationLog (){
+        startTime = null;
+        parameters = null;
+        log = null;
+        output = null;
+    }
     
     ///////////////////////////////
 
