@@ -7,11 +7,12 @@ import map.IPrintable;
 import map.EmptySlot;
 import map.Being;
 import random.Dice;
+import services.dispatching.Dispatching;
 
 public class BeingContainer {
     private List<IRecord> list;
     private Map map;
-
+    private Dispatching dispatching;
     ////////////////////////////
 
     public BeingContainer(Map map){
@@ -59,14 +60,17 @@ public class BeingContainer {
 
     public int [] performDiseaseRound() {
         int killCure []= new int[]{0,0};
-        int buffer;
+        int buffer[];
         for(IRecord obj:list) {
             buffer = obj.progressIllness();
-            if(buffer == -1) {
+            if(buffer[0] == -1) {
                 killCure[0]++;
                 map.emptyField(obj.getVerHor());//żeby trupy się nie zbierały na mapie
-            } else if(buffer == 1) {
+            } else if(buffer[0] == 1) {
                 killCure[1]++;
+            }
+            if(buffer[1] == 1 && !(dispatching.getList().contains(obj))){
+                dispatching.addPatient(obj);
             }
         }
         return killCure;
