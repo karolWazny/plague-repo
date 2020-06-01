@@ -1,7 +1,7 @@
-mapLength=100
-mapWidth=200
-numPeople=5000
-numDocs=500
+﻿mapLength=20
+mapWidth=20
+numPeople=200
+numDocs=0
 numAmbulance=0
 numHearse=0
 power1=6

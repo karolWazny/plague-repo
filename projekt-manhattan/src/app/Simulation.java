@@ -19,7 +19,7 @@ public class Simulation {
 
     ////////////////////////
 
-    Simulation(SimulationParameters parameters) {
+    public Simulation(SimulationParameters parameters) {
         params = parameters;
         numPeople = parameters.numPeople;
         numInfected = 1;
@@ -89,5 +89,8 @@ public class Simulation {
     }
 
     ////////////////
+    public Map getMap(){
+        return map;
+    }
 
 }
