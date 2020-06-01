@@ -4,12 +4,11 @@ import virus.DiseaseRecord;
 import map.Being;
 import human.IDiseaseSensitive;
 import map.Map;
-import services.dispatching.Dispatching;
+
 
 public class  Record implements IRecord {
     private Being being;
     private Coordinates position;
-    private Dispatching dispatching;
 
     ////////////////////////////
 
@@ -28,10 +27,8 @@ public class  Record implements IRecord {
         }
         if( being instanceof IDiseaseSensitive) {
             if(((IDiseaseSensitive)being).getHealthPoints() < 50)
-            //dispatching.addPatient(being);
             return;
         }
-
         if(being instanceof IMovable){
             IMovable being = (IMovable) this.being;
             position = being.move(position);
@@ -60,16 +57,22 @@ public class  Record implements IRecord {
     }
 
     @Override
-    public int progressIllness(){
+    public int[] progressIllness(){
+        int tab[] = {0,0};
         if(!(being instanceof IDiseaseSensitive)) {
-            return 0;
+            return tab;
         }
         if(!((IDiseaseSensitive)being).getIsAlive()) {
-            return 0; //trupy nie chorują
+            return tab; //trupy nie chorują
         }
-        int output = 0;
-        output = ((IDiseaseSensitive)being).performIllness();
-        return output;
+        if( being instanceof IDiseaseSensitive) {
+            if(((IDiseaseSensitive)being).getHealthPoints() < 50)
+            tab[1] = 1;
+            
+        }
+        
+        tab[0] = ((IDiseaseSensitive)being).performIllness();
+        return tab;
     }
 
     @Override
