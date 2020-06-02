@@ -20,12 +20,19 @@ public class Test {
             //System.out.println(sim2.doSimulation().toString());
             SwingUtilities.invokeLater(new Runnable(){
                 @Override
-                public void run() {
+                public void run(){
                 ramka = new Ramka(sim2);
+                try {
+                    for(int i = 0; i < 100; i++) {
+                        TimeUnit.MILLISECONDS.sleep(333);
+                        sim2.performRound();
+                        ramka.panel.revalidate();
+                        ramka.panel.repaint();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 }
             });
-            for(int i = 0; i < 100; i++) {
-                
-            }
     }
 }

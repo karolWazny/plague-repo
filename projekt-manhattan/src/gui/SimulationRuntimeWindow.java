@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import java.awt.FlowLayout;
 
 public class SimulationRuntimeWindow extends JFrame {
     /**
@@ -27,6 +28,7 @@ public class SimulationRuntimeWindow extends JFrame {
         pack();
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
     }
 
     public void nextRound(String state) {
