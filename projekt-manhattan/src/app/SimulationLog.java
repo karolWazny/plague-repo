@@ -38,19 +38,16 @@ public class SimulationLog {
 
     @Override
     public String toString(){
-        if(this.output == null) {
-            return "Simulation not finished yet";
-        }
         String output = new String();
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
         output += "Simulation run at: ";
         output += formatter.format(startTime) + '\n';
         output += parameters.toString()+'\n';
         output += "Simulation length: "+(log.size()-1)+" rounds\n";
-        output += "Simulation output: " +this.output+'\n';
+        output += "Simulation output: " +(this.output==null?"Simulation not finished yet":this.output)+'\n';
         output+="Detailed log:\n";
         for(SimulationState state:log) {
-            output += "Alive: "+state.getNumPeople()+", infected: "+state.getNumInfected()+'\n';
+            output += state.toString()+'\n';
         }
         return output;
     }
@@ -62,5 +59,11 @@ public class SimulationLog {
             return true;
         }
         return false;
+    }
+
+    ////////////////////////////////////
+
+    public SimulationState getLast(){
+        return log.get(log.size()-1);
     }
 }

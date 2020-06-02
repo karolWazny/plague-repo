@@ -6,24 +6,26 @@ import java.awt.EventQueue;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import javax.swing.SwingUtilities;
 
 public class Test {
-    public static void main(String [] args){
-        try{
+    static Ramka ramka;
+    public static void main(String [] args)throws Exception{
             File plik = new File("Config.txt");
             SimulationParameters parametry = new SimulationParameters();
             parametry.ReadFromFile(plik);
             Simulation sim2 = new Simulation(parametry);
             //System.out.println(sim2.doSimulation().toString());
-            EventQueue.invokeLater(new Runnable(){
+            SwingUtilities.invokeLater(new Runnable(){
                 @Override
                 public void run() {
-                new Ramka(sim2.getMap());
-            }
+                ramka = new Ramka(sim2);
+                }
             });
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-        
+            for(int i = 0; i < 100; i++) {
+                
+            }
     }
 }

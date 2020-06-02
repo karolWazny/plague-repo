@@ -18,7 +18,7 @@ public class App {
         System.out.println(sim2.doSimulation().toString());
         //menu();
         // startup();
-        // menu();
+        //menu();
     }
 
     //////////////////////////

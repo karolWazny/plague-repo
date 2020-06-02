@@ -35,8 +35,8 @@ public class PanelMap extends JPanel{
             maleIcon = ImageIO.read(icon);
             icon = new File("female.png");
             femaleIcon = ImageIO.read(icon);
-            // iconWidth = maleIcon.getWidth()>femaleIcon.getWidth()?maleIcon.getWidth():femaleIcon.getWidth();
-            // iconHeight = maleIcon.getHeight()>femaleIcon.getHeight()?maleIcon.getHeight():femaleIcon.getHeight();
+            iconWidth = maleIcon.getWidth()>femaleIcon.getWidth()?maleIcon.getWidth():femaleIcon.getWidth();
+            iconHeight = maleIcon.getHeight()>femaleIcon.getHeight()?maleIcon.getHeight():femaleIcon.getHeight();
             setPreferredSize(new Dimension(map.getWidth()*iconWidth, iconHeight*map.getLength()));
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,6 +45,7 @@ public class PanelMap extends JPanel{
 
     @Override
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         Graphics2D g2d = (Graphics2D)g;
 
         char c = 'q';

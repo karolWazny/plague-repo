@@ -3,11 +3,17 @@ package app;
 import map.Map;
 import container.*;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import random.Dice;
 import human.Human;
 import human.Doctor;
 import virus.DiseaseRecord;
 import virus.Virus;
+
+import gui.SimulationRuntimeWindow;
+
+import javax.swing.SwingUtilities;
 
 public class Simulation {
     private Map map;
@@ -16,6 +22,8 @@ public class Simulation {
     private int numPeople;
     private int numInfected;
     private SimulationParameters params;
+    SimulationLog log;
+    SimulationRuntimeWindow srw;
 
     ////////////////////////
 
@@ -55,7 +63,7 @@ public class Simulation {
 
     /////////////////
 
-    private void performRound() {
+    public void performRound() {
         int [] buffer;
         container.performMovementRound();
         numInfected += container.performInfectRound();
@@ -67,9 +75,26 @@ public class Simulation {
     }
 
     public SimulationLog doSimulation() {
-        SimulationLog log = new SimulationLog(params);
+        log = new SimulationLog(params);
+        Simulation sim = this;
+
+        SwingUtilities.invokeLater(new Runnable(){
+            @Override
+            public void run(){
+                srw = new SimulationRuntimeWindow(sim);
+            }
+        });
+
         boolean whetherToContinue = true;
         while(whetherToContinue) {
+
+            try {
+                
+            TimeUnit.MILLISECONDS.sleep(333); //ustawienie zmiany szybkości
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             performRound();
             log.addRecord(numPeople, numInfected);
             if(numPeople == 0) {
@@ -80,7 +105,22 @@ public class Simulation {
                 log.setOutput("All cured");
                 whetherToContinue = false;
             }
+
+            SwingUtilities.invokeLater(new Runnable(){
+                @Override
+                public void run(){
+                    srw.nextRound(log.getLast().toString());;
+                }
+            });
         }
+
+        SwingUtilities.invokeLater(new Runnable(){
+            @Override
+            public void run(){
+                srw.finish(log.toString());
+            }
+        });
+
         return log;
     }
 
@@ -93,4 +133,7 @@ public class Simulation {
         return map;
     }
 
+    public SimulationLog getLog(){
+        return log;
+    }
 }
