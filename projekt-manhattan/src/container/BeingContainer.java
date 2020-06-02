@@ -15,9 +15,10 @@ public class BeingContainer {
     private Dispatching dispatching;
     ////////////////////////////
 
-    public BeingContainer(Map map){
+    public BeingContainer(Map map, Dispatching dispatching){
         list = new ArrayList<IRecord>();
         this.map = map;
+        this.dispatching = new Dispatching();
     }
 
     ////////////////////////////
