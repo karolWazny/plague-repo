@@ -25,10 +25,10 @@ public class SimulationRuntimeWindow extends JFrame {
         add(simulationPanel);
         outputConsole = new JTextArea(sim.getLog().toString());
         add(new JScrollPane(outputConsole));
-        pack();
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
+        pack();
     }
 
     public void nextRound(String state) {
