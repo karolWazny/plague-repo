@@ -140,7 +140,7 @@ public class SimulationParameters {
         out+=" doctors\nNumber of ambulances: "+numAmbulance;
         out += "\nVirus characteristics:\n\tPower: "+power1+"d"+power2;
         out += "\n\tNominal time between beeing infected and infecting others: "+timeTilInfect;
-        out += "\n\tNominal time between being infected and being cured: "+timeTilCured;
+        out += "\t\n\tNominal time between being infected and being cured: "+timeTilCured;
         out += "\n\tInfection rate: "+infectionRate;
         out += "%\n\tPercentage of active instances of virus: "+activeRate+"%";
         return out;

@@ -43,7 +43,7 @@ public class SimulationLog {
         output += "Simulation run at: ";
         output += formatter.format(startTime) + '\n';
         output += parameters.toString()+'\n';
-        output += "Simulation length: "+(log.size()-1)+" rounds\n";
+        output += "Simulation length: "+(log.size()==0?'\n':""+(log.size()-1)+" rounds\n");
         output += "Simulation output: " +(this.output==null?"Simulation not finished yet":this.output)+'\n';
         output+="Detailed log:\n";
         for(SimulationState state:log) {

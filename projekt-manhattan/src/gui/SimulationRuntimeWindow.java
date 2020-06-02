@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
-import java.awt.FlowLayout;
 
 public class SimulationRuntimeWindow extends JFrame {
     /**
@@ -20,21 +19,26 @@ public class SimulationRuntimeWindow extends JFrame {
     private JScrollPane scroller;
 
     public SimulationRuntimeWindow(Simulation sim) {
-        super("Simulation");
+        super("Simulation run");
         this.sim = sim;
 
-        
         setLayout(new BoxLayout(this.getContentPane(), BoxLayout.LINE_AXIS));
 
-        simulationPanel = new PanelMap(sim.getMap());//do zmiany
-        add(simulationPanel);
+
+        simulationPanel = new PanelMap(sim.getMap());
+        add(new JScrollPane(simulationPanel));
         outputConsole = new JTextArea(sim.getLog().toString());
+        // outputConsole.setBackground(Color.BLACK);
+        // outputConsole.setForeground(Color.GREEN);
         scroller = new JScrollPane(outputConsole);
         add(scroller);
-        setVisible(true);
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //setLayout(new FlowLayout());
+        setAlwaysOnTop(true);
+
         pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     public void nextRound(String state) {
