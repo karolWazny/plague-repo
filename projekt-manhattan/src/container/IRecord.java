@@ -8,7 +8,7 @@ public interface IRecord {
     public Coordinates getVerHor();
     public void setVerHor(Coordinates currentVerHor);
     public int infectNeighbours(Map map);
-    public int progressIllness();
+    public int[] progressIllness();
     public void performRecovery();
     public Being getBeing();
 }
