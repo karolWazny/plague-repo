@@ -117,12 +117,12 @@ public class Simulation {
             });
         }
 
-        // SwingUtilities.invokeLater(new Runnable(){
-        //     @Override
-        //     public void run(){
-        //         srw.finish(log.toString());
-        //     }
-        // });
+        SwingUtilities.invokeLater(new Runnable(){
+            @Override
+            public void run(){
+                srw.finish(log.toString());
+            }
+        });
 
         return log;
     }

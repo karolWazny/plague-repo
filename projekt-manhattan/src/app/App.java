@@ -119,68 +119,68 @@ public class App {
 
     ///////////////////////////////////////
     
-    // class Settings implements Serializable{
-    //     /**
-    //      *
-    //      */
-    //     private static final long serialVersionUID = -282658663089910836L;
-    //     SimulationParameters params;
-    //     String outPath;
-    //     String paramPath;
+    class Settings implements Serializable{
+        /**
+         *
+         */
+        private static final long serialVersionUID = -282658663089910836L;
+        SimulationParameters params;
+        String outPath;
+        String paramPath;
 
-    //     ////////////////////////
-    //     Settings(){
-    //         boolean wasException = false;
-    //         try {
-    //             Settings temp = load();
-    //             params = temp.params;
-    //             outPath = temp.outPath;
-    //             paramPath = temp.paramPath;
-    //         } catch (FileNotFoundException e) {
-    //             setDefaultAll();
-    //             wasException = true;
-    //         } catch (IOException e) {
-    //             setDefaultAll();
-    //             wasException = true;
-    //         } catch (ClassNotFoundException e){
-    //             setDefaultAll();
-    //             wasException = true;
-    //         }
+        ////////////////////////
+        Settings(){
+            boolean wasException = false;
+            try {
+                Settings temp = load();
+                params = temp.params;
+                outPath = temp.outPath;
+                paramPath = temp.paramPath;
+            } catch (FileNotFoundException e) {
+                setDefaultAll();
+                wasException = true;
+            } catch (IOException e) {
+                setDefaultAll();
+                wasException = true;
+            } catch (ClassNotFoundException e){
+                setDefaultAll();
+                wasException = true;
+            }
 
-    //         if(wasException){
-    //             try {
-    //                 serialize();
-    //             } catch (IOException e){
-    //                 e.printStackTrace();
-    //             }
-    //         }
-    //     }
+            if(wasException){
+                try {
+                    serialize();
+                } catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
 
-    //     ///////////////////////////
+        ///////////////////////////
 
-    //     private Settings load() throws FileNotFoundException, IOException, ClassNotFoundException {
-    //         ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("Settings.bin"));
-    //         Settings temp = (Settings)inputStream.readObject();
-    //         inputStream.close();
-    //         return temp;
-    //     }
+        private Settings load() throws FileNotFoundException, IOException, ClassNotFoundException {
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("Settings.bin"));
+            Settings temp = (Settings)inputStream.readObject();
+            inputStream.close();
+            return temp;
+        }
 
-    //     //////////////////////////////////
+        //////////////////////////////////
 
-    //     private void serialize() throws IOException{
-    //         ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("Settings.bin"));
-    //         outputStream.writeObject(this);
-    //         outputStream.close();
-    //         return;
-    //     }
+        private void serialize() throws IOException{
+            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("Settings.bin"));
+            outputStream.writeObject(this);
+            outputStream.close();
+            return;
+        }
 
-    //     ///////////////////////////////
+        ///////////////////////////////
 
-    //     void setDefaultAll(){
-    //         params = new SimulationParameters();
-    //         outPath = new String();
-    //         paramPath = new String();
-    //         return;
-    //     }
-    // }
+        void setDefaultAll(){
+            params = new SimulationParameters();
+            outPath = new String();
+            paramPath = new String();
+            return;
+        }
+    }
 }
