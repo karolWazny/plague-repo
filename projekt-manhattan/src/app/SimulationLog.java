@@ -68,4 +68,8 @@ public class SimulationLog {
     public SimulationState getLast(){
         return log.get(log.size()-1);
     }
+
+    public List<SimulationState> getList(){
+        return this.log;
+    }
 }
