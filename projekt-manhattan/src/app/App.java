@@ -22,7 +22,7 @@ public class App {
         //Tu trzeba własną ścieżkę dostępu do pliku dodać:
         //startup();
         SimulationParameters parameters;
-        File plik = new File("Config.txt");
+        File plik = new File("D:/STUDIA/II semestr/Programowanie obiektowe/PROJEKT/Repozytorium projekt/plague-repo/Config.txt");
         SimulationParameters parametry = new SimulationParameters();
         parametry.ReadFromFile(plik);
         Simulation sim2 = new Simulation(parametry);
