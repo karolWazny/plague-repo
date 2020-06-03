@@ -1,4 +1,6 @@
-﻿numHearse=0
+﻿Piszę sobie cokolwiek
+
+START
 mapWidth=50
 mapLength=50
 numPeople=1200

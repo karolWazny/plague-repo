@@ -65,61 +65,67 @@ public class SimulationParameters implements Serializable{
 
         if(exists){
             Scanner in = new Scanner(plik);
-            String line = in.nextLine();
+            int index1 = 0;
+            String line, name, number;
 
-            while(in.hasNextLine()&&(!line.equals("END"))){
-                
-                int index1 = 0;
-                index1 = line.indexOf("=");
-                
-                if(index1 != 0){
-                    String name = line.substring(0, index1);
-          
-                    String number = line.substring(index1+1);
+            while(in.hasNextLine()){
+                line = in.nextLine();
 
-                    if(name.equals("mapLength")){
-                        this.mapLength = Integer.valueOf(number);
-                    }
-                    else if(name.equals("mapWidth")){
-                        this.mapWidth = Integer.valueOf(number);
-                    }
-                    else if(name.equals("numPeople")){
-                        this.numPeople = Integer.valueOf(number);
-                    }
-                    else if(name.equals("numDocs")){
-                        this.numDocs = Integer.valueOf(number);
-                    }
-                    else if(name.equals("numAmbulance")){
-                        this.numAmbulance = Integer.valueOf(number);
-                    }
-                    else if(name.equals("numHearse")){
-                        this.numHearse = Integer.valueOf(number);
-                    }
-                    else if(name.equals("power1")){
-                        this.power1 = Integer.valueOf(number);
-                    }
-                    else if(name.equals("power2")){
-                        this.power2 = Integer.valueOf(number);
-                    }
-                    else if(name.equals("timeTilInfect")){
-                        this.timeTilInfect = Integer.valueOf(number);
-                    }
-                    else if(name.equals("timeTilCured")){
-                        this.timeTilCured = Integer.valueOf(number);
-                    }
-                    else if(name.equals("infectionRate")){
-                        this.infectionRate = Integer.valueOf(number);
-                    }
-                    else if(name.equals("activeRate")){
-                        this.activeRate = Integer.valueOf(number);
-                    }
-                
-                    line = in.nextLine();
-                   
-                    }
-                    else{
+                if(line.equals("START")){
+                    
+                    while(!line.equals("END")){
                         line = in.nextLine();
+                        index1 = 0;
+                        index1 = line.indexOf("=");
+                        
+                        //System.out.println("Index = " + index1);
+                        if(index1 > 0){
+                            name = line.substring(0, index1);
+          
+                            number = line.substring(index1+1);
+
+                            //System.out.println(name);
+                            //System.out.println(number);
+
+                            if(name.equals("mapLength")){
+                                this.mapLength = Integer.valueOf(number);
+                            }
+                            else if(name.equals("mapWidth")){
+                                this.mapWidth = Integer.valueOf(number);
+                            }
+                            else if(name.equals("numPeople")){
+                                this.numPeople = Integer.valueOf(number);
+                            }
+                            else if(name.equals("numDocs")){
+                                this.numDocs = Integer.valueOf(number);
+                            }
+                            else if(name.equals("numAmbulance")){
+                                this.numAmbulance = Integer.valueOf(number);
+                            }
+                            else if(name.equals("numHearse")){
+                                this.numHearse = Integer.valueOf(number);
+                            }
+                            else if(name.equals("power1")){
+                                this.power1 = Integer.valueOf(number);
+                            }
+                            else if(name.equals("power2")){
+                                this.power2 = Integer.valueOf(number);
+                            }
+                            else if(name.equals("timeTilInfect")){
+                                this.timeTilInfect = Integer.valueOf(number);
+                            }
+                            else if(name.equals("timeTilCured")){
+                                this.timeTilCured = Integer.valueOf(number);
+                            }
+                            else if(name.equals("infectionRate")){
+                                this.infectionRate = Integer.valueOf(number);
+                            }
+                            else if(name.equals("activeRate")){
+                                this.activeRate = Integer.valueOf(number);
+                            }
+                        }
                     }
+                }
             }
             in.close();
         }
