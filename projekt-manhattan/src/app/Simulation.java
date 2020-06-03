@@ -27,7 +27,7 @@ public class Simulation {
 
     ////////////////////////
 
-    public Simulation(SimulationParameters parameters) {
+    public Simulation(SimulationParameters parameters) throws IncorrectParametersException{
         params = parameters;
         numPeople = parameters.numPeople;
         numInfected = 1;
@@ -37,7 +37,9 @@ public class Simulation {
         List<Coordinates> list = map.emptyFieldsList();
         int listLength = list.size();
         if((parameters.numPeople + parameters.numDocs + parameters.numAmbulance + parameters.numHearse + 8)>listLength)
-            return;
+        {
+            throw new IncorrectParametersException();
+        }
         int roll;
         for(int i = 0; i<parameters.numPeople - parameters.numDocs; i++) {
             roll = Dice.custom(listLength) - 1;
@@ -58,6 +60,7 @@ public class Simulation {
             list.remove(roll);
             listLength--;
         }
+        return;
     }
 
 
@@ -114,12 +117,12 @@ public class Simulation {
             });
         }
 
-        SwingUtilities.invokeLater(new Runnable(){
-            @Override
-            public void run(){
-                srw.finish(log.toString());
-            }
-        });
+        // SwingUtilities.invokeLater(new Runnable(){
+        //     @Override
+        //     public void run(){
+        //         srw.finish(log.toString());
+        //     }
+        // });
 
         return log;
     }
