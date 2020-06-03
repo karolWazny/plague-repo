@@ -93,40 +93,39 @@ public class Simulation {
 
         boolean whetherToContinue = true;
         while(whetherToContinue) {
-
-            try {
+            try{
                 
-            TimeUnit.MILLISECONDS.sleep(333); //ustawienie zmiany szybkości
+                TimeUnit.MILLISECONDS.sleep(33); //ustawienie zmiany szybkości
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
             performRound();
             log.addRecord(numPeople, numInfected);
-            if(numPeople == 0) {
-                log.setOutput("All dead");
-                whetherToContinue = false;
-            }
-            if(numInfected == 0) {
-                log.setOutput("All cured");
-                whetherToContinue = false;
-            }
-
-            SwingUtilities.invokeLater(new Runnable(){
-                @Override
-                public void run(){
-                    srw.nextRound(log.getLast().toString());;
+                if(numPeople == 0) {
+                    log.setOutput("All dead");
+                    whetherToContinue = false;
                 }
-            });
-        }
 
+                if(numInfected == 0) {
+                    log.setOutput("All cured");
+                    whetherToContinue = false;
+                }
+
+                SwingUtilities.invokeLater(new Runnable(){
+                    @Override
+                    public void run(){
+                        srw.nextRound(log.getLast().toString());;
+                    }
+                });
+
+            }
         SwingUtilities.invokeLater(new Runnable(){
             @Override
             public void run(){
-                srw.finish(log.toString());
+            srw.finish(log.toString());
             }
         });
-
         return log;
     }
 

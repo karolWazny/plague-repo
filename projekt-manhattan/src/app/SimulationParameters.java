@@ -5,7 +5,11 @@ import java.util.*;
 import java.io.FileNotFoundException;
 
 
-public class SimulationParameters {
+public class SimulationParameters implements Serializable{
+    /**
+     *
+     */
+    private static final long serialVersionUID = -4042477513098162866L;
     int mapLength;
     int mapWidth;
     int numPeople;
@@ -38,18 +42,7 @@ public class SimulationParameters {
     }
 
     public SimulationParameters(){
-        this.mapLength = 20;
-        this.mapWidth = 20;
-        this.numPeople = 10;
-        this.numDocs = 5;
-        this.numAmbulance = 2;
-        this.numHearse = 2;
-        this.power1 = 10;
-        this.power2 = 10;
-        this.timeTilInfect = 5;
-        this.timeTilCured = 10;
-        this.infectionRate = 10;
-        this.activeRate = 10;
+        this(50, 50, 1200, 0, 5, 0, 6, 6, 1, 50, 50, 50);
     }
 
     public SimulationParameters(SimulationParameters params) {

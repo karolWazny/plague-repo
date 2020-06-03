@@ -27,6 +27,7 @@ public class SimulationRuntimeWindow extends JFrame {
         outputConsole = new JTextArea(sim.getLog().toString());
         // outputConsole.setBackground(Color.BLACK);
         // outputConsole.setForeground(Color.GREEN);
+        outputConsole.setEditable(false);
         scroller = new JScrollPane(outputConsole);
         add(scroller);
         
@@ -36,6 +37,7 @@ public class SimulationRuntimeWindow extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+        setAlwaysOnTop(true);
     }
 
     public void nextRound(String state) {

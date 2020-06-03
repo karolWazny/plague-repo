@@ -13,11 +13,18 @@ import javax.swing.SwingUtilities;
 public class Test {
     static Ramka ramka;
     public static void main(String [] args)throws Exception{
+
+        
             
             SwingUtilities.invokeLater(new Runnable(){
                 @Override
                 public void run(){
-                    new MainFrame();
+                    try{
+                        Simulation sim = new Simulation(new SimulationParameters());
+                        sim.doSimulation();
+                    } catch (IncorrectParametersException e){
+                        e.printStackTrace();
+                    }
                 }
             });
     }
