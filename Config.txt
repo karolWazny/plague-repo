@@ -1,5 +1,4 @@
-﻿numHearse=0
-mapWidth=50
+﻿mapWidth=50
 mapLength=50
 numPeople=1200
 numDocs=0
@@ -10,6 +9,7 @@ timeTilInfect=1
 timeTilCured=90
 infectionRate=80
 activeRate=100
+numHearse=0
 END
 
 Do powyższej sekwencji należy dane wpisać bez spacji
