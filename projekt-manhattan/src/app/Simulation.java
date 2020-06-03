@@ -10,6 +10,7 @@ import human.Human;
 import human.Doctor;
 import virus.DiseaseRecord;
 import virus.Virus;
+import services.dispatching.Dispatching;
 
 import gui.SimulationRuntimeWindow;
 
@@ -24,6 +25,7 @@ public class Simulation {
     private SimulationParameters params;
     SimulationLog log;
     SimulationRuntimeWindow srw;
+    private Dispatching dispatching;
 
     ////////////////////////
 
@@ -32,7 +34,8 @@ public class Simulation {
         numPeople = parameters.numPeople;
         numInfected = 1;
         map = new Map(parameters.mapLength, parameters.mapWidth);
-        container = new BeingContainer(map);
+        dispatching = new Dispatching();
+        container = new BeingContainer(map, dispatching);
         strain = new Virus(parameters.power1, parameters.power2, parameters.timeTilInfect, parameters.timeTilCured, parameters.infectionRate, parameters.activeRate);
         List<Coordinates> list = map.emptyFieldsList();
         int listLength = list.size();

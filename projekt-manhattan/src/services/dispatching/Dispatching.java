@@ -1,25 +1,28 @@
 package services.dispatching;
 
 
-import map.Being;
-
 import java.util.List;
+import container.IRecord;
 import java.util.LinkedList;
 
 public class Dispatching {
 
-    private List<Being> list;
+    private List<IRecord> list;
 
     public Dispatching(){
-        list = new LinkedList<Being>();
+        list = new LinkedList<IRecord>();
     }
 
-    public void addPatient(Being record){
+    public List<IRecord> getList(){
+        return list;
+    }
+
+    public void addPatient(IRecord record){
         list.add(record);
     }
 
     public void pickUpPatient(){
-        for(Being obj:list){
+        for(IRecord obj:list){
             
         }
     }

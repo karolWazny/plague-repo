@@ -19,6 +19,9 @@ import java.io.ObjectOutputStream;
 public class App {
     //private Settings settings;
     public static void main(String[] args) throws Exception {
+        //Tu trzeba własną ścieżkę dostępu do pliku dodać:
+        startup();
+        SimulationParameters parameters;
         File plik = new File("Config.txt");
         SimulationParameters parametry = new SimulationParameters();
         parametry.ReadFromFile(plik);

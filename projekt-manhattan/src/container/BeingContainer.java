@@ -9,16 +9,18 @@ import map.IPrintable;
 import map.EmptySlot;
 import map.Being;
 import random.Dice;
+import services.dispatching.Dispatching;
 
 public class BeingContainer {
     private List<IRecord> list;
     private Map map;
-
+    private Dispatching dispatching;
     ////////////////////////////
 
-    public BeingContainer(Map map){
+    public BeingContainer(Map map, Dispatching dispatching){
         list = new ArrayList<IRecord>();
         this.map = map;
+        this.dispatching = new Dispatching();
     }
 
     ////////////////////////////
@@ -63,18 +65,20 @@ public class BeingContainer {
 
     public int [] performDiseaseRound() {
         int killCure []= new int[]{0,0};
-        int buffer;
+        int buffer[];
         IRecord obj;
         Iterator<IRecord> iter = list.iterator();
         while(iter.hasNext()) {
             obj = iter.next();
             buffer = obj.progressIllness();
-            if(buffer == -1) {
+            if(buffer[0] == -1) {
                 killCure[0]++;
                 map.emptyField(obj.getVerHor());//żeby trupy się nie zbierały na mapie
-                iter.remove();
-            } else if(buffer == 1) {
+            } else if(buffer[0] == 1) {
                 killCure[1]++;
+            }
+            if(buffer[1] == 1 && !(dispatching.getList().contains(obj))){
+                dispatching.addPatient(obj);
             }
         }
         return killCure;
