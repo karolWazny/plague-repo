@@ -2,7 +2,11 @@ package gui;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
+
+import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainMenu extends JPanel{
 
@@ -18,6 +22,11 @@ public class MainMenu extends JPanel{
     public MainMenu(){
         super();
         runButt = new JButton("Run simulation");
+        runButt.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                runButt.setBackground(Color.GRAY);
+            }
+        });
         add(runButt);
         showParamButt = new JButton("Show current parameters");
         add(showParamButt);

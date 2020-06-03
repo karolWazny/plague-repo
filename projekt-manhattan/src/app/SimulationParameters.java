@@ -1,7 +1,7 @@
 package app;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.util.Scanner;
 import java.io.FileNotFoundException;
 
 
@@ -38,18 +38,7 @@ public class SimulationParameters {
     }
 
     public SimulationParameters(){
-        this.mapLength = 50;
-        this.mapWidth = 50;
-        this.numPeople = 10;
-        this.numDocs = 5;
-        this.numAmbulance = 2;
-        this.numHearse = 2;
-        this.power1 = 10;
-        this.power2 = 10;
-        this.timeTilInfect = 5;
-        this.timeTilCured = 10;
-        this.infectionRate = 10;
-        this.activeRate = 10;
+        this(20,20,100,0,2,0,3,6,5,50,50,50);
     }
 
     public SimulationParameters(SimulationParameters params) {
