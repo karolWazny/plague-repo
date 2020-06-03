@@ -27,6 +27,8 @@ public class WriteToFile {
         
         List<SimulationState> list = LOG.getList();
         
+        out.print(LOG.toString());
+
         for(SimulationState element : list){
             String line = element.toString();
             out.println(line);
