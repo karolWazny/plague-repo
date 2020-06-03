@@ -38,8 +38,8 @@ public class SimulationParameters {
     }
 
     public SimulationParameters(){
-        this.mapLength = 50;
-        this.mapWidth = 50;
+        this.mapLength = 20;
+        this.mapWidth = 20;
         this.numPeople = 10;
         this.numDocs = 5;
         this.numAmbulance = 2;

@@ -12,11 +12,15 @@ public class GPS1 implements IGPS {
     ////////////////////
     @Override
     public Coordinates navigate(Coordinates position, Coordinates destination, int velocity) {
+
         Coordinates output = new Coordinates(position);
         Coordinates next = new Coordinates(position);
+
         int verticalToGo = destination.getVertical() - position.getVertical();
         int horizontalToGo = destination.getHorizontal() - position.getHorizontal();
+
         for (int i = 0; i < velocity; i++) {
+
             if(verticalToGo != 0) { //jeżeli trzeba jechać w dół (ku wyższym wartościom)
                 next.addVector(new Coordinates(Integer.signum(verticalToGo),0));
                 if(map.getField(next).getId() == "empty") {
@@ -26,20 +30,27 @@ public class GPS1 implements IGPS {
                     next.addVector(new Coordinates(-Integer.signum(verticalToGo),0));
                 }
             }
+
             if(horizontalToGo != 0) {
                 next.addVector(new Coordinates(0, Integer.signum(horizontalToGo)));
                 if(map.getField(next).getId()=="empty") {
                     horizontalToGo -= Integer.signum(horizontalToGo);
-                    continue;
                 } else {
                     next.addVector(new Coordinates (0, -Integer.signum(horizontalToGo)));
                 }
             }
+
             output.setCoordinates(next);
-            if(output.equals(destination)) {
+
+            if(Integer.signum(horizontalToGo) * horizontalToGo <= 1 && Integer.signum(verticalToGo) * verticalToGo <= 1) {
                 return output;
             }
         }
         return output;
+    }
+
+    @Override
+    public Map getMap(){
+        return map;
     }
 }
