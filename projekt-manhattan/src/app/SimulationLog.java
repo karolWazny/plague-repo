@@ -3,6 +3,7 @@ package app;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Date;
+import java.util.Iterator;
 import java.text.SimpleDateFormat;
 
 public class SimulationLog {
@@ -46,8 +47,9 @@ public class SimulationLog {
         output += "Simulation length: "+(log.size()==0?'\n':""+(log.size()-1)+" rounds\n");
         output += "Simulation output: " +(this.output==null?"Simulation not finished yet":this.output)+'\n';
         output+="Detailed log:\n";
-        for(SimulationState state:log) {
-            output += state.toString()+'\n';
+        Iterator<SimulationState> iterator = log.iterator();
+        while(iterator.hasNext()) {
+            output += iterator.next().toString()+'\n';
         }
         return output;
     }

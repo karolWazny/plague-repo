@@ -38,7 +38,8 @@ public class SimulationParameters {
     }
 
     public SimulationParameters(){
-        this(20,20,100,0,2,0,3,6,5,50,50,50);
+        this(20,20,100,0,2,0,5,6,5,50,50,50);
+        return;
     }
 
     public SimulationParameters(SimulationParameters params) {

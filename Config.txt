@@ -1,9 +1,9 @@
-﻿mapLength=50
+﻿numHearse=0
 mapWidth=50
+mapLength=50
 numPeople=1200
 numDocs=0
 numAmbulance=0
-numHearse=0
 power1=6
 power2=10
 timeTilInfect=1

@@ -13,17 +13,14 @@ public class SimulationRuntimeWindow extends JFrame {
      *
      */
     private static final long serialVersionUID = -4709971995267753715L;
-    private Simulation sim;
     private JPanel simulationPanel;
     private JTextArea outputConsole;
     private JScrollPane scroller;
 
     public SimulationRuntimeWindow(Simulation sim) {
         super("Simulation run");
-        this.sim = sim;
 
         setLayout(new BoxLayout(this.getContentPane(), BoxLayout.LINE_AXIS));
-
 
         simulationPanel = new PanelMap(sim.getMap());
         add(new JScrollPane(simulationPanel));
