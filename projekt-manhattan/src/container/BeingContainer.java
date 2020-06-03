@@ -74,6 +74,7 @@ public class BeingContainer {
             if(buffer[0] == -1) {
                 killCure[0]++;
                 map.emptyField(obj.getVerHor());//żeby trupy się nie zbierały na mapie
+                iter.remove();
             } else if(buffer[0] == 1) {
                 killCure[1]++;
             }

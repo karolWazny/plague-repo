@@ -20,13 +20,14 @@ public class App {
     //private Settings settings;
     public static void main(String[] args) throws Exception {
         //Tu trzeba własną ścieżkę dostępu do pliku dodać:
-        startup();
+        //startup();
         SimulationParameters parameters;
         File plik = new File("Config.txt");
         SimulationParameters parametry = new SimulationParameters();
         parametry.ReadFromFile(plik);
         Simulation sim2 = new Simulation(parametry);
-        System.out.println(sim2.doSimulation().toString());
+        WriteToFile writer = new WriteToFile();
+        writer.WriteTheData(sim2.doSimulation());
     }
 
     //////////////////////////
