@@ -10,6 +10,7 @@ timeTilInfect=1
 timeTilCured=90
 infectionRate=80
 activeRate=100
+numHearse=0
 END
 
 Do powyższej sekwencji należy dane wpisać bez spacji
