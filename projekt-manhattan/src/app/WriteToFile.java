@@ -29,10 +29,6 @@ public class WriteToFile {
         
         out.print(LOG.toString());
 
-        for(SimulationState element : list){
-            String line = element.toString();
-            out.println(line);
-        }
         out.close();
     }
 }
