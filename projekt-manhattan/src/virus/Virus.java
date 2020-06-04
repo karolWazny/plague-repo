@@ -60,6 +60,7 @@ public class Virus extends Disease {
      *          Obiekt podatny na choroby
      * @param record
      *          Choroba, na którą się choruje
+     * @return Zwraca 0 jeśli nie zmienił się stan, 1 jeśli wyzdrowiał, -1 jeśli umarł
      */
     public int progress(IDiseaseSensitive infected, DiseaseRecord record) {
         int output = 0; 
