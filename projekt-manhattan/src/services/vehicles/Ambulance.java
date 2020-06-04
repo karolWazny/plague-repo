@@ -1,36 +1,67 @@
 package services.vehicles;
 
-import java.util.List;
+import java.util.Iterator;
 
 import container.Coordinates;
 import container.IRecord;
+import human.IRecoverable;
+import human.Human;
 
-public class Ambulance extends Vehicle {
+public class Ambulance extends Vehicle implements IRecoverable {
     //Dodać jakieś pole
+    private IRecord caller;
     private static int numAmb = 0;
-    public boolean isFree = true;
-    public List<IRecord> list;
-    
+    public boolean isFree = true;    
 
     ////////////////////////////
 
-    public Ambulance(){
-        super("Ambulance", 'A', 5, 100, destination);
+    public Ambulance(Coordinates home, IGPS gps){
+        super("Ambulance "+numAmb, 'A', 1, 20, home, gps);
         numAmb++;
     }
 
-    public Ambulance(String id, char representation, int capacity, int velocity, Coordinates coords){
-        super(id, representation, capacity, velocity, coords);
-        numAmb++;
-    }
+    // public Ambulance(String id, char representation, int capacity, int velocity, Coordinates coords){
+    //     super(id, representation, capacity, velocity, coords);
+    //     numAmb++;
+    // }
 
     ////////////////////////////
-
+   
     @Override
     public String toString(){
         return "Ambulance nr " + numAmb;
     }
 
+    @Override
+    public Coordinates move(Coordinates currentPosition){
+        Coordinates out = super.move(currentPosition);
+        if(out.isNextTo(destination)){
+            super.addPassenger(caller);
+            super.getIGPS().getMap().emptyField(caller.getVerHor());//złamana zasada Demeter (znowu...)
+            caller.setVerHor(null);
+            caller = null;
+            super.destination = new Coordinates(home);
+            if(passengers.size()<super.getCapacity()){
+                isFree=true;
+            }
+        }
+        return out;
+    }
+
+    @Override
+    public void recover(){
+        Iterator <IRecord>iterator = passengers.iterator();
+        Human patient;
+        while(iterator.hasNext()){
+            patient = (Human)iterator.next().getBeing();
+            if(!patient.getIsAlive()){
+                iterator.remove();
+                isFree = true;
+                continue;
+            }
+            patient.setHealthPoints(patient.getHealthPoints()+5);
+        }
+    }
     ////////////////////////////
 
     //Jak się pojawią pola, to settery i gettery też stykną
@@ -42,25 +73,9 @@ public class Ambulance extends Vehicle {
         return isFree;
     }
 
-    public void setIsFreeFalse(){
+    public void setCaller(IRecord caller){
+        this.caller = caller;
+        destination = new Coordinates(caller.getVerHor());
         isFree = false;
-    }
-
-    public void setIsFreeTrue(){
-        isFree = true;
-    }
-
-    public void addPatient(IRecord record){
-        if(isFree == true){
-            list.add(record);
-            setIsFreeFalse();
-        }
-    }
-    
-    public void removePatient(){
-        if(isFree == false){
-            list.remove(0);
-            setIsFreeTrue();
-        }
     }
 }

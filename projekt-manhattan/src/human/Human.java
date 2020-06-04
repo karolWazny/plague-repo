@@ -147,4 +147,12 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     public List<DiseaseRecord> getDiseases(){
         return diseases;
     }
+
+    @Override
+    public char getRepresentation(){
+        if(isInfected){
+            return 'r';
+        }
+        return super.getRepresentation();
+    }
 }

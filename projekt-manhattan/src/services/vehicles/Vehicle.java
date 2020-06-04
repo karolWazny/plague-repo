@@ -1,31 +1,34 @@
 package services.vehicles;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+
 import container.IMovable;
 import container.Coordinates;
+import container.IRecord;
 import map.Being;
 
 public abstract class Vehicle extends Being implements IMovable{
     private int capacity;
     private int velocity;
-    protected static Coordinates destination;
+    protected Coordinates destination;
     protected final Coordinates home; 
     private static int numVeh = 0;
     private IGPS gps;
-    private List<IMovable> passengers; //Kontener na obiekty
-    private int numPassengers = 0;
+    protected List<IRecord> passengers;
    
     ////////////////////////////
 
-    public Vehicle(Coordinates home){
-        super("Vehicle",'V');
-        passengers = new ArrayList<>();
-        this.home = new Coordinates(home);
-        numVeh++;
-    }
+    // public Vehicle(Coordinates home){
+    //     super("Vehicle",'V');
+    //     passengers = new ArrayList<>();
+    //     this.home = new Coordinates(home);
+    //     numVeh++;
+    // }
 
-    public Vehicle(String id, char representation, int capacity, int velocity, Coordinates home){
+    public Vehicle(String id, char representation, int capacity, int velocity, Coordinates home, IGPS gps){
         super(id, representation);
+        this.gps = gps;
         this.capacity = capacity;
         this.velocity = velocity;
         this.home = new Coordinates(home);
@@ -52,10 +55,9 @@ public abstract class Vehicle extends Being implements IMovable{
 
     ////////////////////////////
     //Dodaję pasażera do pojazdu, jeśli nie ma miejsca, nie robię tego
-    public void setPassenger(IMovable patient){
-        if(this.numPassengers<this.capacity){
-            this.passengers.add(patient);
-            this.numPassengers++;
+    public void addPassenger(IRecord passenger){
+        if(passengers.size()<this.capacity){
+            this.passengers.add(passenger);
         }
         else{
             return;
@@ -79,7 +81,7 @@ public abstract class Vehicle extends Being implements IMovable{
     public int getNumVeh(){
         return numVeh;
     }
-    public List<IMovable> getPassengers(){
+    public List<IRecord> getPassengers(){
         return passengers;
     }
 

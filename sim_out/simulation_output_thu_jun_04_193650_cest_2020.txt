@@ -1,0 +1,96 @@
+Simulation run at: 2020-06-04 at 19:36:50 CEST
+Simulation parameters:
+Map size:
+	width: 50, length: 50
+Initial number of people: 1200, including 0 doctors
+Number of ambulances: 5
+Virus characteristics:
+	Power: 6d6
+	Nominal time between beeing infected and infecting others: 1
+	Nominal time between being infected and being cured: 50
+	Infection rate: 50%
+	Percentage of active instances of virus: 50%
+Simulation length: 80 rounds
+Simulation output: All cured
+Detailed log:
+Alive: 1200, infected: 1
+Alive: 1200, infected: 4
+Alive: 1200, infected: 7
+Alive: 1200, infected: 11
+Alive: 1200, infected: 17
+Alive: 1200, infected: 24
+Alive: 1200, infected: 34
+Alive: 1200, infected: 45
+Alive: 1199, infected: 63
+Alive: 1199, infected: 78
+Alive: 1198, infected: 94
+Alive: 1196, infected: 110
+Alive: 1195, infected: 128
+Alive: 1194, infected: 148
+Alive: 1192, infected: 171
+Alive: 1190, infected: 189
+Alive: 1180, infected: 211
+Alive: 1173, infected: 232
+Alive: 1168, infected: 258
+Alive: 1157, infected: 276
+Alive: 1152, infected: 306
+Alive: 1147, infected: 335
+Alive: 1140, infected: 360
+Alive: 1126, infected: 381
+Alive: 1112, infected: 402
+Alive: 1102, infected: 412
+Alive: 1082, infected: 422
+Alive: 1059, infected: 414
+Alive: 1043, infected: 422
+Alive: 1023, infected: 429
+Alive: 1013, infected: 440
+Alive: 996, infected: 450
+Alive: 980, infected: 449
+Alive: 967, infected: 454
+Alive: 948, infected: 449
+Alive: 931, infected: 451
+Alive: 915, infected: 447
+Alive: 898, infected: 446
+Alive: 879, infected: 437
+Alive: 866, infected: 439
+Alive: 848, infected: 430
+Alive: 833, infected: 426
+Alive: 821, infected: 423
+Alive: 804, infected: 410
+Alive: 788, infected: 396
+Alive: 777, infected: 389
+Alive: 761, infected: 379
+Alive: 748, infected: 370
+Alive: 733, infected: 358
+Alive: 716, infected: 350
+Alive: 698, infected: 327
+Alive: 684, infected: 302
+Alive: 677, infected: 285
+Alive: 672, infected: 271
+Alive: 665, infected: 257
+Alive: 656, infected: 237
+Alive: 647, infected: 209
+Alive: 636, infected: 190
+Alive: 632, infected: 169
+Alive: 627, infected: 156
+Alive: 624, infected: 146
+Alive: 621, infected: 126
+Alive: 617, infected: 114
+Alive: 612, infected: 96
+Alive: 610, infected: 80
+Alive: 609, infected: 65
+Alive: 608, infected: 55
+Alive: 608, infected: 43
+Alive: 608, infected: 34
+Alive: 607, infected: 27
+Alive: 607, infected: 20
+Alive: 607, infected: 19
+Alive: 607, infected: 17
+Alive: 607, infected: 11
+Alive: 607, infected: 9
+Alive: 607, infected: 7
+Alive: 607, infected: 5
+Alive: 607, infected: 2
+Alive: 607, infected: 2
+Alive: 607, infected: 1
+Alive: 607, infected: 0

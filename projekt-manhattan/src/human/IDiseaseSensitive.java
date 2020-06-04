@@ -3,9 +3,8 @@ package human;
 import java.util.List;
 import virus.DiseaseRecord;
 
-public interface IDiseaseSensitive {
+public interface IDiseaseSensitive extends IRecoverable {
     public int performIllness();
-    public void recover();
 
     /////////////////////////////////
 

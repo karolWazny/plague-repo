@@ -1,131 +1,47 @@
 package app;
 
-import java.io.File;
-import java.util.concurrent.TimeUnit;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import gui.frames.MainFrame;
+
+import javax.swing.SwingUtilities;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class App {
+    private static MainFrame mainFrame;
     public static void main(String[] args) throws Exception {
-        //Tu trzeba własną ścieżkę dostępu do pliku dodać:
-        startup();
-        SimulationParameters parameters;
-        File plik = new File("Config.txt");
-        SimulationParameters parametry = new SimulationParameters();
-        parametry.ReadFromFile(plik);
-        Simulation sim2 = new Simulation(parametry);
-        System.out.print(sim2.doSimulation().toString());
-        menu();
-    }
+        
+        Settings settings = new Settings();
 
-    //////////////////////////
+        ExecutorService executor = Executors.newFixedThreadPool(2);
 
-    public static void startup() {
-        try {
-            System.out.print("Wake up, Neo...");
-        TimeUnit.SECONDS.sleep(3);
-        System.out.println("");
-        System.out.println("");
-        System.out.println("The Matrix has you...");
-        TimeUnit.SECONDS.sleep(3);
-        System.out.println();
-        System.out.println();
-        System.out.println("Follow the white rabbit...");
-        System.out.println("");
-        TimeUnit.SECONDS.sleep(3);
-        System.out.println("");
-        System.out.println("Knock, knock, Neo.");
-        TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            return;
-        }
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("Plague Simulation: Project Manhattan");
-        System.out.println("");
-        //tu chciałbym drukować wersję
-    }
-
-    ////////////////////////
-
-    public static void menu() throws IOException{
-        SimulationParameters parameters = new SimulationParameters();
-        SimulationLog log = new SimulationLog();
-        boolean running = true;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int position;
-        while (running) {
-            System.out.println("Menu:");
-            System.out.println("1. Run simulation");
-            System.out.println("2. Show current parameters");
-            System.out.println("3. Input parameters manually");
-            System.out.println("4. Input path for parameters file");
-            System.out.println("5. Show last simulation output");
-            System.out.println("6. Exit\n\nEnter a number");
-                try {
-                    position = Integer.parseInt(br.readLine());
-                    switch(position) {
-                        case 1: menuRun(parameters, log);
-                            break;
-                        case 2: menuShowParams(parameters);
-                            break;
-                        case 3:
-                            break;
-                        case 4:
-                            break;
-                        case 5:
-                            break;
-                        case 6: running = false;
-                            break;
-                        default: System.out.println("Invalid number!");
-                            break;
-                    }
-                } catch (NumberFormatException nfe) {
-                    System.out.println("Invalid number format!");
-                }
-        }
-    }
-
-    //////////////////////////////
-
-    public static void menuRun(SimulationParameters parameters, SimulationLog log) {
-        if(parameters == null){
-            System.out.println("No parameters found.\nInput parameters manually\nor via path to parameters.txt file");
-            return;
-        }
-        Simulation sim = new Simulation(parameters);
-        log = sim.doSimulation(); //tu cały cyrk z zapisem do pliku
+        executor.submit(new Program(settings, executor));
+        
     }
 
     ////////////////////////////////////
 
-    public static void menuShowParams(SimulationParameters parameters) {
-        if(parameters == null){
-            System.out.println("No parameters found.\nInput parameters manually\nor via path to parameters.txt file");
-            return;
+    public static class Program implements Runnable{
+
+        private Settings settings;
+        private ExecutorService executor;
+
+        public Program(Settings settings, ExecutorService executor){
+            this.settings = settings;
+            this.executor = executor;
         }
-        System.out.print(parameters.toString());
-    }
 
-    ///////////////////////////////////
-
-    public static void menuInManually(){
-
-    }
-
-    /////////////////////////////////////
-
-    public static void menuInFile(){
+        @Override
+        public void run(){
+            SwingUtilities.invokeLater(new Runnable(){
+                @Override
+                public void run(){
+                    mainFrame = new MainFrame(settings, executor);
+                }
+            });
+        }
 
     }
 
     ///////////////////////////////////////
-
-    public static void menuShowLast(){
-
-    }
 }

@@ -3,12 +3,18 @@ package app;
 import map.Map;
 import container.*;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import random.Dice;
 import human.Human;
 import human.Doctor;
 import virus.DiseaseRecord;
 import virus.Virus;
 import services.dispatching.Dispatching;
+
+import gui.frames.SimulationRuntimeWindow;
+
+import javax.swing.SwingUtilities;
 
 public class Simulation {
     private Map map;
@@ -17,11 +23,13 @@ public class Simulation {
     private int numPeople;
     private int numInfected;
     private SimulationParameters params;
+    SimulationLog log;
+    SimulationRuntimeWindow srw;
     private Dispatching dispatching;
 
     ////////////////////////
 
-    Simulation(SimulationParameters parameters) {
+    public Simulation(SimulationParameters parameters) throws IncorrectParametersException{
         params = parameters;
         numPeople = parameters.numPeople;
         numInfected = 1;
@@ -32,7 +40,9 @@ public class Simulation {
         List<Coordinates> list = map.emptyFieldsList();
         int listLength = list.size();
         if((parameters.numPeople + parameters.numDocs + parameters.numAmbulance + parameters.numHearse + 8)>listLength)
-            return;
+        {
+            throw new IncorrectParametersException();
+        }
         int roll;
         for(int i = 0; i<parameters.numPeople - parameters.numDocs; i++) {
             roll = Dice.custom(listLength) - 1;
@@ -53,12 +63,13 @@ public class Simulation {
             list.remove(roll);
             listLength--;
         }
+        return;
     }
 
 
     /////////////////
 
-    private void performRound() {
+    public void performRound() {
         int [] buffer;
         container.performMovementRound();
         numInfected += container.performInfectRound();
@@ -70,20 +81,51 @@ public class Simulation {
     }
 
     public SimulationLog doSimulation() {
-        SimulationLog log = new SimulationLog(params);
+        log = new SimulationLog(params);
+        Simulation sim = this;
+
+        SwingUtilities.invokeLater(new Runnable(){
+            @Override
+            public void run(){
+                srw = new SimulationRuntimeWindow(sim);
+            }
+        });
+        
         boolean whetherToContinue = true;
         while(whetherToContinue) {
+            try{
+                
+                TimeUnit.MILLISECONDS.sleep(250); //ustawienie zmiany szybkości
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             performRound();
             log.addRecord(numPeople, numInfected);
-            if(numPeople == 0) {
-                log.setOutput("All dead");
-                whetherToContinue = false;
+                if(numPeople == 0) {
+                    log.setOutput("All dead");
+                    whetherToContinue = false;
+                }
+
+                if(numInfected == 0) {
+                    log.setOutput("All cured");
+                    whetherToContinue = false;
+                }
+
+                SwingUtilities.invokeLater(new Runnable(){
+                    @Override
+                    public void run(){
+                        srw.nextRound(log.getLast().toString());
+                    }
+                });
+
             }
-            if(numInfected == 0) {
-                log.setOutput("All cured");
-                whetherToContinue = false;
+        SwingUtilities.invokeLater(new Runnable(){
+            @Override
+            public void run(){
+            srw.finish(log.toString());
             }
-        }
+        });
         return log;
     }
 
@@ -92,5 +134,11 @@ public class Simulation {
     }
 
     ////////////////
+    public Map getMap(){
+        return map;
+    }
 
+    public SimulationLog getLog(){
+        return log;
+    }
 }

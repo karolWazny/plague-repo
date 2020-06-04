@@ -2,6 +2,8 @@ package container;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Iterator;
+
 import map.Map;
 import map.IPrintable;
 import map.EmptySlot;
@@ -29,25 +31,27 @@ public class BeingContainer {
         Coordinates newVerHor = new Coordinates(0,0);
         for(IRecord obj:list)
         {
-            currentVerHor.setCoordinates(obj.getVerHor());
-            obj.move();
-            newVerHor.setCoordinates(obj.getVerHor());
-            obj.setVerHor(currentVerHor);
-            if(map.getLength() <= newVerHor.getVertical() || newVerHor.getVertical() < 0)
-            {
-                continue;
+            if(obj!=null){
+                currentVerHor.setCoordinates(obj.getVerHor());
+                obj.move();
+                newVerHor.setCoordinates(obj.getVerHor());
+                obj.setVerHor(currentVerHor);
+                if(map.getLength() <= newVerHor.getVertical() || newVerHor.getVertical() < 0)
+                {
+                    continue;
+                }
+                if(map.getWidth() <= newVerHor.getHorizontal() || newVerHor.getHorizontal() < 0)
+                {
+                    continue;
+                }
+                if(map.getField(newVerHor).getId()!="empty")
+                {
+                    continue;
+                }
+                obj.setVerHor(newVerHor);
+                map.emptyField(currentVerHor);
+                map.setField((IPrintable) obj.getBeing(), newVerHor);
             }
-            if(map.getWidth() <= newVerHor.getHorizontal() || newVerHor.getHorizontal() < 0)
-            {
-                continue;
-            }
-            if(map.getField(newVerHor).getId()!="empty")
-            {
-                continue;
-            }
-            obj.setVerHor(newVerHor);
-            map.emptyField(currentVerHor);
-            map.setField((IPrintable) obj.getBeing(), newVerHor);
         }
     }
 
@@ -62,11 +66,15 @@ public class BeingContainer {
     public int [] performDiseaseRound() {
         int killCure []= new int[]{0,0};
         int buffer[];
-        for(IRecord obj:list) {
+        IRecord obj;
+        Iterator<IRecord> iter = list.iterator();
+        while(iter.hasNext()) {
+            obj = iter.next();
             buffer = obj.progressIllness();
             if(buffer[0] == -1) {
                 killCure[0]++;
                 map.emptyField(obj.getVerHor());//żeby trupy się nie zbierały na mapie
+                iter.remove();
             } else if(buffer[0] == 1) {
                 killCure[1]++;
             }

@@ -3,6 +3,7 @@ package app;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Date;
+import java.util.Iterator;
 import java.text.SimpleDateFormat;
 
 public class SimulationLog {
@@ -38,19 +39,17 @@ public class SimulationLog {
 
     @Override
     public String toString(){
-        if(this.output == null) {
-            return "Simulation not finished yet";
-        }
         String output = new String();
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
         output += "Simulation run at: ";
         output += formatter.format(startTime) + '\n';
         output += parameters.toString()+'\n';
-        output += "Simulation length: "+(log.size()-1)+" rounds\n";
-        output += "Simulation output: " +this.output+'\n';
+        output += "Simulation length: "+(log.size()==0?'\n':""+(log.size()-1)+" rounds\n");
+        output += "Simulation output: " +(this.output==null?"Simulation not finished yet":this.output)+'\n';
         output+="Detailed log:\n";
-        for(SimulationState state:log) {
-            output += "Alive: "+state.getNumPeople()+", infected: "+state.getNumInfected()+'\n';
+        Iterator<SimulationState> iterator = log.iterator();
+        while(iterator.hasNext()) {
+            output += iterator.next().toString()+'\n';
         }
         return output;
     }
@@ -62,5 +61,19 @@ public class SimulationLog {
             return true;
         }
         return false;
+    }
+
+    ////////////////////////////////////
+
+    public SimulationState getLast(){
+        return log.get(log.size()-1);
+    }
+
+    public List<SimulationState> getList(){
+        return this.log;
+    }
+
+    public Date getStartTime(){
+        return startTime;
     }
 }

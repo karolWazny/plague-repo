@@ -1,0 +1,61 @@
+Simulation run at: 2020-06-04 at 18:49:47 CEST
+Simulation parameters:
+Map size:
+	width: 30, length: 50
+Initial number of people: 1200, including 0 doctors
+Number of ambulances: 0
+Virus characteristics:
+	Power: 6d10
+	Nominal time between beeing infected and infecting others: 1
+	Nominal time between being infected and being cured: 90
+	Infection rate: 80%
+	Percentage of active instances of virus: 100%
+Simulation length: 45 rounds
+Simulation output: All cured
+Detailed log:
+Alive: 1200, infected: 1
+Alive: 1200, infected: 5
+Alive: 1200, infected: 19
+Alive: 1199, infected: 40
+Alive: 1197, infected: 68
+Alive: 1187, infected: 90
+Alive: 1169, infected: 107
+Alive: 1143, infected: 107
+Alive: 1114, infected: 96
+Alive: 1075, infected: 81
+Alive: 1049, infected: 85
+Alive: 1028, infected: 98
+Alive: 1001, infected: 100
+Alive: 977, infected: 108
+Alive: 941, infected: 102
+Alive: 910, infected: 107
+Alive: 879, infected: 125
+Alive: 850, infected: 142
+Alive: 814, infected: 156
+Alive: 771, infected: 161
+Alive: 732, infected: 157
+Alive: 678, infected: 134
+Alive: 627, infected: 115
+Alive: 587, infected: 110
+Alive: 552, infected: 108
+Alive: 525, infected: 108
+Alive: 494, infected: 101
+Alive: 459, infected: 88
+Alive: 421, infected: 75
+Alive: 402, infected: 86
+Alive: 380, infected: 92
+Alive: 356, infected: 102
+Alive: 325, infected: 101
+Alive: 302, infected: 102
+Alive: 266, infected: 98
+Alive: 235, infected: 101
+Alive: 209, infected: 104
+Alive: 177, infected: 102
+Alive: 147, infected: 108
+Alive: 119, infected: 97
+Alive: 86, infected: 80
+Alive: 56, infected: 55
+Alive: 28, infected: 27
+Alive: 15, infected: 14
+Alive: 3, infected: 2
+Alive: 1, infected: 0

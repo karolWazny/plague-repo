@@ -29,6 +29,16 @@ public class Coordinates {
 
     ////////////////////////////
 
+    public boolean isNextTo(Coordinates coords){
+        if(this.horizontal-coords.horizontal>1||this.horizontal-coords.horizontal<-1){
+            return false;
+        }
+        if(this.vertical-coords.vertical>1||this.vertical-coords.vertical<-1){
+            return false;
+        }
+        return true;
+    }
+
     public void addVector(Coordinates vector){
         this.horizontal+=vector.getHorizontal();
         this.vertical+=vector.getVertical();
