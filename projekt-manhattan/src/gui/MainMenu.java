@@ -12,17 +12,18 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
-import java.util.Date;
 import java.util.concurrent.ExecutorService;
 
 public class MainMenu extends JPanel {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -3300511018266865394L;
     private JButton runButt;
     private JButton showParamButt;
     private JButton inputParamButt;

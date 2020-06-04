@@ -7,6 +7,10 @@ import java.awt.event.WindowListener;
 import java.awt.event.WindowEvent;
 
 public class SidekickFrame extends JFrame{
+    /**
+     *
+     */
+    private static final long serialVersionUID = 4962172870167576711L;
     private JPanel panel;
     private JFrame parentFrame;
 

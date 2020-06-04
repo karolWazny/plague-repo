@@ -16,6 +16,10 @@ import java.io.FileNotFoundException;
 import app.Settings;
 
 public class ChangeOutputPanel extends JPanel{
+    /**
+     *
+     */
+    private static final long serialVersionUID = -7668936027676131330L;
     private JButton confirmButt;
     private JButton defaultButt;
 

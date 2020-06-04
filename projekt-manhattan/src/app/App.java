@@ -5,7 +5,6 @@ import gui.MainFrame;
 import javax.swing.SwingUtilities;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.io.File;
 
 
 public class App {
@@ -18,12 +17,6 @@ public class App {
 
         executor.submit(new Program(settings, executor));
         
-        
-        // File plik = new File("Config.txt");
-        // SimulationParameters params = new SimulationParameters();
-        // params.ReadFromFile(plik);
-        // Simulation sim = new Simulation(params);
-        // sim.doSimulation();
     }
 
     ////////////////////////////////////

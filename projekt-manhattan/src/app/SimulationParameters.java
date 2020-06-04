@@ -61,7 +61,6 @@ public class SimulationParameters implements Serializable{
     }
 
     public void ReadFromFile(File plik) throws FileNotFoundException{
-        boolean exists = plik.exists();
 
             Scanner in = new Scanner(plik);
             int index1 = 0;

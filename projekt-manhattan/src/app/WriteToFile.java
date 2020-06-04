@@ -3,7 +3,6 @@ package app;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.File;
-import java.util.List;
 
 public class WriteToFile {
     private String FilePath;
@@ -24,8 +23,6 @@ public class WriteToFile {
     public void WriteTheData(SimulationLog LOG) throws FileNotFoundException{
         File file = new File(FilePath);
         PrintWriter out = new PrintWriter(file);
-        
-        List<SimulationState> list = LOG.getList();
         
         out.print(LOG.toString());
 

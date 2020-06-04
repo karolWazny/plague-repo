@@ -15,6 +15,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class InputPathPanel extends JPanel {
+    /**
+     *
+     */
+    private static final long serialVersionUID = -2602656210270465426L;
+
     private Settings settings;
 
     private JLabel lab1;

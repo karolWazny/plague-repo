@@ -9,8 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JFrame;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
@@ -18,6 +16,11 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class InputParamPanel extends JPanel {
+    /**
+     *
+     */
+    private static final long serialVersionUID = -5953054514721607983L;
+
     private final Settings settings;
 
     private final JTextField mapLengthTField;
@@ -35,8 +38,6 @@ public class InputParamPanel extends JPanel {
     public InputParamPanel(Settings settings) {
         super();
         this.settings = settings;
-
-        JPanel thisPanel = this;
 
         final JPanel bigPanel = new JPanel();
 

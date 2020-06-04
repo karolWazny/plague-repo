@@ -9,6 +9,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 public class LastFrame extends JFrame{
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1221589322728058910L;
     private JPanel panel;
     private JFrame parentFrame;
 

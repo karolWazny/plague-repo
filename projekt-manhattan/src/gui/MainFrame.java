@@ -8,6 +8,10 @@ import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 8708925714105432303L;
     private Settings settings;
     private ExecutorService executor;
 

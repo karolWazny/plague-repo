@@ -7,6 +7,10 @@ import javax.swing.JTextArea;
 
 public class ShowParamsPanel extends JPanel{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -2037304708202985244L;
     private Settings settings;
     private JTextArea textArea;
 
