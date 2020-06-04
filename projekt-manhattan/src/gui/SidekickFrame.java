@@ -70,4 +70,8 @@ public class SidekickFrame extends JFrame{
         setLocationRelativeTo(null);
         setResizable(false);
     }
+
+    public JPanel getPanel(){
+        return panel;
+    }
 }

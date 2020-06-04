@@ -95,7 +95,7 @@ public class Simulation {
         while(whetherToContinue) {
             try{
                 
-                TimeUnit.MILLISECONDS.sleep(33); //ustawienie zmiany szybkości
+                TimeUnit.MILLISECONDS.sleep(250); //ustawienie zmiany szybkości
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -116,7 +116,6 @@ public class Simulation {
                     @Override
                     public void run(){
                         srw.nextRound(log.getLast().toString());
-                        System.out.println("mesedż");
                     }
                 });
 

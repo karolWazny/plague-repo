@@ -2,13 +2,6 @@ package app;
 
 import gui.MainFrame;
 
-import java.util.concurrent.TimeUnit;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.File;
-
 import javax.swing.SwingUtilities;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

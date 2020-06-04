@@ -144,4 +144,92 @@ public class SimulationParameters implements Serializable{
         out += "%\n\tPercentage of active instances of virus: "+activeRate+"%";
         return out;
     }
+
+    public int getMapLength(){
+        return mapLength;
+    }
+
+    public int getMapWidth(){
+        return mapWidth;
+    }
+
+    public int getNumPeople(){
+        return numPeople;
+    }
+
+    public int getNumDocs(){
+        return numDocs;
+    }
+
+    public int getNumAmbulance(){
+        return numAmbulance;
+    }
+
+    public int getPower1(){
+        return power1;
+    }
+
+    public int getPower2(){
+        return power2;
+    }
+
+    public int getTimeTilInfect(){
+        return timeTilInfect;
+    }
+
+    public int getTimeTilCured(){
+        return timeTilCured;
+    }
+
+    public int getInfectionRate(){
+        return infectionRate;
+    }
+
+    public int getActiveRate(){
+        return activeRate;
+    }
+
+    public void setMapLength(int mapLength){
+        this.mapLength = mapLength;
+    }
+
+    public void setMapWidth(int mapWidth){
+        this.mapWidth = mapWidth;
+    }
+
+    public void setNumPeople(int numPeople){
+        this.numPeople = numPeople;
+    }
+
+    public void setNumDocs(int numDocs){
+        this.numDocs = numDocs;
+    }
+
+    public void setNumAmbulance(int numAmbulance){
+        this.numAmbulance = numAmbulance;
+    }
+
+    public void setPower1(int power1){
+        this.power1 = power1;
+    }
+
+    public void setPower2(int power2){
+        this.power2 = power2;
+    }
+
+    public void setTimeTilInfect(int timeTilInfect){
+        this.timeTilInfect = timeTilInfect;
+    }
+
+    public void setTimeTilCured(int timeTilCured){
+        this.timeTilCured = timeTilCured;
+    }
+
+    public void setInfectionRate(int infectionRate){
+        this.infectionRate = infectionRate;
+    }
+
+    public void setActiveRate(int activeRate){
+        this.activeRate = activeRate;
+    }
 }

@@ -56,7 +56,7 @@ public class Settings implements Serializable{
 
     //////////////////////////////////
 
-    private void serialize() throws IOException{
+    public void serialize() throws IOException{
         ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("Settings.bin"));
         outputStream.writeObject(this);
         outputStream.close();
@@ -76,5 +76,13 @@ public class Settings implements Serializable{
 
     public SimulationParameters getParameters(){
         return params;
+    }
+
+    public void setDefaultParameters(){
+        params = new SimulationParameters();
+    }
+
+    public void setParameters(SimulationParameters parameters){
+        params  = new SimulationParameters(parameters);
     }
 }

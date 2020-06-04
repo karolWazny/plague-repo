@@ -3,13 +3,11 @@ package gui;
 import app.IncorrectParametersException;
 import app.Settings;
 import app.Simulation;
-import app.IncorrectParametersException;
 
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 import java.awt.Color;
 import java.awt.GridLayout;
