@@ -23,6 +23,7 @@ public class PanelMap extends JPanel{
     private Map map;
     private BufferedImage maleIcon;
     private BufferedImage femaleIcon;
+    private BufferedImage infectedIcon;
     private int iconHeight = 16;
     private int iconWidth = 16;
 
@@ -35,8 +36,8 @@ public class PanelMap extends JPanel{
             maleIcon = ImageIO.read(icon);
             icon = new File("female.png");
             femaleIcon = ImageIO.read(icon);
-            iconWidth = maleIcon.getWidth()>femaleIcon.getWidth()?maleIcon.getWidth():femaleIcon.getWidth();
-            iconHeight = maleIcon.getHeight()>femaleIcon.getHeight()?maleIcon.getHeight():femaleIcon.getHeight();
+            icon = new File("infected.png");
+            infectedIcon = ImageIO.read(icon);
             setPreferredSize(new Dimension(map.getWidth()*iconWidth, iconHeight*map.getLength()));
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,7 +50,7 @@ public class PanelMap extends JPanel{
         Graphics2D g2d = (Graphics2D)g;
 
         char c = 'q';
-        BufferedImage img;
+        BufferedImage img = null;
 
         for(int i = 0; i < map.getWidth(); i++) {
             for(int j = 0; j < map.getLength(); j++) {
@@ -59,6 +60,8 @@ public class PanelMap extends JPanel{
                     case 'm':img = maleIcon;
                         break;
                     case 'k':img = femaleIcon;
+                        break;
+                    case 'r':img = infectedIcon;
                         break;
                     default:img = null;
                         break;
