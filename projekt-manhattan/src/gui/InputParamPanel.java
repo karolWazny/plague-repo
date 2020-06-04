@@ -35,7 +35,6 @@ public class InputParamPanel extends JPanel {
     public InputParamPanel(Settings settings) {
         super();
         this.settings = settings;
-        this.parentFrame = parentFrame;
 
         JPanel thisPanel = this;
 
