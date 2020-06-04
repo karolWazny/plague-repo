@@ -13,16 +13,12 @@ public class LastFrame extends JFrame{
      *
      */
     private static final long serialVersionUID = 1221589322728058910L;
-    private JPanel panel;
-    private JFrame parentFrame;
 
     public LastFrame(JPanel panel, String windowName, JFrame parentFrame){
         super(windowName);
 
-        this.parentFrame = parentFrame;
         parentFrame.setEnabled(false);
 
-        this.panel = panel;
         add(new JScrollPane(panel));
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

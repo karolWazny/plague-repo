@@ -12,12 +12,10 @@ public class SidekickFrame extends JFrame{
      */
     private static final long serialVersionUID = 4962172870167576711L;
     private JPanel panel;
-    private JFrame parentFrame;
 
     public SidekickFrame(JPanel panel, String windowName, JFrame parentFrame){
         super(windowName);
 
-        this.parentFrame = parentFrame;
         parentFrame.setEnabled(false);
 
         this.panel = panel;

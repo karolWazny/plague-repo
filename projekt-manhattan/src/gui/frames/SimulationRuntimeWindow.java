@@ -1,6 +1,7 @@
 package gui.frames;
 
 import app.Simulation;
+import gui.panels.PanelMap;
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
@@ -25,8 +26,6 @@ public class SimulationRuntimeWindow extends JFrame {
         simulationPanel = new PanelMap(sim.getMap());
         add(new JScrollPane(simulationPanel));
         outputConsole = new JTextArea(sim.getLog().toString());
-        // outputConsole.setBackground(Color.BLACK);
-        // outputConsole.setForeground(Color.GREEN);
         outputConsole.setEditable(false);
         scroller = new JScrollPane(outputConsole);
         add(scroller);

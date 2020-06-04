@@ -13,14 +13,9 @@ public class MainFrame extends JFrame{
      *
      */
     private static final long serialVersionUID = 8708925714105432303L;
-    private Settings settings;
-    private ExecutorService executor;
 
     public MainFrame(Settings settings, ExecutorService executor){
         super("Plague Simulation: Project Manhattan");
-
-        this.settings = settings;
-        this.executor = executor;
 
         add(new MainMenu(settings, this, executor));
 

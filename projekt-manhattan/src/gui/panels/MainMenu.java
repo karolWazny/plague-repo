@@ -33,23 +33,13 @@ public class MainMenu extends JPanel {
     private JButton showLastButt;
     private JButton inputOutPathButt;
 
-    private JFrame parentFrame;
-
-    private Settings settings;
-
-    private ExecutorService executor;
-
     JFrame frame;
 
     ///////////////////////
 
     public MainMenu(Settings settings, JFrame parentFrame, ExecutorService executor) {
         super();
-
-        this.settings = settings;
-        this.parentFrame = parentFrame;
-        this.executor = executor;
-
+        
         runButt = new JButton("Run simulation");
         runButt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
