@@ -72,4 +72,8 @@ public class SimulationLog {
     public List<SimulationState> getList(){
         return this.log;
     }
+
+    public Date getStartTime(){
+        return startTime;
+    }
 }

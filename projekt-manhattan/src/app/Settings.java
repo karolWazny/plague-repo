@@ -7,12 +7,14 @@ import java.io.ObjectInputStream;
 import java.io.FileInputStream;
 import java.io.ObjectOutputStream;
 import java.io.FileOutputStream;
+import java.io.File;
 
 public class Settings implements Serializable{
+  
     /**
      *
      */
-    private static final long serialVersionUID = -282658663089910836L;
+    private static final long serialVersionUID = -1525600418539269674L;
     SimulationParameters params;
     String outPath;
     String paramPath;
@@ -66,9 +68,9 @@ public class Settings implements Serializable{
     ///////////////////////////////
 
     void setDefaultAll(){
-        params = new SimulationParameters();
-        outPath = new String();
-        paramPath = new String();
+        setDefaultParameters();
+        setDefaultOutPath();
+        setDefaultParamPath();
         return;
     }
 
@@ -80,9 +82,76 @@ public class Settings implements Serializable{
 
     public void setDefaultParameters(){
         params = new SimulationParameters();
+        try {
+            serialize();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     public void setParameters(SimulationParameters parameters){
         params  = new SimulationParameters(parameters);
+        try {
+            serialize();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void setDefaultParamPath(){
+        paramPath = "Config.txt";
+        try {
+            serialize();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void setParamPath(String paramPath) throws FileNotFoundException {
+        this.paramPath = paramPath;
+        File file = new File(paramPath);
+        params.ReadFromFile(file);
+        try {
+            serialize();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void setDefaultOutPath(){
+        outPath = "sim_out\\";
+    }
+
+    public String getParamPath(){
+        return paramPath;
+    }
+
+    public String getOutPath(){
+        return outPath;
+    }
+
+    public void setOutPath(String outPath) throws FileNotFoundException {
+        this.outPath = outPath+"\\";
+        // WriteToFile skryba = new WriteToFile(outPath+"test.txt");
+        // skryba.WriteTheData(new SimulationLog());
+        File test = new File(outPath);
+        //test.delete();
+        if(!test.isDirectory()){
+            if(outPath.equals("sim_out\\")){
+                test.mkdir();
+            } else{
+                throw new FileNotFoundException();
+            }
+        }
+        try {
+            serialize();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }

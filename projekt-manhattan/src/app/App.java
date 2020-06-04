@@ -5,6 +5,7 @@ import gui.MainFrame;
 import javax.swing.SwingUtilities;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.io.File;
 
 
 public class App {
@@ -23,15 +24,6 @@ public class App {
         // params.ReadFromFile(plik);
         // Simulation sim = new Simulation(params);
         // sim.doSimulation();
-    }
-
-    public static void menuRun(SimulationParameters parameters, SimulationLog log) {
-        if(parameters == null){
-            System.out.println("No parameters found.\nInput parameters manually\nor via path to parameters.txt file");
-            return;
-        }
-        //Simulation sim = new Simulation(parameters);
-        //log = sim.doSimulation(); //tu cały cyrk z zapisem do pliku
     }
 
     ////////////////////////////////////
