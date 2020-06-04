@@ -1,7 +1,7 @@
 ﻿Piszę sobie cokolwiek
 
 START
-mapWidth=50
+mapWidth=30
 mapLength=50
 numPeople=1200
 numDocs=0

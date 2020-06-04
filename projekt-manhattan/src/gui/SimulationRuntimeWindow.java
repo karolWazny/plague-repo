@@ -31,7 +31,7 @@ public class SimulationRuntimeWindow extends JFrame {
         scroller = new JScrollPane(outputConsole);
         add(scroller);
         
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
 
         pack();

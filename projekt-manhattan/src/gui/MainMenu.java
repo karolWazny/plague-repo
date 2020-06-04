@@ -15,6 +15,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.ExecutorService;
 
 public class MainMenu extends JPanel{
 
@@ -29,28 +30,23 @@ public class MainMenu extends JPanel{
 
     private Settings settings;
 
-    private static SimulationRuntimeWindow srw;
+    private ExecutorService executor;
 
     JFrame frame;
     
     ///////////////////////
 
-    public MainMenu(Settings settings, JFrame parentFrame){
+    public MainMenu(Settings settings, JFrame parentFrame, ExecutorService executor){
         super();
 
         this.settings = settings;
         this.parentFrame = parentFrame;
+        this.executor = executor;
 
         runButt = new JButton("Run simulation");
         runButt.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                        try{
-                            Simulation sim = new Simulation(settings.getParameters());
-                            sim.doSimulation();
-                        } catch (IncorrectParametersException exception){
-                            JOptionPane.showMessageDialog(frame, "Unable to run simulation\nusing current parameters.\nPossible cause:\ntoo many people on"+
-                            "too small map\nor map too large to handle", "Incorrect parameters error", JOptionPane.ERROR_MESSAGE);
-                        }
+                        executor.submit(new SimulationDoer(settings));
             }
         });
         add(runButt);
@@ -62,7 +58,7 @@ public class MainMenu extends JPanel{
 
                     @Override
                     public void run(){
-                        frame = new SidekickFrame(new ShowParamsPanel(settings), "Current simulation parameters");
+                        frame = new SidekickFrame(new ShowParamsPanel(settings), "Current simulation parameters", parentFrame);
                     }
                 });
             }
@@ -75,7 +71,7 @@ public class MainMenu extends JPanel{
                 SwingUtilities.invokeLater(new Runnable(){
                     @Override
                     public void run(){
-                        
+                        frame = new SidekickFrame(new InputParamPanel(settings), "Input simulation parameters", parentFrame);
                     }
                 });
             }
@@ -107,5 +103,25 @@ public class MainMenu extends JPanel{
         add(inputOutPathButt);
 
         setLayout(new GridLayout(6,1,3,3));
+    }
+
+    static class SimulationDoer implements Runnable{
+        private Settings settings;
+        private Simulation simulation;
+
+        public SimulationDoer(Settings settings){
+            this.settings = settings;
+            try {
+                simulation = new Simulation(settings.getParameters());
+            } catch (IncorrectParametersException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void run(){
+            simulation.doSimulation();
+        }
     }
 }

@@ -90,7 +90,7 @@ public class Simulation {
                 srw = new SimulationRuntimeWindow(sim);
             }
         });
-
+        
         boolean whetherToContinue = true;
         while(whetherToContinue) {
             try{
@@ -115,7 +115,8 @@ public class Simulation {
                 SwingUtilities.invokeLater(new Runnable(){
                     @Override
                     public void run(){
-                        srw.nextRound(log.getLast().toString());;
+                        srw.nextRound(log.getLast().toString());
+                        System.out.println("mesedż");
                     }
                 });
 

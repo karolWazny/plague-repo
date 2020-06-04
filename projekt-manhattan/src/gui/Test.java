@@ -19,13 +19,22 @@ public class Test {
             SwingUtilities.invokeLater(new Runnable(){
                 @Override
                 public void run(){
-                    try{
-                        Simulation sim = new Simulation(new SimulationParameters());
-                        sim.doSimulation();
-                    } catch (IncorrectParametersException e){
-                        e.printStackTrace();
-                    }
+                    startSimulation();
                 }
             });
+    }
+
+    public static void startSimulation(){
+        new Thread(new Runnable(){
+            @Override
+            public void run(){
+                try{
+                    Simulation sim = new Simulation(new SimulationParameters());
+                    sim.doSimulation();
+                } catch (IncorrectParametersException e){
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }
