@@ -1,6 +1,7 @@
-package gui;
+package gui.frames;
 
 import app.Settings;
+import gui.panels.MainMenu;
 
 import java.util.concurrent.ExecutorService;
 

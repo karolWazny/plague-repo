@@ -1,31 +1,30 @@
-package gui;
+package gui.frames;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import java.awt.event.WindowListener;
 import java.awt.event.WindowEvent;
 
-import javax.swing.BoxLayout;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-
-public class LastFrame extends JFrame{
+public class SidekickFrame extends JFrame{
     /**
      *
      */
-    private static final long serialVersionUID = 1221589322728058910L;
+    private static final long serialVersionUID = 4962172870167576711L;
     private JPanel panel;
     private JFrame parentFrame;
 
-    public LastFrame(JPanel panel, String windowName, JFrame parentFrame){
+    public SidekickFrame(JPanel panel, String windowName, JFrame parentFrame){
         super(windowName);
 
         this.parentFrame = parentFrame;
         parentFrame.setEnabled(false);
 
         this.panel = panel;
-        add(new JScrollPane(panel));
+        add(panel);
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        pack();
 
         addWindowListener(new WindowListener(){
             @Override
@@ -70,12 +69,13 @@ public class LastFrame extends JFrame{
             }
             
         });
-        setSize(470, 500);
-        setLayout(new BoxLayout(getContentPane(), BoxLayout.LINE_AXIS));
         setVisible(true);
         setAlwaysOnTop(true);
         setLocationRelativeTo(null);
         setResizable(false);
     }
-    
+
+    public JPanel getPanel(){
+        return panel;
+    }
 }

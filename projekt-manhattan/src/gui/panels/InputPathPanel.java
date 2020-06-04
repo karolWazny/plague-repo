@@ -1,44 +1,42 @@
-package gui;
-
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.JOptionPane;
-
-import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import java.io.FileNotFoundException;
+package gui.panels;
 
 import app.Settings;
 
-public class ChangeOutputPanel extends JPanel{
+import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+public class InputPathPanel extends JPanel {
     /**
      *
      */
-    private static final long serialVersionUID = -7668936027676131330L;
-    private JButton confirmButt;
-    private JButton defaultButt;
-
-    private JLabel lab1;
-    private JLabel lab2;
-
-    private JTextField tField1;
-    private JTextField tField2;
+    private static final long serialVersionUID = -2602656210270465426L;
 
     private Settings settings;
 
-    public ChangeOutputPanel(Settings settings) {
+    private JLabel lab1;
+    private JLabel lab2;
+    private JTextField tField1;
+    private JTextField tField2;
+    private JButton defaultButt;
+    private JButton confirmButt;
+
+    public InputPathPanel(Settings settings) {
         super();
 
         this.settings = settings;
 
         JPanel panel1 = new JPanel();
 
-        lab1 = new JLabel("Current output directory: ");
+        lab1 = new JLabel("Current configuration file path: ");
         panel1.add(lab1);
         tField1 = new JTextField();
         tField1.setColumns(100);
@@ -49,7 +47,7 @@ public class ChangeOutputPanel extends JPanel{
         add(panel1);
 
         JPanel panel2 = new JPanel();
-        lab2 = new JLabel("New output directory: ");
+        lab2 = new JLabel("New configuration file path: ");
         panel2.add(lab2);
         tField2 = new JTextField();
         tField2.setColumns(100);
@@ -58,25 +56,25 @@ public class ChangeOutputPanel extends JPanel{
         add(panel2);
 
         JPanel panel3 = new JPanel();
-        defaultButt = new JButton("Set default directory");
+        defaultButt = new JButton("Set default path");
         defaultButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                settings.setDefaultOutPath();
+                settings.setDefaultParamPath();
                 refresh();
             }
         });
         panel3.add(defaultButt);
-        confirmButt = new JButton("Confirm new output directory");
+        confirmButt = new JButton("Confirm and load from file");
         confirmButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String newPath = tField2.getText();
-                String oldPath = settings.getOutPath();
+                String oldPath = settings.getParamPath();
                 try {
-                    settings.setOutPath(newPath);
+                    settings.setParamPath(newPath);
                 } catch (FileNotFoundException e1) {
-                    JOptionPane.showMessageDialog(getParent(), "Couldn't find directory!\nCheck output path,\ntry using '\\' instead of '/',\nfinish with '\\'.");
+                    JOptionPane.showMessageDialog(getParent(), "Couldn't find file!\nCheck input path,\ntry using '\\' instead of '/'.");
                     try {
                         settings.setParamPath(oldPath);
                     } catch (FileNotFoundException e2) {
@@ -96,7 +94,7 @@ public class ChangeOutputPanel extends JPanel{
     }
 
     public void refresh(){
-        tField1.setText(settings.getOutPath().replace("\\\\", "\\"));
-        tField2.setText(settings.getOutPath().replace("\\\\", "\\"));
+        tField1.setText(settings.getParamPath());
+        tField2.setText(settings.getParamPath());
     }
 }

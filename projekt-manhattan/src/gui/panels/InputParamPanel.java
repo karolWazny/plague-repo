@@ -1,4 +1,4 @@
-package gui;
+package gui.panels;
 
 import app.Settings;
 import app.SimulationParameters;

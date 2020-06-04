@@ -12,7 +12,7 @@ import virus.DiseaseRecord;
 import virus.Virus;
 import services.dispatching.Dispatching;
 
-import gui.SimulationRuntimeWindow;
+import gui.frames.SimulationRuntimeWindow;
 
 import javax.swing.SwingUtilities;
 

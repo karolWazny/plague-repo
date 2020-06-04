@@ -1,6 +1,6 @@
 package app;
 
-import gui.MainFrame;
+import gui.frames.MainFrame;
 
 import javax.swing.SwingUtilities;
 import java.util.concurrent.ExecutorService;

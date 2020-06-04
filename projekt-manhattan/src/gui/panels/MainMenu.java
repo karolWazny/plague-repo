@@ -1,10 +1,12 @@
-package gui;
+package gui.panels;
 
 import app.IncorrectParametersException;
 import app.Settings;
 import app.Simulation;
 import app.SimulationLog;
 import app.WriteToFile;
+import gui.frames.LastFrame;
+import gui.frames.SidekickFrame;
 
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;

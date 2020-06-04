@@ -1,4 +1,4 @@
-package gui;
+package gui.frames;
 
 import map.Map;
 import container.Coordinates;
