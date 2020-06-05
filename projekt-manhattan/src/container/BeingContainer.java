@@ -20,7 +20,7 @@ public class BeingContainer {
     public BeingContainer(Map map, Dispatching dispatching){
         list = new ArrayList<IRecord>();
         this.map = map;
-        this.dispatching = new Dispatching();
+        this.dispatching = dispatching;
     }
 
     ////////////////////////////
@@ -32,33 +32,38 @@ public class BeingContainer {
         for(IRecord obj:list)
         {
             if(obj!=null){
-                currentVerHor.setCoordinates(obj.getVerHor());
-                obj.move();
-                newVerHor.setCoordinates(obj.getVerHor());
-                obj.setVerHor(currentVerHor);
-                if(map.getLength() <= newVerHor.getVertical() || newVerHor.getVertical() < 0)
-                {
-                    continue;
+                if(obj.getVerHor() != null){
+                    currentVerHor.setCoordinates(obj.getVerHor());
+                    obj.move();
+                    newVerHor.setCoordinates(obj.getVerHor());
+                    obj.setVerHor(currentVerHor);
+                    if(map.getLength() <= newVerHor.getVertical() || newVerHor.getVertical() < 0)
+                    {
+                        continue;
+                    }
+                    if(map.getWidth() <= newVerHor.getHorizontal() || newVerHor.getHorizontal() < 0)
+                    {
+                        continue;
+                    }
+                    if(map.getField(newVerHor).getId()!="empty")
+                    {
+                        continue;
+                    }
+                    obj.setVerHor(newVerHor);
+                    map.emptyField(currentVerHor);
+                    map.setField((IPrintable) obj.getBeing(), newVerHor);
                 }
-                if(map.getWidth() <= newVerHor.getHorizontal() || newVerHor.getHorizontal() < 0)
-                {
-                    continue;
-                }
-                if(map.getField(newVerHor).getId()!="empty")
-                {
-                    continue;
-                }
-                obj.setVerHor(newVerHor);
-                map.emptyField(currentVerHor);
-                map.setField((IPrintable) obj.getBeing(), newVerHor);
             }
         }
+        dispatching.doTheJob();
     }
 
     public int performInfectRound() {
         int output = 0;
         for(IRecord obj:list) {
-            output += obj.infectNeighbours(map);
+            if(obj.getVerHor() != null){
+                output += obj.infectNeighbours(map);
+            }
         }
         return output;
     }
@@ -78,8 +83,8 @@ public class BeingContainer {
             } else if(buffer[0] == 1) {
                 killCure[1]++;
             }
-            if(buffer[1] == 1 && !(dispatching.getList().contains(obj))){
-                dispatching.addPatient(obj);
+            if(buffer[1] == 1 && !(dispatching.getBothLists().contains(obj))){
+                dispatching.addCaller(obj);
             }
         }
         return killCure;
@@ -92,9 +97,6 @@ public class BeingContainer {
     }
 
     public boolean addRecord(Being being, Coordinates coords) {
-        if(!(map.getField(coords) instanceof EmptySlot)) {
-            addRecord(being); //nie wiem, czy dobre rozwiązanie problemu
-        }
         list.add(new Record(being, coords));
         map.setField((IPrintable)being, coords);
         return true;

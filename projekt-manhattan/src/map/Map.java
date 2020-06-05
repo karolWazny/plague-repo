@@ -59,6 +59,9 @@ public class Map {
     ////////////////////////////
 
     public void setField(IPrintable obj, Coordinates coords){
+        if(coords == null){
+            return;
+        }
         if(coords.getVertical()>=this.length) {
             System.out.println("setField exception: coordinates out of range");
             return;

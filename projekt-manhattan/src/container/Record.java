@@ -3,6 +3,7 @@ package container;
 import virus.DiseaseRecord;
 import map.Being;
 import human.IDiseaseSensitive;
+import human.IRecoverable;
 import map.Map;
 
 
@@ -77,19 +78,23 @@ public class  Record implements IRecord {
 
     @Override
     public void performRecovery(){
-        if(!(being instanceof IDiseaseSensitive)) {
+        if(!(being instanceof IRecoverable)) {
             return;
         }
-        if(!((IDiseaseSensitive)being).getIsAlive()) {
-            return; //trupy nie zdrowieją
-        }
-        ((IDiseaseSensitive)being).recover();
+        // if(!((IDiseaseSensitive)being).getIsAlive()) {
+        //     return; //trupy nie zdrowieją
+        // }
+        ((IRecoverable)being).recover();
     }
 
     ////////////////////////////
 
     @Override
     public void setVerHor(Coordinates newVerHor){
+        if(newVerHor == null){
+            position = null;
+            return;
+        }
         position = new Coordinates(newVerHor);
     }
 

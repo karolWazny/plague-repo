@@ -32,6 +32,7 @@ public abstract class Vehicle extends Being implements IMovable{
         this.capacity = capacity;
         this.velocity = velocity;
         this.home = new Coordinates(home);
+        destination = new Coordinates(home);
         passengers = new ArrayList<>();
         numVeh++;
     }

@@ -10,8 +10,10 @@ import human.Human;
 import human.Doctor;
 import virus.DiseaseRecord;
 import virus.Virus;
+import services.buildings.Hospital;
 import services.dispatching.Dispatching;
-
+import services.vehicles.Ambulance;
+import services.vehicles.GPS1;
 import gui.frames.SimulationRuntimeWindow;
 
 import javax.swing.SwingUtilities;
@@ -34,16 +36,42 @@ public class Simulation {
         numPeople = parameters.numPeople;
         numInfected = 1;
         map = new Map(parameters.mapLength, parameters.mapWidth);
+
         dispatching = new Dispatching();
+
         container = new BeingContainer(map, dispatching);
         strain = new Virus(parameters.power1, parameters.power2, parameters.timeTilInfect, parameters.timeTilCured, parameters.infectionRate, parameters.activeRate);
         List<Coordinates> list = map.emptyFieldsList();
+        
         int listLength = list.size();
+
         if((parameters.numPeople + parameters.numDocs + parameters.numAmbulance + parameters.numHearse + 8)>listLength)
         {
             throw new IncorrectParametersException();
         }
-        int roll;
+
+        
+        int roll = Dice.custom(listLength)-1;
+
+        Hospital hospital = new Hospital(map);
+        Coordinates hospCoords = new Coordinates(list.get(roll));
+
+        list.remove(roll);
+
+        listLength-=1;
+
+        container.addRecord(hospital, hospCoords);
+
+        Ambulance ambulance;
+
+        for(int i = 0; i<parameters.numAmbulance; i++){
+            roll = Dice.custom(listLength) - 1;
+            ambulance = new Ambulance(hospCoords, new GPS1(map), hospital);
+            container.addRecord(ambulance, list.get(roll));
+            dispatching.addAmbulance(ambulance);
+            listLength--;
+        }
+
         for(int i = 0; i<parameters.numPeople - parameters.numDocs; i++) {
             roll = Dice.custom(listLength) - 1;
             if(i==0) {
@@ -95,7 +123,7 @@ public class Simulation {
         while(whetherToContinue) {
             try{
                 
-                TimeUnit.MILLISECONDS.sleep(250); //ustawienie zmiany szybkości
+                TimeUnit.MILLISECONDS.sleep(25); //ustawienie zmiany szybkości
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

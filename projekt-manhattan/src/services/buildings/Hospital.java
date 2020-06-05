@@ -1,28 +1,31 @@
 package services.buildings;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import human.Human;
+import human.IDiseaseSensitive;
+import human.IRecoverable;
+import container.Coordinates;
+import container.IMovable;
 import container.IRecord;
-import map.Being;
+import map.IPrintable;
+import map.Map;
 
 
 
-public class Hospital extends Building {
+public class Hospital extends Building implements IMovable, IRecoverable{
+
+    private Map map;
     private static int hospitalCounter = 0;
     private List<IRecord> list;
    
     ////////////////////////////
     //Konstruktor
-    public Hospital(){
+    public Hospital(Map map){
         super("Hospital", 'H', 100);
+        this.map = map;
         hospitalCounter++;
         list = new ArrayList<IRecord>();
-    }
-
-    public Hospital(String id, char representation, int capacity){
-        super(id, representation, capacity);
-        hospitalCounter++;
     }
 
     ////////////////////////////
@@ -37,17 +40,33 @@ public class Hospital extends Building {
         return list;
     }
     
-    public void recoverPatient(){
-        for(IRecord obj:list){
-           obj.performRecovery();
+    public void recover(){
+        for(int i = 0; i < 2; i++){
+            for(IRecord obj:list){
+                obj.performRecovery();
+            }
         }
     }
 
-    public void leaveHospital(){
-        for(IRecord obj:list){
-            Being buffer = obj.getBeing();
-            if(!(obj.getIsInfected()))
-            list.remove(obj);
+    @Override
+    public Coordinates move(Coordinates currentPosition){
+        Iterator<IRecord> iterator = list.iterator();
+        IDiseaseSensitive humanBuffer;
+        IRecord recordBuffer;
+        Coordinates coords;
+        while(iterator.hasNext()){
+            recordBuffer = iterator.next();
+            humanBuffer = (IDiseaseSensitive)recordBuffer.getBeing();
+            if(!humanBuffer.getIsAlive()){
+                iterator.remove();
+                continue;
+            } else if(!humanBuffer.getIsInfected()){
+                coords = map.emptyFieldsList().get(0);
+                recordBuffer.setVerHor(new Coordinates(coords));
+                map.setField((IPrintable)humanBuffer, coords);
+                iterator.remove();
+            }
         }
+        return currentPosition;
     }
 }   

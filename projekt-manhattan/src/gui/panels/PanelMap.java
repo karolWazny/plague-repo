@@ -24,6 +24,9 @@ public class PanelMap extends JPanel{
     private BufferedImage maleIcon;
     private BufferedImage femaleIcon;
     private BufferedImage infectedIcon;
+    private BufferedImage doctorIcon;
+    private BufferedImage hospitalIcon;
+    private BufferedImage ambulanceIcon;
     private int iconHeight = 16;
     private int iconWidth = 16;
 
@@ -38,6 +41,12 @@ public class PanelMap extends JPanel{
             femaleIcon = ImageIO.read(icon);
             icon = new File("infected.png");
             infectedIcon = ImageIO.read(icon);
+            icon = new File("doctor.png");
+            doctorIcon = ImageIO.read(icon);
+            icon = new File("hospital.png");
+            hospitalIcon = ImageIO.read(icon);
+            icon = new File("ambulance.png");
+            ambulanceIcon = ImageIO.read(icon);
             setPreferredSize(new Dimension(map.getWidth()*iconWidth, iconHeight*map.getLength()));
         } catch (IOException e) {
             e.printStackTrace();
@@ -63,11 +72,17 @@ public class PanelMap extends JPanel{
                         break;
                     case 'r':img = infectedIcon;
                         break;
+                    case 'd':img = doctorIcon;
+                        break;
+                    case 'H':img = hospitalIcon;
+                        break;
+                    case 'A':img = ambulanceIcon;
+                        break;
                     default:img = null;
                         break;
                 }
                 try {
-                    g2d.drawImage(img, j*iconWidth, i*iconHeight,this);
+                    g2d.drawImage(img, i*iconWidth, j*iconHeight, this);
                 } catch (NullPointerException e){
                     continue;
                 }

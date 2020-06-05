@@ -5,18 +5,21 @@ import java.util.Iterator;
 import container.Coordinates;
 import container.IRecord;
 import human.IRecoverable;
+import services.buildings.Hospital;
 import human.Human;
 
 public class Ambulance extends Vehicle implements IRecoverable {
     //Dodać jakieś pole
     private IRecord caller;
     private static int numAmb = 0;
-    public boolean isFree = true;    
+    public boolean isFree = true;
+    private Hospital hospital;
 
     ////////////////////////////
 
-    public Ambulance(Coordinates home, IGPS gps){
+    public Ambulance(Coordinates home, IGPS gps, Hospital hospital){
         super("Ambulance "+numAmb, 'A', 1, 20, home, gps);
+        this.hospital = hospital;
         numAmb++;
     }
 
@@ -36,13 +39,19 @@ public class Ambulance extends Vehicle implements IRecoverable {
     public Coordinates move(Coordinates currentPosition){
         Coordinates out = super.move(currentPosition);
         if(out.isNextTo(destination)){
-            super.addPassenger(caller);
-            super.getIGPS().getMap().emptyField(caller.getVerHor());//złamana zasada Demeter (znowu...)
-            caller.setVerHor(null);
-            caller = null;
-            super.destination = new Coordinates(home);
-            if(passengers.size()<super.getCapacity()){
-                isFree=true;
+            if(destination.equals(home)){
+                hospital.getList().addAll(passengers);
+                passengers.clear();
+                isFree = true;
+            } else{
+                super.addPassenger(caller);
+                super.getIGPS().getMap().emptyField(caller.getVerHor());//złamana zasada Demeter (znowu...)
+                caller.setVerHor(null);
+                caller = null;
+                super.destination = new Coordinates(home);
+                if(passengers.size()<super.getCapacity()){
+                    isFree=true;
+                }
             }
         }
         return out;
@@ -77,5 +86,9 @@ public class Ambulance extends Vehicle implements IRecoverable {
         this.caller = caller;
         destination = new Coordinates(caller.getVerHor());
         isFree = false;
+    }
+
+    public IRecord getCaller(){
+        return caller;
     }
 }
