@@ -3,14 +3,29 @@ package services.vehicles;
 import map.Map;
 import container.Coordinates;
 
+/**
+ * Klasa, która jest odpowiedzialna za nawigowanie karetkami
+ * Posiada informacje o mapie i jej aktualnym stanie
+ */
 public class GPS1 implements IGPS {
+    /** Pole, które jest obiektem klasy map - informacje o aktualnej sytuacji na mapie */
     private Map map;
-    ////////////////////
+
+    /**
+     * Metoda, konstruktor, która tworzy obiekt klasy GPS1
+     * @param map mapa, na której działa GPS
+     */
     public GPS1(Map map) {
         this.map = map;
     }
-    ////////////////////
-    //@Override
+
+    /**
+     * Metoda, która nawiguje obiektem
+     * @param position aktualna pozycja
+     * @param destination cel ruchu
+     * @param velocity szybkość 
+     * @return nowe koordynaty
+     */
     public Coordinates navigate(Coordinates position, Coordinates destination, int velocity) {
 
         Coordinates output = new Coordinates(position);
@@ -21,7 +36,7 @@ public class GPS1 implements IGPS {
 
         for (int i = 0; i < velocity; i++) {
 
-            if(verticalToGo != 0) { //jeżeli trzeba jechać w dół (ku wyższym wartościom)
+            if(verticalToGo != 0) { 
                 next.addVector(new Coordinates(Integer.signum(verticalToGo),0));
                 if(map.getField(next).getId() == "empty") {
                     verticalToGo -= Integer.signum(verticalToGo);
@@ -49,7 +64,10 @@ public class GPS1 implements IGPS {
         return output;
     }
 
-    //@Override
+    /**
+     * Metoda, getter, która zwraca obiekt mapy
+     * @return mapa
+     */
     public Map getMap(){
         return map;
     }
