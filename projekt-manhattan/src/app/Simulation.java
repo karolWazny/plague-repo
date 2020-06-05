@@ -113,7 +113,7 @@ public class Simulation {
         Simulation sim = this;
 
         SwingUtilities.invokeLater(new Runnable(){
-            @Override
+            //@Override
             public void run(){
                 srw = new SimulationRuntimeWindow(sim);
             }
@@ -141,7 +141,7 @@ public class Simulation {
                 }
 
                 SwingUtilities.invokeLater(new Runnable(){
-                    @Override
+                    //@Override
                     public void run(){
                         srw.nextRound(log.getLast().toString());
                     }
@@ -149,7 +149,7 @@ public class Simulation {
 
             }
         SwingUtilities.invokeLater(new Runnable(){
-            @Override
+            //@Override
             public void run(){
             srw.finish(log.toString());
             }

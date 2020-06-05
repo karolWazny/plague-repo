@@ -31,10 +31,10 @@ public class App {
             this.executor = executor;
         }
 
-        @Override
+        //@Override
         public void run(){
             SwingUtilities.invokeLater(new Runnable(){
-                @Override
+                //@Override
                 public void run(){
                     mainFrame = new MainFrame(settings, executor);
                 }

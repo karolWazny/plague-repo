@@ -39,7 +39,7 @@ public abstract class Vehicle extends Being implements IMovable{
 
     ////////////////////////////
 
-    @Override
+    //@Override
     public String toString(){
         return "Vehicle nr " + numVeh + " with capacity " + this.capacity + 
         " and velocity " + this.velocity;
@@ -48,7 +48,7 @@ public abstract class Vehicle extends Being implements IMovable{
     ////////////////////////////
 
     
-    @Override
+    //@Override
     public Coordinates move(Coordinates currentPosition){
         Coordinates newPosition = gps.navigate(currentPosition, destination, velocity);        
         return newPosition;

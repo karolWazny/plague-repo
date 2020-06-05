@@ -1,0 +1,106 @@
+Simulation run at: 2020-06-05 at 14:12:15 CEST
+Simulation parameters:
+Map size:
+	width: 50, length: 50
+Initial number of people: 1200, including 10 doctors
+Number of ambulances: 5
+Virus characteristics:
+	Power: 6d6
+	Nominal time between beeing infected and infecting others: 1
+	Nominal time between being infected and being cured: 50
+	Infection rate: 50%
+	Percentage of active instances of virus: 50%
+Simulation length: 90 rounds
+Simulation output: All cured
+Detailed log:
+Alive: 1200, infected: 1
+Alive: 1200, infected: 4
+Alive: 1200, infected: 8
+Alive: 1200, infected: 14
+Alive: 1200, infected: 21
+Alive: 1200, infected: 31
+Alive: 1200, infected: 41
+Alive: 1199, infected: 58
+Alive: 1199, infected: 69
+Alive: 1199, infected: 78
+Alive: 1198, infected: 97
+Alive: 1193, infected: 109
+Alive: 1192, infected: 119
+Alive: 1189, infected: 132
+Alive: 1187, infected: 152
+Alive: 1184, infected: 167
+Alive: 1178, infected: 180
+Alive: 1174, infected: 191
+Alive: 1168, infected: 204
+Alive: 1162, infected: 220
+Alive: 1154, infected: 232
+Alive: 1149, infected: 252
+Alive: 1140, infected: 259
+Alive: 1134, infected: 277
+Alive: 1126, infected: 292
+Alive: 1118, infected: 306
+Alive: 1112, infected: 326
+Alive: 1106, infected: 343
+Alive: 1097, infected: 358
+Alive: 1084, infected: 372
+Alive: 1072, infected: 387
+Alive: 1063, infected: 397
+Alive: 1046, infected: 390
+Alive: 1030, infected: 391
+Alive: 1011, infected: 387
+Alive: 999, infected: 382
+Alive: 982, infected: 379
+Alive: 969, infected: 375
+Alive: 951, infected: 367
+Alive: 935, infected: 363
+Alive: 919, infected: 363
+Alive: 905, infected: 365
+Alive: 890, infected: 377
+Alive: 877, infected: 367
+Alive: 870, infected: 374
+Alive: 860, infected: 377
+Alive: 852, infected: 392
+Alive: 841, infected: 387
+Alive: 826, infected: 378
+Alive: 815, infected: 366
+Alive: 803, infected: 353
+Alive: 789, infected: 343
+Alive: 775, infected: 335
+Alive: 762, infected: 320
+Alive: 743, infected: 312
+Alive: 738, infected: 318
+Alive: 726, infected: 306
+Alive: 714, infected: 296
+Alive: 705, infected: 287
+Alive: 697, infected: 276
+Alive: 688, infected: 254
+Alive: 680, infected: 239
+Alive: 669, infected: 220
+Alive: 657, infected: 194
+Alive: 649, infected: 174
+Alive: 643, infected: 155
+Alive: 636, infected: 140
+Alive: 630, infected: 120
+Alive: 623, infected: 102
+Alive: 619, infected: 88
+Alive: 618, infected: 76
+Alive: 617, infected: 63
+Alive: 616, infected: 54
+Alive: 615, infected: 45
+Alive: 615, infected: 37
+Alive: 615, infected: 30
+Alive: 614, infected: 20
+Alive: 614, infected: 13
+Alive: 613, infected: 9
+Alive: 612, infected: 4
+Alive: 612, infected: 3
+Alive: 612, infected: 2
+Alive: 612, infected: 2
+Alive: 612, infected: 1
+Alive: 612, infected: 1
+Alive: 612, infected: 1
+Alive: 612, infected: 1
+Alive: 612, infected: 1
+Alive: 612, infected: 1
+Alive: 612, infected: 1
+Alive: 612, infected: 0

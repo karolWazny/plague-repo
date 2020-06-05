@@ -37,7 +37,7 @@ public class SimulationLog {
         log.add(new SimulationState(alive, infected));
     }
 
-    @Override
+    //@Override
     public String toString(){
         String output = new String();
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");

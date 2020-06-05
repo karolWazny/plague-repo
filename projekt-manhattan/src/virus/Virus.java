@@ -51,7 +51,7 @@ public class Virus extends Disease {
         this.power1 = prototype.getPower1();
         this.power2 = prototype.getPower2();
     }
-    @Override
+    //@Override
     /**
      * Metoda, która symuluje rozwój choroby
      * @see IDiseaseSensitive
@@ -102,7 +102,7 @@ public class Virus extends Disease {
         return output;
     }
 
-    @Override
+    //@Override
     /**
      * Metoda, która symuluje zarażanie następnej instancji człowieka
      * @param human

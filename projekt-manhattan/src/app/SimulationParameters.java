@@ -129,7 +129,7 @@ public class SimulationParameters implements Serializable{
         
     }
 
-    @Override
+    //@Override
     public String toString() {
         String out = new String();
         out+="Simulation parameters:\nMap size:\n\twidth: "+mapWidth+", length: "+mapLength;

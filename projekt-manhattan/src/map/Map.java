@@ -47,7 +47,7 @@ public class Map {
         }
     }
 
-    @Override
+    //@Override
     /**
      * Metoda, która zwraca reprezentację tekstową instancji klasy mapa
      * @return ciąg znakowy z informacjami o instancji klasy

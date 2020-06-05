@@ -48,7 +48,7 @@ public class Hospital extends Building implements IMovable, IRecoverable{
         }
     }
 
-    @Override
+    //@Override
     public Coordinates move(Coordinates currentPosition){
         Iterator<IRecord> iterator = list.iterator();
         IDiseaseSensitive humanBuffer;

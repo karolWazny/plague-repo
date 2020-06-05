@@ -17,7 +17,7 @@ public class Hearse extends Vehicle{
 
     ////////////////////////////
 
-    @Override
+    //@Override
     public String toString(){
         return "Hearse nr " + numHear;
     }

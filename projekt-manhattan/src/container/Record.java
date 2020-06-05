@@ -37,7 +37,7 @@ public class  Record implements IRecord {
         this.position = new Coordinates(position);
     }
    
-    @Override
+    //@Override
     /**
      * Metoda, która na obiektach rekordu wykonuje ruch
      */
@@ -56,7 +56,7 @@ public class  Record implements IRecord {
         }
     }
 
-    @Override
+    //@Override
     /**
      * Metoda, która symuluje zarażanie sąsiadów na mapie, zwraca informację
      * Co wydarzyło się z sąsiednim obiektem
@@ -83,7 +83,7 @@ public class  Record implements IRecord {
         return newInfected;
     }
 
-    @Override
+    //@Override
     /**
      * Metoda, która jest odpowiedzialna za rozwój choroby dla elementów kontenera bytów
      * @return tablica z informacjami
@@ -106,7 +106,7 @@ public class  Record implements IRecord {
         return tab;
     }
 
-    @Override
+    //@Override
     /**
      * Metoda, która symuluje zdrowienie obiektu w kontenerze
      */
@@ -117,7 +117,7 @@ public class  Record implements IRecord {
         ((IRecoverable)being).recover();
     }
 
-    @Override
+    //@Override
     /**
      * Metoda, setter, która ustawia nową pozycję dla obiektu w kontenerze
      * @param newVerHor nowe koordynaty
@@ -131,7 +131,7 @@ public class  Record implements IRecord {
         position = new Coordinates(newVerHor);
     }
 
-    @Override
+    //@Override
     /**
      * Metoda, getter, która zwraca aktualne koordynaty
      * @return aktualne koordynaty
@@ -140,7 +140,7 @@ public class  Record implements IRecord {
         return position;
     }
 
-    @Override
+    //@Override
     /**
      * Metoda, getter, która zwraca byt w rekordzie
      * @return byt w rekordzie

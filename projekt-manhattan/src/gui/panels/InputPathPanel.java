@@ -58,7 +58,7 @@ public class InputPathPanel extends JPanel {
         JPanel panel3 = new JPanel();
         defaultButt = new JButton("Set default path");
         defaultButt.addActionListener(new ActionListener() {
-            @Override
+            //@Override
             public void actionPerformed(ActionEvent e) {
                 settings.setDefaultParamPath();
                 refresh();
@@ -67,7 +67,7 @@ public class InputPathPanel extends JPanel {
         panel3.add(defaultButt);
         confirmButt = new JButton("Confirm and load from file");
         confirmButt.addActionListener(new ActionListener() {
-            @Override
+            //@Override
             public void actionPerformed(ActionEvent e) {
                 String newPath = tField2.getText();
                 String oldPath = settings.getParamPath();

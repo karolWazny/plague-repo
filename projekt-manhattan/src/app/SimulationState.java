@@ -13,7 +13,7 @@ public class SimulationState {
 
     /////////////////////////
 
-    @Override
+    //@Override
     public String toString(){
         return "Alive: "+numPeople+", infected: "+numInfected;
     }

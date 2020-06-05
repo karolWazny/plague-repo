@@ -60,7 +60,7 @@ public class ChangeOutputPanel extends JPanel{
         JPanel panel3 = new JPanel();
         defaultButt = new JButton("Set default directory");
         defaultButt.addActionListener(new ActionListener() {
-            @Override
+            //@Override
             public void actionPerformed(ActionEvent e) {
                 settings.setDefaultOutPath();
                 refresh();
@@ -69,7 +69,7 @@ public class ChangeOutputPanel extends JPanel{
         panel3.add(defaultButt);
         confirmButt = new JButton("Confirm new output directory");
         confirmButt.addActionListener(new ActionListener() {
-            @Override
+            //@Override
             public void actionPerformed(ActionEvent e) {
                 String newPath = tField2.getText();
                 String oldPath = settings.getOutPath();

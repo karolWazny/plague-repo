@@ -45,7 +45,7 @@ public class Coordinates {
         this.horizontal = Coor.getHorizontal();
     }
 
-    @Override
+    //@Override
     /**
      * Metoda, która zwraca ciąg znaków opisujący obiekt typu koordynaty
      * @return ciąg znaków opisowych

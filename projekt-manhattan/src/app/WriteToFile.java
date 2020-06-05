@@ -15,7 +15,7 @@ public class WriteToFile {
         this.FilePath = "AfterSim.txt";
     }
 
-    @Override
+    //@Override
     public String toString(){
         return "This object writes data to: " + this.FilePath;
     }

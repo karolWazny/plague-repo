@@ -30,12 +30,12 @@ public class Ambulance extends Vehicle implements IRecoverable {
 
     ////////////////////////////
    
-    @Override
+    //@Override
     public String toString(){
         return "Ambulance nr " + numAmb;
     }
 
-    @Override
+    //@Override
     public Coordinates move(Coordinates currentPosition){
         Coordinates out = super.move(currentPosition);
         if(out.isNextTo(destination)){
@@ -57,7 +57,7 @@ public class Ambulance extends Vehicle implements IRecoverable {
         return out;
     }
 
-    @Override
+    //@Override
     public void recover(){
         Iterator <IRecord>iterator = passengers.iterator();
         Human patient;

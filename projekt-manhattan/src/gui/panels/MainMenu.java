@@ -53,7 +53,7 @@ public class MainMenu extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable() {
 
-                    @Override
+                    //@Override
                     public void run() {
                         frame = new SidekickFrame(new ShowParamsPanel(settings), "Current simulation parameters",
                                 parentFrame);
@@ -67,7 +67,7 @@ public class MainMenu extends JPanel {
         inputParamButt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable() {
-                    @Override
+                    //@Override
                     public void run() {
                         frame = new SidekickFrame(new InputParamPanel(settings), "Input simulation parameters",
                                 parentFrame);
@@ -81,7 +81,7 @@ public class MainMenu extends JPanel {
         inputParamPathButt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable() {
-                    @Override
+                    //@Override
                     public void run() {
                         frame = new SidekickFrame(new InputPathPanel(settings), "Change path to configuration file",
                                 parentFrame);
@@ -95,7 +95,7 @@ public class MainMenu extends JPanel {
         showLastButt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable(){
-                    @Override
+                    //@Override
                     public void run(){
                         frame = new LastFrame(new ShowLastPanel(settings), "Last run output", parentFrame);
                     }
@@ -108,7 +108,7 @@ public class MainMenu extends JPanel {
         inputOutPathButt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable(){
-                    @Override
+                    //@Override
                     public void run(){
                         frame = new SidekickFrame(new ChangeOutputPanel(settings), "Change output directory", parentFrame);
                     }
@@ -136,7 +136,7 @@ public class MainMenu extends JPanel {
             }
         }
 
-        @Override
+        //@Override
         public void run() {
             SimulationLog log = simulation.doSimulation();
             String date = log.getStartTime().toString().replace(" ", "_").replace(":", "").toLowerCase();

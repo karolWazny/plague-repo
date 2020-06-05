@@ -54,14 +54,14 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
 
     ////////////////////////////
 
-    @Override
+    //@Override
     public String toString(){
         return "Human " + humanCounter;
     }
 
     ////////////////////////////
 
-    @Override
+    //@Override
     public Coordinates move(Coordinates currentPosition) {
         Coordinates newPosition = new Coordinates(0,0);
         switch(Dice.d4())
@@ -79,7 +79,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
         return newPosition;
     }
 
-    @Override
+    //@Override
     public int performIllness() {
         int output = 0;
         boolean wasInfected = isInfected;
@@ -94,7 +94,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
         return output;
     }
 
-    @Override
+    //@Override
     public void recover() {
         healthPoints+=10-(age/10)+Dice.d6(2);
         if(healthPoints>100)
@@ -103,17 +103,17 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
 
     ////////////////////////////
    
-    @Override
+    //@Override
     public void setHealthPoints(int healthPoints) {
         this.healthPoints = healthPoints;
     }
    
-    @Override
+    //@Override
     public void setIsInfected(boolean isInfected) {
         this.isInfected = isInfected;
     }
 
-    @Override
+    //@Override
     public void setIsAlive(boolean isAlive) {
         this.isAlive = isAlive;
     }
@@ -124,17 +124,17 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
         return (sex==2)? "male":"female"; 
     }
 
-    @Override
+    //@Override
     public int getHealthPoints(){
         return healthPoints;
     }
 
-    @Override
+    //@Override
     public boolean getIsInfected(){
         return isInfected;
     }
 
-    @Override
+    //@Override
     public boolean getIsAlive(){
         return isAlive;
     }
@@ -143,12 +143,12 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
         return age;
     }
 
-    @Override
+    //@Override
     public List<DiseaseRecord> getDiseases(){
         return diseases;
     }
 
-    @Override
+    //@Override
     public char getRepresentation(){
         if(isInfected){
             return 'r';

@@ -10,7 +10,7 @@ public class GPS1 implements IGPS {
         this.map = map;
     }
     ////////////////////
-    @Override
+    //@Override
     public Coordinates navigate(Coordinates position, Coordinates destination, int velocity) {
 
         Coordinates output = new Coordinates(position);
@@ -49,7 +49,7 @@ public class GPS1 implements IGPS {
         return output;
     }
 
-    @Override
+    //@Override
     public Map getMap(){
         return map;
     }

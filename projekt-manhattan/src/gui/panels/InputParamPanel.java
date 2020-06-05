@@ -111,7 +111,7 @@ public class InputParamPanel extends JPanel {
 
         final JButton defaultButt = new JButton("Set default parameters");
         defaultButt.addActionListener(new ActionListener() {
-            @Override
+            //@Override
             public void actionPerformed(final ActionEvent event) {
                 settings.setDefaultParameters();
                 refresh();
@@ -127,7 +127,7 @@ public class InputParamPanel extends JPanel {
 
         final JButton confirmButt = new JButton("Confirm new parameters");
         confirmButt.addActionListener(new ActionListener() {
-            @Override
+            //@Override
             public void actionPerformed(final ActionEvent event) {
                 SimulationParameters params = new SimulationParameters(settings.getParameters());
                 int buffer = -1;
