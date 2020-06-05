@@ -137,7 +137,8 @@ public class Simulation {
     }
 
     /**
-     * Metoda, tworzy obiekt przechowujący wszystkie info o przebiegu symulacji 
+     * Metoda, przeprowadza symulację, wyświetla jej przebieg w okienku, tworzy obiekt SimulationLog,
+     * w którym zapisuje przebieg symulacji.
      * @return obiekt typu SimulationLog
      */
     public SimulationLog doSimulation() {
