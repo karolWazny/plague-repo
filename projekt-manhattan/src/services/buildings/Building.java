@@ -10,18 +10,19 @@ public abstract class Building extends Being{
     private static int blockCounter = 0;
     /** Pojemność budynku */
     private int capacity;
-
-    public Building(){
-        super("Block "+ blockCounter, 'B');
-        blockCounter++;
-    }
-    
+   
+    /**
+     * Metoda, konstruktor, która tworzy obiekty klasy building
+     * @param id ciąg znaków identyikujących
+     * @param representation reprezentacja znakowa
+     * @param capacity pojemność
+     */
     public Building(String id, char representation, int capacity){ //Hospital
         super(id, representation);
         this.capacity = capacity;
         blockCounter++;
     }
-
+    
     /**
      * Metoda, konstruktor domyślny, który tworzy obiekt tej klasy o domyślnych parametrach
      */
