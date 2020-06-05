@@ -12,6 +12,7 @@ public abstract class Building extends Being{
         super("Block "+ blockCounter, 'B');
         blockCounter++;
     }
+    
     public Building(String id, char representation, int capacity){ //Hospital
         super(id, representation);
         this.capacity = capacity;
