@@ -136,10 +136,7 @@ public class Settings implements Serializable{
 
     public void setOutPath(String outPath) throws FileNotFoundException {
         this.outPath = outPath+"\\";
-        // WriteToFile skryba = new WriteToFile(outPath+"test.txt");
-        // skryba.WriteTheData(new SimulationLog());
         File test = new File(outPath);
-        //test.delete();
         if(!test.isDirectory()){
             if(outPath.equals("sim_out\\")){
                 test.mkdir();
