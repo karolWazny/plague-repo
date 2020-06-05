@@ -31,8 +31,8 @@ public class App {
     }
 
     /**
-     * Klasa, która jest odpowiedzialna za otworzenie głównego okna i wysłanie tego
-     * do egzekutora wątków
+     * Klasa - zadanie w formie przyjmowanej przez egzekutora wątków,
+     * wyświetla okienko z głównym menu.
      */
     public static class Program implements Runnable{
         /** Pole przechowujące obiekt z ustawieniami */
