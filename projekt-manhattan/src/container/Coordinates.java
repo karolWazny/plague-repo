@@ -38,6 +38,9 @@ public class Coordinates {
      * @param Coor inna instancja klasy koordynaty
      */
     public Coordinates(Coordinates Coor){
+        if(Coor == null){
+            return;
+        }
         this.vertical = Coor.getVertical();
         this.horizontal = Coor.getHorizontal();
     }

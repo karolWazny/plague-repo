@@ -123,7 +123,7 @@ public class Simulation {
         while(whetherToContinue) {
             try{
                 
-                TimeUnit.MILLISECONDS.sleep(25); //ustawienie zmiany szybkości
+                TimeUnit.MILLISECONDS.sleep(250); //ustawienie zmiany szybkości
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
