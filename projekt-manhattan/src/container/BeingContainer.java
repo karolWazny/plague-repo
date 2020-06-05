@@ -6,7 +6,6 @@ import java.util.Iterator;
 
 import map.Map;
 import map.IPrintable;
-import map.EmptySlot;
 import map.Being;
 import random.Dice;
 import services.dispatching.Dispatching;
