@@ -7,32 +7,32 @@ import java.util.Iterator;
 import java.text.SimpleDateFormat;
 
 /**
- * Klasa, która zbiera informacje o przebiegu symulacji
- * W niej są przechowywane wszystkie "rundy", które wykonuje symulacja
+ * Klasa, która zbiera informacje o przebiegu symulacji.
+ * W niej są przechowywane wszystkie "rundy", które wykonuje symulacja.
  * @version 1.0
  * @see app.SimulationState
  * @see app.SimulationParameters
  */
 public class SimulationLog {
     /**
-     * Pole finalne, które przechowuje informację o dacie startu symulacji
+     * Pole finalne, które przechowuje informację o dacie startu symulacji.
      */
     public final Date startTime;
     /**
-     * Pole przechowujące obiekt parametrów symulacji
+     * Pole przechowujące obiekt parametrów symulacji.
      */
     private SimulationParameters parameters;
     /**
-     * Pole - lista przechowująca wszystkie stany symulacji
+     * Pole - lista przechowująca wszystkie stany symulacji.
      */
     private List<SimulationState> log;
     /**
-     * Pole przechowują informację czy All cured or all dead
+     * Pole przechowują informację czy All cured or all dead.
      */
     private String output;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekt klasy SimulationLog
+     * Metoda, konstruktor, która tworzy obiekt klasy SimulationLog.
      * @param parameters parametry, które przyjmuje symulacja
      */
     public SimulationLog (SimulationParameters parameters) {
@@ -42,7 +42,7 @@ public class SimulationLog {
     }
 
     /**
-     * Metoda, konstuktor domyślny, która ustawia wszystkie pola na null
+     * Metoda, konstuktor domyślny, która ustawia wszystkie pola na null.
      */
     public SimulationLog (){
         startTime = null;
@@ -52,7 +52,7 @@ public class SimulationLog {
     }
 
     /**
-     * Metoda, która dodaje do naszej listy stanów nowy stan z przebiegu symulacji
+     * Metoda, która dodaje do naszej listy stanów nowy stan z przebiegu symulacji.
      * @param state stan po przejściu rundy
      */
     public void addRecord(SimulationState state) {
@@ -60,8 +60,8 @@ public class SimulationLog {
     }
 
     /**
-     * Metoda, która również dodaje informację o stanie, ale bardziej w sposób bezpośredni
-     * nie przekazujemy obiektu SimulationState od razu
+     * Metoda, która również dodaje informację o stanie, ale bardziej w sposób bezpośredni,
+     * nie przekazujemy obiektu SimulationState od razu.
      * @param alive liczba żywych
      * @param infected liczba zainfekowanych
      */
@@ -70,7 +70,7 @@ public class SimulationLog {
     }
 
     /**
-     * Metoda, która zwraca ciąg znakowy opisujący cały obiekt typu SimulationState
+     * Metoda, która zwraca ciąg znakowy opisujący cały obiekt typu SimulationState.
      * A także przedstawia jego całą zawartość - przede wszystkim.
      * @return Ciąg znaków z opisem całej symulacji
      */
@@ -91,7 +91,7 @@ public class SimulationLog {
     }
 
     /**
-     * Metoda, setter, która ustawia pole output na all cured lub all dead
+     * Metoda, setter, która ustawia pole output na all cured lub all dead.
      * @param output Ciąg znaków z informacją
      * @return stan logiczny, czy zmieniono status
      */
@@ -104,7 +104,7 @@ public class SimulationLog {
     }
 
     /**
-     * Metoda, getter, która zwraca ostatni stan pojedynczej rundy symulacji
+     * Metoda, getter, która zwraca ostatni stan pojedynczej rundy symulacji.
      * @return obiekt SimulationState - ostatni z listy
      */
     public SimulationState getLast(){
@@ -112,7 +112,7 @@ public class SimulationLog {
     }
 
     /**
-     * Metoda, getter, która zwraca listę stanów symulacji
+     * Metoda, getter, która zwraca listę stanów symulacji.
      * @return lista stanów symulacji
      */
     public List<SimulationState> getList(){
@@ -120,7 +120,7 @@ public class SimulationLog {
     }
 
     /**
-     * Metoda, getter, która zwraca czas startu symulacji
+     * Metoda, getter, która zwraca czas startu symulacji.
      * @return czas początku symulacji
      */
     public Date getStartTime(){

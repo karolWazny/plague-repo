@@ -6,8 +6,8 @@ import java.io.FileNotFoundException;
 
 /**
  * Klasa, która jest odpowiedzialna za przechowywanie informacji 
- * dotyczących wstępnego uruchomienia symulacji
- * Ponadto posiada ona metodę wczytującą te dane z pliku
+ * dotyczących wstępnego uruchomienia symulacji.
+ * Ponadto posiada ona metodę wczytującą te dane z pliku.
  * @version 1.0
  */
 public class SimulationParameters implements Serializable{

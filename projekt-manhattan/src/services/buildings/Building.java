@@ -10,12 +10,12 @@ public abstract class Building extends Being{
     private static int blockCounter = 0;
     /** Pojemność budynku */
     private int capacity;
-    /**
-     * Metoda, konstruktor, która tworzy obiekty klasy Building
-     * @param id ciąg znaków identyfikują
-     * @param representation reprezentacja znakowa budynku
-     * @param capacity pojemność budynku
-     */
+
+    public Building(){
+        super("Block "+ blockCounter, 'B');
+        blockCounter++;
+    }
+    
     public Building(String id, char representation, int capacity){ //Hospital
         super(id, representation);
         this.capacity = capacity;
