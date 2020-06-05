@@ -1,10 +1,12 @@
 package app;
 
-import map.Map;
-import container.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import javax.swing.SwingUtilities;
 
+import gui.frames.SimulationRuntimeWindow;
+import map.Map;
+import container.*;
 import random.Dice;
 import human.Human;
 import human.Doctor;
@@ -14,23 +16,49 @@ import services.buildings.Hospital;
 import services.dispatching.Dispatching;
 import services.vehicles.Ambulance;
 import services.vehicles.GPS1;
-import gui.frames.SimulationRuntimeWindow;
 
-import javax.swing.SwingUtilities;
 
+/**
+ * Klasa główna całej symulacji - w tym miejscu spinane jest wszystko w jedną spójną całość
+ * W tym miejscu tworzone są obiekty wszystkich głównych klas
+ * @version 1.0
+ * @see map.Map;
+ * @see container.*;
+ * @see random.Dice;
+ * @see human.Human;
+ * @see human.Doctor;
+ * @see virus.DiseaseRecord;
+ * @see virus.Virus;
+ * @see services.buildings.Hospital;
+ * @see services.dispatching.Dispatching;
+ * @see services.vehicles.Ambulance;
+ * @see services.vehicles.GPS1;
+ */
 public class Simulation {
+    /** Pole, w którym znajduje się mapa */
     private Map map;
+    /** Pole dla kontenera bytów */
     private BeingContainer container;
+    /** Pole, w którym przechowywana jest postać wirusa */
     private Virus strain;
+    /** Pole, w którym zapisana jest liczb ludzi */
     private int numPeople;
+    /** Pole, w którym zapisana jest liczba zainfekowanych */
     private int numInfected;
+    /** Pole, w którym przechowywane są parametry początkowe symulacji */
     private SimulationParameters params;
+    /** Pole, w którym przechowywane są informacje o przebiegu całej symulacji */
     SimulationLog log;
+    /** Pole, w którym przechowujemy okno przebiegu symulacji */
     SimulationRuntimeWindow srw;
+    /** Pole, w którym jest obiekt zarządzający pojazdami */
     private Dispatching dispatching;
 
-    ////////////////////////
-
+    /**
+     * Metoda, konstruktor, który tworzy obiekt klasy symulacji
+     * @param parameters parametry wstępne symulacji
+     * @throws IncorrectParametersException Wyrzuca wyjątek jak są nieprawidłowe parametry
+     */
     public Simulation(SimulationParameters parameters) throws IncorrectParametersException{
         params = parameters;
         numPeople = parameters.numPeople;
@@ -94,9 +122,9 @@ public class Simulation {
         return;
     }
 
-
-    /////////////////
-
+    /**
+     * Metoda wykonująca rundę całej symulacji
+     */
     public void performRound() {
         int [] buffer;
         container.performMovementRound();
@@ -108,6 +136,10 @@ public class Simulation {
         container.performRecoveryRound();
     }
 
+    /**
+     * Metoda, tworzy obiekt przechowujący wszystkie info o przebiegu symulacji 
+     * @return obiekt typu SimulationLog
+     */
     public SimulationLog doSimulation() {
         log = new SimulationLog(params);
         Simulation sim = this;
@@ -157,15 +189,25 @@ public class Simulation {
         return log;
     }
 
+    /**
+     * Metoda, która wyświetla mapę w konsoli
+     */
     public void display() {
         map.displayMap();
     }
 
-    ////////////////
+    /**
+     * Metoda, getter, która zwraca obiekt typu mapa
+     * @return obiekt mapy
+     */
     public Map getMap(){
         return map;
     }
 
+    /**
+     * Metoda, getter, która zwraca obiekt z zapisem przebiegu
+     * @return obiekt z zapisem przebiegu
+     */
     public SimulationLog getLog(){
         return log;
     }
