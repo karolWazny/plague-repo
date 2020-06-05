@@ -11,7 +11,7 @@ import map.Being;
 /**
  * Klasa, która definiuje cechy ogólnie pojętych pojazdów
  * Posiada wszystkie niezbędne funkcjonalności do poruszania się po mapie i 
- * do przeworzenia obiektów
+ * do przewożenia obiektów
  * @version 1.0
  * @see container.IMovable
  * @see container.Coordinates
