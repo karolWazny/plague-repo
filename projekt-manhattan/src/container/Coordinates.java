@@ -16,6 +16,9 @@ public class Coordinates {
     }
 
     public Coordinates(Coordinates Coor){
+        if(Coor == null){
+            return;
+        }
         this.vertical = Coor.getVertical();
         this.horizontal = Coor.getHorizontal();
     }
