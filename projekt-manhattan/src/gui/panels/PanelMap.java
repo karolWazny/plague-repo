@@ -16,7 +16,7 @@ import javax.imageio.ImageIO;
 
 /**
  * Klasa, której obiekty odpowiedzialne są za wyświetlanie
- * aktualnej sytuacji na mapie
+ * aktualnej sytuacji na mapie.
  * @version 1.0
  * @see map.Map
  */
@@ -70,8 +70,7 @@ public class PanelMap extends JPanel{
     }
 
     /** 
-     * Metoda, która jest odpowiedzialna za przydzielanie obiektom
-     * z mapy odpowiednich ikon
+     * Metoda, która jest odpowiedzialna za wydruk mapy do okienka.
      */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

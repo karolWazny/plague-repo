@@ -39,7 +39,7 @@ public class MainMenu extends JPanel {
     private JButton runButt;
     /** Pole, które przechowuje przycisk do opcji pokazania parametrów */
     private JButton showParamButt;
-    /** Pole, które przechowuje przycisk do opcji wpisania parameetrów*/
+    /** Pole, które przechowuje przycisk do opcji wpisania parametrów*/
     private JButton inputParamButt;
     /** Pole, które przechowuje przycisk do ścieżki z plikiem parametrów wejściowych */
     private JButton inputParamPathButt;
@@ -47,7 +47,7 @@ public class MainMenu extends JPanel {
     private JButton showLastButt;
     /** Pole, które przechowuje przycisk do opcji zmiany ścieżki docelowego miejsca zapisu plików */
     private JButton inputOutPathButt;
-    /** Pole, które przehowuje ramkę */
+    /** Referencja do aktualnie otwartego okienka pobocznego. */
     JFrame frame;
 
     /**
@@ -134,10 +134,20 @@ public class MainMenu extends JPanel {
         setLayout(new GridLayout(6, 1, 3, 3));
     }
 
+    /**
+     * Klasa wewnętrzna - zadanie przeprowadzenia symulacji i zapisu wyniku;
+     * wysyłana do egzekutora wątków.
+     */
+
     class SimulationDoer implements Runnable {
         private Settings settings;
         private Simulation simulation;
 
+        /**
+         * 
+         * @param settings ustawienia programu
+         * Metoda - konstruktor; tworzy obiekt, który jest przyjmowany jako zadanie przez wątek.
+         */
         public SimulationDoer(Settings settings) {
             this.settings = settings;
             try {
@@ -150,6 +160,7 @@ public class MainMenu extends JPanel {
             }
         }
 
+        @Override
         public void run() {
             SimulationLog log = simulation.doSimulation();
             String date = log.getStartTime().toString().replace(" ", "_").replace(":", "").toLowerCase();

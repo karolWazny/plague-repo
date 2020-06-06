@@ -17,26 +17,28 @@ import javax.swing.JOptionPane;
 /**
  * Klasa, która jest odpowiedzialna za stworzenie obiektu będącego
  * panelem do pobrania aktualnej ścieżki dostępu lub do wpisania nowej ścieżki
- * z plikiem konfiguracyjnym
+ * z plikiem konfiguracyjnym.
  * @version 1.0
  * @see app.Settings
  */
 public class InputPathPanel extends JPanel {
-    /** Pole, które jest potrzebne do serializacji */ 
+    /** Pole, które jest potrzebne do serializacji. */ 
     private static final long serialVersionUID = -2602656210270465426L;
-    /** Pole, które przechowuje obiekt z ustawieniami */
+    /** Pole, które przechowuje obiekt z ustawieniami. */
     private Settings settings;
-    /** Pole, które przechowuje  */
+    /** Etykieta z napisem "Current configuration file path: "*/
     private JLabel lab1;
-    /** Pole, które przechowuje obiekt  */
+    /** Etykieta z napisem "New configuration file path: " */
     private JLabel lab2;
-    /** Pole, które przechowuje obiekt będący obszarem na wpisanie tekstu */
+    /** Obszar tekstowy wyświetlający aktualną ścieżkę do pliku konfiguracyjnego.*/
     private JTextField tField1;
-    /** Pole, które przechowuje obiekt będący obszarem na wpisanie tekstu */
+    /** Obszar tekstowy na wpisanie nowej ścieżki do pliku konfiguracyjnego.*/
     private JTextField tField2;
     /** Pole, które przechowuje obiekt - przycisk do ustawiania domyślnej ścieżki */
     private JButton defaultButt;
-    /** Pole, które przechowuje obiekt - przycisk do potwierdzenia i załadowania ścieżki */
+    /** Pole, które przechowuje obiekt - przycisk do potwierdzenia i załadowania parametrów
+     * z pliku z podanej ścieżki.
+    */
     private JButton confirmButt;
 
     /**
@@ -106,7 +108,7 @@ public class InputPathPanel extends JPanel {
     }
 
     /**
-     * Metoda, która pozwala odświeżyć widok
+     * Metoda, która odświeża widok zawartości obszarów tekstowych.
      */
     public void refresh(){
         tField1.setText(settings.getParamPath());

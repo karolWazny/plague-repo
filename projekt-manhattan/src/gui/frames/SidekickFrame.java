@@ -7,13 +7,14 @@ import java.awt.event.WindowListener;
 import java.awt.event.WindowEvent;
 
 /**
- * Klasa, która jest odpowiedzialna za 
+ * Klasa, która jest odpowiedzialna za poboczne okienka modalne, nie licząc okna podglądu symulacji i wyświetlania
+ * wyniku ostatniego przebiegu.
  * @version 1.0
  */
 public class SidekickFrame extends JFrame{
-    /** Pole potrzebne do serializacji */
+    /** Pole potrzebne do serializacji. */
     private static final long serialVersionUID = 4962172870167576711L;
-    /** Pole, które przechowuje obiekt panel */
+    /** Pole, które przechowuje panel z zawartością okienka.*/
     private JPanel panel;
 
     /**
@@ -70,7 +71,7 @@ public class SidekickFrame extends JFrame{
     }
 
     /**
-     * Metoda, getter, która pobiera panel z obiektu
+     * Metoda, getter, która pobiera panel z obiektu.
      * @return obiekt typu IPanel
      */
     public JPanel getPanel(){

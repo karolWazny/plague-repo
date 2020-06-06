@@ -16,8 +16,8 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 /**
- * Klasa, która jest wzorem do stworzenia obiektu odpowiedzialnego
- * za manualne wpisywanie parametrów symulacji
+ * Klasa, która jest wzorem do stworzenia obiektu - panelu do
+ * manualnego wpisywania parametrów symulacji.
  * @version 1.0
  * @see app.Settings
  * @see app.SimulationParameters

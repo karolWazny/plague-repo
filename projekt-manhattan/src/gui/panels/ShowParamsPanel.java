@@ -7,18 +7,18 @@ import javax.swing.JTextArea;
 
 /**
  * Klasa, która odpowiedzialna jest za pokazanie wyświetlenie
- * panelu z parametrami symulacji
+ * panelu z parametrami symulacji.
  * @version 1.0
  * @see app.Settings
  */
 public class ShowParamsPanel extends JPanel{
     /** Pole dla serializacji */
     private static final long serialVersionUID = -2037304708202985244L;
-    /** Pole - obiekt będący polem tekstowym w panelu */
+    /** Pole - obszar tekstowy, w którym wyświetlane są ustawienia.*/
     private JTextArea textArea;
 
     /**
-     * Metoda, konstruktor panelu z parametrami
+     * Metoda, konstruktor panelu z parametrami.
      * @param settings obiekt z ustawieniami
      */
     public ShowParamsPanel(Settings settings){

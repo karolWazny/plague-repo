@@ -17,7 +17,7 @@ import app.Settings;
 
 /**
  * Klasa, która jest odpowiedzialna za przygotowanie wzoru obiektu będącego
- * panelem do zmiany ścieżki dla plików wyjściowych z symulacji
+ * panelem do zmiany ścieżki dla plików wyjściowych z symulacji.
  * @version 1.0
  * @see app.Settings
  */
@@ -106,7 +106,7 @@ public class ChangeOutputPanel extends JPanel{
     }
 
     /**
-     * Metoda, która jest odpowiedzialna za odświeżanie informacji
+     * Metoda, która jest odpowiedzialna za odświeżanie pól tekstowych w panelu.
      */
     public void refresh(){
         tField1.setText(settings.getOutPath().replace("\\\\", "\\"));

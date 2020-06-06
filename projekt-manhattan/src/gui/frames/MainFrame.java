@@ -19,8 +19,8 @@ public class MainFrame extends JFrame{
     private static final long serialVersionUID = 8708925714105432303L;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekty klasy głównego okienka 
-     * W zależności od obiektów ustawień i zarządzania wątkami
+     * Metoda, konstruktor, która tworzy obiekty klasy głównego okienka.
+     * Przekazuje ustawienia i referencję do egzekutora wątków do panelu głównego menu.
      * @param settings ustawienia
      * @param executor zarządzanie wątkami
      */
