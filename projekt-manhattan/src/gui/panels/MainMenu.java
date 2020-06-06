@@ -20,23 +20,42 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.util.concurrent.ExecutorService;
 
+/**
+ * Klasa, której obiekty tworzą główne menu symulacji
+ * @version 1.0
+ * @see app.IncorrectParametersException
+ * @see app.Settings
+ * @see app.Simulation
+ * @see app.WriteToFile
+ * @see gui.frames.LastFrame
+ * @see gui.frames.SidekickFrame
+ */
 public class MainMenu extends JPanel {
-
     /**
-     *
+     * Pole, które potrzebne jest do serializacji
      */
     private static final long serialVersionUID = -3300511018266865394L;
+    /** Pole, które przechowuje przycisk do startu symulacji */
     private JButton runButt;
+    /** Pole, które przechowuje przycisk do opcji pokazania parametrów */
     private JButton showParamButt;
+    /** Pole, które przechowuje przycisk do opcji wpisania parameetrów*/
     private JButton inputParamButt;
+    /** Pole, które przechowuje przycisk do ścieżki z plikiem parametrów wejściowych */
     private JButton inputParamPathButt;
+    /** Pole, które przechowuje przycisk do pokazania ostatniego przebiegu */
     private JButton showLastButt;
+    /** Pole, które przechowuje przycisk do opcji zmiany ścieżki docelowego miejsca zapisu plików */
     private JButton inputOutPathButt;
-
+    /** Pole, które przehowuje ramkę */
     JFrame frame;
 
-    ///////////////////////
-
+    /**
+     * Metoda, konstruktor, która tworzy obiekt graficznego menu symulacji
+     * @param settings ustawienia
+     * @param parentFrame ramka 
+     * @param executor obiekt zarządzający wątkami
+     */
     public MainMenu(Settings settings, JFrame parentFrame, ExecutorService executor) {
         super();
         
@@ -53,7 +72,6 @@ public class MainMenu extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable() {
 
-                    //@Override
                     public void run() {
                         frame = new SidekickFrame(new ShowParamsPanel(settings), "Current simulation parameters",
                                 parentFrame);
@@ -67,7 +85,6 @@ public class MainMenu extends JPanel {
         inputParamButt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable() {
-                    //@Override
                     public void run() {
                         frame = new SidekickFrame(new InputParamPanel(settings), "Input simulation parameters",
                                 parentFrame);
@@ -81,7 +98,6 @@ public class MainMenu extends JPanel {
         inputParamPathButt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable() {
-                    //@Override
                     public void run() {
                         frame = new SidekickFrame(new InputPathPanel(settings), "Change path to configuration file",
                                 parentFrame);
@@ -95,7 +111,6 @@ public class MainMenu extends JPanel {
         showLastButt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable(){
-                    //@Override
                     public void run(){
                         frame = new LastFrame(new ShowLastPanel(settings), "Last run output", parentFrame);
                     }
@@ -108,7 +123,6 @@ public class MainMenu extends JPanel {
         inputOutPathButt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable(){
-                    //@Override
                     public void run(){
                         frame = new SidekickFrame(new ChangeOutputPanel(settings), "Change output directory", parentFrame);
                     }
@@ -136,7 +150,6 @@ public class MainMenu extends JPanel {
             }
         }
 
-        //@Override
         public void run() {
             SimulationLog log = simulation.doSimulation();
             String date = log.getStartTime().toString().replace(" ", "_").replace(":", "").toLowerCase();
@@ -144,14 +157,12 @@ public class MainMenu extends JPanel {
             try {
                 skryba.WriteTheData(log);
             } catch (FileNotFoundException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             skryba = new WriteToFile("last_output.txt");
             try {
                 skryba.WriteTheData(log);
             } catch (FileNotFoundException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

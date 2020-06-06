@@ -14,22 +14,38 @@ import java.io.IOException;
 import javax.swing.JPanel;
 import javax.imageio.ImageIO;
 
+/**
+ * Klasa, której obiekty odpowiedzialne są za wyświetlanie
+ * aktualnej sytuacji na mapie
+ * @version 1.0
+ * @see map.Map
+ */
 public class PanelMap extends JPanel{
-
-    /**
-     *
-     */
+    /** Pole potrzebne do serializacji */
     private static final long serialVersionUID = -4468016093122501126L;
+    /** Pole, które przechowuje aktualną mapę */
     private Map map;
+    /** Pole, które przechowuje ikonę mężczyzny */
     private BufferedImage maleIcon;
+    /** Pole, które przechowuje ikonę kobiety */
     private BufferedImage femaleIcon;
+    /** Pole, które przechowuje jednolitą ikonę obiektu zainfekowanego */
     private BufferedImage infectedIcon;
+    /** Pole, które przechowuje ikonę doktora */
     private BufferedImage doctorIcon;
+    /** Pole, które przechowuje ikonę szpitala */
     private BufferedImage hospitalIcon;
+    /** Pole, które przechowuje ikonę karetki */
     private BufferedImage ambulanceIcon;
+    /** Pole, które przechowuje wysokość ikony */
     private int iconHeight = 16;
+    /** Pole, które przechowuje szerokość ikony */
     private int iconWidth = 16;
 
+    /**
+     * Metoda, konstruktor, która tworzy obiekty tej klasy
+     * @param map używana mapa
+     */
     public PanelMap(Map map){
         super();
         this.map = map;
@@ -53,7 +69,10 @@ public class PanelMap extends JPanel{
         }
     }
 
-    //@Override
+    /** 
+     * Metoda, która jest odpowiedzialna za przydzielanie obiektom
+     * z mapy odpowiednich ikon
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D)g;

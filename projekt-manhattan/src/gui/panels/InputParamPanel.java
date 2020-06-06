@@ -15,26 +15,46 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 
+/**
+ * Klasa, która jest wzorem do stworzenia obiektu odpowiedzialnego
+ * za manualne wpisywanie parametrów symulacji
+ * @version 1.0
+ * @see app.Settings
+ * @see app.SimulationParameters
+ */
 public class InputParamPanel extends JPanel {
-    /**
-     *
-     */
+    /** Pole, które jest potrzebne do serializacji */
     private static final long serialVersionUID = -5953054514721607983L;
-
+    /** Pole, które przechowuje obiekt z ustawieniami */
     private final Settings settings;
-
+    /** Pole, które przechowuje obiekt z obszarem do wpisania długości mapy */
     private final JTextField mapLengthTField;
+    /** Pole, które przechowuje obiekt z obszarem do wpisania szerokości mapy */
     private final JTextField mapWidthTField;
+    /** Pole, które przechowuje obiekt z obszarem do wpisania liczby ludzi */
     private final JTextField numPeopleTField;
+    /** Pole, które przechowuje obiekt z obszarem do wpisania liczby lekarzy */
     private final JTextField numDocsTField;
+    /** Pole, które przechowuje obiekt z obszarem do wpisania liczby karetek */
     private final JTextField ambulanceNumTField;
+    /** Pole, które przechowuje obiekt z obszarem do wpisania liczby kości dla wirusa */
     private final JTextField pow1TField;
+    /** Pole, które przechowuje obiekt z obszarem do wpisania liczby ścian kości wirusa */
     private final JTextField pow2TField;
+    /** Pole, które przechowuje obiekt z obszarem do wpisania czasu potrzebnego do zarażenia */
     private final JTextField timeTilInfectTField;
+    /** Pole, które przechowuje obiekt z obszarem do wpisania czasu do wyzdrowienia */
     private final JTextField timeTilCuredTField;
+    /** Pole, które przechowuje obiekt z obszarem do wpisania wskaźnika infekcji */
     private final JTextField infectionRateTField;
+    /** Pole, które przechowuje obiekt z obszarem do wpisania szansy na wyzdrowienie */
     private final JTextField activeRateTField;
 
+    /**
+     * Metoda, konstruktor, która jest odpowiedzialna za stworzenie obiektu 
+     * tej klasy w zależności od ustawień
+     * @param settings obiekt z ustawieniami
+     */
     public InputParamPanel(Settings settings) {
         super();
         this.settings = settings;
@@ -111,7 +131,6 @@ public class InputParamPanel extends JPanel {
 
         final JButton defaultButt = new JButton("Set default parameters");
         defaultButt.addActionListener(new ActionListener() {
-            //@Override
             public void actionPerformed(final ActionEvent event) {
                 settings.setDefaultParameters();
                 refresh();
@@ -119,7 +138,6 @@ public class InputParamPanel extends JPanel {
                 try {
                     settings.serialize();
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }
@@ -127,7 +145,6 @@ public class InputParamPanel extends JPanel {
 
         final JButton confirmButt = new JButton("Confirm new parameters");
         confirmButt.addActionListener(new ActionListener() {
-            //@Override
             public void actionPerformed(final ActionEvent event) {
                 SimulationParameters params = new SimulationParameters(settings.getParameters());
                 int buffer = -1;
@@ -296,6 +313,9 @@ public class InputParamPanel extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
     }
 
+    /**
+     * Metoda, która odpowiedzialna jest za odświeżenie widoku w panelu
+     */
     public void refresh(){
         mapLengthTField.setText("" + settings.getParameters().getMapLength());
         mapWidthTField.setText("" + settings.getParameters().getMapWidth());

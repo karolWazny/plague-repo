@@ -14,21 +14,36 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+/**
+ * Klasa, która jest odpowiedzialna za stworzenie obiektu będącego
+ * panelem do pobrania aktualnej ścieżki dostępu lub do wpisania nowej ścieżki
+ * z plikiem konfiguracyjnym
+ * @version 1.0
+ * @see app.Settings
+ */
 public class InputPathPanel extends JPanel {
-    /**
-     *
-     */
+    /** Pole, które jest potrzebne do serializacji */ 
     private static final long serialVersionUID = -2602656210270465426L;
-
+    /** Pole, które przechowuje obiekt z ustawieniami */
     private Settings settings;
-
+    /** Pole, które przechowuje  */
     private JLabel lab1;
+    /** Pole, które przechowuje obiekt  */
     private JLabel lab2;
+    /** Pole, które przechowuje obiekt będący obszarem na wpisanie tekstu */
     private JTextField tField1;
+    /** Pole, które przechowuje obiekt będący obszarem na wpisanie tekstu */
     private JTextField tField2;
+    /** Pole, które przechowuje obiekt - przycisk do ustawiania domyślnej ścieżki */
     private JButton defaultButt;
+    /** Pole, które przechowuje obiekt - przycisk do potwierdzenia i załadowania ścieżki */
     private JButton confirmButt;
 
+    /**
+     * Metoda, konstruktor, która tworzy obiekt będący panelem do pokazywania
+     * aktualnej ścieżki z plikiem konfiguracyjnym i do wpisywania nowej
+     * @param settings obiekt z ustawieniami
+     */
     public InputPathPanel(Settings settings) {
         super();
 
@@ -58,7 +73,6 @@ public class InputPathPanel extends JPanel {
         JPanel panel3 = new JPanel();
         defaultButt = new JButton("Set default path");
         defaultButt.addActionListener(new ActionListener() {
-            //@Override
             public void actionPerformed(ActionEvent e) {
                 settings.setDefaultParamPath();
                 refresh();
@@ -67,7 +81,6 @@ public class InputPathPanel extends JPanel {
         panel3.add(defaultButt);
         confirmButt = new JButton("Confirm and load from file");
         confirmButt.addActionListener(new ActionListener() {
-            //@Override
             public void actionPerformed(ActionEvent e) {
                 String newPath = tField2.getText();
                 String oldPath = settings.getParamPath();
@@ -78,7 +91,6 @@ public class InputPathPanel extends JPanel {
                     try {
                         settings.setParamPath(oldPath);
                     } catch (FileNotFoundException e2) {
-                        // TODO Auto-generated catch block
                         e2.printStackTrace();
                     }
                 }
@@ -93,6 +105,9 @@ public class InputPathPanel extends JPanel {
         refresh();
     }
 
+    /**
+     * Metoda, która pozwala odświeżyć widok
+     */
     public void refresh(){
         tField1.setText(settings.getParamPath());
         tField2.setText(settings.getParamPath());

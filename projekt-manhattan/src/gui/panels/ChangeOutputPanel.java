@@ -15,22 +15,35 @@ import java.io.FileNotFoundException;
 
 import app.Settings;
 
+/**
+ * Klasa, która jest odpowiedzialna za przygotowanie wzoru obiektu będącego
+ * panelem do zmiany ścieżki dla plików wyjściowych z symulacji
+ * @version 1.0
+ * @see app.Settings
+ */
 public class ChangeOutputPanel extends JPanel{
-    /**
-     *
-     */
+    /** Pole potrzebne do serializacji */
     private static final long serialVersionUID = -7668936027676131330L;
+    /** Pole, które przechowuje przycisk do potwierdzenia zmian */
     private JButton confirmButt;
+    /** Pole, które przechowuje przycisk do ustawienia domyślnej ścieżki */
     private JButton defaultButt;
-
+    /** Pole, które przechowuje napis nad obszarem do wyświetlania tekstu */
     private JLabel lab1;
+    /** Pole, które przechowuje napis nad obszarem do wpisywania tekstu */
     private JLabel lab2;
-
+    /** Pole, które przechowuje obiekt odpowiedzialny za wpisywanie tekstu ścieżki */
     private JTextField tField1;
+    /** Pole, które przechowuje obiekt odpowiedzialny za wyświetlanie tekstu ścieżki */
     private JTextField tField2;
-
+    /** Pole, które przechowuje obiekt z ustawieniami */
     private Settings settings;
 
+    /**
+     * Metoda, konstruktor, która tworzy obiekt tej klasy w zależności
+     * od obiektu ustawień symulacji
+     * @param settings obiekt z ustawieniami
+     */
     public ChangeOutputPanel(Settings settings) {
         super();
 
@@ -60,7 +73,6 @@ public class ChangeOutputPanel extends JPanel{
         JPanel panel3 = new JPanel();
         defaultButt = new JButton("Set default directory");
         defaultButt.addActionListener(new ActionListener() {
-            //@Override
             public void actionPerformed(ActionEvent e) {
                 settings.setDefaultOutPath();
                 refresh();
@@ -69,7 +81,6 @@ public class ChangeOutputPanel extends JPanel{
         panel3.add(defaultButt);
         confirmButt = new JButton("Confirm new output directory");
         confirmButt.addActionListener(new ActionListener() {
-            //@Override
             public void actionPerformed(ActionEvent e) {
                 String newPath = tField2.getText();
                 String oldPath = settings.getOutPath();
@@ -80,7 +91,6 @@ public class ChangeOutputPanel extends JPanel{
                     try {
                         settings.setParamPath(oldPath);
                     } catch (FileNotFoundException e2) {
-                        // TODO Auto-generated catch block
                         e2.printStackTrace();
                     }
                 }
@@ -95,6 +105,9 @@ public class ChangeOutputPanel extends JPanel{
         refresh();
     }
 
+    /**
+     * Metoda, która jest odpowiedzialna za odświeżanie informacji
+     */
     public void refresh(){
         tField1.setText(settings.getOutPath().replace("\\\\", "\\"));
         tField2.setText(settings.getOutPath().replace("\\\\", "\\"));
