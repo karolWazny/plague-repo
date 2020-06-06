@@ -297,7 +297,6 @@ public class InputParamPanel extends JPanel {
                 try {
                     settings.serialize();
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }
