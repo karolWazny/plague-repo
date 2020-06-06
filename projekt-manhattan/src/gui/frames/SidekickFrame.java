@@ -6,13 +6,22 @@ import javax.swing.JPanel;
 import java.awt.event.WindowListener;
 import java.awt.event.WindowEvent;
 
+/**
+ * Klasa, która jest odpowiedzialna za 
+ * @version 1.0
+ */
 public class SidekickFrame extends JFrame{
-    /**
-     *
-     */
+    /** Pole potrzebne do serializacji */
     private static final long serialVersionUID = 4962172870167576711L;
+    /** Pole, które przechowuje obiekt panel */
     private JPanel panel;
 
+    /**
+     * Metoda, konstruktor, która tworzy obiekt klasy SidekickFrame 
+     * @param panel panel 
+     * @param windowName nazwa okienka
+     * @param parentFrame nazwa rodzica
+     */
     public SidekickFrame(JPanel panel, String windowName, JFrame parentFrame){
         super(windowName);
 
@@ -25,44 +34,31 @@ public class SidekickFrame extends JFrame{
         pack();
 
         addWindowListener(new WindowListener(){
-            //@Override
             public void windowClosing(WindowEvent we){
                 parentFrame.setEnabled(true);
             }
 
-            //@Override
             public void windowOpened(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
 
-            //@Override
             public void windowClosed(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
 
-            //@Override
             public void windowIconified(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
 
-            //@Override
             public void windowDeiconified(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
 
-            //@Override
             public void windowActivated(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
 
-            //@Override
             public void windowDeactivated(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
             
@@ -73,6 +69,10 @@ public class SidekickFrame extends JFrame{
         setResizable(false);
     }
 
+    /**
+     * Metoda, getter, która pobiera panel z obiektu
+     * @return obiekt typu IPanel
+     */
     public JPanel getPanel(){
         return panel;
     }

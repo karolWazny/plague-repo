@@ -8,12 +8,20 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+/**
+ * Klasa, która jest wzorem do stworzenia obiektu
+ * @version 1.0
+ */
 public class LastFrame extends JFrame{
-    /**
-     *
-     */
+    /** Pole potrzebne do serializacji */
     private static final long serialVersionUID = 1221589322728058910L;
 
+    /**
+     * Metoda, konstruktor, która tworzy obiekt klasy LastFrame
+     * @param panel panel
+     * @param windowName nazwa okna
+     * @param parentFrame okienko rodzica
+     */
     public LastFrame(JPanel panel, String windowName, JFrame parentFrame){
         super(windowName);
 
@@ -24,44 +32,31 @@ public class LastFrame extends JFrame{
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         addWindowListener(new WindowListener(){
-            //@Override
             public void windowClosing(WindowEvent we){
                 parentFrame.setEnabled(true);
             }
 
-            //@Override
             public void windowOpened(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
 
-            //@Override
             public void windowClosed(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
 
-            //@Override
             public void windowIconified(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
 
-            //@Override
             public void windowDeiconified(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
 
-            //@Override
             public void windowActivated(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
 
-            //@Override
             public void windowDeactivated(WindowEvent e) {
-                // TODO Auto-generated method stub
 
             }
             

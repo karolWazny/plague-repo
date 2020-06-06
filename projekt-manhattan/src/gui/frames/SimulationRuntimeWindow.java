@@ -9,15 +9,27 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 
+/**
+ * Klasa, która jest typem obiektu będącego okienkiem w trakcie trwania
+ * symulacji
+ * @version 1.0
+ * @see app.Simulation
+ * @see gui.panels.PanelMap
+ */
 public class SimulationRuntimeWindow extends JFrame {
-    /**
-     *
-     */
+    /** Pole potrzebne do serializacji */
     private static final long serialVersionUID = -4709971995267753715L;
+    /** Pole, które przechowuje obiekt z panelem całej symulacji */
     private JPanel simulationPanel;
+    /** Pole, które przechowuje obiekt z konsolą zewnętrzną */
     private JTextArea outputConsole;
+    /** Pole, które przechowuje obiekt do scrollowania */
     private JScrollPane scroller;
 
+    /**
+     * Metoda, konstruktor, która tworzy obiekt będący okienkiem symulacji
+     * @param sim Obiekt klasy symulacji
+     */
     public SimulationRuntimeWindow(Simulation sim) {
         super("Simulation run");
 
@@ -39,6 +51,10 @@ public class SimulationRuntimeWindow extends JFrame {
         setAlwaysOnTop(true);
     }
 
+    /**
+     * Metoda, która wyświetla następną rundę
+     * @param state obiekt ze stanem symulacji po rundzie
+     */
     public void nextRound(String state) {
         simulationPanel.revalidate();
         simulationPanel.repaint();
@@ -46,6 +62,10 @@ public class SimulationRuntimeWindow extends JFrame {
         outputConsole.setCaretPosition(outputConsole.getText().length());
     }
 
+    /**
+     * Metoda, która kończy działanie okienka i symulacji
+     * @param str tekst do zakończenia
+     */
     public void finish(String str) {
         outputConsole.setText(str);
     }
