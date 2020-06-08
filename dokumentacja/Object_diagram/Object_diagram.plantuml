@@ -141,8 +141,64 @@ object BeingContainer{
 
 
 
+object MainFrame{
 
- 
+}
+object MainMenu{
+    runButt
+    showParamButt
+    inputParamButt
+    inputParamPathButt
+    showLastButt
+    inputOutPathButt
+    frame 
+}
+
+
+
+
+
+object SimulationState{
+    numPeople = 2
+    numInfected = 1
+}
+object SimulationLog{
+    startTime
+    parameters
+    SimulationLog
+    output
+}
+object SimulationParameters{
+    mapLength = 20
+    mapWidth = 20
+    numPeople = 2
+    numDocs = 1
+    numAmbulance = 1
+    power1 = 
+    power2 = 
+    timeTilInfect = 10
+    timeTilCured = 10
+    infectionRate = 
+    activeRate = 
+}
+object Simulation{
+    map
+    container 
+    strain 
+    numPeople 
+    numInfected 
+    params 
+    log 
+    srw 
+    dispatching 
+}
+object Settings{
+    params 
+    outPath
+    paramPath 
+}
+
+
 
 
 
@@ -170,7 +226,6 @@ Ambulance --o Map
 Infector --* Virus
 Dispatching --* Hospital
 
-Queue --* Dispatching
 
 Virus --* DiseaseRecord
 DiseaseRecord --o Human
