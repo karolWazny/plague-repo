@@ -1,0 +1,38 @@
+@startuml recovery_diagram_08062020
+start
+
+repeat :checkout to next Record;
+
+if(is Recoverable?) then (yes)
+
+    if(human?)then(yes)
+        :human recovery;
+    else(no)
+        if(ambulance?)then(yes)
+            :get passenger list;
+            repeat :next passenger;
+                if(passenger alive)then(yes)
+                    :add 5 to passenger's health points;
+                else(no)
+                    :remove this passenger;
+                endif
+            repeat while(more passengers)is (yes)
+        else(no)
+            :it's hospital then;
+            :i = 0;
+            repeat
+                :get patients list;
+                repeat :next patient;
+                    :patient recovery;
+                repeat while (more patients)is(yes)
+            repeat while(i<2)is (yes)
+        endif
+    endif
+
+else (no)
+endif
+
+repeat while(more records?) is (yes) 
+
+stop
+@enduml
