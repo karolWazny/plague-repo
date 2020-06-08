@@ -136,7 +136,7 @@ class ShowParamsPanel {
 JFrame<|--MainFrame
 JFrame<|--SidekickFrame
 JFrame<|--SimulationRuntimeWindow
-JFrame<|--LastFrame
+JFrame<|-- LastFrame
 JPanel<|--ChangeOutputPanel
 JPanel<|--InputParamPanel
 JPanel<|--InputPathPanel
