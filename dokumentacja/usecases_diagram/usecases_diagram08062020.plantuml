@@ -1,16 +1,29 @@
-@startuml Usecases
- 
-rectangle Simulation {
-    :User:
-    :User: -left-> (Start)
-    :User: -up-> (Enter the number\nof people)
-    :User: -down-> (Enter the map size)
-    :User: -up-> (Enter the number\nof ambulances)
-    :User: -down-> (Enter the percentage of\ndoctors)
-    :User: -down-> (Enter the virus\nparameters)
-    :User: -left-> (Run Simulation) 
-    (Run Simulation) -left-> (View results)
-    :User: -right-> (View results)
+@startuml
+left to right direction
+rectangle Simulation{
+    :User: --> (Input parameters manually)
+    (Change output destination) <-- :User:
+    (Run simulation) <-- :User:
+    (Show current parameters) <-- :User:
+    (Show last run's output) <-- :User:
+    (Input path to configuration file) <-- :User:
     
+
+    (Input parameters manually) --> (Enter the map size\nlength, width)
+    (Input parameters manually) --> (Enter the number\nof people)
+    (Input parameters manually) --> (Enter the number\nof doctors)
+    (Input parameters manually) --> (Enter the number\nof ambulances)
+    (Input parameters manually) --> (Enter the power1 and power2\nof the virus)
+    (Input parameters manually) --> (Enter the time til\ninfecting others)
+    (Input parameters manually) --> (Enter the time til\nthe end of disease)
+    (Input parameters manually) --> (Enter the infection rate)
+    (Input parameters manually) --> (Enter the rate of\nactive cases of virus)
+    (Input parameters manually) -up-> (Set default parameters)
+    
+    (Input path to configuration file) --> (Get current configuration\nfile path)
+    (Input path to configuration file) --> (Set new configuration\nfile path)
+
+    (Change output destination) -> (Get current output directory)
+    (Change output destination) --> (Set new output directory)
 }
 @enduml
