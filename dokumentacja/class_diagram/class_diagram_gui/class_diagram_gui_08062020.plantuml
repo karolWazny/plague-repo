@@ -1,0 +1,156 @@
+@startuml class_diagram_gui_08062020
+
+class JFrame {
+    + JFrame(String);
+    + void setVisible(boolean);
+    + void add(Component);
+    + void setDefaultCloseOperation(int);
+    + void pack();
+    + void setLocationRelativeTo(Component);
+    + void setVisible(boolean);
+    + void setResizable(boolean);
+    + void addWindowListener(WindowListener);
+    + void setSize(int, int);
+    + void setLayout(LayoutManager);
+    + void setAlwaysOnTop(boolean);
+    + contentPane getContentPane(); 
+}
+
+class JPanel {
+    + JPanel();
+    + void add(Component);
+    + void setLayout(LayoutManager);
+    + void paintComponent(Graphics);
+
+}
+
+class LastFrame {
+    - {static} long serialVerionUID;
+    + LastFrame(JPanel, String, JFrame);
+}
+
+class MainFrame {
+    - {static} long serialVerionUID;
+    + MainFrame(Settings, ExecutorService);
+}
+
+class SidekickFrame {
+    - {static} long serialVerionUID;
+    - JPanel panel;
+    + SidekickFrame(JPanel, String, JFrame);
+    + JPanel getPanel();
+}
+
+class SimulationRuntimeWindow{
+    - {static} long serialVerionUID;
+    - JPanel simulationPanel;
+    - JTextArea outputConsole;
+    - JScrollPane scroller;
+    + SimulationRuntimeWindow(Simulation);
+    + void nextRound(String);
+    + void finish(String);
+}
+
+class ChangeOutputPanel {
+    - {static} long serialVerionUID;
+    - JButton confirmButt;
+    - JButton defaultButt;
+    - JLabel lab1;
+    - JLabel lab2;
+    - JTextField tField1;
+    - JTextField tField2;
+    - Settings settings;
+    + ChangeOutputPanel(Settings);
+    + void refresh();
+}
+
+class InputParamPanel{
+    - {static} long serialVerionUID;
+    - Settings settings;
+    - JTextField mapLengthTField;
+    - JTextField mapWidthTField;
+    - JTextField numPeopleTField;
+    - JTextField numDocsTField;
+    - JTextField ambulanceNumTField;
+    - JTextField pow1TField;
+    - JTextField pow2TField;
+    - JTextField timeTilInfectTField;
+    - JTextField timeTilCuredTField;
+    - JTextField infectionRateTField;
+    - JTextField activeRateTField;
+    + InputParamPanel(Settings);
+    + void refresh();
+}
+
+class InputPathPanel {
+    - {static} long serialVerionUID;
+    - Settings settings;
+    - JLabel lab1;
+    - JLabel lab2;
+    - JTextField tField1;
+    - JTextField tField2;
+    - JButton defaultButt;
+    - JButton confirButt;
+    + InputPathPanel(String);
+    + refresh();
+}
+
+class MainMenu {
+    - {static} long serialVerionUID;
+    - JButton runButt;
+    - JButton showParamButt;
+    - JButton inputParamButt;
+    - JButton inputParamPathButt;
+    - JButton showLastButt;
+    - JButton inputOutPathButt;
+    - JFrame frame;
+    + MainMenu(Settings, JFrame, ExecutorService);
+}
+
+class PanelMap {
+    - {static} long serialVerionUID;
+    - Map map;
+    - BufferedImage maleIcon;
+    - BufferedImage femaleIcon;
+    - BufferedImage infectedIcon;
+    - BufferedImage doctorIcon;
+    - BufferedImage hospitalIcon;
+    - BufferedImage ambulanceIcon;
+    - int iconHeight;
+    - int iconWidth;
+    + PanelMap(Map);
+}
+
+class ShowLastPanel {
+    - {static} long serialVerionUID;
+    - JTextArea tArea;
+    + ShowLastPanel(Settings);
+}
+
+class ShowParamsPanel {
+    - {static} long serialVerionUID;
+    - JTextArea tArea;
+    + ShowParamsPanel(Settings);
+}
+
+JFrame<|--MainFrame
+JFrame<|--SidekickFrame
+JFrame<|--SimulationRuntimeWindow
+JFrame<|--LastFrame
+JPanel<|--ChangeOutputPanel
+JPanel<|--InputParamPanel
+JPanel<|--InputPathPanel
+JPanel<|--MainMenu
+JPanel<|--PanelMap
+JPanel<|--ShowLastPanel
+JPanel<|--ShowParamsPanel
+
+SidekickFrame*--ChangeOutputPanel
+SidekickFrame*--InputParamPanel
+SidekickFrame*--InputPathPanel
+SidekickFrame*--ShowParamsPanel
+MainFrame*--MainMenu
+LastFrame*--ShowLastPanel
+SimulationRuntimeWindow*--PanelMap
+
+@enduml

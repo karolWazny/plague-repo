@@ -301,7 +301,7 @@ class GPS1
 
 interface IGPS
 {
-
+ + Coordinates navigate(Coordinates);
 }
 
 Map o- IPrintable
