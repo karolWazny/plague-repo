@@ -133,6 +133,25 @@ class ShowParamsPanel {
     + ShowParamsPanel(Settings);
 }
 
+class Settings{
+    - {static} long serialVerionUID;
+    - SimulationParameters params;
+    - String outPath;
+    - String parmPath;
+    + Settings();
+    - Settings load();
+    + void serialize();
+    ~ void setDefaultAll();
+    + SimulationParameters getParameters();
+    + void setParameters(SimulationParameters);
+    + void setDefaultParamPath();
+    + void setParamPath(String);
+    + void setDefaultOutPath();
+    + String getParamPath();
+    + String getOutPath();
+    + void setOutPath(String);
+}
+
 JFrame<|--MainFrame
 JFrame<|--SidekickFrame
 JFrame<|--SimulationRuntimeWindow
@@ -145,12 +164,17 @@ JPanel<|--PanelMap
 JPanel<|--ShowLastPanel
 JPanel<|--ShowParamsPanel
 
-SidekickFrame*--ChangeOutputPanel
-SidekickFrame*--InputParamPanel
-SidekickFrame*--InputPathPanel
-SidekickFrame*--ShowParamsPanel
-MainFrame*--MainMenu
-LastFrame*--ShowLastPanel
-SimulationRuntimeWindow*--PanelMap
+SidekickFrame *-- ChangeOutputPanel
+SidekickFrame *-- InputParamPanel
+SidekickFrame *-- InputPathPanel
+SidekickFrame *-- ShowParamsPanel
+MainFrame *-- MainMenu
+LastFrame *-- ShowLastPanel
+SimulationRuntimeWindow *-- PanelMap
+InputParamPanel o-- Settings
+InputPathPanel o-- Settings
+ChangeOutputPanel o-- Settings
+MainMenu -- Simulation :>>uses<<
+Simulation -- SimulationRuntimeWindow: >>uses<<
 
 @enduml
