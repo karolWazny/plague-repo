@@ -1,0 +1,699 @@
+[
+  {
+    "name": "Ambulance",
+    "superclasses": "Vehicle, IRecoverable",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "knows number of ambulances",
+      "knows its capacity",
+      "knows its velocity",
+      "transports sick Humans to Hospital"
+    ],
+    "collaborators": [
+      "Record",
+      "Human",
+      "IGPS"
+    ]
+  },
+  {
+    "name": "App",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "main class in application",
+      "has \"main\" method"
+    ],
+    "collaborators": [
+      "ExecutosService",
+      "Settings",
+      "inner class Program"
+    ]
+  },
+  {
+    "name": "Being",
+    "superclasses": "IPrintable",
+    "subclasses": "Human, EmptySlot",
+    "type": 2,
+    "responsibilities": [
+      "get identification",
+      "get representation",
+      ""
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "BeingContainer",
+    "superclasses": "none",
+    "subclasses": "Human",
+    "type": 1,
+    "responsibilities": [
+      "get list of agents",
+      "add agents",
+      "get map",
+      "performs rounds of agent activities"
+    ],
+    "collaborators": [
+      "Map",
+      "Record",
+      "Dispatching",
+      ""
+    ]
+  },
+  {
+    "name": "Building",
+    "superclasses": "Being",
+    "subclasses": "Hospital",
+    "type": 2,
+    "responsibilities": [
+      "knows its capacity",
+      "knows number of blocks"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "ChangeOutputPanel",
+    "superclasses": "JPanel",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "part of UI",
+      "displaying current output file path",
+      "changing output file path"
+    ],
+    "collaborators": [
+      "Settings"
+    ]
+  },
+  {
+    "name": "Coordinates",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "stores a pair of coordinates",
+      "adds vector to stored coordinates",
+      "returns neighbouring coordinates"
+    ],
+    "collaborators": [
+      "none"
+    ]
+  },
+  {
+    "name": "Dice",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "generate pseudorandom numbers"
+    ],
+    "collaborators": [
+      "none"
+    ]
+  },
+  {
+    "name": "Disease",
+    "superclasses": "IDisease",
+    "subclasses": "Virus",
+    "type": 2,
+    "responsibilities": [
+      "stores information about illness"
+    ],
+    "collaborators": [
+      "Human",
+      "DiseaseRecord"
+    ]
+  },
+  {
+    "name": "DiseaseRecord",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "stores information about course of illness",
+      "runs information flow between Human and disease",
+      "runs illness progress"
+    ],
+    "collaborators": [
+      "Disease",
+      "Human"
+    ]
+  },
+  {
+    "name": "Dispatching",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "intakes calls about needed intervensions",
+      "sends vehicles of a specific type for intervensions"
+    ],
+    "collaborators": [
+      "Record",
+      "Map",
+      "Vehicle",
+      "Queue",
+      "Simulation",
+      "Dispatching"
+    ]
+  },
+  {
+    "name": "Doctor",
+    "superclasses": "Human",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "heal the patient"
+    ],
+    "collaborators": [
+      "Human",
+      "Dice"
+    ]
+  },
+  {
+    "name": "EmptySlot",
+    "superclasses": "Being",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "is empty"
+    ],
+    "collaborators": [
+      "Map"
+    ]
+  },
+  {
+    "name": "GPS1",
+    "superclasses": "IGPS",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "calculates route for a vehicle"
+    ],
+    "collaborators": [
+      "Vehicle",
+      "Map"
+    ]
+  },
+  {
+    "name": "Hospital",
+    "superclasses": "Building, IRecoverable, IMovable",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "stores ill Humans",
+      "cures its inhabitants"
+    ],
+    "collaborators": [
+      "Human",
+      "Record",
+      "Map"
+    ]
+  },
+  {
+    "name": "Human",
+    "superclasses": "Being, IMovable, IDiseaseSensitive",
+    "subclasses": "Doctor",
+    "type": 1,
+    "responsibilities": [
+      "move",
+      "perform illness",
+      "get sex",
+      "get health points",
+      "get is infected",
+      "get age",
+      ""
+    ],
+    "collaborators": [
+      "Dice",
+      "Coordinates",
+      "DiseaseRecord"
+    ]
+  },
+  {
+    "name": "IDisease",
+    "superclasses": "none",
+    "subclasses": "Disease",
+    "type": 3,
+    "responsibilities": [
+      "gives information about disease",
+      "gives disease methods (infect, progress)"
+    ],
+    "collaborators": [
+      "Human, DiseaseRecord"
+    ]
+  },
+  {
+    "name": "IDiseaseSensitive",
+    "superclasses": "IRecoverable",
+    "subclasses": "Human",
+    "type": 3,
+    "responsibilities": [
+      "performs actions related to being ill and infecting"
+    ],
+    "collaborators": [
+      "DiseaseRecord"
+    ]
+  },
+  {
+    "name": "IGPS",
+    "superclasses": "none",
+    "subclasses": "GPS1",
+    "type": 3,
+    "responsibilities": [
+      "calculates route for vehicle"
+    ],
+    "collaborators": [
+      "Vehicle",
+      "Map"
+    ]
+  },
+  {
+    "name": "IncorrectParametersException",
+    "superclasses": "Exception",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "thrown, when attempt is made to run simulation with too small map according to number of people"
+    ],
+    "collaborators": [
+      "Simulation"
+    ]
+  },
+  {
+    "name": "Infector",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "runs infection"
+    ],
+    "collaborators": [
+      "Human",
+      "Disease"
+    ]
+  },
+  {
+    "name": "IMovable",
+    "superclasses": "none",
+    "subclasses": "Human, Vehicle",
+    "type": 3,
+    "responsibilities": [
+      "moves"
+    ],
+    "collaborators": [
+      "Coordinates"
+    ]
+  },
+  {
+    "name": "InputParamPanel",
+    "superclasses": "JPanel",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "part of IU",
+      "manual change of simulation parameters"
+    ],
+    "collaborators": [
+      "Settings",
+      "SimulationParameters",
+      "SidekickFrame"
+    ]
+  },
+  {
+    "name": "InputPathPanel",
+    "superclasses": "JPanel",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "part of UI",
+      "displaying current path to configuration file",
+      "changing path to configuration file"
+    ],
+    "collaborators": [
+      "SidekickFrame",
+      "Settings"
+    ]
+  },
+  {
+    "name": "IPrintable",
+    "superclasses": "none",
+    "subclasses": "Being",
+    "type": 3,
+    "responsibilities": [
+      "can be printed on the map"
+    ],
+    "collaborators": [
+      "none"
+    ]
+  },
+  {
+    "name": "IRecord",
+    "superclasses": "none",
+    "subclasses": "Record",
+    "type": 3,
+    "responsibilities": [
+      "moves its agent",
+      "infects its neighbours",
+      "progresses illness and recovers"
+    ],
+    "collaborators": [
+      "Coordinates",
+      "Map"
+    ]
+  },
+  {
+    "name": "IRecoverable",
+    "superclasses": "none",
+    "subclasses": "IDiseaseSensitive, Ambulance",
+    "type": 1,
+    "responsibilities": [
+      "can recover"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "LastFrame",
+    "superclasses": "JFrame",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "window to show last simulation output"
+    ],
+    "collaborators": [
+      "LastPanel",
+      "MainFrame"
+    ]
+  },
+  {
+    "name": "MainFrame",
+    "superclasses": "JFrame",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "main window of the program",
+      "displays main menu panel"
+    ],
+    "collaborators": [
+      "MainMenu"
+    ]
+  },
+  {
+    "name": "MainMenu",
+    "superclasses": "JPanel",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "core of the UI",
+      "provides access to all functionalities"
+    ],
+    "collaborators": [
+      "Settings",
+      "MainFrame",
+      "SidekickFrame",
+      "ShowParamsPanel",
+      "InputParamPanel",
+      "InputPathPanel",
+      "ShowLastPanel",
+      "LastFrame",
+      "inner class SimulationDoer"
+    ]
+  },
+  {
+    "name": "Map",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "display map measurments",
+      "display map",
+      "get field",
+      "set field",
+      ""
+    ],
+    "collaborators": [
+      "IPrintable",
+      "EmptySlot",
+      "BeingContainer",
+      ""
+    ]
+  },
+  {
+    "name": "PanelMap",
+    "superclasses": "JPanel",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "displays current graphical representation of simulation state"
+    ],
+    "collaborators": [
+      "Map",
+      "Coordinates"
+    ]
+  },
+  {
+    "name": "Program",
+    "superclasses": "Runnable",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "inner class of the App",
+      "task of opening MainFrame that is sent to thread"
+    ],
+    "collaborators": [
+      "MainFrame",
+      "Settings",
+      "App"
+    ]
+  },
+  {
+    "name": "Queue",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "stores calls about intervensions needed"
+    ],
+    "collaborators": [
+      "Record",
+      "Coordinates"
+    ]
+  },
+  {
+    "name": "Record",
+    "superclasses": "IRecord",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "get position",
+      "get being (agent binded to this record)",
+      "runs information flow between agent and simulation",
+      ""
+    ],
+    "collaborators": [
+      "IMovable",
+      "IDiseaseSensitive",
+      "IRecoverable"
+    ]
+  },
+  {
+    "name": "Settings",
+    "superclasses": "Serializable",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "stores parameters and other settings of the program",
+      "recalls settings after restarting application"
+    ],
+    "collaborators": [
+      "SimulationParameters",
+      "App",
+      "ChangeOutputPanel",
+      "InputParamPanel",
+      "InputPathPanel",
+      "ShowParamsPanel"
+    ]
+  },
+  {
+    "name": "ShowLastPanel",
+    "superclasses": "JPanel",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "part of the UI",
+      "displays output of the last run simulation"
+    ],
+    "collaborators": [
+      "none"
+    ]
+  },
+  {
+    "name": "ShowParamsPanel",
+    "superclasses": "JPanel",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "part of the UI",
+      "displays current simulation parameters"
+    ],
+    "collaborators": [
+      "Settings"
+    ]
+  },
+  {
+    "name": "SideKickFrame",
+    "superclasses": "JFrame",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "used to create modal windows, e.g. input parameters window"
+    ],
+    "collaborators": [
+      "ChangeOutputPanel",
+      "InputParamPanel",
+      "InputPathPanel",
+      "ShowParamsPanel"
+    ]
+  },
+  {
+    "name": "Simulation",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "creates simulation using current parameters",
+      "runs simulation",
+      "works as a facade for logic of the simulation"
+    ],
+    "collaborators": [
+      "Dispatching",
+      "Map",
+      "BeingContainer",
+      "Virus",
+      "SimulationParameters",
+      "SimulationLog",
+      "SimulationRuntimeWindow",
+      "IncorrectParametersException"
+    ]
+  },
+  {
+    "name": "SimulationDoer",
+    "superclasses": "Runnable",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "inner class from MainMenu",
+      "task given to thread so simulation is calculated outside EventDispatchingThread",
+      "calculate simulation and save output",
+      ""
+    ],
+    "collaborators": [
+      "Settings",
+      "Simulation",
+      "WriteToFile",
+      "SimulationLog"
+    ]
+  },
+  {
+    "name": "SimulationLog",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "stores information about simulation run"
+    ],
+    "collaborators": [
+      "SimulationParameters",
+      "SimulationState",
+      "Simulation"
+    ]
+  },
+  {
+    "name": "SimulationParameters",
+    "superclasses": "Serializable",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "stores parameters to run simulation",
+      "reads parameters from Config.txt file",
+      ""
+    ],
+    "collaborators": [
+      "Simulation"
+    ]
+  },
+  {
+    "name": "SimulationRuntimeWindow",
+    "superclasses": "JFrame",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "displays window with map and current situation during simulation runtime"
+    ],
+    "collaborators": [
+      "PanelMap"
+    ]
+  },
+  {
+    "name": "SimulationState",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "stores information about single iteration of the simulation"
+    ],
+    "collaborators": [
+      "SimulationLog"
+    ]
+  },
+  {
+    "name": "Vehicle",
+    "superclasses": "Being, IMovable",
+    "subclasses": "Ambulance, Hearse",
+    "type": 1,
+    "responsibilities": [
+      "knows number of vehicles",
+      "stores passengers (Humans)",
+      "moves"
+    ],
+    "collaborators": [
+      "IGPS",
+      "Human",
+      "Dispatching"
+    ]
+  },
+  {
+    "name": "Virus",
+    "superclasses": "Disease",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "stores and gives information about specific disease - THE Virus",
+      "performs Virus-illness",
+      "KILLS!"
+    ],
+    "collaborators": [
+      "Human",
+      "DiseaseRecord"
+    ]
+  },
+  {
+    "name": "WiteToFile",
+    "superclasses": "none",
+    "subclasses": "none",
+    "type": 1,
+    "responsibilities": [
+      "writes simulation output to proper file"
+    ],
+    "collaborators": [
+      "inner class SimulationDoer from MainMenu public class"
+    ]
+  }
+]

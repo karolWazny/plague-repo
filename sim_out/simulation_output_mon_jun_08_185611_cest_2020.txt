@@ -1,0 +1,83 @@
+Simulation run at: 2020-06-08 at 18:56:11 CEST
+Simulation parameters:
+Map size:
+	width: 50, length: 50
+Initial number of people: 1200, including 5 doctors
+Number of ambulances: 8
+Virus characteristics:
+	Power: 6d6
+	Nominal time between beeing infected and infecting others: 1
+	Nominal time between being infected and being cured: 90
+	Infection rate: 80%
+	Percentage of active instances of virus: 100%
+Simulation length: 67 rounds
+Simulation output: All cured
+Detailed log:
+Alive: 1200, infected: 1
+Alive: 1200, infected: 2
+Alive: 1200, infected: 5
+Alive: 1200, infected: 12
+Alive: 1200, infected: 19
+Alive: 1200, infected: 29
+Alive: 1200, infected: 36
+Alive: 1200, infected: 44
+Alive: 1200, infected: 52
+Alive: 1200, infected: 75
+Alive: 1200, infected: 94
+Alive: 1195, infected: 109
+Alive: 1187, infected: 118
+Alive: 1180, infected: 131
+Alive: 1175, infected: 146
+Alive: 1173, infected: 157
+Alive: 1160, infected: 164
+Alive: 1146, infected: 165
+Alive: 1130, infected: 164
+Alive: 1116, infected: 175
+Alive: 1102, infected: 186
+Alive: 1083, infected: 194
+Alive: 1068, infected: 206
+Alive: 1045, infected: 204
+Alive: 1027, infected: 218
+Alive: 1007, infected: 227
+Alive: 996, infected: 247
+Alive: 975, infected: 263
+Alive: 962, infected: 285
+Alive: 942, infected: 292
+Alive: 909, infected: 287
+Alive: 884, infected: 296
+Alive: 846, infected: 292
+Alive: 819, infected: 304
+Alive: 801, infected: 325
+Alive: 770, infected: 331
+Alive: 735, infected: 331
+Alive: 702, infected: 344
+Alive: 669, infected: 353
+Alive: 637, infected: 369
+Alive: 614, infected: 381
+Alive: 575, infected: 381
+Alive: 537, infected: 377
+Alive: 502, infected: 370
+Alive: 477, infected: 365
+Alive: 436, infected: 339
+Alive: 394, infected: 317
+Alive: 350, infected: 291
+Alive: 320, infected: 276
+Alive: 270, infected: 242
+Alive: 235, infected: 218
+Alive: 200, infected: 191
+Alive: 171, infected: 168
+Alive: 142, infected: 142
+Alive: 121, infected: 121
+Alive: 102, infected: 102
+Alive: 80, infected: 80
+Alive: 62, infected: 62
+Alive: 48, infected: 48
+Alive: 34, infected: 34
+Alive: 25, infected: 25
+Alive: 14, infected: 14
+Alive: 7, infected: 7
+Alive: 4, infected: 4
+Alive: 1, infected: 1
+Alive: 1, infected: 1
+Alive: 1, infected: 1
+Alive: 0, infected: 0
