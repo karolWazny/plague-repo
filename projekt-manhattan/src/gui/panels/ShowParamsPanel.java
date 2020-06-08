@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 /**
- * Klasa, która odpowiedzialna jest za pokazanie wyświetlenie
+ * Klasa, która odpowiedzialna jest za wyświetlenie
  * panelu z parametrami symulacji.
  * @version 1.0
  * @see app.Settings
