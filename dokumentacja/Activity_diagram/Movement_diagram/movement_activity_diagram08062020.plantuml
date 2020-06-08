@@ -1,0 +1,51 @@
+@startuml movement_round_08062020
+title Perform movement round
+start
+:Get list of objects;
+:Start iterating through the list of objects;
+repeat
+:Get object;
+:Get current Coordinates;
+if(IMovable) then (yes)
+    if (Hospital) then (no)
+        if(Human) then (yes)
+            :Human movement;
+        else (no)
+            :Ambulance movement;
+        endif 
+        if(Correct coordinates) then (yes)
+        :Set new Coordinates;
+        else (no)
+        :Stay;
+        endif
+    else(yes)
+        :get list of patients;
+        repeat
+            if(alive)then(yes)
+                if(fully cured)then(yes)
+                    :place this patient back on map;
+                    :remove from the list;
+                else(no)
+                endif
+            else(no)
+                :remove from the list;
+            endif
+        repeat while(more patients)
+    endif
+else (no)
+endif 
+repeat while(Next object);
+if(unresolved calls in dispatching)then(yes)
+    :get list of ambulances;
+    repeat
+        if(this ambulance free)then (yes)
+            :dispatch this call\nto this ambulance;
+            :next call;
+        else(no)
+        endif
+        :next ambulance;
+    repeat while(more ambulances\n&&\nmore unresolved calls)
+else(no)
+endif
+end 
+@enduml

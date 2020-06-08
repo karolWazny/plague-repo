@@ -1,7 +1,7 @@
 @startuml recovery_diagram
 start
 
-repeat :checkout to next Human;
+repeat :checkout to next Record;
 
 if(isAlive && healthPoints!=100) then(yes)
 
@@ -12,7 +12,7 @@ else (no)
 endif
 endif
 
-repeat while(more Humans?) is (yes) 
+repeat while(more records?) is (yes) 
 
 stop
 @enduml
