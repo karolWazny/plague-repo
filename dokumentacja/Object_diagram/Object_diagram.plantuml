@@ -1,14 +1,93 @@
 @startuml Object diagram
-object BeingContainer{
-    list
-    map
+object Virus{
+    timeTilSymptoms = 10
+    timeTilInfect = 10
+    timeTilCured = 10
+    id = Koronaświrus
+    infectionRate = 10
+    activeRate = 10
+    infector = INFECTOR 
+    power1 = 10
+    power2 = 10
 }
+object Infector{
+
+}
+object DiseaseRecord{
+    disease = koronaświrus
+    isActive = true 
+    infects = true 
+    areSymptoms = true 
+    isCured = false 
+    state = 8
+}
+
+
+
+
+
+object GPS1{
+    map 
+}
+object Ambulance{
+    id = Ambulance 1
+    Character representation = 
+    capacity = 1
+    velocity = 100
+    destination = null
+    home = null
+    numVeh = 2
+    gps
+    passengers = 0
+    caller = Human
+    numAmb = 1
+    isFree = true
+    hospital = Hospital
+}
+
+
+
+
+
+object Dispatching{
+    id = dispatching
+    Character Representation = 'i'
+    callerList: IRecord 
+    ambulanceList: Ambulance 
+}
+
+
+
+
+
+object Hospital{
+    id = Hospital
+    Character representation = 'H'
+    capacity = 50
+    blockCounter = 2
+    hospitalCounter = 1
+    list: IRecord 
+}
+
+
+
+
+
 object Map{
-    lenght = 20
+    length = 20
     width = 20
     empty 
     table 
-} 
+}
+object EmptySlot{
+    id = empty
+    representation = ' '
+}
+
+
+
+
+
 object Human{
     id = Citizen 1
     represantion = 'm'
@@ -31,110 +110,105 @@ object Doctor{
     humanCounter = 2
     diseases = [none]
 }
-object EmptySlot{
-    id = empty
-    representation = ' '
-}
-object Hospital{
-    id = Hospital
-    Character representation = 'H'
-    blockCounter = 2
-    hospitalNumber = 1
-    capacity = 50
-}
-object Dispatching1{
 
-}
-object Dispatching2{
 
-}
-object GPS1{
 
-}
-object Ambulance{
-    numVeh = 2
-    capacity = 1
-    velocity = 100
-    numPassengers = 1
-    GPS = ...
-    passengers = 0
-    numAmb = 1
-}
-object Hearse{
-    numVeh = 2
-    capacity = 1
-    velocity = 100
-    numPassengers = 1
-    GPS = ...
-    passengers = 0
-    numHear = 1
-}
-object GPS2{
 
+
+object Record1{
+    Being = Human
+    position = Coordinates1
 }
-object Graveyard{
-    id = Hospital
-    Character representation = 'H'
-    blockCounter = 2
-    capacity = 100
-    GraveyardNumber = 1
+object Record2{
+    Being = Doctor
+    position = Coordinates2
 }
 object Coordinates1{
     vertical = 0
     horizontal = 0
 }
-object Queue1{
-
-}
-object Queue2{
-
-}
-
-object Infector{
-    
-}
-object Virus{
-    isActve = false
-    timeTilSymptoms = 10
-    timeTilInfect = 10
-    timeTilCured = 10
-    id = Koronaświrus
-    infectionRate = 10
-    activeRate = 10
-    infector = INFECTOR 
-    power1 = 10
-    power2 = 10
-}
-object Virus{
-    timeTilSymptoms = 10
-    timeTilInfect = 10
-    timeTilCured = 10
-    id = koronaświrus
-    infectionRate = 25
-    activeRate = 25
-    power1 = 2
-    power2 = 3
-}
-object DiseaseRecord{
-    disease = koronaświrus
-    isActive = true 
-    infects = true 
-    areSymptoms = true 
-    isCured = false 
-    state = 8
-}
-object Record1{
-    Being = Human
-    position = Coordinates
-}
-object Record2{
-    Being = Doctor
-    position = Coordinates
-}
 object Coordinates2{
     vertical = 1
     horizontal = 1
 }
+object BeingContainer{
+    list
+    map
+    dispatching
+}
+
+
+
+
+
+object MainFrame{
+
+}
+object MainMenu{
+    runButt
+    showParamButt
+    inputParamButt
+    inputParamPathButt
+    showLastButt
+    inputOutPathButt
+    frame 
+}
+
+
+
+
+
+object SimulationState{
+    numPeople = 2
+    numInfected = 1
+}
+object SimulationLog{
+    startTime
+    parameters
+    SimulationLog
+    output
+}
+object SimulationParameters{
+    mapLength = 20
+    mapWidth = 20
+    numPeople = 2
+    numDocs = 1
+    numAmbulance = 1
+    power1 = 
+    power2 = 
+    timeTilInfect = 10
+    timeTilCured = 10
+    infectionRate = 
+    activeRate = 
+}
+object Simulation{
+    map
+    container 
+    strain 
+    numPeople 
+    numInfected 
+    params 
+    log 
+    srw 
+    dispatching 
+}
+object Settings{
+    params 
+    outPath
+    paramPath 
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 Map -o BeingContainer 
 Map *-- EmptySlot
@@ -144,21 +218,27 @@ Hospital o-- Doctor
 Record2 *-- Doctor
 Record1 --o BeingContainer
 Hospital --* Map 
-Graveyard --* Map 
-GPS1 --* Ambulance 
+GPS1 --o Ambulance 
 Ambulance --o Map
-GPS2 --* Hearse 
-Hearse --o Map
 Infector --* Virus
-Dispatching1 --* Hospital
-Dispatching2 --* Graveyard
-Queue1 --* Dispatching1
-Queue2 --* Dispatching2
+Dispatching --* Hospital
 Virus --* DiseaseRecord
 DiseaseRecord --o Human
 Coordinates1 --* Record1
 Record2 --o BeingContainer
 Coordinates2 --* Record2
 
+
+SimulationLog o-- SimulationState
+SimulationParameters --* Settings
+Simulation *-- Map
+Simulation *-- BeingContainer
+Simulation *-- SimulationParameters
+Simulation *-- SimulationLog
+Simulation *-- Dispatching
+Simulation *-- Virus
+MainMenu *-- Simulation
+MainMenu *-- Settings
+MainMenu *-- MainFrame
 
 @enduml 
