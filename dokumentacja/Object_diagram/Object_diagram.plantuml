@@ -30,19 +30,19 @@ object GPS1{
     map 
 }
 object Ambulance{
-    id =
+    id = Ambulance 1
     Character representation = 
     capacity = 1
     velocity = 100
-    destination = 
-    home = 
+    destination = null
+    home = null
     numVeh = 2
-    gps = 
+    gps
     passengers = 0
-    caller = 
+    caller = Human
     numAmb = 1
     isFree = true
-    hospital = 
+    hospital = Hospital
 }
 
 
@@ -218,20 +218,27 @@ Hospital o-- Doctor
 Record2 *-- Doctor
 Record1 --o BeingContainer
 Hospital --* Map 
-
-GPS1 --* Ambulance 
+GPS1 --o Ambulance 
 Ambulance --o Map
-
-
 Infector --* Virus
 Dispatching --* Hospital
-
-
 Virus --* DiseaseRecord
 DiseaseRecord --o Human
 Coordinates1 --* Record1
 Record2 --o BeingContainer
 Coordinates2 --* Record2
 
+
+SimulationLog o-- SimulationState
+SimulationParameters --* Settings
+Simulation *-- Map
+Simulation *-- BeingContainer
+Simulation *-- SimulationParameters
+Simulation *-- SimulationLog
+Simulation *-- Dispatching
+Simulation *-- Virus
+MainMenu *-- Simulation
+MainMenu *-- Settings
+MainMenu *-- MainFrame
 
 @enduml 
