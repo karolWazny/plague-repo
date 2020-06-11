@@ -175,6 +175,6 @@ InputParamPanel o-- Settings
 InputPathPanel o-- Settings
 ChangeOutputPanel o-- Settings
 MainMenu -- Simulation :>>uses<<
-Simulation -- SimulationRuntimeWindow: >>uses<<
+Simulation o-- SimulationRuntimeWindow
 
 @enduml
