@@ -55,23 +55,32 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-     * Metoda konstruktow, która jako parametr przyjmuje inną instancję tej samej klasy
+     * Metoda konstruktor, która jako parametr przyjmuje inną instancję tej samej klasy
      * @param prototype obiekt instancja tej samej klasy
      */
     public Disease(Disease prototype) {
         this(prototype.getId(), prototype.getTimeTilInfect(), prototype.getTimeTilCured(), prototype.getInfectionRate(), prototype.getActiveRate());
     }
 
+    
+    /** 
+     * @param infected
+     * @param getId(
+     * @return int
+     */
     /**
      * Deklaracja metody progress
      */
-    //@Override
     public abstract int progress(IDiseaseSensitive infected, DiseaseRecord record);
     
+    
+    /** 
+     * @param getId(
+     * @return int
+     */
     /**
      * Deklsaracja metody infect
      */
-    //@Override
     public abstract int infect(IDiseaseSensitive man); //zarażenie wirusem zwraca 1, zarażenie czymś innym lub brak zarażenia zwraca 0
 
     /**
@@ -91,7 +100,7 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-     * MEtoda pobierająca wartość czasu potrzebnego do wyzdrowienia
+     * Metoda pobierająca wartość czasu potrzebnego do wyzdrowienia
      * @return czas do wyzdrowienia
      */
     public int getTimeTilCured() {
@@ -102,7 +111,6 @@ public abstract class Disease implements IDisease {
      * Metoda zwracająca wskaźnik infekcji
      * @return wskaźnik infekcji
      */
-    //@Override
     public int getInfectionRate() {
         return infectionRate;
     }
@@ -111,7 +119,6 @@ public abstract class Disease implements IDisease {
      * Metoda zwracająca Czas do wystąpienia symptomów
      * @return czas do wystąpienia symptomów
      */
-    //@Override
     public int getTimeTilSymptoms() {
         return timeTilSymptoms;
     }
@@ -120,7 +127,6 @@ public abstract class Disease implements IDisease {
      * Metoda zwracająca szansę na wystąpieni objawów
      * @return szansa na wystąpienie objawów
      */
-    //@Override
     public int getActiveRate() {
         return activeRate;
     }
