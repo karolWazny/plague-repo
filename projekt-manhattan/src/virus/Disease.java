@@ -64,22 +64,18 @@ public abstract class Disease implements IDisease {
 
     
     /** 
+     * Deklaracja metody progress
      * @param infected
      * @param getId(
      * @return int
-     */
-    /**
-     * Deklaracja metody progress
      */
     public abstract int progress(IDiseaseSensitive infected, DiseaseRecord record);
     
     
     /** 
+     * Deklaracja metody infect
      * @param getId(
      * @return int
-     */
-    /**
-     * Deklsaracja metody infect
      */
     public abstract int infect(IDiseaseSensitive man); //zarażenie wirusem zwraca 1, zarażenie czymś innym lub brak zarażenia zwraca 0
 
