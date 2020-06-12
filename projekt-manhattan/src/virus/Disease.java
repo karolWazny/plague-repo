@@ -55,21 +55,31 @@ public abstract class Disease implements IDisease {
     }
 
     /**
+<<<<<<< HEAD
      * Metoda konstruktow, ktora jako parametr przyjmuje inna instancje tej samej klasy
+=======
+     * Metoda konstruktor, która jako parametr przyjmuje inną instancję tej samej klasy
+>>>>>>> 538007c06d7b4c6e7a34d9ff1a1d922de984e8c7
      * @param prototype obiekt instancja tej samej klasy
      */
     public Disease(Disease prototype) {
         this(prototype.getId(), prototype.getTimeTilInfect(), prototype.getTimeTilCured(), prototype.getInfectionRate(), prototype.getActiveRate());
     }
 
-    /**
+    
+    /** 
      * Deklaracja metody progress
+     * @param infected
+     * @param getId(
+     * @return int
      */
-    //@Override
     public abstract int progress(IDiseaseSensitive infected, DiseaseRecord record);
     
-    /**
-     * Deklsaracja metody infect
+    
+    /** 
+     * Deklaracja metody infect
+     * @param getId(
+     * @return int
      */
     //@Override
     public abstract int infect(IDiseaseSensitive man); //zarazenie wirusem zwraca 1, zarazenie czyms innym lub brak zarazenia zwraca 0
@@ -91,7 +101,11 @@ public abstract class Disease implements IDisease {
     }
 
     /**
+<<<<<<< HEAD
      * MEtoda pobierajaca wartosć czasu potrzebnego do wyzdrowienia
+=======
+     * Metoda pobierająca wartość czasu potrzebnego do wyzdrowienia
+>>>>>>> 538007c06d7b4c6e7a34d9ff1a1d922de984e8c7
      * @return czas do wyzdrowienia
      */
     public int getTimeTilCured() {
@@ -102,7 +116,6 @@ public abstract class Disease implements IDisease {
      * Metoda zwracajaca wskaznik infekcji
      * @return wskaznik infekcji
      */
-    //@Override
     public int getInfectionRate() {
         return infectionRate;
     }
@@ -111,7 +124,6 @@ public abstract class Disease implements IDisease {
      * Metoda zwracajaca Czas do wystapienia symptomow
      * @return czas do wystapienia symptomow
      */
-    //@Override
     public int getTimeTilSymptoms() {
         return timeTilSymptoms;
     }
@@ -120,7 +132,6 @@ public abstract class Disease implements IDisease {
      * Metoda zwracajaca szanse na wystapieni objawow
      * @return szansa na wystapienie objawow
      */
-    //@Override
     public int getActiveRate() {
         return activeRate;
     }
