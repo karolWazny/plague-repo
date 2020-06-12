@@ -1,24 +1,24 @@
 package map;
 
 /**
- * Interfejs, który deklaruje metody potrzebne przy operacjach na mapie
+ * Interfejs, ktory deklaruje metody potrzebne przy operacjach na mapie
  * @version 1.0
  * @see map.Being
  * @see map.Map
  */
 public interface IPrintable {
     /**
-     * Deklaracja metody zwracającacej reprezentację znakową obiektu
-     * @return ciąg znaków - opis słowny instancji klasy
+     * Deklaracja metody zwracajacacej reprezentacje znakowa obiektu
+     * @return ciag znakow - opis slowny instancji klasy
      */
     public String toString();
     /**
-     * Deklaracja metody typu getter, która zwraca ciąg znaków - identyfikator
+     * Deklaracja metody typu getter, ktora zwraca ciag znakow - identyfikator
      * @return identyfikator
      */
     public String getId();
     /**
-     * Deklaracja metody zwracającej reprezentację znakową klasy
+     * Deklaracja metody zwracajacej reprezentacje znakowa klasy
      * @return znak - reprezentacja znakowa
      */
     public char getRepresentation();

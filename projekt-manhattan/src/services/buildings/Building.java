@@ -3,19 +3,19 @@ package services.buildings;
 import map.Being;
 
 /**
- * Klasa, która abstrakcyjnie przedstawia budynki, które posiadają zdolność 
+ * Klasa, ktora abstrakcyjnie przedstawia budynki, ktore posiadaja zdolnosć 
  */
 public abstract class Building extends Being{
-    /** Pole, które jest licznikiem budynków */
+    /** Pole, ktore jest licznikiem budynkow */
     private static int blockCounter = 0;
-    /** Pojemność budynku */
+    /** Pojemnosć budynku */
     private int capacity;
    
     /**
-     * Metoda, konstruktor, która tworzy obiekty klasy building
-     * @param id ciąg znaków identyikujących
+     * Metoda, konstruktor, ktora tworzy obiekty klasy building
+     * @param id ciag znakow identyikujacych
      * @param representation reprezentacja znakowa
-     * @param capacity pojemność
+     * @param capacity pojemnosć
      */
     public Building(String id, char representation, int capacity){ //Hospital
         super(id, representation);
@@ -24,7 +24,7 @@ public abstract class Building extends Being{
     }
     
     /**
-     * Metoda, konstruktor domyślny, który tworzy obiekt tej klasy o domyślnych parametrach
+     * Metoda, konstruktor domyslny, ktory tworzy obiekt tej klasy o domyslnych parametrach
      */
     public Building(){
         super("Block "+ blockCounter, 'B');
@@ -32,24 +32,24 @@ public abstract class Building extends Being{
     }
 
     /**
-     * Metoda, setter, która ustawia pojemność budynku
-     * @param capacity pojemność
+     * Metoda, setter, ktora ustawia pojemnosć budynku
+     * @param capacity pojemnosć
      */
     public void setCapacity(int capacity){
         this.capacity = capacity;
     }
 
     /**
-     * Metoda, getter, która zwraca wartość pojemności budynku
-     * @return pojemność
+     * Metoda, getter, ktora zwraca wartosć pojemnosci budynku
+     * @return pojemnosć
      */
     public int getCapacity(){
         return capacity;
     }
     
     /**
-     * Metoda, która zwraca statyczną wartość dla obiektów tej klasy
-     * @return licznik budynków
+     * Metoda, ktora zwraca statyczna wartosć dla obiektow tej klasy
+     * @return licznik budynkow
      */
     public int getblockCounter(){
         return blockCounter;

@@ -16,31 +16,31 @@ import java.io.FileNotFoundException;
 import app.Settings;
 
 /**
- * Klasa, która jest odpowiedzialna za przygotowanie wzoru obiektu będącego
- * panelem do zmiany ścieżki dla plików wyjściowych z symulacji.
+ * Klasa, ktora jest odpowiedzialna za przygotowanie wzoru obiektu bedacego
+ * panelem do zmiany sciezki dla plikow wyjsciowych z symulacji.
  * @version 1.0
  * @see app.Settings
  */
 public class ChangeOutputPanel extends JPanel{
     /** Pole potrzebne do serializacji */
     private static final long serialVersionUID = -7668936027676131330L;
-    /** Pole, które przechowuje przycisk do potwierdzenia zmian */
+    /** Pole, ktore przechowuje przycisk do potwierdzenia zmian */
     private JButton confirmButt;
-    /** Pole, które przechowuje przycisk do ustawienia domyślnej ścieżki */
+    /** Pole, ktore przechowuje przycisk do ustawienia domyslnej sciezki */
     private JButton defaultButt;
-    /** Pole, które przechowuje napis nad obszarem do wyświetlania tekstu */
+    /** Pole, ktore przechowuje napis nad obszarem do wyswietlania tekstu */
     private JLabel lab1;
-    /** Pole, które przechowuje napis nad obszarem do wpisywania tekstu */
+    /** Pole, ktore przechowuje napis nad obszarem do wpisywania tekstu */
     private JLabel lab2;
-    /** Pole, które przechowuje obiekt odpowiedzialny za wpisywanie tekstu ścieżki */
+    /** Pole, ktore przechowuje obiekt odpowiedzialny za wpisywanie tekstu sciezki */
     private JTextField tField1;
-    /** Pole, które przechowuje obiekt odpowiedzialny za wyświetlanie tekstu ścieżki */
+    /** Pole, ktore przechowuje obiekt odpowiedzialny za wyswietlanie tekstu sciezki */
     private JTextField tField2;
-    /** Pole, które przechowuje obiekt z ustawieniami */
+    /** Pole, ktore przechowuje obiekt z ustawieniami */
     private Settings settings;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekt tej klasy w zależności
+     * Metoda, konstruktor, ktora tworzy obiekt tej klasy w zaleznosci
      * od obiektu ustawień symulacji
      * @param settings obiekt z ustawieniami
      */
@@ -106,7 +106,7 @@ public class ChangeOutputPanel extends JPanel{
     }
 
     /**
-     * Metoda, która jest odpowiedzialna za odświeżanie pól tekstowych w panelu.
+     * Metoda, ktora jest odpowiedzialna za odswiezanie pol tekstowych w panelu.
      */
     public void refresh(){
         tField1.setText(settings.getOutPath().replace("\\\\", "\\"));

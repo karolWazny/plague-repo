@@ -2,7 +2,7 @@ package map;
 
 /**
  * Klasa pustego pola na mapie
- * Jego reprezentacją znakową jest spacja
+ * Jego reprezentacja znakowa jest spacja
  * @version 1.0
  * @see map.Being
  */

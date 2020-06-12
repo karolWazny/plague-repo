@@ -10,7 +10,7 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 
 /**
- * Klasa, która jest typem obiektu będącego okienkiem podglądu przebiegu w trakcie trwania
+ * Klasa, ktora jest typem obiektu bedacego okienkiem podgladu przebiegu w trakcie trwania
  * symulacji.
  * @version 1.0
  * @see app.Simulation
@@ -19,19 +19,19 @@ import javax.swing.JScrollPane;
 public class SimulationRuntimeWindow extends JFrame {
     /** Pole potrzebne do serializacji. */
     private static final long serialVersionUID = -4709971995267753715L;
-    /** Pole, które przechowuje panel do wyświetlania mapy. */
+    /** Pole, ktore przechowuje panel do wyswietlania mapy. */
     private JPanel simulationPanel;
-    /** Pole, które przechowuje obszar tekstowy, gdzie są drukowane wartości liczbowe
+    /** Pole, ktore przechowuje obszar tekstowy, gdzie sa drukowane wartosci liczbowe
      * w trakcie przebiegu symulacji.
     */
     private JTextArea outputConsole;
-    /** Obiekt odpowiedzialny za możliwość scrollowania obszaru tekstowego
-     * - konsoli wyjściowej.
+    /** Obiekt odpowiedzialny za mozliwosć scrollowania obszaru tekstowego
+     * - konsoli wyjsciowej.
     */
     private JScrollPane scroller;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekt będący okienkiem symulacji
+     * Metoda, konstruktor, ktora tworzy obiekt bedacy okienkiem symulacji
      * @param sim Obiekt klasy symulacji
      */
     public SimulationRuntimeWindow(Simulation sim) {
@@ -56,7 +56,7 @@ public class SimulationRuntimeWindow extends JFrame {
     }
 
     /**
-     * Metoda, która wyświetla następną rundę.
+     * Metoda, ktora wyswietla nastepna runde.
      * @param state obiekt ze stanem symulacji po rundzie
      */
     public void nextRound(String state) {
@@ -67,8 +67,8 @@ public class SimulationRuntimeWindow extends JFrame {
     }
 
     /**
-     * Metoda, która wyświetla do okienka ostatnią rundę i wynik symulacji.
-     * @param str tekst, będący ostatecznym wyjściem symulacji.
+     * Metoda, ktora wyswietla do okienka ostatnia runde i wynik symulacji.
+     * @param str tekst, bedacy ostatecznym wyjsciem symulacji.
      */
     public void finish(String str) {
         outputConsole.setText(str);

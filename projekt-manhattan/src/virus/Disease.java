@@ -3,14 +3,14 @@ package virus;
 import human.IDiseaseSensitive;
 
 /**
- * Klasa, która w rzeczywistości byłaby pojęciem "choroba"
- * Posiada informacje bezpośrednio o chorobie i jej działanie na człowieka
+ * Klasa, ktora w rzeczywistosci bylaby pojeciem "choroba"
+ * Posiada informacje bezposrednio o chorobie i jej dzialanie na czlowieka
  * @version 1.0
  * @see human.IDiseaseSensitive
  */
 public abstract class Disease implements IDisease {
     /**
-     * Pole z informacją: czas do objawów choroby
+     * Pole z informacja: czas do objawow choroby
      */
     private int timeTilSymptoms;
     /**
@@ -26,25 +26,25 @@ public abstract class Disease implements IDisease {
      */
     private String id;
     /**
-     * Wskaźnik infekcji
+     * Wskaznik infekcji
      */
     private int infectionRate;
     /**
-     * Szansa na wystąpienie objawów
+     * Szansa na wystapienie objawow
      */
     private int activeRate;
     /**
-     * Obiekt odpowiedzialny za zarażanie - wydzielona odpowiedzialność
+     * Obiekt odpowiedzialny za zarazanie - wydzielona odpowiedzialnosć
      */
     protected static Infector infector = new Infector();
     
     /**
-     * Metoda - konstruktor obiektów klasy choroba
+     * Metoda - konstruktor obiektow klasy choroba
      * @param id identyfikator
      * @param timeTilInfect czas do zainfekowania
      * @param timeTilCured czas do wyzdrowienia
-     * @param infectionRate wskaźnik infekcji
-     * @param activeRate szansa na wystąpienie objawów
+     * @param infectionRate wskaznik infekcji
+     * @param activeRate szansa na wystapienie objawow
      */
     public Disease(String id, int timeTilInfect, int timeTilCured, int infectionRate, int activeRate) {
         this.timeTilInfect = timeTilInfect;
@@ -55,7 +55,7 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-     * Metoda konstruktow, która jako parametr przyjmuje inną instancję tej samej klasy
+     * Metoda konstruktow, ktora jako parametr przyjmuje inna instancje tej samej klasy
      * @param prototype obiekt instancja tej samej klasy
      */
     public Disease(Disease prototype) {
@@ -72,10 +72,10 @@ public abstract class Disease implements IDisease {
      * Deklsaracja metody infect
      */
     //@Override
-    public abstract int infect(IDiseaseSensitive man); //zarażenie wirusem zwraca 1, zarażenie czymś innym lub brak zarażenia zwraca 0
+    public abstract int infect(IDiseaseSensitive man); //zarazenie wirusem zwraca 1, zarazenie czyms innym lub brak zarazenia zwraca 0
 
     /**
-     * Metoda pobierająca identyfikator choroby
+     * Metoda pobierajaca identyfikator choroby
      * @return identyfikator
      */
     public String getId() {
@@ -83,7 +83,7 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-     * Metoda pobierająca wartość czasu potrzebnego do zainfekowania
+     * Metoda pobierajaca wartosć czasu potrzebnego do zainfekowania
      * @return czas do zainfekowania
      */
     public int getTimeTilInfect() {
@@ -91,7 +91,7 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-     * MEtoda pobierająca wartość czasu potrzebnego do wyzdrowienia
+     * MEtoda pobierajaca wartosć czasu potrzebnego do wyzdrowienia
      * @return czas do wyzdrowienia
      */
     public int getTimeTilCured() {
@@ -99,8 +99,8 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-     * Metoda zwracająca wskaźnik infekcji
-     * @return wskaźnik infekcji
+     * Metoda zwracajaca wskaznik infekcji
+     * @return wskaznik infekcji
      */
     //@Override
     public int getInfectionRate() {
@@ -108,8 +108,8 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-     * Metoda zwracająca Czas do wystąpienia symptomów
-     * @return czas do wystąpienia symptomów
+     * Metoda zwracajaca Czas do wystapienia symptomow
+     * @return czas do wystapienia symptomow
      */
     //@Override
     public int getTimeTilSymptoms() {
@@ -117,8 +117,8 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-     * Metoda zwracająca szansę na wystąpieni objawów
-     * @return szansa na wystąpienie objawów
+     * Metoda zwracajaca szanse na wystapieni objawow
+     * @return szansa na wystapienie objawow
      */
     //@Override
     public int getActiveRate() {

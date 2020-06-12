@@ -4,51 +4,51 @@ import java.util.List;
 import virus.DiseaseRecord;
 
 /**
- * Interfejs, który zawiera deklaracje metod potrzebnych do operacji
- * na człowieku i jego cechach
+ * Interfejs, ktory zawiera deklaracje metod potrzebnych do operacji
+ * na czlowieku i jego cechach
  * @version 1.0
  * @see virus.DiseaseRecord
  * @see IRecoverable
  */
 public interface IDiseaseSensitive extends IRecoverable {
     /**
-     * Deklaracja metody, która symuluje przebieg choroby
-     * @return stan człowieka
+     * Deklaracja metody, ktora symuluje przebieg choroby
+     * @return stan czlowieka
      */
     public int performIllness();
     /**
-     * Deklaracja metody, która zwraca wartość czy obiekt jest żywy
-     * @return wartość logiczna
+     * Deklaracja metody, ktora zwraca wartosć czy obiekt jest zywy
+     * @return wartosć logiczna
      */
     public boolean getIsAlive();
     /**
-     * Deklaracja metody, getter, która zwraca czy obiekt jest zarażony
-     * @return wartość logiczna czy zarażony
+     * Deklaracja metody, getter, ktora zwraca czy obiekt jest zarazony
+     * @return wartosć logiczna czy zarazony
      */
     public boolean getIsInfected();
     /**
-     * Deklaracja metody, getter, która zwraca punkty zdrowia obiektu
+     * Deklaracja metody, getter, ktora zwraca punkty zdrowia obiektu
      * @return punkty zdrowia
      */
     public int getHealthPoints();
     /**
-     * Deklaracja metody, getter, która zwraca listę chorób obiektu
-     * @return lista chorób
+     * Deklaracja metody, getter, ktora zwraca liste chorob obiektu
+     * @return lista chorob
      */
     public List<DiseaseRecord> getDiseases();
     /**
-     * Deklaracja mateody, setter, która ustawia wartość logiczną czy jest zarażony
-     * @param isInfected wartość logiczna czy jest zarażony
+     * Deklaracja mateody, setter, ktora ustawia wartosć logiczna czy jest zarazony
+     * @param isInfected wartosć logiczna czy jest zarazony
      */
     public void setIsInfected(boolean isInfected);
     /**
-     * Deklaracja metody, setter, która ustawia wartość punktów zdrowia obiektu
+     * Deklaracja metody, setter, ktora ustawia wartosć punktow zdrowia obiektu
      * @param healthPoints punkty zdrowia obiektu
      */
     public void setHealthPoints(int healthPoints);
     /**
-     * Deklaracja metody, setter, która ustawia stan logiczny aspektu czy obiekt jest żywy
-     * @param isAlive stan logiczny czy żywy
+     * Deklaracja metody, setter, ktora ustawia stan logiczny aspektu czy obiekt jest zywy
+     * @param isAlive stan logiczny czy zywy
      */ 
     public void setIsAlive(boolean isAlive);
 }

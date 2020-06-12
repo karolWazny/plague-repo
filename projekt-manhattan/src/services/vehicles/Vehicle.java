@@ -9,9 +9,9 @@ import container.IRecord;
 import map.Being;
 
 /**
- * Klasa, która definiuje cechy ogólnie pojętych pojazdów
- * Posiada wszystkie niezbędne funkcjonalności do poruszania się po mapie i 
- * do przewożenia obiektów
+ * Klasa, ktora definiuje cechy ogolnie pojetych pojazdow
+ * Posiada wszystkie niezbedne funkcjonalnosci do poruszania sie po mapie i 
+ * do przewozenia obiektow
  * @version 1.0
  * @see container.IMovable
  * @see container.Coordinates
@@ -19,28 +19,28 @@ import map.Being;
  * @see map.Being
  */
 public abstract class Vehicle extends Being implements IMovable{
-    /** Pole z pojemnością pojazdu */
+    /** Pole z pojemnoscia pojazdu */
     private int capacity;
-    /** Prędkość pojazdu */
+    /** Predkosć pojazdu */
     private int velocity;
-    /** Cel podróży */
+    /** Cel podrozy */
     protected Coordinates destination;
-    /** koordynaty garażu */
+    /** koordynaty garazu */
     protected final Coordinates home; 
-    /** zmienna statyczna - ilość pojazdów */
+    /** zmienna statyczna - ilosć pojazdow */
     private static int numVeh = 0;
     /** pole z obiektem gps */
     private IGPS gps;
-    /** Lista pasażerów pojazdu */
+    /** Lista pasazerow pojazdu */
     protected List<IRecord> passengers;
     
     /**
-     * Metoda, konstruktor, która tworzy obiekty klasy pojazd
-     * @param id identyfikator - ciąg znaków
+     * Metoda, konstruktor, ktora tworzy obiekty klasy pojazd
+     * @param id identyfikator - ciag znakow
      * @param representation reprezentacja znakowa
-     * @param capacity pojemność
-     * @param velocity szybkość
-     * @param home koordynaty garażu
+     * @param capacity pojemnosć
+     * @param velocity szybkosć
+     * @param home koordynaty garazu
      * @param gps obiekt gps-u
      */
     public Vehicle(String id, char representation, int capacity, int velocity, Coordinates home, IGPS gps){
@@ -55,8 +55,8 @@ public abstract class Vehicle extends Being implements IMovable{
     }
 
     /**
-     * Metoda, która zwraca reprezentację znakową konkretnej instancji obiektu
-     * @return ciąg znaków charakterystyczny dla obiektu
+     * Metoda, ktora zwraca reprezentacje znakowa konkretnej instancji obiektu
+     * @return ciag znakow charakterystyczny dla obiektu
      */
     public String toString(){
         return "Vehicle nr " + numVeh + " with capacity " + this.capacity + 
@@ -64,7 +64,7 @@ public abstract class Vehicle extends Being implements IMovable{
     }
 
     /** 
-     * Metoda, która jest odpowiedzialna za ruch
+     * Metoda, ktora jest odpowiedzialna za ruch
      * @param currentPosition aktualna pozycja 
      * @return nowa pozycja
      */
@@ -73,10 +73,10 @@ public abstract class Vehicle extends Being implements IMovable{
         return newPosition;
     }
 
-    //Dodaję pasażera do pojazdu, jeśli nie ma miejsca, nie robię tego
+    //Dodaje pasazera do pojazdu, jesli nie ma miejsca, nie robie tego
     /**
-     * Metoda, która dodaje pasażera do pojazdu, jeśli nie ma miejsca, nie robię tego
-     * @param passenger obiekt pasażer
+     * Metoda, ktora dodaje pasazera do pojazdu, jesli nie ma miejsca, nie robie tego
+     * @param passenger obiekt pasazer
      */
     public void addPassenger(IRecord passenger){
         if(passengers.size()<this.capacity){
@@ -88,7 +88,7 @@ public abstract class Vehicle extends Being implements IMovable{
     }
 
     /**
-     * Metoda, setter, która ustawia pole gps
+     * Metoda, setter, ktora ustawia pole gps
      * @param gps pole gps
      */
     public void setGPS (IGPS gps) {
@@ -96,39 +96,39 @@ public abstract class Vehicle extends Being implements IMovable{
     }
 
     /**
-     * Metoda, getter, która zwraca szybkość pojazdu
-     * @return szybkość pojazdu
+     * Metoda, getter, ktora zwraca szybkosć pojazdu
+     * @return szybkosć pojazdu
      */
     public int getVelocity(){
         return velocity;
     }
 
     /**
-     * Metoda, getter, która zwraca pojemność pojazdu
-     * @return pojemność pojazdu
+     * Metoda, getter, ktora zwraca pojemnosć pojazdu
+     * @return pojemnosć pojazdu
      */
     public int getCapacity(){
         return capacity;
     }
 
     /**
-     * Metoda, getter, która zwraca liczbę wszystkich instancji klasy pojazd
-     * @return liczba pojazdów
+     * Metoda, getter, ktora zwraca liczbe wszystkich instancji klasy pojazd
+     * @return liczba pojazdow
      */
     public int getNumVeh(){
         return numVeh;
     }
 
     /**
-     * Metoda, getter, która zwraca listę pasażerów pojazdu
-     * @return lista pasażerów
+     * Metoda, getter, ktora zwraca liste pasazerow pojazdu
+     * @return lista pasazerow
      */
     public List<IRecord> getPassengers(){
         return passengers;
     }
 
     /**
-     * Metoda, getter, która zwraca obiekt pełniący rolę GPS
+     * Metoda, getter, ktora zwraca obiekt pelniacy role GPS
      * @return GPS
      */
     public IGPS getIGPS() {

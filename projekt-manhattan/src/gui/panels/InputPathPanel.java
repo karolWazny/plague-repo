@@ -15,35 +15,35 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
- * Klasa, która jest odpowiedzialna za stworzenie obiektu będącego
- * panelem do pobrania aktualnej ścieżki dostępu lub do wpisania nowej ścieżki
+ * Klasa, ktora jest odpowiedzialna za stworzenie obiektu bedacego
+ * panelem do pobrania aktualnej sciezki dostepu lub do wpisania nowej sciezki
  * z plikiem konfiguracyjnym.
  * @version 1.0
  * @see app.Settings
  */
 public class InputPathPanel extends JPanel {
-    /** Pole, które jest potrzebne do serializacji. */ 
+    /** Pole, ktore jest potrzebne do serializacji. */ 
     private static final long serialVersionUID = -2602656210270465426L;
-    /** Pole, które przechowuje obiekt z ustawieniami. */
+    /** Pole, ktore przechowuje obiekt z ustawieniami. */
     private Settings settings;
     /** Etykieta z napisem "Current configuration file path: "*/
     private JLabel lab1;
     /** Etykieta z napisem "New configuration file path: " */
     private JLabel lab2;
-    /** Obszar tekstowy wyświetlający aktualną ścieżkę do pliku konfiguracyjnego.*/
+    /** Obszar tekstowy wyswietlajacy aktualna sciezke do pliku konfiguracyjnego.*/
     private JTextField tField1;
-    /** Obszar tekstowy na wpisanie nowej ścieżki do pliku konfiguracyjnego.*/
+    /** Obszar tekstowy na wpisanie nowej sciezki do pliku konfiguracyjnego.*/
     private JTextField tField2;
-    /** Pole, które przechowuje obiekt - przycisk do ustawiania domyślnej ścieżki */
+    /** Pole, ktore przechowuje obiekt - przycisk do ustawiania domyslnej sciezki */
     private JButton defaultButt;
-    /** Pole, które przechowuje obiekt - przycisk do potwierdzenia i załadowania parametrów
-     * z pliku z podanej ścieżki.
+    /** Pole, ktore przechowuje obiekt - przycisk do potwierdzenia i zaladowania parametrow
+     * z pliku z podanej sciezki.
     */
     private JButton confirmButt;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekt będący panelem do pokazywania
-     * aktualnej ścieżki z plikiem konfiguracyjnym i do wpisywania nowej
+     * Metoda, konstruktor, ktora tworzy obiekt bedacy panelem do pokazywania
+     * aktualnej sciezki z plikiem konfiguracyjnym i do wpisywania nowej
      * @param settings obiekt z ustawieniami
      */
     public InputPathPanel(Settings settings) {
@@ -108,7 +108,7 @@ public class InputPathPanel extends JPanel {
     }
 
     /**
-     * Metoda, która odświeża widok zawartości obszarów tekstowych.
+     * Metoda, ktora odswieza widok zawartosci obszarow tekstowych.
      */
     public void refresh(){
         tField1.setText(settings.getParamPath());

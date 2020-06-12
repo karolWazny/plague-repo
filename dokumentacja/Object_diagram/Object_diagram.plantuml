@@ -3,7 +3,7 @@ object Virus{
     timeTilSymptoms = 10
     timeTilInfect = 10
     timeTilCured = 10
-    id = Koronaświrus
+    id = Koronaswirus
     infectionRate = 10
     activeRate = 10
     infector = INFECTOR 
@@ -14,7 +14,7 @@ object Infector{
 
 }
 object DiseaseRecord{
-    disease = koronaświrus
+    disease = koronaswirus
     isActive = true 
     infects = true 
     areSymptoms = true 

@@ -1,14 +1,14 @@
 package random;
 
 /**
- * Klasa, która symuluje rzut standardowo spotykaną w RPG kostką
- * Można powiedzieć, że są to gereratory liczb losowych dla określonych wartości
+ * Klasa, ktora symuluje rzut standardowo spotykana w RPG kostka
+ * Mozna powiedzieć, ze sa to gereratory liczb losowych dla okreslonych wartosci
  * @version 1.0
  */
 public class Dice {
     /**
-     * Metoda symulująca rzut kostką dwuścienną
-     * @param arg ilość kości
+     * Metoda symulujaca rzut kostka dwuscienna
+     * @param arg ilosć kosci
      * @return wynik losowy
      */
     public static int d2(int arg) {
@@ -20,7 +20,7 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut jedną kostką dwuścienną
+     * Metoda symulujaca rzut jedna kostka dwuscienna
      * @return wynik losowy
      */
     public static int d2() {
@@ -28,8 +28,8 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut kostką czterościenną
-     * @param arg ilość kości
+     * Metoda symulujaca rzut kostka czteroscienna
+     * @param arg ilosć kosci
      * @return wynik losowy
      */
     public static int d4(int arg) {
@@ -41,7 +41,7 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut jedną kostką czterościenną
+     * Metoda symulujaca rzut jedna kostka czteroscienna
      * @return wynik losowy
      */
     public static int d4() {
@@ -49,8 +49,8 @@ public class Dice {
     }
     
     /**
-     * Metoda symulująca rzut kostką sześciościenną
-     * @param arg ilość kości
+     * Metoda symulujaca rzut kostka szescioscienna
+     * @param arg ilosć kosci
      * @return wynik losowy
      */
     public static int d6(int arg) {
@@ -62,7 +62,7 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut jedną kostką sześciościenną
+     * Metoda symulujaca rzut jedna kostka szescioscienna
      * @return wynik losowy
      */
     public static int d6() {
@@ -70,8 +70,8 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut kostką ośmiościenną
-     * @param arg ilość kości
+     * Metoda symulujaca rzut kostka osmioscienna
+     * @param arg ilosć kosci
      * @return wynik losowy
      */
     public static int d8(int arg) {
@@ -83,7 +83,7 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut jedną kostką ośmiościenną
+     * Metoda symulujaca rzut jedna kostka osmioscienna
      * @return wynik losowy
      */
     public static int d8() {
@@ -91,8 +91,8 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut kostką dziesięciościenną
-     * @param arg ilość kości
+     * Metoda symulujaca rzut kostka dziesiecioscienna
+     * @param arg ilosć kosci
      * @return wynik losowy
      */
     public static int d10(int arg) {
@@ -104,7 +104,7 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut jedną kostką dziesięciościenną
+     * Metoda symulujaca rzut jedna kostka dziesiecioscienna
      * @return wynik losowy
      */
     public static int d10() {
@@ -112,8 +112,8 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut kostką dwunastościenną
-     * @param arg ilość kości
+     * Metoda symulujaca rzut kostka dwunastoscienna
+     * @param arg ilosć kosci
      * @return wynik losowy
      */
     public static int d12(int arg) {
@@ -125,7 +125,7 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut jedną kostką dwunastościenną
+     * Metoda symulujaca rzut jedna kostka dwunastoscienna
      * @return wynik losowy
      */
     public static int d12() {
@@ -133,8 +133,8 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut kostką dwudziestościenną
-     * @param arg ilość kości
+     * Metoda symulujaca rzut kostka dwudziestoscienna
+     * @param arg ilosć kosci
      * @return wynik losowy
      */
     public static int d20(int arg) {
@@ -146,7 +146,7 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut jedną kostką dwudziestościenną
+     * Metoda symulujaca rzut jedna kostka dwudziestoscienna
      * @return wynik losowy
      */
     public static int d20() {
@@ -154,8 +154,8 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut kostką stuścienną
-     * @param arg ilość kości
+     * Metoda symulujaca rzut kostka stuscienna
+     * @param arg ilosć kosci
      * @return wynik losowy
      */
     public static int d100(int arg) {
@@ -167,7 +167,7 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut jedną kostką stuścienną
+     * Metoda symulujaca rzut jedna kostka stuscienna
      * @return wynik losowy
      */
     public static int d100() {
@@ -175,9 +175,9 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut kostką dowolnych rozmiarów
+     * Metoda symulujaca rzut kostka dowolnych rozmiarow
      * @param diceRange rozmiar
-     * @param diceNumber ilość
+     * @param diceNumber ilosć
      * @return wynik losowy
      */
     public static int custom(int diceRange, int diceNumber){
@@ -189,8 +189,8 @@ public class Dice {
     }
 
     /**
-     * Metoda symulująca rzut jedną kostką o dowolnej liczbie ścian
-     * @param diceRange liczba ścian
+     * Metoda symulujaca rzut jedna kostka o dowolnej liczbie scian
+     * @param diceRange liczba scian
      * @return wynik losowy
      */
     public static int custom(int diceRange){

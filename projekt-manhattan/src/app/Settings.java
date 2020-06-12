@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
 import java.io.File;
 
 /**
- * Klasa służąca do przechowywania informacji o ustawieniach
+ * Klasa sluzaca do przechowywania informacji o ustawieniach
  * @version 1.0
  * @see app.SimulationParameters
  */
@@ -24,17 +24,17 @@ public class Settings implements Serializable{
      */
     SimulationParameters params;
     /**
-     * Pole z informacją o ścieżce dostępu do folderu z plikami tekstowymi przebiegów
+     * Pole z informacja o sciezce dostepu do folderu z plikami tekstowymi przebiegow
      */
     String outPath;
     /**
-     * Pole z informacją o ścieżce do odczytu pliku z parametrami symulacji
+     * Pole z informacja o sciezce do odczytu pliku z parametrami symulacji
      */
     String paramPath;
 
     /**
-     * Metoda, konstruktor domyślny tworząca obiekt klasy ustawienia
-     * Istenieje tylko ten jeden sposób tworzenia obiektu
+     * Metoda, konstruktor domyslny tworzaca obiekt klasy ustawienia
+     * Istenieje tylko ten jeden sposob tworzenia obiektu
      */
     public Settings(){
         boolean wasException = false;
@@ -66,8 +66,8 @@ public class Settings implements Serializable{
     /**
      * Zaczytuje informacje z pliku
      * @return obiekt typu Settings
-     * @throws FileNotFoundException Wyrzuca wyjątek, gdy nie ma pliku
-     * @throws IOException Wyrzuca wyjątek, gdy są błędy na wejściu-wyjściu
+     * @throws FileNotFoundException Wyrzuca wyjatek, gdy nie ma pliku
+     * @throws IOException Wyrzuca wyjatek, gdy sa bledy na wejsciu-wyjsciu
      * @throws ClassNotFoundException Wyrzuca wyjatek, gdy nie znajdzie klasy
      */
     private Settings load() throws FileNotFoundException, IOException, ClassNotFoundException {
@@ -78,8 +78,8 @@ public class Settings implements Serializable{
     }
 
     /**
-     * Metoda, która wysyła ustawienia do pliku binarnego
-     * @throws IOException wyrzuca błąd na wejściu-wyjściu
+     * Metoda, ktora wysyla ustawienia do pliku binarnego
+     * @throws IOException wyrzuca blad na wejsciu-wyjsciu
      */
     public void serialize() throws IOException{
         ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("Settings.bin"));
@@ -89,7 +89,7 @@ public class Settings implements Serializable{
     }
 
     /**
-     * Metoda ustawiająca wszystko domyślnie
+     * Metoda ustawiajaca wszystko domyslnie
      */
     void setDefaultAll(){
         setDefaultParameters();
@@ -99,7 +99,7 @@ public class Settings implements Serializable{
     }
 
     /**
-     * Metoda, getter, która zwraca obiekt z parametrami symulacji
+     * Metoda, getter, ktora zwraca obiekt z parametrami symulacji
      * @return obiekt z parametrami symulacji
      */
     public SimulationParameters getParameters(){
@@ -107,7 +107,7 @@ public class Settings implements Serializable{
     }
 
     /**
-     * Metoda, która ustawia wszystkie parametry na domyślne wartości
+     * Metoda, ktora ustawia wszystkie parametry na domyslne wartosci
      */
     public void setDefaultParameters(){
         params = new SimulationParameters();
@@ -119,8 +119,8 @@ public class Settings implements Serializable{
     }
 
     /**
-     * Metoda, setter, która ustawia parametry w zależności od obiektu, który otrzymuje
-     * @param parameters obiekt parametrów, które mają być przyjęte
+     * Metoda, setter, ktora ustawia parametry w zaleznosci od obiektu, ktory otrzymuje
+     * @param parameters obiekt parametrow, ktore maja być przyjete
      */
     public void setParameters(SimulationParameters parameters){
         params  = new SimulationParameters(parameters);
@@ -132,7 +132,7 @@ public class Settings implements Serializable{
     }
 
     /**
-     * Metoda, setter, która ustawia domyślnie ścieżkę do pliku tekstowego
+     * Metoda, setter, ktora ustawia domyslnie sciezke do pliku tekstowego
      */
     public void setDefaultParamPath(){
         paramPath = "Config.txt";
@@ -144,9 +144,9 @@ public class Settings implements Serializable{
     }
 
     /**
-     * Metoda, setter, która ustawia ścieżkę do odczytu z pliku
-     * @param paramPath ścieżka do pliku
-     * @throws FileNotFoundException Wyrzuca wyjątek braku pliku
+     * Metoda, setter, ktora ustawia sciezke do odczytu z pliku
+     * @param paramPath sciezka do pliku
+     * @throws FileNotFoundException Wyrzuca wyjatek braku pliku
      */
     public void setParamPath(String paramPath) throws FileNotFoundException {
         this.paramPath = paramPath;
@@ -160,32 +160,32 @@ public class Settings implements Serializable{
     }
 
     /**
-     * Metoda, setter, która domyślnie ustawia OutPath
+     * Metoda, setter, ktora domyslnie ustawia OutPath
      */
     public void setDefaultOutPath(){
         outPath = "sim_out\\";
     }
 
     /**
-     * Metoda, getter, która zwraca ścieżkę do plku z parametrami
-     * @return ciąg znaków - ścieżka
+     * Metoda, getter, ktora zwraca sciezke do plku z parametrami
+     * @return ciag znakow - sciezka
      */
     public String getParamPath(){
         return paramPath;
     }
 
     /**
-     * MEtoda, getter, która zwraca wartość pola outPath
-     * @return ciąg znaków outPath
+     * MEtoda, getter, ktora zwraca wartosć pola outPath
+     * @return ciag znakow outPath
      */
     public String getOutPath(){
         return outPath;
     }
 
     /**
-     * Metoda, setter, która ustawia pole outPath 
-     * @param outPath ciąg znaków, który chcemy ustawić
-     * @throws FileNotFoundException Wyrzuca wyjątek, gdy nie znajdzie pliku
+     * Metoda, setter, ktora ustawia pole outPath 
+     * @param outPath ciag znakow, ktory chcemy ustawić
+     * @throws FileNotFoundException Wyrzuca wyjatek, gdy nie znajdzie pliku
      */
     public void setOutPath(String outPath) throws FileNotFoundException {
         this.outPath = outPath+"\\";

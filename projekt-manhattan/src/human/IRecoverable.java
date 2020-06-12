@@ -1,13 +1,13 @@
 package human;
 
 /**
- * Interfejs, który implementuje tylko Doctor
+ * Interfejs, ktory implementuje tylko Doctor
  * @version 1.0
  * @see human.Doctor
  */
 public interface IRecoverable{
     /**
-     * Metoda, która symuluje działalność doktora, przyspiesza leczenie
+     * Metoda, ktora symuluje dzialalnosć doktora, przyspiesza leczenie
      */
     public void recover(); 
 }

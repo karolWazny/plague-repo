@@ -1,4 +1,4 @@
-﻿Piszę sobie cokolwiek
+﻿Pisze sobie cokolwiek
 
 START
 mapWidth=30
@@ -15,7 +15,7 @@ activeRate=100
 numHearse=0
 END
 
-Do powyższej sekwencji należy dane wpisać bez spacji
-między nazwą, znakiem równości i po nim.
+Do powyzszej sekwencji nalezy dane wpisać bez spacji
+miedzy nazwa, znakiem rownosci i po nim.
 
-Inaczej program może nie zadziałać.
+Inaczej program moze nie zadzialać.

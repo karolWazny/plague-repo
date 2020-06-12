@@ -9,8 +9,8 @@ import services.buildings.Hospital;
 import human.Human;
 
 /**
- * Klasa, która rozszerza klasę pojazd
- * Posiada informacje dodatkowe, które są potrzebne
+ * Klasa, ktora rozszerza klase pojazd
+ * Posiada informacje dodatkowe, ktore sa potrzebne
  * @version 1.0
  * @see container.Coordinates
  * @see container.IRecord
@@ -19,20 +19,20 @@ import human.Human;
  * @see human.Human
  */
 public class Ambulance extends Vehicle implements IRecoverable {
-    /** Pole, które posiada informacje o potrzebującym pomocy */
+    /** Pole, ktore posiada informacje o potrzebujacym pomocy */
     private IRecord caller;
     /** Licznik karetek */
     private static int numAmb = 0;
     /** Stan logiczny czy jest wolna */
     public boolean isFree = true;
-    /** Pole z informacjami o szpitalu, do którego należy */
+    /** Pole z informacjami o szpitalu, do ktorego nalezy */
     private Hospital hospital;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekty klasy karetki i przypisuje im cechy
-     * @param home garaż
+     * Metoda, konstruktor, ktora tworzy obiekty klasy karetki i przypisuje im cechy
+     * @param home garaz
      * @param gps nawigator, GPS
-     * @param hospital szpital, dla którego pracuje
+     * @param hospital szpital, dla ktorego pracuje
      */
     public Ambulance(Coordinates home, IGPS gps, Hospital hospital){
         super("Ambulance "+numAmb, 'A', 1, 20, home, gps);
@@ -41,15 +41,15 @@ public class Ambulance extends Vehicle implements IRecoverable {
     }
 
     /**
-     * Metoda, która zwraca ciąg znaków informujący o danym obiekcie
-     * @return ciąg znaków z informacjami
+     * Metoda, ktora zwraca ciag znakow informujacy o danym obiekcie
+     * @return ciag znakow z informacjami
      */
     public String toString(){
         return "Ambulance nr " + numAmb;
     }
 
     /**
-     * Metoda, która wykonuje ruch karetki i jako parametr przyjmuje aktualną jej pozycję
+     * Metoda, ktora wykonuje ruch karetki i jako parametr przyjmuje aktualna jej pozycje
      * @param currentPosition aktualna pozycja
      * @return nowe koordynaty
      */
@@ -62,7 +62,7 @@ public class Ambulance extends Vehicle implements IRecoverable {
                 isFree = true;
             } else{
                 super.addPassenger(caller);
-                super.getIGPS().getMap().emptyField(caller.getVerHor());//złamana zasada Demeter (znowu...)
+                super.getIGPS().getMap().emptyField(caller.getVerHor());//zlamana zasada Demeter (znowu...)
                 caller.setVerHor(null);
                 caller = null;
                 super.destination = new Coordinates(home);
@@ -75,7 +75,7 @@ public class Ambulance extends Vehicle implements IRecoverable {
     }
 
     /**
-     * Metoda, która pozwala w przyspieszony sposób wracać do zdrowia pasażerom
+     * Metoda, ktora pozwala w przyspieszony sposob wracać do zdrowia pasazerom
      */
     public void recover(){
         Iterator <IRecord>iterator = passengers.iterator();
@@ -92,15 +92,15 @@ public class Ambulance extends Vehicle implements IRecoverable {
     }
 
     /**
-     * Metoda, getter, która zwraca aktualną ilość karetek na mapie
-     * @return ilość karetek
+     * Metoda, getter, ktora zwraca aktualna ilosć karetek na mapie
+     * @return ilosć karetek
      */
     public int getNumAmb(){
         return numAmb;
     }
 
     /**
-     * Metoda, getter, która zwraca stan logiczny odpowiadający na pytanie: 
+     * Metoda, getter, ktora zwraca stan logiczny odpowiadajacy na pytanie: 
      * czy karetka jest wolna?
      * @return stan logiczny
      */
@@ -109,8 +109,8 @@ public class Ambulance extends Vehicle implements IRecoverable {
     }
 
     /**
-     * Maetoda, setter, która dodaje pasażera do listy pasażerów
-     * @param caller potrzebujący pomocy
+     * Maetoda, setter, ktora dodaje pasazera do listy pasazerow
+     * @param caller potrzebujacy pomocy
      */
     public void setCaller(IRecord caller){
         this.caller = caller;
@@ -119,8 +119,8 @@ public class Ambulance extends Vehicle implements IRecoverable {
     }
 
     /**
-     * Metoda, getter, która zwraca obiekt będący pasażerem karetki
-     * @return pasażer karetki
+     * Metoda, getter, ktora zwraca obiekt bedacy pasazerem karetki
+     * @return pasazer karetki
      */
     public IRecord getCaller(){
         return caller;

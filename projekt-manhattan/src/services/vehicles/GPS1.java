@@ -4,26 +4,26 @@ import map.Map;
 import container.Coordinates;
 
 /**
- * Klasa, która jest odpowiedzialna za nawigowanie karetkami
+ * Klasa, ktora jest odpowiedzialna za nawigowanie karetkami
  * Posiada informacje o mapie i jej aktualnym stanie
  */
 public class GPS1 implements IGPS {
-    /** Pole, które jest obiektem klasy map - informacje o aktualnej sytuacji na mapie */
+    /** Pole, ktore jest obiektem klasy map - informacje o aktualnej sytuacji na mapie */
     private Map map;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekt klasy GPS1
-     * @param map mapa, na której działa GPS
+     * Metoda, konstruktor, ktora tworzy obiekt klasy GPS1
+     * @param map mapa, na ktorej dziala GPS
      */
     public GPS1(Map map) {
         this.map = map;
     }
 
     /**
-     * Metoda, która nawiguje obiektem
+     * Metoda, ktora nawiguje obiektem
      * @param position aktualna pozycja
      * @param destination cel ruchu
-     * @param velocity szybkość 
+     * @param velocity szybkosć 
      * @return nowe koordynaty
      */
     public Coordinates navigate(Coordinates position, Coordinates destination, int velocity) {
@@ -65,7 +65,7 @@ public class GPS1 implements IGPS {
     }
 
     /**
-     * Metoda, getter, która zwraca obiekt mapy
+     * Metoda, getter, ktora zwraca obiekt mapy
      * @return mapa
      */
     public Map getMap(){

@@ -3,18 +3,18 @@ package virus;
 import human.IDiseaseSensitive;
 import random.Dice;
 /**
- * Klasa, która jest odpowiedzialna za zarażanie następnych ludzi
+ * Klasa, ktora jest odpowiedzialna za zarazanie nastepnych ludzi
  * @see human.IDiseaseSensitive
  * @see random.Dice
  */
 public class Infector {
     /**
-     * Metoda, która jest odpowiedzialna za zarażanie następnej instancji człowieka
+     * Metoda, ktora jest odpowiedzialna za zarazanie nastepnej instancji czlowieka
      * @param human
-     *          instancja człowieka - cel infekcji
+     *          instancja czlowieka - cel infekcji
      * @param disease
-     *          choroba, którą się zaraża
-     * @return Zwraca 0 jeśli nie doszło do zarażenia i 1 jeśli się powiodło
+     *          choroba, ktora sie zaraza
+     * @return Zwraca 0 jesli nie doszlo do zarazenia i 1 jesli sie powiodlo
      */
     public int performInfection(IDiseaseSensitive human, Disease disease) {
         for(DiseaseRecord illness: human.getDiseases()) {

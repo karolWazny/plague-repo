@@ -1,8 +1,8 @@
 package map;
 
 /**
- * Klasa, po której dziedziczy większość klas obiektów będących na mapie
- * Abstrakcyjna klasa, która nie tworzy instancji
+ * Klasa, po ktorej dziedziczy wiekszosć klas obiektow bedacych na mapie
+ * Abstrakcyjna klasa, ktora nie tworzy instancji
  * @version 1.0
  * @see map.IPrintable
  */
@@ -18,7 +18,7 @@ public abstract class Being implements IPrintable {
 
     /**
      * Metoda konstruktor klasy byt
-     * @param id ciąg znakowy - identyfikator
+     * @param id ciag znakowy - identyfikator
      * @param representation znak, reprezentacja znakowa
      */
     public Being(String id, char representation){
@@ -28,7 +28,7 @@ public abstract class Being implements IPrintable {
 
     //@Override
     /**
-     * Metoda zwracająca reprezentację znakową bytu
+     * Metoda zwracajaca reprezentacje znakowa bytu
      * @return reprezentacja znakowa
      */
     public String toString(){
@@ -38,8 +38,8 @@ public abstract class Being implements IPrintable {
     
     //@Override
     /**
-     * Metoda getter, która zwraca ciąg znakowy - identyfikator bytu
-     * @return ciąg znakowy identyfikatora
+     * Metoda getter, ktora zwraca ciag znakowy - identyfikator bytu
+     * @return ciag znakowy identyfikatora
      */
     public String getId() {
         return id;
@@ -47,7 +47,7 @@ public abstract class Being implements IPrintable {
 
     //@Override
     /**
-     * Metoda getter, która zwraca reprezentację znakową bytu
+     * Metoda getter, ktora zwraca reprezentacje znakowa bytu
      * @return reprezentacja znakowa w konsoli
      */
     public char getRepresentation(){

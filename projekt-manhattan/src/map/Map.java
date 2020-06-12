@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 /**
- * Klasa zawierająca wszystkie informacje potrzebne do wyświetlenia na mapie
+ * Klasa zawierajaca wszystkie informacje potrzebne do wyswietlenia na mapie
  * Instancja tej klasy - obiekt mapa
  * @version 1.0
  * @see container.Coordinates
@@ -13,27 +13,27 @@ import java.util.LinkedList;
  */
 public class Map {
     /**
-     * Długość obszaru reprezentującego mapę
+     * Dlugosć obszaru reprezentujacego mape
      */
     private int length;
     /**
-     * Szerokość obszaru reprezentującego mapę
+     * Szerokosć obszaru reprezentujacego mape
      */
     private int width;
     /**
-     * Pole będące tablicą obiektów implementujących IPrintable
+     * Pole bedace tablica obiektow implementujacych IPrintable
      */     
     private IPrintable[][] table;
     /**
-     * Puste pole, do którego prowadzą wszystkie referencje z pól, gdzie nic nie ma
+     * Puste pole, do ktorego prowadza wszystkie referencje z pol, gdzie nic nie ma
      */
     private static EmptySlot empty = new EmptySlot();
 
     /**
-     * Metoda, konstruktor, która tworzy instancję klasy mapa
-     * W tablicy pól pierwotnie umieszcza puste pola
-     * @param length długość obszaru reprezentującego mapę
-     * @param width szerokość obszaru reprezentującego mapę
+     * Metoda, konstruktor, ktora tworzy instancje klasy mapa
+     * W tablicy pol pierwotnie umieszcza puste pola
+     * @param length dlugosć obszaru reprezentujacego mape
+     * @param width szerokosć obszaru reprezentujacego mape
      */
     public Map(int length, int width){
         this.length = length;
@@ -49,15 +49,15 @@ public class Map {
 
     //@Override
     /**
-     * Metoda, która zwraca reprezentację tekstową instancji klasy mapa
-     * @return ciąg znakowy z informacjami o instancji klasy
+     * Metoda, ktora zwraca reprezentacje tekstowa instancji klasy mapa
+     * @return ciag znakowy z informacjami o instancji klasy
      */
     public String toString(){
         return "Mapa o rozmiarze: " + this.length + " na " + this.width;
     }
 
     /**
-     * Metoda, która wyświetla mapę w konsoli
+     * Metoda, ktora wyswietla mape w konsoli
      */
     public void displayMap(){
         for(int i=0; i<this.length; i++){
@@ -69,9 +69,9 @@ public class Map {
     }
 
     /**
-     * Metoda zwracająca listę obiektów klasy container.Coordinates będących 
+     * Metoda zwracajaca liste obiektow klasy container.Coordinates bedacych 
      * pustymi polami na mapie
-     * @return Lista koordynatów
+     * @return Lista koordynatow
      */
     public List<Coordinates> emptyFieldsList () {
         List<Coordinates> list = new LinkedList<>();
@@ -86,10 +86,10 @@ public class Map {
     }
 
     /**
-     * Metoda ustawiająca na mapie w konkretnym miejscu obiekt 
-     * implementujący interfejs IPrintable
+     * Metoda ustawiajaca na mapie w konkretnym miejscu obiekt 
+     * implementujacy interfejs IPrintable
      * @param obj obiekt umieszczany na mapie
-     * @param coords koordynaty miejsca, w którym chcemy obiekt ustawić
+     * @param coords koordynaty miejsca, w ktorym chcemy obiekt ustawić
      */
     public void setField(IPrintable obj, Coordinates coords){
         if(coords == null){
@@ -111,7 +111,7 @@ public class Map {
     }
     
     /**
-     * Metoda, która w konkretnym miejscu ustawia puste pole
+     * Metoda, ktora w konkretnym miejscu ustawia puste pole
      * @param coords koordynaty nowego pustego pola
      */
     public void emptyField(Coordinates coords) {
@@ -120,20 +120,20 @@ public class Map {
 
     @Deprecated
     /**
-     * Metoda, której używaliśmy przed wprowadzeniem klasy container.Coordinates
-     * do umieszczania obiektów na mapie
+     * Metoda, ktorej uzywalismy przed wprowadzeniem klasy container.Coordinates
+     * do umieszczania obiektow na mapie
      * @param obj obiekt do umieszczenia
-     * @param vertical współrzędna Y
-     * @param horizontal współrzędna X
+     * @param vertical wspolrzedna Y
+     * @param horizontal wspolrzedna X
      */
     public void setField(IPrintable obj, int vertical, int horizontal) {
         table[vertical][horizontal] = obj;
     }
 
     /**
-     * Metoda, która przekształca reprezentację koordynatów
+     * Metoda, ktora przeksztalca reprezentacje koordynatow
      * @param newVerHor Nowe koordynaty
-     * @return tablica ze współrzędnymi X i Y
+     * @return tablica ze wspolrzednymi X i Y
      */
 	public IPrintable getField(Coordinates newVerHor) {
         if(newVerHor.getVertical()>=this.length) {
@@ -149,16 +149,16 @@ public class Map {
     }
     
     /**
-     * Metoda getter, która zwraca długość konkretnej instancji mapy
-     * @return długość mapy
+     * Metoda getter, ktora zwraca dlugosć konkretnej instancji mapy
+     * @return dlugosć mapy
      */
     public int getLength() {
         return length;
     }
 
     /**
-     * Metoda getter, która zwraca szerokość mapy
-     * @return szerokość mapy
+     * Metoda getter, ktora zwraca szerokosć mapy
+     * @return szerokosć mapy
      */
     public int getWidth() {
         return width;

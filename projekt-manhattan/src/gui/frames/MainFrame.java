@@ -8,8 +8,8 @@ import java.util.concurrent.ExecutorService;
 import javax.swing.JFrame;
 
 /**
- * Klasa, która jest odpowiedzialna za tworzenie obiektów 
- * posiadających cechy głównego okienka aplikacji
+ * Klasa, ktora jest odpowiedzialna za tworzenie obiektow 
+ * posiadajacych cechy glownego okienka aplikacji
  * @version 1.0
  * @see app.Settings
  * @see gui.panels.MainMenu
@@ -19,10 +19,10 @@ public class MainFrame extends JFrame{
     private static final long serialVersionUID = 8708925714105432303L;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekty klasy głównego okienka.
-     * Przekazuje ustawienia i referencję do egzekutora wątków do panelu głównego menu.
+     * Metoda, konstruktor, ktora tworzy obiekty klasy glownego okienka.
+     * Przekazuje ustawienia i referencje do egzekutora watkow do panelu glownego menu.
      * @param settings ustawienia
-     * @param executor zarządzanie wątkami
+     * @param executor zarzadzanie watkami
      */
     public MainFrame(Settings settings, ExecutorService executor){
         super("Plague Simulation: Project Manhattan");

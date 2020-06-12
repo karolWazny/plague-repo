@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
- * Klasa, która jest zarządzającym obiektem dla wszystkich karetek
+ * Klasa, ktora jest zarzadzajacym obiektem dla wszystkich karetek
  * Posiada informacje o karetkach i pacjentach
  * @version 1.0
  * @see container.IRecord
@@ -20,13 +20,13 @@ import java.util.LinkedList;
  * @see human.IDiseaseSensitive 
  */
 public class Dispatching extends Being{
-    /** Lista rekordów dla ludzi, którzy potrzebują pomocy */
+    /** Lista rekordow dla ludzi, ktorzy potrzebuja pomocy */
     private List<IRecord> callerList;
-    /** Lista rekordów z karetkami */
+    /** Lista rekordow z karetkami */
     private List<Ambulance> ambulanceList;
 
     /**
-     * Metoda, konstruktor domyślny, która tworzy obiekt klasy Dispatching
+     * Metoda, konstruktor domyslny, ktora tworzy obiekt klasy Dispatching
      */
     public Dispatching(){
         super("disp", 'i');
@@ -35,23 +35,23 @@ public class Dispatching extends Being{
     }
 
     /**
-     * Metoda, getter, która zwraca listę obiektów oczekujących na pomoc
-     * @return lista obiektów oczekujących na karetkę
+     * Metoda, getter, ktora zwraca liste obiektow oczekujacych na pomoc
+     * @return lista obiektow oczekujacych na karetke
      */
     public List<IRecord> getCallerList(){
         return callerList;
     }
 
     /**
-     * Metoda, która dodaje nowe rekordy do listy potrzebujących 
-     * @param record nowy potrzebujący pomocy
+     * Metoda, ktora dodaje nowe rekordy do listy potrzebujacych 
+     * @param record nowy potrzebujacy pomocy
      */
     public void addCaller(IRecord record){
         callerList.add(record);
     }
 
     /**
-     * Metoda, która dodaje nowy rekord ambulansu do listy ambulansów
+     * Metoda, ktora dodaje nowy rekord ambulansu do listy ambulansow
      * @param ambulance karetka
      */
     public void addAmbulance(Ambulance ambulance){
@@ -59,7 +59,7 @@ public class Dispatching extends Being{
     }
 
     /**
-     * Metoda, która dysponuje karetkami do potrzebujących
+     * Metoda, ktora dysponuje karetkami do potrzebujacych
      */
     public void doTheJob(){
         Iterator <IRecord> iterator= callerList.iterator();
@@ -81,8 +81,8 @@ public class Dispatching extends Being{
     }
 
     /**
-     * Metoda, getter, która pobiera obydwie listy naraz 
-     * @return łączona lista wszystkich obiektów
+     * Metoda, getter, ktora pobiera obydwie listy naraz 
+     * @return laczona lista wszystkich obiektow
      */
     public List<IRecord> getBothLists(){
         List<IRecord> output = new LinkedList<>();

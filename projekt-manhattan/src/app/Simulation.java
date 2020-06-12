@@ -19,8 +19,8 @@ import services.vehicles.GPS1;
 
 
 /**
- * Klasa główna całej symulacji - w tym miejscu spinane jest wszystko w jedną spójną całość
- * W tym miejscu tworzone są obiekty wszystkich głównych klas
+ * Klasa glowna calej symulacji - w tym miejscu spinane jest wszystko w jedna spojna calosć
+ * W tym miejscu tworzone sa obiekty wszystkich glownych klas
  * @version 1.0
  * @see map.Map;
  * @see container.*;
@@ -35,29 +35,29 @@ import services.vehicles.GPS1;
  * @see services.vehicles.GPS1;
  */
 public class Simulation {
-    /** Pole, w którym znajduje się mapa */
+    /** Pole, w ktorym znajduje sie mapa */
     private Map map;
-    /** Pole dla kontenera bytów */
+    /** Pole dla kontenera bytow */
     private BeingContainer container;
-    /** Pole, w którym przechowywana jest postać wirusa */
+    /** Pole, w ktorym przechowywana jest postać wirusa */
     private Virus strain;
-    /** Pole, w którym zapisana jest liczb ludzi */
+    /** Pole, w ktorym zapisana jest liczb ludzi */
     private int numPeople;
-    /** Pole, w którym zapisana jest liczba zainfekowanych */
+    /** Pole, w ktorym zapisana jest liczba zainfekowanych */
     private int numInfected;
-    /** Pole, w którym przechowywane są parametry początkowe symulacji */
+    /** Pole, w ktorym przechowywane sa parametry poczatkowe symulacji */
     private SimulationParameters params;
-    /** Pole, w którym przechowywane są informacje o przebiegu całej symulacji */
+    /** Pole, w ktorym przechowywane sa informacje o przebiegu calej symulacji */
     SimulationLog log;
-    /** Pole, w którym przechowujemy okno przebiegu symulacji */
+    /** Pole, w ktorym przechowujemy okno przebiegu symulacji */
     SimulationRuntimeWindow srw;
-    /** Pole, w którym jest obiekt zarządzający pojazdami */
+    /** Pole, w ktorym jest obiekt zarzadzajacy pojazdami */
     private Dispatching dispatching;
 
     /**
-     * Metoda, konstruktor, który tworzy obiekt klasy symulacji
-     * @param parameters parametry wstępne symulacji
-     * @throws IncorrectParametersException Wyrzuca wyjątek jak są nieprawidłowe parametry
+     * Metoda, konstruktor, ktory tworzy obiekt klasy symulacji
+     * @param parameters parametry wstepne symulacji
+     * @throws IncorrectParametersException Wyrzuca wyjatek jak sa nieprawidlowe parametry
      */
     public Simulation(SimulationParameters parameters) throws IncorrectParametersException{
         params = parameters;
@@ -123,7 +123,7 @@ public class Simulation {
     }
 
     /**
-     * Metoda wykonująca rundę całej symulacji
+     * Metoda wykonujaca runde calej symulacji
      */
     public void performRound() {
         int [] buffer;
@@ -137,8 +137,8 @@ public class Simulation {
     }
 
     /**
-     * Metoda, przeprowadza symulację, wyświetla jej przebieg w okienku, tworzy obiekt SimulationLog,
-     * w którym zapisuje przebieg symulacji.
+     * Metoda, przeprowadza symulacje, wyswietla jej przebieg w okienku, tworzy obiekt SimulationLog,
+     * w ktorym zapisuje przebieg symulacji.
      * @return obiekt typu SimulationLog
      */
     public SimulationLog doSimulation() {
@@ -156,7 +156,7 @@ public class Simulation {
         while(whetherToContinue) {
             try{
                 
-                TimeUnit.MILLISECONDS.sleep(250); //ustawienie zmiany szybkości
+                TimeUnit.MILLISECONDS.sleep(250); //ustawienie zmiany szybkosci
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -191,14 +191,14 @@ public class Simulation {
     }
 
     /**
-     * Metoda, która wyświetla mapę w konsoli
+     * Metoda, ktora wyswietla mape w konsoli
      */
     public void display() {
         map.displayMap();
     }
 
     /**
-     * Metoda, getter, która zwraca obiekt typu mapa
+     * Metoda, getter, ktora zwraca obiekt typu mapa
      * @return obiekt mapy
      */
     public Map getMap(){
@@ -206,7 +206,7 @@ public class Simulation {
     }
 
     /**
-     * Metoda, getter, która zwraca obiekt z zapisem przebiegu
+     * Metoda, getter, ktora zwraca obiekt z zapisem przebiegu
      * @return obiekt z zapisem przebiegu
      */
     public SimulationLog getLog(){

@@ -1,13 +1,13 @@
 package app;
 
 /**
- * Klasa spełniająca funkcje testowe
+ * Klasa spelniajaca funkcje testowe
  */
 public class Test{
     /**
-     * Metoda main do testów
-     * @param args ciąg znaków wejścciowych do maina
-     * @throws IncorrectParametersException Wyrzuca błędy niepoprawnych parametrów
+     * Metoda main do testow
+     * @param args ciag znakow wejscciowych do maina
+     * @throws IncorrectParametersException Wyrzuca bledy niepoprawnych parametrow
      */
     public static void main(String[] args) throws IncorrectParametersException {
         Simulation sim = new Simulation(new SimulationParameters());

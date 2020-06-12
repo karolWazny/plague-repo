@@ -4,9 +4,9 @@ import random.Dice;
 import human.IDiseaseSensitive;
 
 /**
- * Klasa odzwierciedlająca realnego wirusa.
- * Obiekty tej klasy jak w życiu poruszają się po ludziach, 
- * namnażają, rozprzestrzeniają.
+ * Klasa odzwierciedlajaca realnego wirusa.
+ * Obiekty tej klasy jak w zyciu poruszaja sie po ludziach, 
+ * namnazaja, rozprzestrzeniaja.
  * @version 1.0
  * @see random.Dice
  * @see human.IdiseaseSensitive
@@ -14,27 +14,27 @@ import human.IDiseaseSensitive;
  */
 public class Virus extends Disease {
     /**
-     * Liczba kości
+     * Liczba kosci
      */
     private int power1;
     /**
-     * Liczba ścian na kości do losowania
+     * Liczba scian na kosci do losowania
      */
     private int power2;
     /**
-     * Konstruktor, który tworzy nam instancję wirusa
+     * Konstruktor, ktory tworzy nam instancje wirusa
      * @param power1
-     *          Liczba kości
+     *          Liczba kosci
      * @param power2
-     *          Liczba ścian kości do losowania
+     *          Liczba scian kosci do losowania
      * @param timeTilInfect
-     *          Czas do zarażenia
+     *          Czas do zarazenia
      * @param timeTilCured
      *          Czas do wyzdrowienia
      * @param infectionRate
-     *          wskaźnik infekcji
+     *          wskaznik infekcji
      * @param activeRate
-     *          Szansa na wystąpienie objawów
+     *          Szansa na wystapienie objawow
      */
     public Virus(int power1, int power2, int timeTilInfect, int timeTilCured, int infectionRate, int activeRate) {
         super("korona", timeTilInfect, timeTilCured, infectionRate, activeRate);
@@ -42,7 +42,7 @@ public class Virus extends Disease {
         this.power2 = power2;
     }
     /**
-     * Konstruktor, który jako parametr przyjmuje inną instancję klasy
+     * Konstruktor, ktory jako parametr przyjmuje inna instancje klasy
      * @param prototype
      *          Instancja tej samej klasy
      */
@@ -53,14 +53,14 @@ public class Virus extends Disease {
     }
     //@Override
     /**
-     * Metoda, która symuluje rozwój choroby
+     * Metoda, ktora symuluje rozwoj choroby
      * @see IDiseaseSensitive
      * @see DiseaseRecord
      * @param infected
      *          Obiekt podatny na choroby
      * @param record
-     *          Choroba, na którą się choruje
-     * @return Zwraca 0 jeśli nie zmienił się stan, 1 jeśli wyzdrowiał, -1 jeśli umarł
+     *          Choroba, na ktora sie choruje
+     * @return Zwraca 0 jesli nie zmienil sie stan, 1 jesli wyzdrowial, -1 jesli umarl
      */
     public int progress(IDiseaseSensitive infected, DiseaseRecord record) {
         int output = 0; 
@@ -104,10 +104,10 @@ public class Virus extends Disease {
 
     //@Override
     /**
-     * Metoda, która symuluje zarażanie następnej instancji człowieka
+     * Metoda, ktora symuluje zarazanie nastepnej instancji czlowieka
      * @param human
-     *          Instancja klasy człowieka
-     * @return Czy obiekt człowiek został zarażony 
+     *          Instancja klasy czlowieka
+     * @return Czy obiekt czlowiek zostal zarazony 
      */
     public int infect(IDiseaseSensitive human) {
         int infectionSuccessful = 0;
@@ -118,15 +118,15 @@ public class Virus extends Disease {
         return infectionSuccessful;
     }
     /**
-     * Metoda pobierająca ilość kostek
-     * @return Zwraca wartość prywatnego pola power1
+     * Metoda pobierajaca ilosć kostek
+     * @return Zwraca wartosć prywatnego pola power1
      */
     public int getPower1() {
         return power1;
     }
     /**
-     * Metoda pobierająca ilość ścian w kostkach
-     * @return Zwraca wartość prywatnego pola power2
+     * Metoda pobierajaca ilosć scian w kostkach
+     * @return Zwraca wartosć prywatnego pola power2
      */
     public int getPower2() {
         return power2;

@@ -1,25 +1,25 @@
 package container;
 
 /**
- * Klasa, której obiekty posiadają wszelkie informacje dotyczące
- * szeroko pojętych koordynatów, poza tym metody umożliwiają zmianę tychże
- * koordynatów, przesunięcia o wektor, itd...
+ * Klasa, ktorej obiekty posiadaja wszelkie informacje dotyczace
+ * szeroko pojetych koordynatow, poza tym metody umozliwiaja zmiane tychze
+ * koordynatow, przesuniecia o wektor, itd...
  * @version 1.0
  */
 public class Coordinates {
     /**
-     * Pole, które posiada informację o współrzędnej Y
+     * Pole, ktore posiada informacje o wspolrzednej Y
      */
     private int vertical;
     /**
-     * Pole, które posiada informację o współrzędnej X
+     * Pole, ktore posiada informacje o wspolrzednej X
      */
     private int horizontal;
     
     /**
-     * Metoda, konstruktor, która tworzy instancję klasy koordynaty
-     * @param vertical współrzędna Y
-     * @param horizontal współrzędna X
+     * Metoda, konstruktor, ktora tworzy instancje klasy koordynaty
+     * @param vertical wspolrzedna Y
+     * @param horizontal wspolrzedna X
      */
     public Coordinates(int vertical, int horizontal){
         this.vertical = vertical;
@@ -27,14 +27,14 @@ public class Coordinates {
     }
 
     /**
-     * Metoda, konstruktor domyślny, który ustawia współrzędne na początek układu współrzędnych
+     * Metoda, konstruktor domyslny, ktory ustawia wspolrzedne na poczatek ukladu wspolrzednych
      */
     public Coordinates() {
         this(0, 0);
     }
 
     /**
-     * Metoda, konstruktor, która tworzy obiekt klasy koordynaty na wzór innej instancji
+     * Metoda, konstruktor, ktora tworzy obiekt klasy koordynaty na wzor innej instancji
      * @param Coor inna instancja klasy koordynaty
      */
     public Coordinates(Coordinates Coor){
@@ -47,18 +47,18 @@ public class Coordinates {
 
     //@Override
     /**
-     * Metoda, która zwraca ciąg znaków opisujący obiekt typu koordynaty
-     * @return ciąg znaków opisowych
+     * Metoda, ktora zwraca ciag znakow opisujacy obiekt typu koordynaty
+     * @return ciag znakow opisowych
      */
     public String toString(){
         return "Vertical = " + vertical + "; horizontal = " + horizontal;
     }
 
     /**
-     * Metoda, która zwraca stan logiczny i odpowiada na pytanie:
-     * Czy można przejść w docelowe miejsce?
+     * Metoda, ktora zwraca stan logiczny i odpowiada na pytanie:
+     * Czy mozna przejsć w docelowe miejsce?
      * @param coords koordynaty celu
-     * @return stan logiczny odpowiadający na pytanie z opisu metody
+     * @return stan logiczny odpowiadajacy na pytanie z opisu metody
      */
     public boolean isNextTo(Coordinates coords){
         if(this.horizontal-coords.horizontal>1||this.horizontal-coords.horizontal<-1){
@@ -71,8 +71,8 @@ public class Coordinates {
     }
 
     /**
-     * Metoda, która pozwala wykonać przesunięcie o wektor
-     * @param vector Wektor, o który chcemy przesunąć
+     * Metoda, ktora pozwala wykonać przesuniecie o wektor
+     * @param vector Wektor, o ktory chcemy przesunać
      */
     public void addVector(Coordinates vector){
         this.horizontal+=vector.getHorizontal();
@@ -80,11 +80,11 @@ public class Coordinates {
     }
 
     /**
-     * Metoda, która wykorzystuje metodę addVector do przesunięcia o wektor, 
-     * ale z wykorzystaniem konkretnych wartości liczbowych wektora
-     * @param vertical składowa wektora Y
-     * @param horizontal składowa wektora X
-     * @return Obiekt koordynat po przesunięciu o wektor
+     * Metoda, ktora wykorzystuje metode addVector do przesuniecia o wektor, 
+     * ale z wykorzystaniem konkretnych wartosci liczbowych wektora
+     * @param vertical skladowa wektora Y
+     * @param horizontal skladowa wektora X
+     * @return Obiekt koordynat po przesunieciu o wektor
      */
     public Coordinates changedVector(int vertical, int horizontal) {
         Coordinates coords = new Coordinates(vertical, horizontal);
@@ -93,9 +93,9 @@ public class Coordinates {
     }
 
     /**
-     * Metoda, która porównuje dwa obiektu tej klasy
-     * @param coords porównywany koordynat
-     * @return stan logiczny, który odpowiada na pytanie: czy są równe?
+     * Metoda, ktora porownuje dwa obiektu tej klasy
+     * @param coords porownywany koordynat
+     * @return stan logiczny, ktory odpowiada na pytanie: czy sa rowne?
      */
     public boolean equals(Coordinates coords) {
         if(vertical != coords.getVertical()) {
@@ -108,10 +108,10 @@ public class Coordinates {
     }
 
     /**
-     * Metoda, która zgodnie z ruchem wskazówek zegara sprawdza, czy w zależności od 
-     * wylosowanej liczby w danym miejscu jest sąsiad i czy możliwe jest przesunięcie
-     * obiektu w dane miejsce. Zwraca koordynaty nowego miejsca, bądź starego jeśli nie można
-     * @param direction wylosowana wartość celu
+     * Metoda, ktora zgodnie z ruchem wskazowek zegara sprawdza, czy w zaleznosci od 
+     * wylosowanej liczby w danym miejscu jest sasiad i czy mozliwe jest przesuniecie
+     * obiektu w dane miejsce. Zwraca koordynaty nowego miejsca, badz starego jesli nie mozna
+     * @param direction wylosowana wartosć celu
      * @return koordynaty nowe
      */
     public Coordinates neighboursClockwise(int direction) {
@@ -140,9 +140,9 @@ public class Coordinates {
     }
 
     /**
-     * Metoda, setter, która ustawia koordynaty na konkretne wartości liczbowe
-     * @param vertical składowa Y
-     * @param horizontal składowa X
+     * Metoda, setter, ktora ustawia koordynaty na konkretne wartosci liczbowe
+     * @param vertical skladowa Y
+     * @param horizontal skladowa X
      */
     public void setCoordinates(int vertical, int horizontal){
         this.vertical = vertical;
@@ -150,7 +150,7 @@ public class Coordinates {
     }
 
     /**
-     * Metoda, setter, która ustawia koordynaty w miejscu innego obiektu koordynaty
+     * Metoda, setter, ktora ustawia koordynaty w miejscu innego obiektu koordynaty
      * @param Coor inny obiekt tego samego typu
      */
     public void setCoordinates(Coordinates Coor){
@@ -159,31 +159,31 @@ public class Coordinates {
     }
     
     /**
-     * Metoda, setter, która ustawia składową Y koordynatów
-     * @param vertical składowa Y
+     * Metoda, setter, ktora ustawia skladowa Y koordynatow
+     * @param vertical skladowa Y
      */
     public void setVertical(int vertical){
         this.vertical = vertical;
     }
 
     /**
-     * Metoda, setter, która ustawia składową X koordynatów
-     * @param horizontal składowa X
+     * Metoda, setter, ktora ustawia skladowa X koordynatow
+     * @param horizontal skladowa X
      */
     public void setHorizontal(int horizontal){
         this.horizontal = horizontal;
     }
 
     /**
-     * Metoda, getter, która zwraca wartość składowej Y koordynatu
-     * @return składowa Y
+     * Metoda, getter, ktora zwraca wartosć skladowej Y koordynatu
+     * @return skladowa Y
      */
     public int getVertical(){
         return vertical;
     }
 
     /**
-     * Metoda, getter, która zwraca wartość składowej X koordynatu
+     * Metoda, getter, ktora zwraca wartosć skladowej X koordynatu
      * @return
      */
     public int getHorizontal(){

@@ -4,8 +4,8 @@ import human.IDiseaseSensitive;
 import random.Dice;
 
 /**
- * Klasa, która jest sztucznym "rekordem" choroby na liście chorób człowieka
- * Obiekty tej klasy znajdują się w polu człowieka - lista chorób
+ * Klasa, ktora jest sztucznym "rekordem" choroby na liscie chorob czlowieka
+ * Obiekty tej klasy znajduja sie w polu czlowieka - lista chorob
  * @version 1.0
  * @see human
  * @see random.Dice
@@ -20,11 +20,11 @@ public class DiseaseRecord {
      */
     private boolean isActive;
     /**
-     * pole prywatne - informacja czy zaraża
+     * pole prywatne - informacja czy zaraza
      */
     private boolean infects;
     /**
-     * pole prywatne - informacja czy występują symptomy choroby
+     * pole prywatne - informacja czy wystepuja symptomy choroby
      */
     private boolean areSymptoms;
     /**
@@ -37,9 +37,9 @@ public class DiseaseRecord {
     private int state;
 
     /**
-     * Metoda - konstruktor, tworzy obiekty instancji tej klasy w zależności od parametrów
-     * @param disease Choroba, która ma znajeźć się w rekordzie
-     * @param infected Człowiek infekowany
+     * Metoda - konstruktor, tworzy obiekty instancji tej klasy w zaleznosci od parametrow
+     * @param disease Choroba, ktora ma znajezć sie w rekordzie
+     * @param infected Czlowiek infekowany
      */
     public DiseaseRecord(Disease disease, IDiseaseSensitive infected) {
         this.disease = disease;
@@ -50,8 +50,8 @@ public class DiseaseRecord {
     }
 
     /**
-     * Metoda, która symuluje rozwój choroby - informacje w rekordzie
-     * @param infected Chorujący
+     * Metoda, ktora symuluje rozwoj choroby - informacje w rekordzie
+     * @param infected Chorujacy
      */
     public void progress(IDiseaseSensitive infected) {
         if(!isCured) {
@@ -60,8 +60,8 @@ public class DiseaseRecord {
     }
 
     /**
-     * Metoda, która infekuje inną instancję człowieka
-     * @param human Instancja człowieka infekowanego
+     * Metoda, ktora infekuje inna instancje czlowieka
+     * @param human Instancja czlowieka infekowanego
      * @return Zwraca 0 jesli nie zainfekowano
      */
     public int infect(IDiseaseSensitive human) {
@@ -79,16 +79,16 @@ public class DiseaseRecord {
     }
     
     /**
-     * Metoda setter do informacji czy zaraża
-     * @param infects stan logiczny czy zaraża
+     * Metoda setter do informacji czy zaraza
+     * @param infects stan logiczny czy zaraza
      */
     public void setInfects(boolean infects) {
         this.infects = infects;
     }
 
     /**
-     * Metoda setter do stanu czy wyzdrowiał
-     * @param isCured stan logiczny czy wyzdrowiał
+     * Metoda setter do stanu czy wyzdrowial
+     * @param isCured stan logiczny czy wyzdrowial
      */
     public void setIsCured(boolean isCured) {
         this.isCured = isCured;
@@ -103,15 +103,15 @@ public class DiseaseRecord {
     }
 
     /**
-     * Metoda setter do stanu czy są symptomy
-     * @param areSymptoms stan logiczny czy są symptomy
+     * Metoda setter do stanu czy sa symptomy
+     * @param areSymptoms stan logiczny czy sa symptomy
      */
     public void setAreSymptoms(boolean areSymptoms) {
         this.areSymptoms = areSymptoms;
     }
 
     /**
-     * Metoda zwracająca identyfikator choroby
+     * Metoda zwracajaca identyfikator choroby
      * @return String identyfikator
      */
     public String getDiseaseId(){
@@ -119,7 +119,7 @@ public class DiseaseRecord {
     }
 
     /**
-     * Metoda zwracająca stan logiczny czy jest aktywna choroba
+     * Metoda zwracajaca stan logiczny czy jest aktywna choroba
      * @return stan logiczny czy jest aktywna
      */
     public boolean getIsActive(){
@@ -127,23 +127,23 @@ public class DiseaseRecord {
     }
 
     /**
-     * Metoda zwracająca stan logiczny czy zaraża
-     * @return stan logiczny czy zaraża
+     * Metoda zwracajaca stan logiczny czy zaraza
+     * @return stan logiczny czy zaraza
      */
     public boolean getInfects(){
         return infects;
     }
 
     /**
-     * Metoda zwracająca stan logiczny czy wyzdrowiał
-     * @return stan logiczny informacji czy wyzdrowiał
+     * Metoda zwracajaca stan logiczny czy wyzdrowial
+     * @return stan logiczny informacji czy wyzdrowial
      */
     public boolean getIsCured(){
         return isCured;
     }
 
     /**
-     * Metoda zwracająca stadium rozwoju choroby
+     * Metoda zwracajaca stadium rozwoju choroby
      * @return stan choroby
      */
     public int getState(){
@@ -151,8 +151,8 @@ public class DiseaseRecord {
     }
 
     /**
-     * Metoda zwracająca stan logiczny informacji czy są objawy
-     * @return stan logiczny występowania objawów
+     * Metoda zwracajaca stan logiczny informacji czy sa objawy
+     * @return stan logiczny wystepowania objawow
      */
     public boolean getAreSymptoms() {
         return areSymptoms;

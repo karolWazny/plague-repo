@@ -1,25 +1,25 @@
 package app;
 
 /**
- * Klasa, której obiekty przechowują informacje na temat konkretnej
- * rundy poruszania się, chorowania, itp. na mapie
+ * Klasa, ktorej obiekty przechowuja informacje na temat konkretnej
+ * rundy poruszania sie, chorowania, itp. na mapie
  * @version 1.0
  */
 public class SimulationState {
     /**
-     * Pole opisujące całkowitą liczbę ludzi na mapie
+     * Pole opisujace calkowita liczbe ludzi na mapie
      */
     private final int numPeople;
     /**
-     * Pole opisujące całkowitą liczbę zainfekowanych na mapie
+     * Pole opisujace calkowita liczbe zainfekowanych na mapie
      */
     private final int numInfected;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekt klasy przechowującej informacje
+     * Metoda, konstruktor, ktora tworzy obiekt klasy przechowujacej informacje
      * o stanie ludzkiej populacji po jednej rundzie
-     * @param numPeople całkowita liczba ludzi
-     * @param numInfected całkowita liczba zainfekowanych
+     * @param numPeople calkowita liczba ludzi
+     * @param numInfected calkowita liczba zainfekowanych
      */
     public SimulationState (int numPeople, int numInfected) {
         this.numPeople = numPeople;
@@ -27,15 +27,15 @@ public class SimulationState {
     }
 
     /**
-     * Metoda, która zwraca ciąg znaków opisujący obiekt tej klasy
-     * @return ciąg znaków opisujących obiekt
+     * Metoda, ktora zwraca ciag znakow opisujacy obiekt tej klasy
+     * @return ciag znakow opisujacych obiekt
      */
     public String toString(){
         return "Alive: "+numPeople+", infected: "+numInfected;
     }
 
     /**
-     * Metoda, getter, która zwraca liczbę ludzi zapisaną w obiekcie
+     * Metoda, getter, ktora zwraca liczbe ludzi zapisana w obiekcie
      * @return liczba ludzi
      */
     public int getNumPeople() {
@@ -43,7 +43,7 @@ public class SimulationState {
     }
 
     /**
-     * Metoda, getter, która zwraca liczbę zainfekowanych zapisaną w obiekcie
+     * Metoda, getter, ktora zwraca liczbe zainfekowanych zapisana w obiekcie
      * @return liczba zainfekowanych
      */
     public int getNumInfected(){

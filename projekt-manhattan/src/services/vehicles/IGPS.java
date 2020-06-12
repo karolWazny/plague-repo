@@ -4,7 +4,7 @@ import container.Coordinates;
 import map.Map;
 
 /**
- * Interfejs, który implementuje klasa GPS-u 
+ * Interfejs, ktory implementuje klasa GPS-u 
  * Zawiera deklaracje metod
  * @version 1.0
  * @see container.Coordinates
@@ -12,15 +12,15 @@ import map.Map;
  */
 public interface IGPS {
     /**
-     * Metoda, która nawiguje pojazdem, aby dotarł w odpowiednie miejsce
+     * Metoda, ktora nawiguje pojazdem, aby dotarl w odpowiednie miejsce
      * @param position aktualna pozycja
-     * @param destination cel podróży
-     * @param velocity szybkość poruszania się
+     * @param destination cel podrozy
+     * @param velocity szybkosć poruszania sie
      * @return nowe koordynaty
      */
     public Coordinates navigate(Coordinates position, Coordinates destination, int velocity);
     /**
-     * Metoda, getter, która zwraca używaną mapę
+     * Metoda, getter, ktora zwraca uzywana mape
      * @return obiekt typu mapa
      */
     public Map getMap();

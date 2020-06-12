@@ -7,18 +7,18 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * W tym miejscu rozpoczyna się cały program
+ * W tym miejscu rozpoczyna sie caly program
  * @version 1.0
  * @see gui.*;
  */
 public class App {
-    /** Pole, które przechowuje główne okno/ramkę dla menu */
+    /** Pole, ktore przechowuje glowne okno/ramke dla menu */
     private static MainFrame mainFrame;
 
     /**
-     * Metoda main, która uruchamia wszystko w symulacji
-     * @param args parametry wejściowe do maina
-     * @throws Exception wyrzuca wyjątki, jeśli takie będą
+     * Metoda main, ktora uruchamia wszystko w symulacji
+     * @param args parametry wejsciowe do maina
+     * @throws Exception wyrzuca wyjatki, jesli takie beda
      */
     public static void main(String[] args) throws Exception {
         
@@ -31,26 +31,26 @@ public class App {
     }
 
     /**
-     * Klasa - zadanie w formie przyjmowanej przez egzekutora wątków,
-     * wyświetla okienko z głównym menu.
+     * Klasa - zadanie w formie przyjmowanej przez egzekutora watkow,
+     * wyswietla okienko z glownym menu.
      */
     public static class Program implements Runnable{
-        /** Pole przechowujące obiekt z ustawieniami */
+        /** Pole przechowujace obiekt z ustawieniami */
         private Settings settings;
-        /** Pole, które przechowuje obiekt zarządzający zadaniami dla wątków */
+        /** Pole, ktore przechowuje obiekt zarzadzajacy zadaniami dla watkow */
         private ExecutorService executor;
 
         /**
-         * Metoda, konstruktor, która tworzy obiekt tej klasy finalnej
+         * Metoda, konstruktor, ktora tworzy obiekt tej klasy finalnej
          * @param settings obiekt z ustawieniami
-         * @param executor obiekt zarządzający zadaniami dla wątków
+         * @param executor obiekt zarzadzajacy zadaniami dla watkow
          */
         public Program(Settings settings, ExecutorService executor){
             this.settings = settings;
             this.executor = executor;
         }
 
-        /** Metoda, która wyświetla okienko */
+        /** Metoda, ktora wyswietla okienko */
         public void run(){
             SwingUtilities.invokeLater(new Runnable(){
                 public void run(){

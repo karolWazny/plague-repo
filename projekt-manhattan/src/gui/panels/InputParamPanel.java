@@ -16,43 +16,43 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 /**
- * Klasa, która jest wzorem do stworzenia obiektu - panelu do
- * manualnego wpisywania parametrów symulacji.
+ * Klasa, ktora jest wzorem do stworzenia obiektu - panelu do
+ * manualnego wpisywania parametrow symulacji.
  * @version 1.0
  * @see app.Settings
  * @see app.SimulationParameters
  */
 public class InputParamPanel extends JPanel {
-    /** Pole, które jest potrzebne do serializacji */
+    /** Pole, ktore jest potrzebne do serializacji */
     private static final long serialVersionUID = -5953054514721607983L;
-    /** Pole, które przechowuje obiekt z ustawieniami */
+    /** Pole, ktore przechowuje obiekt z ustawieniami */
     private final Settings settings;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania długości mapy */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania dlugosci mapy */
     private final JTextField mapLengthTField;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania szerokości mapy */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania szerokosci mapy */
     private final JTextField mapWidthTField;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania liczby ludzi */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania liczby ludzi */
     private final JTextField numPeopleTField;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania liczby lekarzy */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania liczby lekarzy */
     private final JTextField numDocsTField;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania liczby karetek */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania liczby karetek */
     private final JTextField ambulanceNumTField;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania liczby kości dla wirusa */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania liczby kosci dla wirusa */
     private final JTextField pow1TField;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania liczby ścian kości wirusa */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania liczby scian kosci wirusa */
     private final JTextField pow2TField;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania czasu potrzebnego do zarażenia */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania czasu potrzebnego do zarazenia */
     private final JTextField timeTilInfectTField;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania czasu do wyzdrowienia */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania czasu do wyzdrowienia */
     private final JTextField timeTilCuredTField;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania wskaźnika infekcji */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania wskaznika infekcji */
     private final JTextField infectionRateTField;
-    /** Pole, które przechowuje obiekt z obszarem do wpisania szansy na wyzdrowienie */
+    /** Pole, ktore przechowuje obiekt z obszarem do wpisania szansy na wyzdrowienie */
     private final JTextField activeRateTField;
 
     /**
-     * Metoda, konstruktor, która jest odpowiedzialna za stworzenie obiektu 
-     * tej klasy w zależności od ustawień
+     * Metoda, konstruktor, ktora jest odpowiedzialna za stworzenie obiektu 
+     * tej klasy w zaleznosci od ustawień
      * @param settings obiekt z ustawieniami
      */
     public InputParamPanel(Settings settings) {
@@ -313,7 +313,7 @@ public class InputParamPanel extends JPanel {
     }
 
     /**
-     * Metoda, która odpowiedzialna jest za odświeżenie widoku w panelu
+     * Metoda, ktora odpowiedzialna jest za odswiezenie widoku w panelu
      */
     public void refresh(){
         mapLengthTField.setText("" + settings.getParameters().getMapLength());

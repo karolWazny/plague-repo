@@ -3,22 +3,22 @@ package human;
 import random.Dice;
 
 /**
- * Klasa, która przedstawia typ Doktora
- * Dziedziczy po człowieku
+ * Klasa, ktora przedstawia typ Doktora
+ * Dziedziczy po czlowieku
  * @version 1.0
  * @see random.Dice
  * @see human.Human
  */
 public final class Doctor extends Human{
     /**
-     * Metoda, konstruktor doktora, która tworzy doktora
+     * Metoda, konstruktor doktora, ktora tworzy doktora
      */
     public Doctor(){
         super(Dice.d2(), 25 + Dice.d20(2), 'd');
     }
 
     /**
-     * Metoda, która symuluje przyspieszone leczenie człowieka - działalność doktora
+     * Metoda, ktora symuluje przyspieszone leczenie czlowieka - dzialalnosć doktora
      * @param patient
      */
     public void heal(Human patient){

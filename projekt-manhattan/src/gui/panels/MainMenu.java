@@ -21,7 +21,7 @@ import java.io.FileNotFoundException;
 import java.util.concurrent.ExecutorService;
 
 /**
- * Klasa, której obiekty tworzą główne menu symulacji
+ * Klasa, ktorej obiekty tworza glowne menu symulacji
  * @version 1.0
  * @see app.IncorrectParametersException
  * @see app.Settings
@@ -32,29 +32,29 @@ import java.util.concurrent.ExecutorService;
  */
 public class MainMenu extends JPanel {
     /**
-     * Pole, które potrzebne jest do serializacji
+     * Pole, ktore potrzebne jest do serializacji
      */
     private static final long serialVersionUID = -3300511018266865394L;
-    /** Pole, które przechowuje przycisk do startu symulacji */
+    /** Pole, ktore przechowuje przycisk do startu symulacji */
     private JButton runButt;
-    /** Pole, które przechowuje przycisk do opcji pokazania parametrów */
+    /** Pole, ktore przechowuje przycisk do opcji pokazania parametrow */
     private JButton showParamButt;
-    /** Pole, które przechowuje przycisk do opcji wpisania parametrów*/
+    /** Pole, ktore przechowuje przycisk do opcji wpisania parametrow*/
     private JButton inputParamButt;
-    /** Pole, które przechowuje przycisk do ścieżki z plikiem parametrów wejściowych */
+    /** Pole, ktore przechowuje przycisk do sciezki z plikiem parametrow wejsciowych */
     private JButton inputParamPathButt;
-    /** Pole, które przechowuje przycisk do pokazania ostatniego przebiegu */
+    /** Pole, ktore przechowuje przycisk do pokazania ostatniego przebiegu */
     private JButton showLastButt;
-    /** Pole, które przechowuje przycisk do opcji zmiany ścieżki docelowego miejsca zapisu plików */
+    /** Pole, ktore przechowuje przycisk do opcji zmiany sciezki docelowego miejsca zapisu plikow */
     private JButton inputOutPathButt;
     /** Referencja do aktualnie otwartego okienka pobocznego. */
     JFrame frame;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekt graficznego menu symulacji
+     * Metoda, konstruktor, ktora tworzy obiekt graficznego menu symulacji
      * @param settings ustawienia
      * @param parentFrame ramka 
-     * @param executor obiekt zarządzający wątkami
+     * @param executor obiekt zarzadzajacy watkami
      */
     public MainMenu(Settings settings, JFrame parentFrame, ExecutorService executor) {
         super();
@@ -135,8 +135,8 @@ public class MainMenu extends JPanel {
     }
 
     /**
-     * Klasa wewnętrzna - zadanie przeprowadzenia symulacji i zapisu wyniku;
-     * wysyłana do egzekutora wątków.
+     * Klasa wewnetrzna - zadanie przeprowadzenia symulacji i zapisu wyniku;
+     * wysylana do egzekutora watkow.
      */
 
     class SimulationDoer implements Runnable {
@@ -146,7 +146,7 @@ public class MainMenu extends JPanel {
         /**
          * 
          * @param settings ustawienia programu
-         * Metoda - konstruktor; tworzy obiekt, który jest przyjmowany jako zadanie przez wątek.
+         * Metoda - konstruktor; tworzy obiekt, ktory jest przyjmowany jako zadanie przez watek.
          */
         public SimulationDoer(Settings settings) {
             this.settings = settings;

@@ -1,17 +1,17 @@
 package container;
 
 /**
- * Interfejs, który ma zadeklarowaną metodę Move()
- * Przyjmuje ona jako parametr obiekt typu koordynaty, które są 
- * aktualną pozycją obiektu
+ * Interfejs, ktory ma zadeklarowana metode Move()
+ * Przyjmuje ona jako parametr obiekt typu koordynaty, ktore sa 
+ * aktualna pozycja obiektu
  * @version 1.0
  * @see container.Coordinates
  */
 public interface IMovable {
     /**
-     * Metoda, która wykonuje ruch, przyjmuje jako parametr aktualną pozycję
+     * Metoda, ktora wykonuje ruch, przyjmuje jako parametr aktualna pozycje
      * @param currentPosition aktualna pozycja
-     * @return obiekt typu koordynaty nową pozycją
+     * @return obiekt typu koordynaty nowa pozycja
      */
     public Coordinates move(Coordinates currentPosition);
 }

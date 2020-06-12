@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 /**
- * Klasa, która odpowiedzialna jest za wyświetlenie
+ * Klasa, ktora odpowiedzialna jest za wyswietlenie
  * panelu z parametrami symulacji.
  * @version 1.0
  * @see app.Settings
@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 public class ShowParamsPanel extends JPanel{
     /** Pole dla serializacji */
     private static final long serialVersionUID = -2037304708202985244L;
-    /** Pole - obszar tekstowy, w którym wyświetlane są ustawienia.*/
+    /** Pole - obszar tekstowy, w ktorym wyswietlane sa ustawienia.*/
     private JTextArea textArea;
 
     /**

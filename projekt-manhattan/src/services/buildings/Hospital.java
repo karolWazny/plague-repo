@@ -12,8 +12,8 @@ import map.IPrintable;
 import map.Map;
 
 /**
- * Klasa, która odzwierciedla budynek jako szpital
- * Posiada funkcjonalności typowe dla szpitala.
+ * Klasa, ktora odzwierciedla budynek jako szpital
+ * Posiada funkcjonalnosci typowe dla szpitala.
  * @version 1.0
  * @see human.IDiseaseSensitive
  * @see human.IRecoverable
@@ -24,15 +24,15 @@ import map.Map;
  * @see map.Map
  */
 public class Hospital extends Building implements IMovable, IRecoverable{
-    /** Pole, które posiada informację o mapie */
+    /** Pole, ktore posiada informacje o mapie */
     private Map map;
-    /** Pole, które jest licznikiem szpitali wszystkich */
+    /** Pole, ktore jest licznikiem szpitali wszystkich */
     private static int hospitalCounter = 0;
-    /** Pole, które posiada listę Recordów */
+    /** Pole, ktore posiada liste Recordow */
     private List<IRecord> list;
 
     /**
-     * Metoda, konstruktor, który tworzy obiekt klasy Szpital 
+     * Metoda, konstruktor, ktory tworzy obiekt klasy Szpital 
      * @param map mapa
      */
     public Hospital(Map map){
@@ -43,7 +43,7 @@ public class Hospital extends Building implements IMovable, IRecoverable{
     }
 
     /**
-     * Metoda, getter, która zwraca liczbę szpitali na mapie
+     * Metoda, getter, ktora zwraca liczbe szpitali na mapie
      * @return liczba szpitali
      */
     public int getHospitalCounter(){
@@ -51,15 +51,15 @@ public class Hospital extends Building implements IMovable, IRecoverable{
     }
 
     /**
-     * Metoda, getter, która zwraca listę rekordów 
-     * @return lista rekordów
+     * Metoda, getter, ktora zwraca liste rekordow 
+     * @return lista rekordow
      */
     public List<IRecord> getList(){
         return list;
     }
     
     /**
-     * Metoda, która symuluje zdrowienie 
+     * Metoda, ktora symuluje zdrowienie 
      */
     public void recover(){
         for(int i = 0; i < 2; i++){
@@ -70,7 +70,7 @@ public class Hospital extends Building implements IMovable, IRecoverable{
     }
 
     /**
-     * Metoda, która przyjmuje jako parametr obiekt typu koordynaty i zwraca 
+     * Metoda, ktora przyjmuje jako parametr obiekt typu koordynaty i zwraca 
      * nowe koordynaty 
      * @param currentPosition aktualna pozycja
      * @return nowe koordynaty

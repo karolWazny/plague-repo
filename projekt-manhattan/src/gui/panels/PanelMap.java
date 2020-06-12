@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import javax.imageio.ImageIO;
 
 /**
- * Klasa, której obiekty odpowiedzialne są za wyświetlanie
+ * Klasa, ktorej obiekty odpowiedzialne sa za wyswietlanie
  * aktualnej sytuacji na mapie.
  * @version 1.0
  * @see map.Map
@@ -23,28 +23,28 @@ import javax.imageio.ImageIO;
 public class PanelMap extends JPanel{
     /** Pole potrzebne do serializacji */
     private static final long serialVersionUID = -4468016093122501126L;
-    /** Pole, które przechowuje aktualną mapę */
+    /** Pole, ktore przechowuje aktualna mape */
     private Map map;
-    /** Pole, które przechowuje ikonę mężczyzny */
+    /** Pole, ktore przechowuje ikone mezczyzny */
     private BufferedImage maleIcon;
-    /** Pole, które przechowuje ikonę kobiety */
+    /** Pole, ktore przechowuje ikone kobiety */
     private BufferedImage femaleIcon;
-    /** Pole, które przechowuje jednolitą ikonę obiektu zainfekowanego */
+    /** Pole, ktore przechowuje jednolita ikone obiektu zainfekowanego */
     private BufferedImage infectedIcon;
-    /** Pole, które przechowuje ikonę doktora */
+    /** Pole, ktore przechowuje ikone doktora */
     private BufferedImage doctorIcon;
-    /** Pole, które przechowuje ikonę szpitala */
+    /** Pole, ktore przechowuje ikone szpitala */
     private BufferedImage hospitalIcon;
-    /** Pole, które przechowuje ikonę karetki */
+    /** Pole, ktore przechowuje ikone karetki */
     private BufferedImage ambulanceIcon;
-    /** Pole, które przechowuje wysokość ikony */
+    /** Pole, ktore przechowuje wysokosć ikony */
     private int iconHeight = 16;
-    /** Pole, które przechowuje szerokość ikony */
+    /** Pole, ktore przechowuje szerokosć ikony */
     private int iconWidth = 16;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekty tej klasy
-     * @param map używana mapa
+     * Metoda, konstruktor, ktora tworzy obiekty tej klasy
+     * @param map uzywana mapa
      */
     public PanelMap(Map map){
         super();
@@ -70,7 +70,7 @@ public class PanelMap extends JPanel{
     }
 
     /** 
-     * Metoda, która jest odpowiedzialna za wydruk mapy do okienka.
+     * Metoda, ktora jest odpowiedzialna za wydruk mapy do okienka.
      */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

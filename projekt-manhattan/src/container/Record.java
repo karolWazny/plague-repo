@@ -7,8 +7,8 @@ import human.IRecoverable;
 import map.Map;
 
 /**
- * Klasa, która jest swoistym rekordem w kontenerze bytów.
- * Obiekty tego typu przechowywane są w kontenerze i na nich są wykonywane operacje
+ * Klasa, ktora jest swoistym rekordem w kontenerze bytow.
+ * Obiekty tego typu przechowywane sa w kontenerze i na nich sa wykonywane operacje
  * @version 1.0
  * @see virus.DiseaseRecord
  * @see map.Being
@@ -19,7 +19,7 @@ import map.Map;
  */
 public class  Record implements IRecord {
     /**
-     * Pole, w którym przypisywany jest konkretny byt wchodzący do kontenera
+     * Pole, w ktorym przypisywany jest konkretny byt wchodzacy do kontenera
      */
     private Being being;
     /**
@@ -28,8 +28,8 @@ public class  Record implements IRecord {
     private Coordinates position;
 
     /**
-     * Metoda, konstruktor, która tworzy instancję klasy rekord 
-     * @param being byt, który wchodzi do rekordu
+     * Metoda, konstruktor, ktora tworzy instancje klasy rekord 
+     * @param being byt, ktory wchodzi do rekordu
      * @param position jego koordynaty na mapie
      */
     public Record(Being being, Coordinates position){
@@ -39,12 +39,12 @@ public class  Record implements IRecord {
    
     //@Override
     /**
-     * Metoda, która na obiektach rekordu wykonuje ruch
+     * Metoda, ktora na obiektach rekordu wykonuje ruch
      */
     public void move(){
         if(being instanceof IDiseaseSensitive) {
             if(!((IDiseaseSensitive)being).getIsAlive())
-            return; //trupy nie chodzą
+            return; //trupy nie chodza
         }
         if( being instanceof IDiseaseSensitive) {
             if(((IDiseaseSensitive)being).getHealthPoints() < 50)
@@ -58,8 +58,8 @@ public class  Record implements IRecord {
 
     //@Override
     /**
-     * Metoda, która symuluje zarażanie sąsiadów na mapie, zwraca informację
-     * Co wydarzyło się z sąsiednim obiektem
+     * Metoda, ktora symuluje zarazanie sasiadow na mapie, zwraca informacje
+     * Co wydarzylo sie z sasiednim obiektem
      * @param map mapa przez nas wykorzystywana
      * @return liczba zainfekowanych 
      */
@@ -85,7 +85,7 @@ public class  Record implements IRecord {
 
     //@Override
     /**
-     * Metoda, która jest odpowiedzialna za rozwój choroby dla elementów kontenera bytów
+     * Metoda, ktora jest odpowiedzialna za rozwoj choroby dla elementow kontenera bytow
      * @return tablica z informacjami
      */
     public int[] progressIllness(){
@@ -108,7 +108,7 @@ public class  Record implements IRecord {
 
     //@Override
     /**
-     * Metoda, która symuluje zdrowienie obiektu w kontenerze
+     * Metoda, ktora symuluje zdrowienie obiektu w kontenerze
      */
     public void performRecovery(){
         if(!(being instanceof IRecoverable)) {
@@ -119,7 +119,7 @@ public class  Record implements IRecord {
 
     //@Override
     /**
-     * Metoda, setter, która ustawia nową pozycję dla obiektu w kontenerze
+     * Metoda, setter, ktora ustawia nowa pozycje dla obiektu w kontenerze
      * @param newVerHor nowe koordynaty
      * @return nowe koordynaty
      */
@@ -133,7 +133,7 @@ public class  Record implements IRecord {
 
     //@Override
     /**
-     * Metoda, getter, która zwraca aktualne koordynaty
+     * Metoda, getter, ktora zwraca aktualne koordynaty
      * @return aktualne koordynaty
      */
     public Coordinates getVerHor(){
@@ -142,7 +142,7 @@ public class  Record implements IRecord {
 
     //@Override
     /**
-     * Metoda, getter, która zwraca byt w rekordzie
+     * Metoda, getter, ktora zwraca byt w rekordzie
      * @return byt w rekordzie
      */
     public Being getBeing(){

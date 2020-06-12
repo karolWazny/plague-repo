@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 /**
- * Klasa okienka modalnego do wyświetlania przebiegu ostatniej symulacji.
+ * Klasa okienka modalnego do wyswietlania przebiegu ostatniej symulacji.
  * @version 1.0
  */
 public class LastFrame extends JFrame{
@@ -17,7 +17,7 @@ public class LastFrame extends JFrame{
     private static final long serialVersionUID = 1221589322728058910L;
 
     /**
-     * Metoda, konstruktor, która tworzy obiekt klasy LastFrame
+     * Metoda, konstruktor, ktora tworzy obiekt klasy LastFrame
      * @param panel panel
      * @param windowName nazwa okna
      * @param parentFrame okienko - rodzic
