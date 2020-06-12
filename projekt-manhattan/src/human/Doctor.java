@@ -18,7 +18,7 @@ public final class Doctor extends Human{
     }
 
     /**
-     * Metoda, ktora symuluje przyspieszone leczenie czlowieka - dzialalnosć doktora
+     * Metoda, ktora symuluje przyspieszone leczenie czlowieka - dzialalnosc doktora
      * @param patient
      */
     public void heal(Human patient){

@@ -2,13 +2,13 @@ package random;
 
 /**
  * Klasa, ktora symuluje rzut standardowo spotykana w RPG kostka
- * Mozna powiedzieć, ze sa to gereratory liczb losowych dla okreslonych wartosci
+ * Mozna powiedziec, ze sa to gereratory liczb losowych dla okreslonych wartosci
  * @version 1.0
  */
 public class Dice {
     /**
      * Metoda symulujaca rzut kostka dwuscienna
-     * @param arg ilosć kosci
+     * @param arg ilosc kosci
      * @return wynik losowy
      */
     public static int d2(int arg) {
@@ -29,7 +29,7 @@ public class Dice {
 
     /**
      * Metoda symulujaca rzut kostka czteroscienna
-     * @param arg ilosć kosci
+     * @param arg ilosc kosci
      * @return wynik losowy
      */
     public static int d4(int arg) {
@@ -50,7 +50,7 @@ public class Dice {
     
     /**
      * Metoda symulujaca rzut kostka szescioscienna
-     * @param arg ilosć kosci
+     * @param arg ilosc kosci
      * @return wynik losowy
      */
     public static int d6(int arg) {
@@ -71,7 +71,7 @@ public class Dice {
 
     /**
      * Metoda symulujaca rzut kostka osmioscienna
-     * @param arg ilosć kosci
+     * @param arg ilosc kosci
      * @return wynik losowy
      */
     public static int d8(int arg) {
@@ -92,7 +92,7 @@ public class Dice {
 
     /**
      * Metoda symulujaca rzut kostka dziesiecioscienna
-     * @param arg ilosć kosci
+     * @param arg ilosc kosci
      * @return wynik losowy
      */
     public static int d10(int arg) {
@@ -113,7 +113,7 @@ public class Dice {
 
     /**
      * Metoda symulujaca rzut kostka dwunastoscienna
-     * @param arg ilosć kosci
+     * @param arg ilosc kosci
      * @return wynik losowy
      */
     public static int d12(int arg) {
@@ -134,7 +134,7 @@ public class Dice {
 
     /**
      * Metoda symulujaca rzut kostka dwudziestoscienna
-     * @param arg ilosć kosci
+     * @param arg ilosc kosci
      * @return wynik losowy
      */
     public static int d20(int arg) {
@@ -155,7 +155,7 @@ public class Dice {
 
     /**
      * Metoda symulujaca rzut kostka stuscienna
-     * @param arg ilosć kosci
+     * @param arg ilosc kosci
      * @return wynik losowy
      */
     public static int d100(int arg) {
@@ -177,7 +177,7 @@ public class Dice {
     /**
      * Metoda symulujaca rzut kostka dowolnych rozmiarow
      * @param diceRange rozmiar
-     * @param diceNumber ilosć
+     * @param diceNumber ilosc
      * @return wynik losowy
      */
     public static int custom(int diceRange, int diceNumber){

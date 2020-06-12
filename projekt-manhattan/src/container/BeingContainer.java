@@ -38,7 +38,7 @@ public class BeingContainer {
 
     /**
      * Metoda, konstruktor, ktora tworzy obiekt tej klasy
-     * @param map mapa, po ktorej bedziemy sie poruszać
+     * @param map mapa, po ktorej bedziemy sie poruszac
      * @param dispatching obiekt zarzadzajacy pojazdami
      */
     public BeingContainer(Map map, Dispatching dispatching){
@@ -148,7 +148,7 @@ public class BeingContainer {
 
     /**
      * Metoda, ktora w losowym miejscu na mapie dodaje obiekty do listy rekordow
-     * @param being Byt, ktory chcemy dodać
+     * @param being Byt, ktory chcemy dodac
      */
     public void addRecord(Being being) {
         List<Coordinates> list = map.emptyFieldsList();

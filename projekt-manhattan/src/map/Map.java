@@ -13,11 +13,11 @@ import java.util.LinkedList;
  */
 public class Map {
     /**
-     * Dlugosć obszaru reprezentujacego mape
+     * Dlugosc obszaru reprezentujacego mape
      */
     private int length;
     /**
-     * Szerokosć obszaru reprezentujacego mape
+     * Szerokosc obszaru reprezentujacego mape
      */
     private int width;
     /**
@@ -32,8 +32,8 @@ public class Map {
     /**
      * Metoda, konstruktor, ktora tworzy instancje klasy mapa
      * W tablicy pol pierwotnie umieszcza puste pola
-     * @param length dlugosć obszaru reprezentujacego mape
-     * @param width szerokosć obszaru reprezentujacego mape
+     * @param length dlugosc obszaru reprezentujacego mape
+     * @param width szerokosc obszaru reprezentujacego mape
      */
     public Map(int length, int width){
         this.length = length;
@@ -89,7 +89,7 @@ public class Map {
      * Metoda ustawiajaca na mapie w konkretnym miejscu obiekt 
      * implementujacy interfejs IPrintable
      * @param obj obiekt umieszczany na mapie
-     * @param coords koordynaty miejsca, w ktorym chcemy obiekt ustawić
+     * @param coords koordynaty miejsca, w ktorym chcemy obiekt ustawic
      */
     public void setField(IPrintable obj, Coordinates coords){
         if(coords == null){
@@ -149,16 +149,16 @@ public class Map {
     }
     
     /**
-     * Metoda getter, ktora zwraca dlugosć konkretnej instancji mapy
-     * @return dlugosć mapy
+     * Metoda getter, ktora zwraca dlugosc konkretnej instancji mapy
+     * @return dlugosc mapy
      */
     public int getLength() {
         return length;
     }
 
     /**
-     * Metoda getter, ktora zwraca szerokosć mapy
-     * @return szerokosć mapy
+     * Metoda getter, ktora zwraca szerokosc mapy
+     * @return szerokosc mapy
      */
     public int getWidth() {
         return width;

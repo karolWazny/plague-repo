@@ -7,7 +7,7 @@ package human;
  */
 public interface IRecoverable{
     /**
-     * Metoda, ktora symuluje dzialalnosć doktora, przyspiesza leczenie
+     * Metoda, ktora symuluje dzialalnosc doktora, przyspiesza leczenie
      */
     public void recover(); 
 }

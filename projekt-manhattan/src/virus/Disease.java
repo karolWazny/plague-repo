@@ -34,7 +34,7 @@ public abstract class Disease implements IDisease {
      */
     private int activeRate;
     /**
-     * Obiekt odpowiedzialny za zarazanie - wydzielona odpowiedzialnosć
+     * Obiekt odpowiedzialny za zarazanie - wydzielona odpowiedzialnosc
      */
     protected static Infector infector = new Infector();
     
@@ -93,7 +93,7 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-     * Metoda pobierajaca wartosć czasu potrzebnego do zainfekowania
+     * Metoda pobierajaca wartosc czasu potrzebnego do zainfekowania
      * @return czas do zainfekowania
      */
     public int getTimeTilInfect() {
@@ -102,9 +102,9 @@ public abstract class Disease implements IDisease {
 
     /**
 <<<<<<< HEAD
-     * MEtoda pobierajaca wartosć czasu potrzebnego do wyzdrowienia
+     * MEtoda pobierajaca wartosc czasu potrzebnego do wyzdrowienia
 =======
-     * Metoda pobierająca wartość czasu potrzebnego do wyzdrowienia
+     * Metoda pobierająca wartośc czasu potrzebnego do wyzdrowienia
 >>>>>>> 538007c06d7b4c6e7a34d9ff1a1d922de984e8c7
      * @return czas do wyzdrowienia
      */

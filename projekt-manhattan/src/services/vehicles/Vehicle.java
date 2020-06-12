@@ -21,13 +21,13 @@ import map.Being;
 public abstract class Vehicle extends Being implements IMovable{
     /** Pole z pojemnoscia pojazdu */
     private int capacity;
-    /** Predkosć pojazdu */
+    /** Predkosc pojazdu */
     private int velocity;
     /** Cel podrozy */
     protected Coordinates destination;
     /** koordynaty garazu */
     protected final Coordinates home; 
-    /** zmienna statyczna - ilosć pojazdow */
+    /** zmienna statyczna - ilosc pojazdow */
     private static int numVeh = 0;
     /** pole z obiektem gps */
     private IGPS gps;
@@ -38,8 +38,8 @@ public abstract class Vehicle extends Being implements IMovable{
      * Metoda, konstruktor, ktora tworzy obiekty klasy pojazd
      * @param id identyfikator - ciag znakow
      * @param representation reprezentacja znakowa
-     * @param capacity pojemnosć
-     * @param velocity szybkosć
+     * @param capacity pojemnosc
+     * @param velocity szybkosc
      * @param home koordynaty garazu
      * @param gps obiekt gps-u
      */
@@ -96,16 +96,16 @@ public abstract class Vehicle extends Being implements IMovable{
     }
 
     /**
-     * Metoda, getter, ktora zwraca szybkosć pojazdu
-     * @return szybkosć pojazdu
+     * Metoda, getter, ktora zwraca szybkosc pojazdu
+     * @return szybkosc pojazdu
      */
     public int getVelocity(){
         return velocity;
     }
 
     /**
-     * Metoda, getter, ktora zwraca pojemnosć pojazdu
-     * @return pojemnosć pojazdu
+     * Metoda, getter, ktora zwraca pojemnosc pojazdu
+     * @return pojemnosc pojazdu
      */
     public int getCapacity(){
         return capacity;

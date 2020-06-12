@@ -15,7 +15,7 @@ activeRate=100
 numHearse=0
 END
 
-Do powyzszej sekwencji nalezy dane wpisać bez spacji
+Do powyzszej sekwencji nalezy dane wpisac bez spacji
 miedzy nazwa, znakiem rownosci i po nim.
 
-Inaczej program moze nie zadzialać.
+Inaczej program moze nie zadzialac.

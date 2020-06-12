@@ -37,9 +37,9 @@ public class PanelMap extends JPanel{
     private BufferedImage hospitalIcon;
     /** Pole, ktore przechowuje ikone karetki */
     private BufferedImage ambulanceIcon;
-    /** Pole, ktore przechowuje wysokosć ikony */
+    /** Pole, ktore przechowuje wysokosc ikony */
     private int iconHeight = 16;
-    /** Pole, ktore przechowuje szerokosć ikony */
+    /** Pole, ktore przechowuje szerokosc ikony */
     private int iconWidth = 16;
 
     /**

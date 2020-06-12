@@ -5,7 +5,7 @@ import map.Being;
 
 /**
  * Interfejs, ktory jest wykorzystywany przy operacjach w kontenerze obiektow
- * W zwiezly sposob pozwala wykonywać po kolei operacje na obiektach
+ * W zwiezly sposob pozwala wykonywac po kolei operacje na obiektach
  * @version 1.0
  * @see map.Map
  * @see map.Being

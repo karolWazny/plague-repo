@@ -75,7 +75,7 @@ public class Ambulance extends Vehicle implements IRecoverable {
     }
 
     /**
-     * Metoda, ktora pozwala w przyspieszony sposob wracać do zdrowia pasazerom
+     * Metoda, ktora pozwala w przyspieszony sposob wracac do zdrowia pasazerom
      */
     public void recover(){
         Iterator <IRecord>iterator = passengers.iterator();
@@ -92,8 +92,8 @@ public class Ambulance extends Vehicle implements IRecoverable {
     }
 
     /**
-     * Metoda, getter, ktora zwraca aktualna ilosć karetek na mapie
-     * @return ilosć karetek
+     * Metoda, getter, ktora zwraca aktualna ilosc karetek na mapie
+     * @return ilosc karetek
      */
     public int getNumAmb(){
         return numAmb;

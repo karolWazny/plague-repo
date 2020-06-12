@@ -19,7 +19,7 @@ import services.vehicles.GPS1;
 
 
 /**
- * Klasa glowna calej symulacji - w tym miejscu spinane jest wszystko w jedna spojna calosć
+ * Klasa glowna calej symulacji - w tym miejscu spinane jest wszystko w jedna spojna calosc
  * W tym miejscu tworzone sa obiekty wszystkich glownych klas
  * @version 1.0
  * @see map.Map;
@@ -39,7 +39,7 @@ public class Simulation {
     private Map map;
     /** Pole dla kontenera bytow */
     private BeingContainer container;
-    /** Pole, w ktorym przechowywana jest postać wirusa */
+    /** Pole, w ktorym przechowywana jest postac wirusa */
     private Virus strain;
     /** Pole, w ktorym zapisana jest liczb ludzi */
     private int numPeople;

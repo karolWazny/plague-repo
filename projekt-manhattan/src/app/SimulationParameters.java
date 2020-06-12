@@ -15,9 +15,9 @@ public class SimulationParameters implements Serializable{
      * Informacja do interfejsu Serializable
      */
     private static final long serialVersionUID = -4042477513098162866L;
-    /** Pole przechowujace dlugosć mapy */
+    /** Pole przechowujace dlugosc mapy */
     int mapLength;
-    /** Pole przechowujace szerokosć mapy */
+    /** Pole przechowujace szerokosc mapy */
     int mapWidth;
     /** Pole przechowujace liczbe ludzi */
     int numPeople;
@@ -42,8 +42,8 @@ public class SimulationParameters implements Serializable{
 
     /**
      * Metoda, konstruktor, ktora tworzy obiekt z parametrami wejsciowymi symulacji
-     * @param mapLength dlugosć mapy
-     * @param mapWidth szerokosć mapy
+     * @param mapLength dlugosc mapy
+     * @param mapWidth szerokosc mapy
      * @param numPeople liczba ludzi
      * @param numDocs liczba lekarzy
      * @param numAmbulance liczba karetek
@@ -188,16 +188,16 @@ public class SimulationParameters implements Serializable{
     }
 
     /**
-     * Metoda, getter, ktora zwraca dlugosć mapy
-     * @return dlugosć mapy
+     * Metoda, getter, ktora zwraca dlugosc mapy
+     * @return dlugosc mapy
      */
     public int getMapLength(){
         return mapLength;
     }
 
     /**
-     * Metoda, getter, ktora zwraca szerokosć mapy
-     * @return szerokosć mapy
+     * Metoda, getter, ktora zwraca szerokosc mapy
+     * @return szerokosc mapy
      */
     public int getMapWidth(){
         return mapWidth;
@@ -276,23 +276,23 @@ public class SimulationParameters implements Serializable{
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć dlugosci mapy
-     * @param mapLength dlugosć mapy
+     * Metoda, setter, ktora ustawia wartosc dlugosci mapy
+     * @param mapLength dlugosc mapy
      */
     public void setMapLength(int mapLength){
         this.mapLength = mapLength;
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć szerokosci mapy
-     * @param mapWidth szerokosć mapy
+     * Metoda, setter, ktora ustawia wartosc szerokosci mapy
+     * @param mapWidth szerokosc mapy
      */
     public void setMapWidth(int mapWidth){
         this.mapWidth = mapWidth;
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć liczby ludzi
+     * Metoda, setter, ktora ustawia wartosc liczby ludzi
      * @param numPeople liczba ludzi
      */
     public void setNumPeople(int numPeople){
@@ -300,7 +300,7 @@ public class SimulationParameters implements Serializable{
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć liczby lekarzy
+     * Metoda, setter, ktora ustawia wartosc liczby lekarzy
      * @param numDocs liczba lekarzy
      */
     public void setNumDocs(int numDocs){
@@ -308,7 +308,7 @@ public class SimulationParameters implements Serializable{
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć liczby karetek
+     * Metoda, setter, ktora ustawia wartosc liczby karetek
      * @param numAmbulance liczba karetek
      */
     public void setNumAmbulance(int numAmbulance){
@@ -316,7 +316,7 @@ public class SimulationParameters implements Serializable{
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć liczby kosci dla wirusa
+     * Metoda, setter, ktora ustawia wartosc liczby kosci dla wirusa
      * @param power1 liczba kosci dla wirusa
      */
     public void setPower1(int power1){
@@ -324,7 +324,7 @@ public class SimulationParameters implements Serializable{
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć liczby scian kosci wirusa
+     * Metoda, setter, ktora ustawia wartosc liczby scian kosci wirusa
      * @param power2 liczba scian kosci dla wirusa
      */
     public void setPower2(int power2){
@@ -332,7 +332,7 @@ public class SimulationParameters implements Serializable{
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć czasu do zainfekowania
+     * Metoda, setter, ktora ustawia wartosc czasu do zainfekowania
      * @param timeTilInfect czas potrzebny do zainfekowania
      */
     public void setTimeTilInfect(int timeTilInfect){
@@ -340,7 +340,7 @@ public class SimulationParameters implements Serializable{
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć czasu do wyzdrowienia
+     * Metoda, setter, ktora ustawia wartosc czasu do wyzdrowienia
      * @param timeTilCured czas potrzebny do wyzdrowienia
      */
     public void setTimeTilCured(int timeTilCured){
@@ -348,7 +348,7 @@ public class SimulationParameters implements Serializable{
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć wskaznika infekcji
+     * Metoda, setter, ktora ustawia wartosc wskaznika infekcji
      * @param infectionRate wskaznik infekcji
      */
     public void setInfectionRate(int infectionRate){
@@ -356,7 +356,7 @@ public class SimulationParameters implements Serializable{
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć szansy na wystapienie objawow
+     * Metoda, setter, ktora ustawia wartosc szansy na wystapienie objawow
      * @param activeRate szansa na wystapienie objawow
      */
     public void setActiveRate(int activeRate){

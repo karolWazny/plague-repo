@@ -71,7 +71,7 @@ public class SimulationLog {
 
     /**
      * Metoda, ktora zwraca ciag znakowy opisujacy caly obiekt typu SimulationState.
-     * A takze przedstawia jego cala zawartosć - przede wszystkim.
+     * A takze przedstawia jego cala zawartosc - przede wszystkim.
      * @return Ciag znakow z opisem calej symulacji
      */
     public String toString(){

@@ -38,7 +38,7 @@ public class DiseaseRecord {
 
     /**
      * Metoda - konstruktor, tworzy obiekty instancji tej klasy w zaleznosci od parametrow
-     * @param disease Choroba, ktora ma znajezć sie w rekordzie
+     * @param disease Choroba, ktora ma znajezc sie w rekordzie
      * @param infected Czlowiek infekowany
      */
     public DiseaseRecord(Disease disease, IDiseaseSensitive infected) {

@@ -23,7 +23,7 @@ public class GPS1 implements IGPS {
      * Metoda, ktora nawiguje obiektem
      * @param position aktualna pozycja
      * @param destination cel ruchu
-     * @param velocity szybkosć 
+     * @param velocity szybkosc 
      * @return nowe koordynaty
      */
     public Coordinates navigate(Coordinates position, Coordinates destination, int velocity) {

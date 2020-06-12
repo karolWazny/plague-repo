@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import java.io.File;
 
 /**
- * Klasa ta zapewnia funkcjonalnosć zapisywania do pliku wszystkich danych
+ * Klasa ta zapewnia funkcjonalnosc zapisywania do pliku wszystkich danych
  * z przebiegu symulacji. Wykorzystuje informacje zawarte w obiekcie klasy SimulationLog
  * @version 1.0
  * @see app.SimulationLog

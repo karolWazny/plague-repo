@@ -15,7 +15,7 @@ public interface IGPS {
      * Metoda, ktora nawiguje pojazdem, aby dotarl w odpowiednie miejsce
      * @param position aktualna pozycja
      * @param destination cel podrozy
-     * @param velocity szybkosć poruszania sie
+     * @param velocity szybkosc poruszania sie
      * @return nowe koordynaty
      */
     public Coordinates navigate(Coordinates position, Coordinates destination, int velocity);

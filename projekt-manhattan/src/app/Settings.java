@@ -120,7 +120,7 @@ public class Settings implements Serializable{
 
     /**
      * Metoda, setter, ktora ustawia parametry w zaleznosci od obiektu, ktory otrzymuje
-     * @param parameters obiekt parametrow, ktore maja być przyjete
+     * @param parameters obiekt parametrow, ktore maja byc przyjete
      */
     public void setParameters(SimulationParameters parameters){
         params  = new SimulationParameters(parameters);
@@ -175,7 +175,7 @@ public class Settings implements Serializable{
     }
 
     /**
-     * MEtoda, getter, ktora zwraca wartosć pola outPath
+     * MEtoda, getter, ktora zwraca wartosc pola outPath
      * @return ciag znakow outPath
      */
     public String getOutPath(){
@@ -184,7 +184,7 @@ public class Settings implements Serializable{
 
     /**
      * Metoda, setter, ktora ustawia pole outPath 
-     * @param outPath ciag znakow, ktory chcemy ustawić
+     * @param outPath ciag znakow, ktory chcemy ustawic
      * @throws FileNotFoundException Wyrzuca wyjatek, gdy nie znajdzie pliku
      */
     public void setOutPath(String outPath) throws FileNotFoundException {

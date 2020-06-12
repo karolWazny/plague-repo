@@ -10,7 +10,7 @@ import container.Coordinates;
 
 /**
  * Klasa, ktora posiada wszelkie informacje i funkcjonalnosci, by abstrakcyjnie
- * przedstawić czlowieka
+ * przedstawic czlowieka
  * @version 1.0
  * @see random.Dice 
  * @see virus.DiseaseRecord
@@ -35,7 +35,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     private static int humanCounter = 1;
     
     /**
-     * Metoda, konstruktor klasy czlowieka, ktora jako parametry przyjmuje pleć i wiek
+     * Metoda, konstruktor klasy czlowieka, ktora jako parametry przyjmuje plec i wiek
      * @param sex informacja o plci
      * @param age wiek
      */
@@ -51,7 +51,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     }
     
     /**
-     * Metoda, konstruktor domyslny czlowieka, pleć i inne 
+     * Metoda, konstruktor domyslny czlowieka, plec i inne 
      * parametry sa przydzielane losowo badz odgornie
      */
     public Human(){
@@ -67,7 +67,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
 
     /**
      * Metoda, konstruktor, ktory zostal stworzony na potrzeby dziedziczenia dla doktora
-     * @param sex pleć
+     * @param sex plec
      * @param age wiek
      * @param representation reprezentacja znakowa
      */
@@ -140,15 +140,15 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć punktow zdrowia
-     * @param healthPoints ilosć punktow zdrowia
+     * Metoda, setter, ktora ustawia wartosc punktow zdrowia
+     * @param healthPoints ilosc punktow zdrowia
      */
     public void setHealthPoints(int healthPoints) {
         this.healthPoints = healthPoints;
     }
    
     /**
-     * Metoda, setter, ktora ustawia wartosć pola czy jest zainfekowany
+     * Metoda, setter, ktora ustawia wartosc pola czy jest zainfekowany
      * @param isInfected Stan logiczny czy jest zainfekowany
      */
     public void setIsInfected(boolean isInfected) {
@@ -156,7 +156,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     }
 
     /**
-     * Metoda, setter, ktora ustawia wartosć pola czy jest zywy
+     * Metoda, setter, ktora ustawia wartosc pola czy jest zywy
      * @param isAlive Stan logiczny czy jest zywy
      */
     public void setIsAlive(boolean isAlive) {
@@ -164,15 +164,15 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     }
 
     /**
-     * Metoda, getter, ktora zwraca wartosć plci
-     * @return wartosć liczbowa odpowiadajaca plci
+     * Metoda, getter, ktora zwraca wartosc plci
+     * @return wartosc liczbowa odpowiadajaca plci
      */
     public String getSex(){
         return (sex==2)? "male":"female"; 
     }
 
     /**
-     * Metoda, getter, ktora zwraca wartosć punktow zdrowia
+     * Metoda, getter, ktora zwraca wartosc punktow zdrowia
      * @return punkty zdrowia
      */
     public int getHealthPoints(){
@@ -180,7 +180,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     }
 
     /**
-     * Metoda, getter, ktora zwraca wartosć logiczna czy jest zainfekowany
+     * Metoda, getter, ktora zwraca wartosc logiczna czy jest zainfekowany
      * @return stan logiczny czy jest zainfekowany
      */
     public boolean getIsInfected(){
@@ -188,7 +188,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     }
 
     /**
-     * Metoda, getter, ktora zwraca wartosć logiczna czy jest zywy
+     * Metoda, getter, ktora zwraca wartosc logiczna czy jest zywy
      * @return stan logiczny czy jest zywy
      */
     public boolean getIsAlive(){
@@ -196,7 +196,7 @@ public class Human extends Being implements IMovable, IDiseaseSensitive {
     }
 
     /**
-     * Metoda, getter, ktora zwraca wartosć wieku czlowieka
+     * Metoda, getter, ktora zwraca wartosc wieku czlowieka
      * @return wiek
      */
     public int getAge(){

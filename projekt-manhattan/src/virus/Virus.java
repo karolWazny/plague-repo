@@ -118,15 +118,15 @@ public class Virus extends Disease {
         return infectionSuccessful;
     }
     /**
-     * Metoda pobierajaca ilosć kostek
-     * @return Zwraca wartosć prywatnego pola power1
+     * Metoda pobierajaca ilosc kostek
+     * @return Zwraca wartosc prywatnego pola power1
      */
     public int getPower1() {
         return power1;
     }
     /**
-     * Metoda pobierajaca ilosć scian w kostkach
-     * @return Zwraca wartosć prywatnego pola power2
+     * Metoda pobierajaca ilosc scian w kostkach
+     * @return Zwraca wartosc prywatnego pola power2
      */
     public int getPower2() {
         return power2;

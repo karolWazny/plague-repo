@@ -56,7 +56,7 @@ public class Coordinates {
 
     /**
      * Metoda, ktora zwraca stan logiczny i odpowiada na pytanie:
-     * Czy mozna przejsć w docelowe miejsce?
+     * Czy mozna przejsc w docelowe miejsce?
      * @param coords koordynaty celu
      * @return stan logiczny odpowiadajacy na pytanie z opisu metody
      */
@@ -71,8 +71,8 @@ public class Coordinates {
     }
 
     /**
-     * Metoda, ktora pozwala wykonać przesuniecie o wektor
-     * @param vector Wektor, o ktory chcemy przesunać
+     * Metoda, ktora pozwala wykonac przesuniecie o wektor
+     * @param vector Wektor, o ktory chcemy przesunac
      */
     public void addVector(Coordinates vector){
         this.horizontal+=vector.getHorizontal();
@@ -111,7 +111,7 @@ public class Coordinates {
      * Metoda, ktora zgodnie z ruchem wskazowek zegara sprawdza, czy w zaleznosci od 
      * wylosowanej liczby w danym miejscu jest sasiad i czy mozliwe jest przesuniecie
      * obiektu w dane miejsce. Zwraca koordynaty nowego miejsca, badz starego jesli nie mozna
-     * @param direction wylosowana wartosć celu
+     * @param direction wylosowana wartosc celu
      * @return koordynaty nowe
      */
     public Coordinates neighboursClockwise(int direction) {
@@ -175,7 +175,7 @@ public class Coordinates {
     }
 
     /**
-     * Metoda, getter, ktora zwraca wartosć skladowej Y koordynatu
+     * Metoda, getter, ktora zwraca wartosc skladowej Y koordynatu
      * @return skladowa Y
      */
     public int getVertical(){
@@ -183,7 +183,7 @@ public class Coordinates {
     }
 
     /**
-     * Metoda, getter, ktora zwraca wartosć skladowej X koordynatu
+     * Metoda, getter, ktora zwraca wartosc skladowej X koordynatu
      * @return
      */
     public int getHorizontal(){

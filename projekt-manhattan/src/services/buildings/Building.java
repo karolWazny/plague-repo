@@ -3,19 +3,19 @@ package services.buildings;
 import map.Being;
 
 /**
- * Klasa, ktora abstrakcyjnie przedstawia budynki, ktore posiadaja zdolnosć 
+ * Klasa, ktora abstrakcyjnie przedstawia budynki, ktore posiadaja zdolnosc 
  */
 public abstract class Building extends Being{
     /** Pole, ktore jest licznikiem budynkow */
     private static int blockCounter = 0;
-    /** Pojemnosć budynku */
+    /** Pojemnosc budynku */
     private int capacity;
    
     /**
      * Metoda, konstruktor, ktora tworzy obiekty klasy building
      * @param id ciag znakow identyikujacych
      * @param representation reprezentacja znakowa
-     * @param capacity pojemnosć
+     * @param capacity pojemnosc
      */
     public Building(String id, char representation, int capacity){ //Hospital
         super(id, representation);
@@ -32,23 +32,23 @@ public abstract class Building extends Being{
     }
 
     /**
-     * Metoda, setter, ktora ustawia pojemnosć budynku
-     * @param capacity pojemnosć
+     * Metoda, setter, ktora ustawia pojemnosc budynku
+     * @param capacity pojemnosc
      */
     public void setCapacity(int capacity){
         this.capacity = capacity;
     }
 
     /**
-     * Metoda, getter, ktora zwraca wartosć pojemnosci budynku
-     * @return pojemnosć
+     * Metoda, getter, ktora zwraca wartosc pojemnosci budynku
+     * @return pojemnosc
      */
     public int getCapacity(){
         return capacity;
     }
     
     /**
-     * Metoda, ktora zwraca statyczna wartosć dla obiektow tej klasy
+     * Metoda, ktora zwraca statyczna wartosc dla obiektow tej klasy
      * @return licznik budynkow
      */
     public int getblockCounter(){

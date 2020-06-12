@@ -25,7 +25,7 @@ public class SimulationRuntimeWindow extends JFrame {
      * w trakcie przebiegu symulacji.
     */
     private JTextArea outputConsole;
-    /** Obiekt odpowiedzialny za mozliwosć scrollowania obszaru tekstowego
+    /** Obiekt odpowiedzialny za mozliwosc scrollowania obszaru tekstowego
      * - konsoli wyjsciowej.
     */
     private JScrollPane scroller;

@@ -1,7 +1,7 @@
 package map;
 
 /**
- * Klasa, po ktorej dziedziczy wiekszosć klas obiektow bedacych na mapie
+ * Klasa, po ktorej dziedziczy wiekszosc klas obiektow bedacych na mapie
  * Abstrakcyjna klasa, ktora nie tworzy instancji
  * @version 1.0
  * @see map.IPrintable
