@@ -34,7 +34,7 @@ public abstract class Disease implements IDisease {
      */
     private int activeRate;
     /**
-     * Obiekt odpowiedzialny za zarazanie - wydzielona odpowiedzialnosc
+     * Obiekt odpowiedzialny za zarazanie - wydzielona odpowiedzialnosć
      */
     protected static Infector infector = new Infector();
     
@@ -55,11 +55,7 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-<<<<<<< HEAD
-     * Metoda konstruktow, ktora jako parametr przyjmuje inna instancje tej samej klasy
-=======
      * Metoda konstruktor, która jako parametr przyjmuje inną instancję tej samej klasy
->>>>>>> 538007c06d7b4c6e7a34d9ff1a1d922de984e8c7
      * @param prototype obiekt instancja tej samej klasy
      */
     public Disease(Disease prototype) {
@@ -93,7 +89,7 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-     * Metoda pobierajaca wartosc czasu potrzebnego do zainfekowania
+     * Metoda pobierajaca wartosć czasu potrzebnego do zainfekowania
      * @return czas do zainfekowania
      */
     public int getTimeTilInfect() {
@@ -101,11 +97,7 @@ public abstract class Disease implements IDisease {
     }
 
     /**
-<<<<<<< HEAD
-     * MEtoda pobierajaca wartosc czasu potrzebnego do wyzdrowienia
-=======
-     * Metoda pobierająca wartośc czasu potrzebnego do wyzdrowienia
->>>>>>> 538007c06d7b4c6e7a34d9ff1a1d922de984e8c7
+     * Metoda pobierająca wartość czasu potrzebnego do wyzdrowienia
      * @return czas do wyzdrowienia
      */
     public int getTimeTilCured() {
