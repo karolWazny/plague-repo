@@ -37,7 +37,7 @@ object Ambulance{
     destination = null
     home = null
     numVeh = 2
-    gps
+    gps = GPS1
     passengers = 0
     caller = Human
     numAmb = 1
