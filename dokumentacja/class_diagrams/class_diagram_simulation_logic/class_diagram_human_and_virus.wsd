@@ -1,0 +1,132 @@
+@startuml human_and_virus_12062020
+
+class Human
+{
+- int healthPoints;
+- boolean isInfected;
+- boolean isAlive;
+- int sex;
+-  int age;
+- {static} int humanCounter;
+- List<DiseaseRecord> diseases;
++ Human();
++ Human(int, int);
+# Human(int, int, char);
++ String getSex();
++ int getSexValue();
++ int getHealyhPoints();
++ boolean getIsInfected();
++ int getAge();
++ void setHealthPoints(int);
++ void setIsInfected(boolean);
++ void setIsAlive(boolean);
+}
+
+
+class Dice
+{
++ {static} int d2();
++ {static} int d2(int);
++ {static} int d4();
++ {static} int d4(int);
++ {static} int d6();
++ {static} int d6(int);
++ {static} int d8();
++ {static} int d8(int);
++ {static} int d10();
++ {static} int d10(int);
++ {static} int d12();
++ {static} int d12(int);
++ {static} int d20();
++ {static} int d20(int);
++ {static} int d100();
++ {static} int d100(int);
+}
+
+abstract class Disease 
+{
+    - boolean isActive;
+    - int timeTilSymptoms;
+    - int timeTilInfect;
+    - int timeTilCured;
+    - String id;
+    - int infectionRate;
+    - int activeRate;
+    + Disease(boolean, String, int, int, int, int)
+    # Infector infector;
+    + {abstract} progress(Human, DiseaseRecord);
+    + {abstract} infect(Human);
+    + boolean getIsActive();
+    + String getId();
+    + int getTimeTilInfect();
+    + int getTimeTilCured();
+    + int getInfectionRate();
+    + int getTimeTilSymptoms();
+    + int getActiveRate();
+}
+
+class DiseaseRecord 
+{
+    - Disease disease;
+    - boolean isActive;
+    - boolean infects;
+    - boolean areSymptoms;
+    - boolean isCured;
+    - int state;
+    + Disease(Disease, Human);
+    + void infect(Human);
+    + void setIsActive(boolean);
+    + void setInfects(boolean);
+    + void setIsCured(boolean);
+    + void setState(int);
+    + void setAreSymptom(boolean);
+    + String getDiseaseId();
+    + boolean getIsActive();
+    + boolean getInfects();
+    + boolean getIsCured();
+    + int getState();
+    + boolean getAreSymptoms(); 
+}
+
+interface IDisease 
+{
+    + void infect(Human);
+    + void progress(Human, DiseaseRecord);
+    + int getInfectionRate();
+    + int getActiveRate();
+    + int getTimeTilSymptoms();
+}
+
+class Infector 
+{
+    + void performInfection(Human, Disease);
+}
+
+class Virus
+{
+    - int power1;
+    - int power2;
+    + Virus(Human, int, int);
+    + void progress(Human, DiseaseRecord);
+    + void infect(Human);
+}
+
+class Doctor
+{
++ Doctor();
++ void heal(Human);
+}
+
+Human <|-- Doctor
+IDisease <|-- Disease
+Disease <|-- Virus
+Doctor -- Dice : uses <
+Human *-- DiseaseRecord
+Human -- Dice : uses <
+Disease *-- Infector
+DiseaseRecord *-- Disease
+DiseaseRecord - Dice : uses <
+Infector - Dice : uses <
+Virus - Dice : uses <
+
+@enduml

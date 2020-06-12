@@ -1,0 +1,176 @@
+@startuml
+
+class Settings{
+    - {static} long serialVerionUID;
+    - SimulationParameters params;
+    - String outPath;
+    - String parmPath;
+    + Settings();
+    - Settings load();
+    + void serialize();
+    ~ void setDefaultAll();
+    + SimulationParameters getParameters();
+    + void setParameters(SimulationParameters);
+    + void setDefaultParamPath();
+    + void setParamPath(String);
+    + void setDefaultOutPath();
+    + String getParamPath();
+    + String getOutPath();
+    + void setOutPath(String);
+}
+
+class Simulation {
+    - Map map;
+    - BeingContainer container;
+    - Virus strain;
+    - int numPeople;
+    - int numInfected;
+    - SimulationParameters params;
+    - SimulationLog log;
+    - SimulationRuntimeWindow srw;
+    - Dispatching dispatching;
+    + Simulation(SimulationParameters);
+    + void performRound;
+    + SimulationLog doSimulation();
+    + void display();
+    + Map getMap();
+    + SimulationLog getLog();
+}
+
+class SimulationLog {
+    + Date startTime;
+    - SimulationParameters parameters;
+    - List<SimulationState> log;
+    - String output;
+    + SimulationLog(SimulationParameters);
+    + SimulationLog();
+    + void addRecord(int, int);
+    + String toString();
+    + boolean setOutput(String);
+    + SimulationState getLast();
+    + List<SimulationState> getList();
+    + Date getStartTime();
+}
+
+class SimulationParameters {
+    - {static} long serialVerionUID;
+    ~ int mapLength;
+    ~ int mapWidth;
+    ~ int numPeople;
+    ~ int numDocs;
+    ~ int numAmbulance;
+    ~ int numHearse;
+    ~ int power1;
+    ~ int power2;
+    ~ int timeTilInfect;
+    ~ int timeTilCured;
+    ~ int infectionRate;
+    ~ int activeRate;
+    + SimulationParameters(int, int, int, int, int, int, int, int, int, int, int);
+    + SimulationParameters();
+    + SimulationParameters(SimulationParameters);
+    + void ReadFromFile(File);
+    + String toString();
+    + int getMapLength();
+    + void setMapLength(int);
+    + int getMapWidth();
+    + void setMapWidth(int);
+    + int getNumPeople();
+    + void setNumPeople(int);
+    + int getNumDocs();
+    + void setNumDocs(int);
+    + int getNumAmbulance();
+    + void setNumAmbulance(int);
+    + int getNumHearse();
+    + void setNumHearse(int);
+    + int getPower1();
+    + void setPower1(int);
+    + int getPower2();
+    + void setPower2(int);
+    + int getTimeTilInfect();
+    + void setTimeTilInfect(int);
+    + int getTimeTilCured();
+    + void setTimeTilCured(int);
+    + int getInfectionRate();
+    + void setInfectionRate(int);
+    + int getActivationRate();
+    + void setActiveRate(int);
+}
+
+class Map
+{
+- int length;
+- int width;
+- {static} EmptySlot empty;
+- IPrintable table;
++ Map(int, int);
++ String toString();
++ void displayMap();
++ List<Coordinates> emptyFieldsList();
++ IPrintable getField(Coordinates);
++ IPrintable setField(IPrintable, Coordinates);
++ void setField(IPrintable, int, int);
++ void emptyField(Coordinates);
++ int getLength();
++ int getWidth();
+}
+
+class Dispatching
+{
+ - List<IRecord> callerList;
+ - List<Ambulance> ambulanceList;
+ + Dispatching();
+ + List<IRecord> getCallerList();
+ + void addCaller(IRecord);
+ + void addAmbulance(Ambulance);
+ + void doTheJob();
+ + List<IRecord> getBothLists();
+}
+
+class Virus
+{
+    - int power1;
+    - int power2;
+    + Virus(Human, int, int);
+    + void progress(Human, DiseaseRecord);
+    + void infect(Human);
+}
+
+class BeingContainer
+{
+    - List<Record> list;
+    - Map map;
+    + BeingContainer(Map map);
+    + List<Record> getList();
+    + Map getMap();
+    + void performMovementRound();
+    + void InfectRound();
+    + void PerformDiseaseRound();
+    + void PerformRecoveryRound();
+}
+
+class SimulationRuntimeWindow{
+    - {static} long serialVerionUID;
+    - JPanel simulationPanel;
+    - JTextArea outputConsole;
+    - JScrollPane scroller;
+    + SimulationRuntimeWindow(Simulation);
+    + void nextRound(String);
+    + void finish(String);
+}
+
+
+SimulationLog *- SimulationParameters
+Simulation *- SimulationParameters
+Simulation *- SimulationLog
+Settings *- SimulationParameters
+Virus --* Simulation 
+Map -* Simulation 
+Simulation *-- Dispatching
+BeingContainer -* Simulation
+BeingContainer *- Map
+BeingContainer *-- Dispatching
+Simulation *-- SimulationRuntimeWindow
+
+
+@enduml

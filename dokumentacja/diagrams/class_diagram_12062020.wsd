@@ -304,102 +304,6 @@ interface IGPS
  + Coordinates navigate(Coordinates);
 }
 
-class Settings{
-    - {static} long serialVerionUID;
-    - SimulationParameters params;
-    - String outPath;
-    - String parmPath;
-    + Settings();
-    - Settings load();
-    + void serialize();
-    ~ void setDefaultAll();
-    + SimulationParameters getParameters();
-    + void setParameters(SimulationParameters);
-    + void setDefaultParamPath();
-    + void setParamPath(String);
-    + void setDefaultOutPath();
-    + String getParamPath();
-    + String getOutPath();
-    + void setOutPath(String);
-}
-
-class Simulation {
-    - Map map;
-    - BeingContainer container;
-    - Virus strain;
-    - int numPeople;
-    - int numInfected;
-    - SimulationParameters params;
-    - SimulationLog log;
-    - SimulationRuntimeWindow srw;
-    - Dispatching dispatching;
-    + Simulation(SimulationParameters);
-    + void performRound;
-    + SimulationLog doSimulation();
-    + void display();
-    + Map getMap();
-    + SimulationLog getLog();
-}
-
-class SimulationLog {
-    + Date startTime;
-    - SimulationParameters parameters;
-    - List<SimulationState> log;
-    - String output;
-    + SimulationLog(SimulationParameters);
-    + SimulationLog();
-    + void addRecord(int, int);
-    + String toString();
-    + boolean setOutput(String);
-    + SimulationState getLast();
-    + List<SimulationState> getList();
-    + Date getStartTime();
-}
-
-class SimulationParameters {
-    - {static} long serialVerionUID;
-    ~ int mapLength;
-    ~ int mapWidth;
-    ~ int numPeople;
-    ~ int numDocs;
-    ~ int numAmbulance;
-    ~ int numHearse;
-    ~ int power1;
-    ~ int power2;
-    ~ int timeTilInfect;
-    ~ int timeTilCured;
-    ~ int infectionRate;
-    ~ int activeRate;
-    + SimulationParameters(int, int, int, int, int, int, int, int, int, int, int);
-    + SimulationParameters();
-    + SimulationParameters(SimulationParameters);
-    + void ReadFromFile(File);
-    + String toString();
-    + int getMapLength();
-    + void setMapLength(int);
-    + int getMapWidth();
-    + void setMapWidth(int);
-    + int getNumPeople();
-    + void setNumPeople(int);
-    + int getNumDocs();
-    + void setNumDocs(int);
-    + int getNumAmbulance();
-    + void setNumAmbulance(int);
-    + int getNumHearse();
-    + void setNumHearse(int);
-    + int getPower1();
-    + void setPower1(int);
-    + int getPower2();
-    + void setPower2(int);
-    + int getTimeTilInfect();
-    + void setTimeTilInfect(int);
-    + int getTimeTilCured();
-    + void setTimeTilCured(int);
-    + int getInfectionRate();
-    + void setInfectionRate(int);
-    + int getActivationRate();
-    + void setActiveRate(int);
-}
 
 Map o- IPrintable
 IPrintable <|-- Being
@@ -436,5 +340,7 @@ DiseaseRecord *-- Disease
 DiseaseRecord -- Dice : uses <
 Infector - Dice : uses <
 Virus - Dice : uses <
+
+
 
 @enduml

@@ -1,0 +1,241 @@
+@startuml class_diagram_12062020
+
+class Map
+{
+- int length;
+- int width;
+- {static} EmptySlot empty;
+- IPrintable table;
++ Map(int, int);
++ String toString();
++ void displayMap();
++ List<Coordinates> emptyFieldsList();
++ IPrintable getField(Coordinates);
++ IPrintable setField(IPrintable, Coordinates);
++ void setField(IPrintable, int, int);
++ void emptyField(Coordinates);
++ int getLength();
++ int getWidth();
+}
+
+interface IPrintable
+{
++ String toString();
++ String getId();
++ char getRepresentation();
+}
+
+abstract class Being
+{
+- String id;
+# Character representation;
++ Being (String, char);
+}
+
+abstract class Record
+{
+- IMovable being;
+- Coordinates position;
++ Record(Being, Coordinates);
++ void move();
++ void infectNeighbours(Map);
++ void progressIllness();
++ void performRecovery();
++ void setVerHor(Coordinates);
++ Coordinates getVerHor();
++ Being getBeing();
+}
+
+interface IRecord
+{
++ void move();
++ int[] getVerHor();
++ void setVerHor(Coordinates);
++ void infectNeighbours(Map);
++ void progressIllness();
++ void performRecovery();
+}
+
+class BeingContainer
+{
+- List<Record> list;
+- Map map;
+- Dispatching dispatching;
++ BeingContainer(Map, Dispatching);
++ List<Record> getList();
++ Map getMap();
++ void performMovementRound();
++ int performInfectRound();
++ int[] performDiseaseRound();
++ void performRecoveryRound();
+}
+
+class EmptySlot
+{
++ EmptySlot();
+}
+
+interface IDiseaseSensitive
+{
++ void PerformIllness();
++ boolean getIsAlive();
++ List<DiseaseRecord> getDisease();
+}
+
+interface IMovable
+{
++ COordinates move(Coordinates);
+}
+
+class Human
+{
+- int healthPoints;
+- boolean isInfected;
+- boolean isAlive;
+- int sex;
+-  int age;
+- {static} int humanCounter;
+- List<DiseaseRecord> diseases;
++ Human();
++ Human(int, int);
+# Human(int, int, char);
++ String getSex();
++ int getSexValue();
++ int getHealyhPoints();
++ boolean getIsInfected();
++ int getAge();
++ void setHealthPoints(int);
++ void setIsInfected(boolean);
++ void setIsAlive(boolean);
+}
+
+abstract class Vehicle
+{
+- int capacity;
+- int velocity
+- {static} int numVeh;
+# Coordinates home;
+- IGPS gps;
+- List<IMovable> passengers;
++ Vehicle(String, char, int, int, Coordinates, IGPS);
++ String toString();
++ void addPassenger(IRecord);
++ void setGPS(IGPS);
++ int getVelocity();
++ int getCapacity();
++ getNumVeh();
++ List<IMovable> getPassengers();
++ IGPS getGPS();
+}
+
+abstract class Building
+{
+    
+    
+    - {static} int blockCounter;
+    - int capacity;
+    + Building();
+    + Building(String, char, int);
+    + void setCapacity(int);
+    + int getCapacity();
+    + int getBlockCounter();
+}
+
+class Ambulance
+{
+    - {static} int numAmb;
+    - IRecord caller;
+    + boolean isFree;
+    - Hospital hospital;
+    + Ambulance(Coordinates, IGPS, Hospital);
+    + String toString();
+    + int getNumAmb();
+    + boolean getIsFree();
+    + void setCaller(IRecord);
+    + IRecord getCaller();
+}
+
+class Hospital
+{
+    - {static} int hospitalCounter;
+    + Hospital();
+    + Hospital(String, char, int);
+    + int getHospitalCounter();
+
+}
+
+class Dispatching
+{
+ - List<IRecord> callerList;
+ - List<Ambulance> ambulanceList;
+ + Dispatching();
+ + List<IRecord> getCallerList();
+ + void addCaller(IRecord);
+ + void addAmbulance(Ambulance);
+ + void doTheJob();
+ + List<IRecord> getBothLists();
+}
+
+class Coordinates 
+{
+    - int vertical;
+    - int horizontal;
+    + Coordinates(int, int);
+    + Cooridnates(Cooridnates);
+    + String toString();
+    + void addVector(Coordinates);
+    + Coordinates changedVector(int, int);
+    + Coordinates neighboursClockwise(int);
+    + void setCoordinates(int, int);
+    + void setCoordinates(Coordinates);
+    + void setVertical(int);
+    + void setHorizontal(int);
+    + int getVertical();
+    + int getHorizontal();
+}
+
+class GPS1
+{
+
+}
+
+interface IGPS
+{
+ + Coordinates navigate(Coordinates);
+}
+
+interface IRecoverable {
+    + void recover();
+}
+
+
+Map o- IPrintable
+IPrintable <|-- Being
+Being <|-- EmptySlot
+IRecord <|-- Record
+BeingContainer o- IRecord
+Being <|-- Human
+IMovable <|-- Human
+IDiseaseSensitive <|-- Human
+IMovable --o Record
+Map *- EmptySlot
+Map -o BeingContainer
+Being <|-- Vehicle
+IMovable <|-- Vehicle
+Vehicle <|-- Ambulance
+Being <|-- Building
+Building <|-- Hospital
+IGPS <|-- GPS1
+Coordinates -* Record
+Vehicle o-- IGPS
+IRecoverable <|- IDiseaseSensitive
+Map --o GPS1
+
+Ambulance -o Dispatching
+IRecord -o Dispatching
+BeingContainer *- Dispatching
+Ambulance o- Hospital
+Ambulance -|> IRecoverable
+IRecoverable <|-- Hospital
+
+@enduml
