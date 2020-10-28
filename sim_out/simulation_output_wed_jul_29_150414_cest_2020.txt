@@ -1,0 +1,69 @@
+Simulation run at: 2020-07-29 at 15:04:14 CEST
+Simulation parameters:
+Map size:
+	width: 50, length: 60
+Initial number of people: 250, including 10 doctors
+Number of ambulances: 15
+Virus characteristics:
+	Power: 6d6
+	Nominal time between beeing infected and infecting others: 1
+	Nominal time between being infected and being cured: 50
+	Infection rate: 50%
+	Percentage of active instances of virus: 50%
+Simulation length: 53 rounds
+Simulation output: All cured
+Detailed log:
+Alive: 250, infected: 1
+Alive: 250, infected: 1
+Alive: 250, infected: 1
+Alive: 250, infected: 2
+Alive: 250, infected: 2
+Alive: 250, infected: 2
+Alive: 250, infected: 2
+Alive: 250, infected: 2
+Alive: 250, infected: 3
+Alive: 249, infected: 2
+Alive: 249, infected: 2
+Alive: 249, infected: 3
+Alive: 248, infected: 3
+Alive: 248, infected: 3
+Alive: 248, infected: 3
+Alive: 247, infected: 2
+Alive: 247, infected: 3
+Alive: 247, infected: 3
+Alive: 247, infected: 5
+Alive: 247, infected: 7
+Alive: 247, infected: 7
+Alive: 247, infected: 7
+Alive: 247, infected: 7
+Alive: 247, infected: 8
+Alive: 247, infected: 8
+Alive: 246, infected: 7
+Alive: 246, infected: 7
+Alive: 246, infected: 7
+Alive: 245, infected: 6
+Alive: 245, infected: 6
+Alive: 245, infected: 4
+Alive: 245, infected: 4
+Alive: 245, infected: 4
+Alive: 244, infected: 3
+Alive: 244, infected: 4
+Alive: 244, infected: 4
+Alive: 244, infected: 3
+Alive: 244, infected: 2
+Alive: 244, infected: 2
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 1
+Alive: 244, infected: 0
