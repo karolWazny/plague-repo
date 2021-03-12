@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
  */
 public class App {
     /** Pole, ktore przechowuje glowne okno/ramke dla menu */
-    private static MainFrame mainFrame;
+//    private static MainFrame mainFrame;
 
     /**
      * Metoda main, ktora uruchamia wszystko w symulacji
